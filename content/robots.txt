@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://luisadow.github.io/theo-iii-wiki/sitemap.xml
+Sitemap: https://theo3.sadowski-dos-santos.de/sitemap.xml

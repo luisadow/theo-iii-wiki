@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: null,
     locale: "de-DE",
-    baseUrl: "luisadow.github.io/theo-iii-wiki",
+    baseUrl: "theo3.sadowski-dos-santos.de",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {

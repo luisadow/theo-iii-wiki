@@ -4,7 +4,7 @@ Lernwiki zur **Theoretischen Physik III (Elektrodynamik)** an der TU Berlin –
 Zusammenfassungen, Formeln und Herleitungen in der Reihenfolge der Vorlesung,
 gebaut als statische Website aus Markdown-Notizen.
 
-**→ Online lesen: <https://luisadow.github.io/theo-iii-wiki/>**
+**→ Online lesen: <https://theo3.sadowski-dos-santos.de>**
 
 ![Startseite des Wikis im Dunkelmodus](.github/assets/screenshot-start.png)
 

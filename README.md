@@ -38,7 +38,7 @@ studentische Notizen – Fehler bitte als
   responsiv bis Smartphone-Breite.
 - **SEO:** individuelle Meta-Beschreibungen, Canonical-URLs, strukturierte
   Daten (schema.org `LearningResource`), Sitemap, RSS und Open-Graph-Bilder.
-- **Deployment:** jeder Push auf `v4` baut die Seite per GitHub Actions und
+- **Deployment:** jeder Push auf `main` baut die Seite per GitHub Actions und
   veröffentlicht sie auf GitHub Pages.
 
 ## Technik

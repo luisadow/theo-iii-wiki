@@ -1,68 +1,143 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
+
+// ---------------------------------------------------------------------------
+// Theo III Wiki – eigenes Styling
+// Dunkles „Laborheft“ mit Lime-Akzent; Farben kommen aus quartz.config.ts
+// (--secondary = Akzent, --light = Hintergrund, --dark = Überschriften).
+// ---------------------------------------------------------------------------
 
 :root {
-  --neon: #d7ff1a;
-  --neon-soft: rgba(215, 255, 26, 0.25);
-  --neon-glow: 0 0 12px rgba(215, 255, 26, 0.35);
-  --neon-glow-strong: 0 0 18px rgba(215, 255, 26, 0.5);
+  --accent-soft: color-mix(in srgb, var(--secondary) 14%, transparent);
+  --accent-line: color-mix(in srgb, var(--secondary) 45%, transparent);
+  --card-bg: color-mix(in srgb, var(--lightgray) 22%, var(--light));
+  --card-border: color-mix(in srgb, var(--gray) 35%, transparent);
+  --radius: 12px;
 }
 
 body {
   background:
-    radial-gradient(1200px circle at 10% 0%, rgba(215, 255, 26, 0.06), transparent 42%),
-    radial-gradient(900px circle at 90% 10%, rgba(120, 165, 255, 0.08), transparent 38%),
+    radial-gradient(1100px circle at 8% -5%, var(--accent-soft), transparent 45%),
+    radial-gradient(900px circle at 95% 0%, rgba(120, 165, 255, 0.07), transparent 40%),
     var(--light);
+  background-attachment: fixed;
 }
 
-:root[saved-theme="dark"] body {
-  background:
-    radial-gradient(1200px circle at 12% 0%, rgba(215, 255, 26, 0.08), transparent 40%),
-    radial-gradient(900px circle at 88% 10%, rgba(120, 165, 255, 0.1), transparent 36%),
-    var(--light);
+// --- Typografie --------------------------------------------------------------
+
+article {
+  line-height: 1.7;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
-h1::after {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 72px;
-  margin-top: 0.35rem;
-  background: var(--secondary);
-  box-shadow: var(--neon-glow);
+.article-title {
+  font-size: 2.1rem;
+  line-height: 1.2;
+  &::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 64px;
+    margin-top: 0.6rem;
+    border-radius: 2px;
+    background: var(--secondary);
+  }
 }
 
-a {
-  color: var(--secondary);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
+article > h2 {
+  margin-top: 2.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--lightgray);
+}
+
+// --- Links: dezent unterstrichen statt farbiger Kästen -------------------------
+
+a.internal,
+a.external {
+  background-color: transparent;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
   transition:
     color 0.15s ease,
-    border-color 0.15s ease,
-    text-shadow 0.15s ease;
+    text-decoration-color 0.15s ease;
+
+  &:hover {
+    color: var(--secondary);
+    text-decoration-color: var(--secondary);
+  }
 }
 
-a:hover {
-  border-color: var(--secondary);
-  text-shadow: var(--neon-glow);
+// Explorer, Inhaltsverzeichnis, Breadcrumbs usw. ohne Unterstreichung
+.explorer a,
+.toc a,
+.breadcrumb-container a,
+.page-title a,
+.backlinks a,
+.page-listing a,
+.tags a {
+  text-decoration: none;
 }
 
-blockquote {
-  border-left: 2px solid var(--secondary);
-  box-shadow: inset 0 0 0 1px rgba(215, 255, 26, 0.08);
+// --- Formeln -----------------------------------------------------------------
+
+.katex-display {
+  padding: 0.35rem 0;
 }
+
+// --- Tabellen ----------------------------------------------------------------
+
+.table-container > table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius);
+  overflow: hidden;
+
+  th {
+    background: var(--accent-soft);
+    color: var(--dark);
+  }
+  th,
+  td {
+    padding: 0.55rem 0.9rem;
+    border-bottom: 1px solid var(--lightgray);
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+  tbody tr:nth-child(even) {
+    background: color-mix(in srgb, var(--lightgray) 18%, transparent);
+  }
+}
+
+// --- Callouts in ihrer eigenen Farbe, ohne Lime-Glow --------------------------
 
 .callout {
-  border: 1px solid rgba(215, 255, 26, 0.2);
-  box-shadow:
-    0 0 0 1px rgba(215, 255, 26, 0.08),
-    0 0 20px rgba(215, 255, 26, 0.08);
+  border-radius: var(--radius);
+  border-width: 1px;
+  border-left-width: 4px;
+  border-left-color: var(--color);
+}
+
+blockquote:not(.callout) {
+  border-left: 3px solid var(--accent-line);
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-line), transparent);
 }
 
 code,
@@ -71,33 +146,173 @@ kbd {
   border-radius: 6px;
 }
 
-table {
-  border: 1px solid rgba(215, 255, 26, 0.12);
-  border-radius: 10px;
-  overflow: hidden;
+kbd {
+  border: 1px solid var(--gray);
+  border-bottom-width: 2px;
+  padding: 0 0.35em;
+  font-size: 0.85em;
 }
 
-thead {
-  background: rgba(215, 255, 26, 0.08);
+// --- Sidebar -------------------------------------------------------------------
+
+.page-title {
+  font-size: 1.6rem;
+  a {
+    color: var(--dark);
+  }
+  a::before {
+    content: "∇ ";
+    color: var(--secondary);
+  }
 }
 
-hr {
-  border: none;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(215, 255, 26, 0.4), transparent);
+.explorer .folder-button,
+.explorer .folder-title {
+  font-weight: 600;
 }
 
-.page-title,
-.article-title {
-  text-shadow: 0 0 22px rgba(215, 255, 26, 0.12);
+// --- Startseite: Hero ----------------------------------------------------------
+
+.hero {
+  padding: 2.5rem 0 1.5rem;
+
+  .hero-eyebrow {
+    margin: 0;
+    font-family: var(--codeFont);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--secondary);
+  }
+
+  .hero-title {
+    margin: 0.6rem 0 1rem;
+    font-family: var(--headerFont);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.08;
+    color: var(--dark);
+  }
+
+  .hero-lead {
+    max-width: 38rem;
+    margin: 0;
+    font-size: 1.12rem;
+    color: var(--darkgray);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.6rem;
+  }
 }
 
-.tag {
-  border: 1px solid rgba(215, 255, 26, 0.25);
-  box-shadow: var(--neon-glow);
+a.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--dark);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: var(--secondary);
+    color: var(--dark);
+  }
+
+  &.btn-primary {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--light);
+    &:hover {
+      color: var(--light);
+      filter: brightness(1.08);
+    }
+  }
 }
 
-.sidebar,
-.toc {
-  backdrop-filter: blur(6px);
+// --- Startseite: Themenkarten ----------------------------------------------------
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(175px, 100%), 1fr));
+  gap: 0.9rem;
+  margin: 1.5rem 0 1rem;
+}
+
+a.topic-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.1rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  min-width: 0;
+  color: var(--darkgray);
+  font-weight: 400;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: var(--secondary);
+    box-shadow: 0 8px 24px -12px var(--accent-line);
+    color: var(--darkgray);
+  }
+
+  .topic-num {
+    font-family: var(--codeFont);
+    font-size: 0.8rem;
+    color: var(--secondary);
+  }
+  .topic-name {
+    font-family: var(--headerFont);
+    font-size: 1.05rem;
+    hyphens: manual;
+    overflow-wrap: normal;
+    font-weight: 700;
+    color: var(--dark);
+  }
+  .topic-lec {
+    font-family: var(--codeFont);
+    font-size: 0.75rem;
+    color: var(--gray);
+  }
+  .topic-desc {
+    margin-top: 0.35rem;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+}
+
+@media all and ($mobile) {
+  .hero {
+    padding-top: 1rem;
+  }
+  .topic-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  a.topic-card {
+    padding: 0.8rem;
+  }
+  a.topic-card .topic-desc {
+    display: none;
+  }
+  .article-title {
+    font-size: 1.7rem;
+  }
 }

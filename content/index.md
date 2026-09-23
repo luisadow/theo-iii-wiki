@@ -1,20 +1,55 @@
 ---
-title: "Theo III – Elektrodynamik"
+title: "Theo III Elektrodynamik – Lernwiki (TU Berlin)"
+description: "Kostenloses Lernwiki zu Theo III (Theoretische Physik III: Elektrodynamik) an der TU Berlin: Zusammenfassungen, Formeln und Herleitungen zur Klausurvorbereitung – von Elektrostatik über Randwertprobleme bis zur Relativität."
 ---
 
-Lernwiki zur **Theoretischen Physik III (Elektrodynamik)** an der TU Berlin, entstanden aus der Vorlesung im WiSe 25/26 zur Prüfungsvorbereitung. Die Seiten folgen der Reihenfolge der Tafelbilder (V1–V20) und fassen Definitionen, Herleitungen und typische Rechenwege kompakt zusammen.
+<section class="hero">
+  <p class="hero-eyebrow">TU Berlin · Theoretische Physik III</p>
+  <p class="hero-title">Elektrodynamik,<br/>verständlich sortiert.</p>
+  <p class="hero-lead">Zusammenfassungen, Formeln und durchgerechnete Herleitungen zu <strong>Theo III</strong> – in der Reihenfolge der Vorlesung, fachlich durchgesehen und zum Nachschlagen vor der Klausur.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary internal" href="./01-Grundlagen/Vektoranalysis">Mit den Grundlagen starten</a>
+    <a class="btn internal" href="./Navigatoren/">Lernpfade ansehen</a>
+  </div>
+</section>
+
+<div class="topic-grid">
+  <a class="topic-card internal" href="./01-Grundlagen/"><span class="topic-num">01</span><span class="topic-name">Grundlagen</span><span class="topic-lec">V1–V2</span><span class="topic-desc">Operatoren in Kugel- und Zylinderkoordinaten, Integralsätze, Flächenelemente</span></a>
+  <a class="topic-card internal" href="./02-Elektrostatik/"><span class="topic-num">02</span><span class="topic-name">Elektrostatik</span><span class="topic-lec">V3–V5</span><span class="topic-desc">Gauß, Potential, Feldenergie, Kapazität, Maxwell-Spannungstensor</span></a>
+  <a class="topic-card internal" href="./03-Randwertprobleme/"><span class="topic-num">03</span><span class="topic-name">Randwert&shy;probleme</span><span class="topic-lec">V6–V8</span><span class="topic-desc">Spiegelladungen, Green-Funktionen, Legendre-Ansatz, Multipole</span></a>
+  <a class="topic-card internal" href="./04-Materie/"><span class="topic-num">04</span><span class="topic-name">Felder in Materie</span><span class="topic-lec">V8–V14</span><span class="topic-desc">Dielektrika, Entelektrisierung, Magnetisierung, Materialgesetze</span></a>
+  <a class="topic-card internal" href="./05-Magnetostatik/"><span class="topic-num">05</span><span class="topic-name">Magnetostatik</span><span class="topic-lec">V11–V16</span><span class="topic-desc">Biot–Savart, Ampère, Vektorpotential, Induktivität</span></a>
+  <a class="topic-card internal" href="./06-Elektrodynamik/"><span class="topic-num">06</span><span class="topic-name">Elektrodynamik</span><span class="topic-lec">V15–V18</span><span class="topic-desc">Induktion, Maxwell-Gleichungen, Eichungen, Wellen, Poynting</span></a>
+  <a class="topic-card internal" href="./07-Relativität/"><span class="topic-num">07</span><span class="topic-name">Relativität</span><span class="topic-lec">V18–V20</span><span class="topic-desc">Lorentz-Transformation, Minkowski-Raum, Vierervektoren</span></a>
+  <a class="topic-card topic-card-paths internal" href="./Navigatoren/"><span class="topic-num">→</span><span class="topic-name">Lernpfade</span><span class="topic-lec">Navigatoren</span><span class="topic-desc">Themenblöcke in sinnvoller Reihenfolge durcharbeiten</span></a>
+</div>
+
+## Alles in vier Gleichungen
+
+Der ganze Kurs läuft auf die Maxwell-Gleichungen hinaus. Statik, Materie, Induktion und Wellen sind Spezialfälle oder Folgerungen davon:
+
+$$
+\begin{aligned}
+\nabla\cdot\mathbf E &= \frac{\rho}{\varepsilon_0} &\qquad \nabla\times\mathbf E &= -\partial_t\mathbf B \\[4pt]
+\nabla\cdot\mathbf B &= 0 &\qquad \nabla\times\mathbf B &= \mu_0\mathbf J + \mu_0\varepsilon_0\,\partial_t\mathbf E
+\end{aligned}
+$$
+
+## Worum es geht
+
+Dieses Wiki ist aus der Vorbereitung auf die **Theo-III-Klausur** (Theoretische Physik III: Elektrodynamik) an der **TU Berlin** entstanden, auf Basis der Vorlesung im WiSe 25/26. Es ersetzt kein Lehrbuch, soll dir aber schnell helfen, wenn du bei einem Thema hängst: jede Seite fasst Definitionen, zentrale Formeln und typische Rechenwege zusammen und verlinkt verwandte Themen.
 
 > [!warning] Keine offizielle Quelle
-> Das hier sind studentische Notizen. Sie wurden fachlich durchgesehen, trotzdem können Fehler drin sein. Im Zweifel gelten Vorlesung und Lehrbuch (Griffiths, Jackson). Fehler oder Unklarheiten gern [als Issue melden](https://github.com/luisadow/theo-iii-wiki/issues/new).
+> Studentische Notizen – fachlich durchgesehen, trotzdem können Fehler drin sein. Im Zweifel gelten Vorlesung und Lehrbuch. Fehler oder Unklarheiten gern [als Issue melden](https://github.com/luisadow/theo-iii-wiki/issues/new).
 
 ## So benutzt du das Wiki
 
-- **Suche** (oben links oder <kbd>Strg</kbd>/<kbd>⌘</kbd> + <kbd>K</kbd>) findet Begriffe und Formeln-Stichworte auf allen Seiten.
-- **Navigatoren** geben pro Themenblock einen kurzen Lernpfad vor.
-- Rechts stehen **Inhaltsverzeichnis**, **Graph** und **Rückverweise**: Hover über einen Link zeigt eine Vorschau.
-- Verweise wie „HA 8“ beziehen sich auf die Übungsblätter aus dem WiSe 25/26, „V6“ auf das jeweilige Tafelbild der Vorlesung.
+- **Suche** mit <kbd>Strg</kbd>/<kbd>⌘</kbd> + <kbd>K</kbd> findet Begriffe auf allen Seiten.
+- **Lernpfade** in den [[Navigatoren/index|Navigatoren]] geben pro Themenblock eine sinnvolle Reihenfolge vor.
+- **Hover** über einen Link zeigt eine Vorschau, rechts findest du Inhaltsverzeichnis, Graph und Rückverweise.
+- Verweise wie „HA 8“ beziehen sich auf die Übungsblätter aus dem WiSe 25/26, „V6“ auf das jeweilige Tafelbild.
 
-## Themen in Vorlesungsreihenfolge
+## Alle Seiten in Vorlesungsreihenfolge
 
 ### Mathematische Grundlagen (V1–V2)
 
@@ -51,12 +86,6 @@ Lernwiki zur **Theoretischen Physik III (Elektrodynamik)** an der TU Berlin, ent
 
 - [[Impulsbilanz und Poynting-Vektor]]
 - [[Relativität – Lorentz-Transformation]] · [[Minkowski-Raum und Vierervektoren]]
-
-## Navigatoren
-
-- [[Navigator - Elektrostatik]] → [[Navigator - Erweiterte Elektrostatik]]
-- [[Navigator - Material und Energie]]
-- [[Navigator - Elektrodynamik und Wellen]] → [[Navigator - Eichungen]]
 
 ## Literatur
 

@@ -1,4 +1,5 @@
 ---
+description: "Lernpfad Elektrostatik: in welcher Reihenfolge du Grundlagen, Energie, Randwertprobleme und Materie für Theo III durcharbeitest."
 title: "Navigator: Elektrostatik"
 tags:
   - theo-iii

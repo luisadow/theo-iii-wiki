@@ -1,4 +1,5 @@
 ---
+description: "Helmholtz-Zerlegung: Aufteilung eines Vektorfelds in transversalen und longitudinalen Anteil mit expliziten Projektorformeln."
 title: "Helmholtz-Zerlegung von Vektorfeldern"
 aliases:
   - Helmholtz-Zerlegung

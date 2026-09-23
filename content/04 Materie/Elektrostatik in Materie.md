@@ -1,4 +1,5 @@
 ---
+description: "Elektrostatik in Materie: Polarisation, D-Feld, gebundene Ladungen, Energiedichte und Entelektrisierung – Überblick mit Links zu allen Materie-Themen."
 title: "Elektrostatik in Materie – Überblick"
 aliases:
   - Elektrostatik in Materie

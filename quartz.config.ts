@@ -9,7 +9,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "Theo III Wiki",
-    pageTitleSuffix: "",
+    pageTitleSuffix: " | Theo III Elektrodynamik",
     enableSPA: true,
     enablePopovers: true,
     analytics: null,

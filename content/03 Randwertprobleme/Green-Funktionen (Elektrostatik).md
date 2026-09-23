@@ -1,4 +1,5 @@
 ---
+description: "Green-Funktionen der Elektrostatik: Freiraum, Halbraum, geerdete Kugel und Zylinder, Greenscher Satz und Dirichlet-/Neumann-Randwertprobleme."
 title: "Green-Funktionen (Elektrostatik)"
 aliases:
   - Green-Funktionen Elektrostatik

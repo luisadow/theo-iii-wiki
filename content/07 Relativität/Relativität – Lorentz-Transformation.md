@@ -1,4 +1,5 @@
 ---
+description: "Lorentz-Transformation und Postulate der speziellen Relativitätstheorie: Boost, Zeitdilatation, Längenkontraktion, Relativität der Gleichzeitigkeit."
 title: "Relativität – Lorentz-Transformation"
 aliases:
   - Lorentztransformation

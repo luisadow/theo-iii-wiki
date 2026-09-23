@@ -1,4 +1,5 @@
 ---
+description: "Kugelkondensator Herleitung: E-Feld mit Gauß, Potential, Kapazität C = 4πε/(1/R₁−1/R₂), Feldenergie und Grenzfälle."
 title: "Kugelkondensator"
 aliases: ["Kugelkondensator"]
 tags: [theo-iii, elektrostatik, kapazitaet, herleitung]

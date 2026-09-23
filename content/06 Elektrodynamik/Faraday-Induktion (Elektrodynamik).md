@@ -1,4 +1,5 @@
 ---
+description: "Faradaysches Induktionsgesetz: Flussregel, Bewegungsinduktion v×B, Lenzsche Regel, typische Setups wie Generator und Transformator."
 title: "Faraday-Induktion – Flux- und Bewegungsinduktion"
 aliases:
   - Faraday-Induktion

@@ -1,4 +1,5 @@
 ---
+description: "Lernpfad Elektrodynamik: Induktion, Maxwell-Gleichungen, Wellen, Energiefluss und magnetische Energie."
 title: "Navigator: Elektrodynamik und Wellen"
 tags:
   - theo-iii

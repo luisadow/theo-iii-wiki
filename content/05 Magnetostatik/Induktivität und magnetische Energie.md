@@ -1,4 +1,5 @@
 ---
+description: "Induktivität und magnetische Energie: Selbst- und Gegeninduktivität, W = ½LI², Spule und Toroid, LC-Schwingkreis."
 title: "Induktivität und magnetische Energie"
 aliases:
   - Induktivität

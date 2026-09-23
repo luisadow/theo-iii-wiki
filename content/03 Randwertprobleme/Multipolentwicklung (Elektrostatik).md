@@ -1,4 +1,5 @@
 ---
+description: "Multipolentwicklung einfach erklärt: Monopol, Dipol, Quadrupol, Legendre-Polynome und Kugelflächenfunktionen, Dipol im äußeren Feld."
 title: "Multipolentwicklung in der Elektrostatik"
 aliases:
   - Multipolentwicklung Elektrostatik

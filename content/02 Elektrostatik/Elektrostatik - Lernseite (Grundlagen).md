@@ -1,4 +1,5 @@
 ---
+description: "Elektrostatik Grundlagen einfach erklärt: Coulomb-Gesetz, E-Feld, Gaußsches Gesetz, Potential, Poisson- und Laplace-Gleichung mit durchgerechneten Beispielen."
 title: "Elektrostatik – Lernseite (Grundlagen)"
 date: "2025-11-25"
 tags:

@@ -1,4 +1,5 @@
 ---
+description: "Vektoranalysis für Theo III: Gradient, Divergenz, Rotation und Laplace in kartesischen, Zylinder- und Kugelkoordinaten, Integralsätze (Gauß, Stokes) und Identitäten."
 title: "Vektoranalysis – Toolbox für Theo III"
 aliases:
   - VA-Toolbox

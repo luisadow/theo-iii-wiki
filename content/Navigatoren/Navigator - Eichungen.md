@@ -1,4 +1,5 @@
 ---
+description: "Welche Eichung wann? Coulomb-, Lorenz- und Poincaré-Eichung im Vergleich mit Transformationsformeln."
 title: "Navigator: Eichungen"
 tags:
   - theo-iii

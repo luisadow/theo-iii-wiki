@@ -1,4 +1,5 @@
 ---
+description: "Magnetische Materialgesetze: B = μ₀(H+M), Suszeptibilität, Permeabilität, Hysterese und Randbedingungen kompakt."
 title: "Materialgesetze (Magnetik) – B, H, M"
 aliases:
   - Materialgesetze Magnetik

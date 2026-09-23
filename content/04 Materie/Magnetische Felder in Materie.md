@@ -1,4 +1,5 @@
 ---
+description: "Magnetische Felder in Materie: B, H, M, Magnetisierungsströme, Randbedingungen, Dia-, Para- und Ferromagnetismus, Entmagnetisierung."
 title: "Magnetische Felder in Materie – Überblick"
 aliases:
   - Magnetfeld in Materie

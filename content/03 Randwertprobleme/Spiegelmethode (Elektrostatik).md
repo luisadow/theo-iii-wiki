@@ -1,4 +1,5 @@
 ---
+description: "Spiegelmethode (Bildladungen) einfach erklärt: Punktladung vor Ebene und Kugel, induzierte Flächenladung, Kraft, Energie und dielektrischer Halbraum."
 title: "Spiegelmethode (Method of Images) – Elektrostatik"
 aliases:
   - Spiegelmethode Elektrostatik

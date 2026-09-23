@@ -1,4 +1,5 @@
 ---
+description: "Zylinderkondensator (Koaxialkabel) Herleitung: Feld, Potential, Kapazität C = 2πεL/ln(b/a), Energie, Grenzfall dünner Spalt."
 title: "Zylinderkondensator (Koaxialkondensator)"
 aliases: ["Zylinderkondensator", "Koaxialkondensator"]
 tags: [theo-iii, elektrostatik, kapazitaet, herleitung]

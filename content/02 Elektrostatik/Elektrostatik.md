@@ -1,4 +1,5 @@
 ---
+description: "Elektrostatik-Überblick für Theo III (TU Berlin): Coulomb, Gauß, Potential, Poisson-Gleichung, Feldenergie und Kapazität als Spickzettel mit Links zu allen Detailseiten."
 title: "Elektrostatik – Navigation & Überblick"
 aliases:
   - E-Statik

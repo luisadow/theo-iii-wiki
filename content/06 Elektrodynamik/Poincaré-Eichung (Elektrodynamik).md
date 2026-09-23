@@ -1,4 +1,5 @@
 ---
+description: "Poincaré-Eichung (radiale Eichung) r·A = 0: Potentiale als Linienintegrale über E und B, Herleitung und Hinweise."
 title: "Poincaré-Eichung (radiale Eichung)"
 aliases:
   - Poincare-Gauge

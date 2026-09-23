@@ -1,4 +1,5 @@
 ---
+description: "Magnetisches Vektorpotential A: Coulomb-Eichung, Poisson-Gleichung ∇²A = −μ₀J, Draht, Kreisstrom, Spule und Induktivität über J·A."
 title: "Stromverteilungen & Magnetisches Vektorpotential"
 aliases:
   - Stromverteilungen und Vektorpotential

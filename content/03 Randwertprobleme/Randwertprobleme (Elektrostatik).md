@@ -1,4 +1,5 @@
 ---
+description: "Randwertprobleme der Elektrostatik: Dirichlet, Neumann, Eindeutigkeitssatz, Separation der Variablen, Spiegelmethode, Green-Funktionen – Lösungsstrategien im Überblick."
 title: "Randwertprobleme in der Elektrostatik"
 aliases:
   - Randwertprobleme Elektrostatik

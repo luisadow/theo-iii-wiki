@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://luisadow.github.io/theo-iii-wiki/sitemap.xml

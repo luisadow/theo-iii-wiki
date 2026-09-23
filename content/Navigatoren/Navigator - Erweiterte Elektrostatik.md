@@ -1,4 +1,5 @@
 ---
+description: "Lernpfad für Multipolentwicklung, Legendre-Ansatz und Randwert-Matching in Kugelkoordinaten."
 title: "Navigator – Erweiterte Elektrostatik (Multipol, Dipol, Legendre)"
 aliases:
   - Navigator Erweiterte Elektrostatik

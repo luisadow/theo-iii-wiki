@@ -13,8 +13,10 @@ export default (() => {
     ctx,
   }: QuartzComponentProps) => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
+    const isHome = fileData.slug === "index"
     const title =
-      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) +
+      (isHome ? "" : titleSuffix)
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
@@ -35,6 +37,32 @@ export default (() => {
       (e) => e.name === CustomOgImagesEmitterName,
     )
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
+
+    // Strukturierte Daten für Suchmaschinen: Startseite als WebSite, Notizen als Lernressource
+    const canonicalUrl = socialUrl.replace(/(^|\/)index$/, "$1")
+    const siteUrl = `${url.toString().replace(/\/$/, "")}/`
+    const jsonLd = isHome
+      ? {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: cfg.pageTitle,
+          url: siteUrl,
+          inLanguage: "de-DE",
+          description,
+        }
+      : {
+          "@context": "https://schema.org",
+          "@type": "LearningResource",
+          name: fileData.frontmatter?.title,
+          url: canonicalUrl,
+          description,
+          inLanguage: "de-DE",
+          learningResourceType: "Zusammenfassung",
+          educationalLevel: "Bachelor Physik",
+          about: "Theoretische Physik III: Elektrodynamik",
+          isPartOf: { "@type": "WebSite", name: cfg.pageTitle, url: siteUrl },
+          ...(fileData.dates?.modified && { dateModified: fileData.dates.modified.toISOString() }),
+        }
 
     return (
       <head>
@@ -82,6 +110,14 @@ export default (() => {
           </>
         )}
 
+        {fileData.slug !== "404" && <link rel="canonical" href={canonicalUrl} />}
+        <meta property="og:locale" content={cfg.locale.replace("-", "_")} />
+        {fileData.slug !== "404" && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+        )}
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />

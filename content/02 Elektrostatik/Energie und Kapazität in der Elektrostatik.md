@@ -1,4 +1,5 @@
 ---
+description: "Feldenergie und Kapazität: Energiedichte, Kapazitätskoeffizienten, Platten-, Kugel- und Zylinderkondensator, Dielektrika – Formeln und Herleitungen für Theo III."
 title: "Energie und Kapazität in der Elektrostatik"
 aliases:
   - Energie und Kapazität

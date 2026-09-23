@@ -1,4 +1,5 @@
 ---
+description: "Maxwell-Spannungstensor in der Elektrostatik: Definition, Kraft über Oberflächenintegral, Druck auf Leiter σ²/2ε₀, Beispiele und Randbedingungen."
 title: "Maxwell-Spannungstensor (Elektrostatik)"
 aliases:
   - Maxwell-Stress-Tensor

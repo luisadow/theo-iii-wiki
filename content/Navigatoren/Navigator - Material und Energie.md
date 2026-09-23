@@ -1,4 +1,5 @@
 ---
+description: "Lernpfad zu Feldern in Materie und Feldenergie: Dielektrika, Magnetisierung, Kapazität, Induktivität, Spannungstensor."
 title: "Navigator: Material und Energie"
 tags:
   - theo-iii

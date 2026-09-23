@@ -1,4 +1,5 @@
 ---
+description: "Magnetostatik Grundgleichungen: Biot-Savart, Ampèresches Gesetz, Vektorpotential, magnetische Energie und typische Felder (Draht, Spule, Ring)."
 title: "Magnetostatik – Grundgleichungen & Überblick"
 aliases:
   - Magnetostatik Grundlagen

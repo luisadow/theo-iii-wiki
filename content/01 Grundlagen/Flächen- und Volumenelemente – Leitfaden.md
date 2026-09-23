@@ -1,4 +1,5 @@
 ---
+description: "Flächen- und Volumenelemente richtig aufstellen: dA und dV in Zylinder- und Kugelkoordinaten, eingeschlossener Strom und Ladung – Schritt für Schritt."
 title: "Flächen- und Volumenelemente – Leitfaden"
 ---
 

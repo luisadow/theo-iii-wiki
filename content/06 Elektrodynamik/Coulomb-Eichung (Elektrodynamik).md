@@ -1,4 +1,5 @@
 ---
+description: "Coulomb-Eichung ∇·A = 0: Feldgleichungen, transversaler Strom, Vorgehen und Vergleich mit der Lorenz-Eichung."
 title: "Coulomb-Eichung (Elektrodynamik)"
 aliases:
   - Coulomb Gauge

@@ -1,4 +1,5 @@
 ---
+description: "Poynting-Vektor und Impulsbilanz des elektromagnetischen Feldes: Energie- und Impulsdichte, Maxwell-Spannungstensor, Kraft auf Ladungsverteilungen."
 title: "Impulsbilanz und Poynting-Vektor"
 aliases:
   - Poynting-Vektor

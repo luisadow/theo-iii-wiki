@@ -1,4 +1,5 @@
 ---
+description: "Minkowski-Raum: Metrik, Vierervektoren, Lorentz- und Poincaré-Gruppe, Viererstrom und Viererpotential in der Elektrodynamik."
 title: "Minkowski-Raum und Vierervektoren"
 aliases:
   - Minkowski-Raum

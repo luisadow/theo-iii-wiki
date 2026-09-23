@@ -1,4 +1,5 @@
 ---
+description: "Lorenz-Eichung: entkoppelte Wellengleichungen für φ und A, retardierte Potentiale und Vergleich mit Coulomb- und Poincaré-Eichung."
 title: "Lorenz-Eichung (Elektrodynamik)"
 aliases:
   - Lorenz Gauge

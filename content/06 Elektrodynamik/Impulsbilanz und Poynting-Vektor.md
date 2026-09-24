@@ -53,6 +53,20 @@ Gesamtkraft auf Volumen $V$: $\mathbf{F} = \oint_{\partial V} \mathbf{T}\cdot\ma
 
 ---
 
+## Beispielaufgabe
+
+> [!example]- Aufgabe: Wie kommt die Energie in einen Draht?
+> Ein gerader Draht (Länge $\ell$, Radius $a$, Widerstand $R$) führt den Gleichstrom $I$. Berechne den Poynting-Vektor an der Drahtoberfläche und den gesamten Energiefluss in den Draht.
+>
+> > [!success]- Lösung
+> > 1. **Felder an der Oberfläche:** Längs des Drahts $E = U/\ell$ mit $U = IR$ (Tangentialkomponente ist stetig, gilt also auch direkt außen). Das Magnetfeld ist $B = \dfrac{\mu_0 I}{2\pi a}$ in $\hat{\boldsymbol\varphi}$-Richtung.
+> > 2. **Richtung:** $\hat{\mathbf z}\times\hat{\boldsymbol\varphi} = -\hat{\mathbf r}$ – $\mathbf S$ zeigt **radial nach innen**.
+> > 3. **Betrag:** $\ S = \dfrac{EB}{\mu_0} = \dfrac{UI}{2\pi a\ell}$.
+> > 4. **Gesamtfluss** durch die Mantelfläche $2\pi a\ell$:
+> >    $$P = S\cdot 2\pi a\ell = UI = I^2R.$$
+> >
+> > **Merke:** Die Energie fließt nicht im Draht entlang, sondern durch das Feld von außen hinein – genau so viel, wie als Wärme frei wird.
+
 ## 4. Hinweise
 
 - In der Statik reduziert sich $T_{ij}$ auf elektrische bzw. magnetische Version (siehe [[Maxwell-Spannungstensor (Elektrostatik)]]).

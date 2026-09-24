@@ -112,6 +112,22 @@ Weitere Fälle (z. B. Kombination mehrerer Ebenen) erfordern iterative Spiegel
 
 ---
 
+## Beispielaufgabe
+
+> [!example]- Aufgabe: Influenzladung auf der geerdeten Ebene
+> Eine Punktladung $q$ sitzt im Abstand $a$ über einer geerdeten, leitenden Ebene ($z=0$). Bestimme die induzierte Flächenladung $\sigma(\rho)$ und zeige, dass insgesamt genau $-q$ influenziert wird.
+>
+> > [!success]- Lösung
+> > 1. **Bildladung:** $-q$ bei $z=-a$. Für $z>0$ ist das Potential das von $q$ und $-q$.
+> > 2. **Feld auf der Ebene:** Die Tangentialanteile heben sich auf, die $z$-Anteile addieren sich:
+> >    $$E_z(\rho, 0) = -\frac{1}{4\pi\varepsilon_0}\,\frac{2qa}{(\rho^2+a^2)^{3/2}}.$$
+> > 3. **Flächenladung:** $\sigma = \varepsilon_0 E_z$ (Normale zeigt aus dem Leiter heraus):
+> >    $$\sigma(\rho) = -\frac{q\,a}{2\pi(\rho^2+a^2)^{3/2}}.$$
+> > 4. **Gesamtladung:** in Polarkoordinaten auf der Ebene
+> >    $$\int_0^\infty \sigma\,2\pi\rho\,d\rho = -q\,a\left[-\frac{1}{\sqrt{\rho^2+a^2}}\right]_0^\infty = -q.$$
+> >
+> > **Merke:** Die Bildladung ist genau die Ladung, die physikalisch auf dem Leiter sitzt – nur verschmiert statt punktförmig.
+
 ## 5. Grenzen und Kombinationen
 
 - Funktioniert optimal für Dirichlet-RB. Neumann- oder Robin-Bedingungen erfordern modifizierte (z. B. verteilte) Bildladungen oder zusätzliche Gleichungen.

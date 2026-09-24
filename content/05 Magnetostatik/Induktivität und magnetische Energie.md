@@ -54,6 +54,20 @@ Dichte: $u_B = |\mathbf{B}|^2/(2\mu_0)$.
 
 ---
 
+## Beispielaufgabe
+
+> [!example]- Aufgabe: Induktivität eines Koaxialkabels
+> Ein Koaxialkabel besteht aus einem dünnwandigen Innenleiter (Radius $a$) und einem dünnwandigen Außenleiter (Radius $b$), die den Strom $I$ in entgegengesetzter Richtung führen. Bestimme die Induktivität pro Länge auf zwei Wegen.
+>
+> > [!success]- Lösung
+> > 1. **Feld:** Nur zwischen den Leitern ist $B \ne 0$: $\ B = \dfrac{\mu_0 I}{2\pi r}$ für $a<r<b$ (außen heben sich die Ströme auf).
+> > 2. **Weg 1 – Fluss:** durch ein Rechteck der Länge $\ell$ zwischen den Leitern
+> >    $$\Phi = \ell\int_a^b \frac{\mu_0 I}{2\pi r}\,dr = \frac{\mu_0 I\ell}{2\pi}\ln\frac{b}{a} \quad\Rightarrow\quad L' = \frac{\Phi}{I\ell} = \frac{\mu_0}{2\pi}\ln\frac{b}{a}.$$
+> > 3. **Weg 2 – Energie:**
+> >    $$W' = \int_a^b\frac{B^2}{2\mu_0}\,2\pi r\,dr = \frac{\mu_0 I^2}{4\pi}\ln\frac{b}{a} = \tfrac12 L' I^2\ \checkmark$$
+> >
+> > **Merke:** Fluss- und Energiemethode müssen dasselbe liefern – ein guter Selbstcheck. Die Formel ist das magnetische Gegenstück zur Kapazität des [[Zylinderkondensator|Zylinderkondensators]].
+
 ## 4. Schwingkreis (LC)
 
 Energiependel zwischen $\tfrac{1}{2} C V^2$ und $\tfrac{1}{2} L I^2$, Eigenfrequenz $\omega_0 = 1/\sqrt{LC}$ (quasistatisch, keine Abstrahlung).

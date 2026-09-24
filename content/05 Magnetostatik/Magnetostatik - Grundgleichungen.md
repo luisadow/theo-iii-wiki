@@ -76,6 +76,21 @@ $$
 
 ---
 
+## Beispielaufgabe
+
+> [!example]- Aufgabe: Dicker Draht mit homogener Stromdichte
+> Ein unendlich langer Draht vom Radius $a$ führt den Strom $I$, gleichmäßig über den Querschnitt verteilt. Bestimme $B(r)$ innen und außen und die magnetische Energie pro Länge im Drahtinneren.
+>
+> > [!success]- Lösung
+> > 1. **Symmetrie:** $\mathbf B = B(r)\,\hat{\boldsymbol\varphi}$; Ampère-Kreis vom Radius $r$ um die Achse: $\oint\mathbf B\cdot d\mathbf l = 2\pi r\,B$.
+> > 2. **Außen:** $2\pi r B = \mu_0 I \Rightarrow B = \dfrac{\mu_0 I}{2\pi r}$.
+> > 3. **Innen:** umschlossen ist $I\,r^2/a^2$ (siehe [[Flächen- und Volumenelemente – Leitfaden]]), also $B = \dfrac{\mu_0 I\,r}{2\pi a^2}$.
+> > 4. **Energie innen pro Länge:**
+> >    $$W' = \int_0^a \frac{B^2}{2\mu_0}\,2\pi r\,dr = \frac{\mu_0 I^2}{4\pi a^4}\int_0^a r^3\,dr = \frac{\mu_0 I^2}{16\pi}.$$
+> > 5. Mit $W' = \tfrac12 L' I^2$ folgt die **innere Induktivität** $L'_{\text{innen}} = \dfrac{\mu_0}{8\pi}$ – unabhängig vom Radius.
+> >
+> > **Merke:** Das Vorgehen ist dasselbe wie bei der geladenen Vollkugel: Symmetrie → Integrationsweg → eingeschlossene Quelle.
+
 ## 5. Magnetostatische Energie
 
 Feldenergie:

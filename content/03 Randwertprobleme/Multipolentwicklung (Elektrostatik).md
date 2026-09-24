@@ -123,6 +123,21 @@ Merke: Das führende nichtverschwindende Moment ist unabhängig von der Wahl des
 
 ---
 
+## Beispielaufgabe
+
+> [!example]- Aufgabe: Linearer Quadrupol
+> Auf der $z$-Achse sitzen $+q$ bei $z=\pm a$ und $-2q$ im Ursprung. Bestimme den führenden Term des Fernfelds und prüfe ihn auf der Achse.
+>
+> > [!success]- Lösung
+> > 1. **Monopol:** $Q = q + q - 2q = 0$.
+> > 2. **Dipol:** $\mathbf p = q\,a\,\hat{\mathbf z} - q\,a\,\hat{\mathbf z} + 0 = 0$.
+> > 3. **Quadrupol:** $Q_{zz} = \sum q_i(3z_i^2 - r_i^2) = 2\cdot q\,(3a^2 - a^2) = 4qa^2$, $\ Q_{xx} = Q_{yy} = -2qa^2$. Damit
+> >    $$\phi \approx \frac{1}{8\pi\varepsilon_0}\,\frac{Q_{ij}\hat r_i\hat r_j}{r^3} = \frac{1}{4\pi\varepsilon_0}\,\frac{2qa^2}{r^3}\,P_2(\cos\theta).$$
+> > 4. **Check auf der Achse** ($\theta=0$, $z\gg a$): exakt ist
+> >    $$\phi = \frac{q}{4\pi\varepsilon_0}\left(\frac{1}{z-a}+\frac{1}{z+a}-\frac{2}{z}\right) = \frac{q}{4\pi\varepsilon_0}\,\frac{2a^2}{z(z^2-a^2)} \approx \frac{1}{4\pi\varepsilon_0}\,\frac{2qa^2}{z^3}.\ \checkmark$$
+> >
+> > **Merke:** Verschwinden Monopol und Dipol, fällt das Potential wie $1/r^3$ – und der Quadrupol ist dann unabhängig von der Wahl des Ursprungs.
+
 ## 7. Verbindung zu Randwertmethoden
 
 - **Außenprobleme:** Multipole approximieren das Fernfeld ohne vollständige Separation der Variablen.
@@ -153,7 +168,7 @@ Merke: Das führende nichtverschwindende Moment ist unabhängig von der Wahl des
 
 - Siehe [[Green-Funktionen (Elektrostatik)]] für $G$ und Ableitung der Legendre-Reihen; Multipolkoeffizienten folgen aus der Projektion $\phi(r,\theta)=\sum A_\ell r^{-(\ell+1)}P_\ell(\cos\theta)$.
 
-### 9.4 Kräfte via Stress-Tensor
+### 9.3 Kräfte via Stress-Tensor
 
 - Für Feld $\mathbf{E}$ eines Multipols: $\mathbf{T} = \varepsilon_0(\mathbf{E}\mathbf{E}-\tfrac{1}{2}|\mathbf{E}|^2\mathbf{I})$.
 - Kraft auf Teilvolumen $V$: $\mathbf{F} = \oint_{\partial V} \mathbf{T}\cdot \mathbf{n}\, dA$; für Dipol im homogenen Feld verschwindet resultierende Kraft, nur Torque bleibt (konsistent zu oben).

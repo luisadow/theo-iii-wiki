@@ -93,6 +93,21 @@ $$
 
 ---
 
+## Beispielaufgabe
+
+> [!example]- Aufgabe: Homogen geladene Vollkugel
+> Eine Kugel vom Radius $R$ trägt die Ladung $Q$, gleichmäßig über das Volumen verteilt. Bestimme $\mathbf E(r)$ und $\phi(r)$ innen und außen (Bezug $\phi(\infty)=0$).
+>
+> > [!success]- Lösung
+> > 1. **Symmetrie:** $\mathbf E = E(r)\,\hat{\mathbf r}$ – Gauß-Fläche ist eine Kugel vom Radius $r$, also $\oint\mathbf E\cdot d\mathbf A = 4\pi r^2 E(r)$.
+> > 2. **Außen ($r\ge R$):** eingeschlossen ist $Q$, also $E = \dfrac{Q}{4\pi\varepsilon_0 r^2}$ – wie eine Punktladung.
+> > 3. **Innen ($r<R$):** eingeschlossen ist $Q\,r^3/R^3$, also $E = \dfrac{Q\,r}{4\pi\varepsilon_0 R^3}$ – linear in $r$.
+> > 4. **Potential außen:** $\phi(r) = \dfrac{Q}{4\pi\varepsilon_0 r}$.
+> > 5. **Potential innen:** von $R$ aus integrieren,
+> >    $$\phi(r) = \phi(R) - \int_R^r E\,dr' = \frac{Q}{8\pi\varepsilon_0 R}\left(3 - \frac{r^2}{R^2}\right).$$
+> >
+> > **Merke:** $E$ ist bei $r=R$ stetig, weil keine Flächenladung vorliegt. Im Zentrum ist $\phi$ das 1,5-Fache des Oberflächenwerts.
+
 ## 5. Elektrisches Potential
 
 $$

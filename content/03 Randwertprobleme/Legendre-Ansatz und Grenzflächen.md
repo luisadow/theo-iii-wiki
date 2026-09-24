@@ -124,6 +124,22 @@ $$
 - Für Punkte auf der Achse ($\theta=0$) kollabiert die Reihe zur bekannten Achsenform $\Phi=q/(4\pi\varepsilon_0\sqrt{z^2+a^2})$.
 - Praktischer Tipp: Für Ringe/Disks schnell prüfen, ob das Vorzeichen unter Spiegelung wechselt ($\Rightarrow$ nur ungerade $\ell$) oder nicht ($\Rightarrow$ nur gerade $\ell$).
 
+## Beispielaufgabe
+
+> [!example]- Aufgabe: Kugel mit vorgegebenem Oberflächenpotential
+> Auf einer Kugelschale vom Radius $R$ ist das Potential $\phi(R,\theta) = V_0\cos\theta$ vorgegeben, sonst gibt es keine Ladungen. Bestimme $\phi$ innen und außen sowie die Flächenladung $\sigma(\theta)$ auf der Schale.
+>
+> > [!success]- Lösung
+> > 1. **Ansatz:** innen regulär $\phi_{\text{in}} = \sum A_\ell r^\ell P_\ell$, außen abfallend $\phi_{\text{out}} = \sum B_\ell r^{-(\ell+1)} P_\ell$.
+> > 2. **Koeffizientenvergleich:** $V_0\cos\theta = V_0 P_1(\cos\theta)$ – nur $\ell = 1$ tritt auf. Aus $\phi(R)$:
+> >    $$\phi_{\text{in}} = V_0\,\frac{r}{R}\cos\theta,\qquad \phi_{\text{out}} = V_0\,\frac{R^2}{r^2}\cos\theta.$$
+> > 3. **Felder an der Schale:** $E_r^{\text{out}} = -\partial_r\phi_{\text{out}} = \tfrac{2V_0}{R}\cos\theta$, $\ E_r^{\text{in}} = -\tfrac{V_0}{R}\cos\theta$.
+> > 4. **Flächenladung** aus dem Sprung der Normalkomponente:
+> >    $$\sigma = \varepsilon_0\left(E_r^{\text{out}} - E_r^{\text{in}}\right) = \frac{3\varepsilon_0 V_0}{R}\cos\theta.$$
+> > 5. **Deutung:** Innen homogenes Feld, außen reines Dipolfeld mit $p = 4\pi\varepsilon_0 R^2 V_0$.
+> >
+> > **Merke:** Ist die Randbedingung ein einzelnes Legendre-Polynom, überlebt genau dieser Term – kein Integral nötig.
+
 ## 6. Verweise
 
 - Randbedingungen und PDE-Schritte: [[Randwertprobleme (Elektrostatik)]].

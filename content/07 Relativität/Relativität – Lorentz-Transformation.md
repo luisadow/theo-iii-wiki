@@ -45,6 +45,20 @@ Inverse: $\beta \to -\beta$. Galilei-Grenze $v\ll c$ → $x'=x-vt$, $t'=t$.
 
 ---
 
+## Beispielaufgabe
+
+> [!example]- Aufgabe: Myonen aus der Atmosphäre
+> Myonen entstehen in etwa $10\ \mathrm{km}$ Höhe und fliegen mit $v = 0{,}998\,c$ zum Boden. Ihre mittlere Lebensdauer in Ruhe ist $\tau = 2{,}2\ \mu\mathrm s$. Welcher Anteil erreicht den Boden – mit und ohne Zeitdilatation?
+>
+> > [!success]- Lösung
+> > 1. **Lorentzfaktor:** $\gamma = 1/\sqrt{1-0{,}998^2} \approx 15{,}8$.
+> > 2. **Flugzeit im Erdsystem:** $\ t = \dfrac{10\ \mathrm{km}}{0{,}998\,c} \approx 33{,}4\ \mu\mathrm s$.
+> > 3. **Eigenzeit der Myonen:** $\ \Delta\tau = t/\gamma \approx 2{,}11\ \mu\mathrm s$.
+> > 4. **Überlebender Anteil:** $e^{-\Delta\tau/\tau} = e^{-0{,}96} \approx 38\,\%$. Ohne Zeitdilatation wäre es $e^{-33{,}4/2{,}2} \approx 3\cdot 10^{-7}$.
+> > 5. **Sicht der Myonen:** Für sie ist die Atmosphäre auf $10\ \mathrm{km}/\gamma \approx 630\ \mathrm m$ verkürzt – dieselbe Eigenzeit, andere Erklärung.
+> >
+> > **Merke:** Zeitdilatation (Erdsystem) und Längenkontraktion (Myonsystem) beschreiben denselben Vorgang aus zwei Inertialsystemen.
+
 ## 4. Minkowski-Raum (Kurzverweis)
 
 Vierervektoren $x^\mu = (ct, \mathbf{x})$, Metrik $\eta = \operatorname{diag}(1,-1,-1,-1)$, Invariante $s^2 = c^2 t^2 - |\mathbf{x}|^2$. Siehe [[Minkowski-Raum und Vierervektoren]].

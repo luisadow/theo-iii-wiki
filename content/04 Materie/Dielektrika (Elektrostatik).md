@@ -73,6 +73,21 @@ Nutze diese RBs gemeinsam mit [[Maxwell-Spannungstensor (Elektrostatik)]] zur Be
 
 ---
 
+## Beispielaufgabe
+
+> [!example]- Aufgabe: Kondensator mit Dielektrikumsschicht
+> Ein Plattenkondensator (Fläche $A$, Abstand $d$) trägt die Ladung $\pm Q$. Parallel zu den Platten liegt eine Schicht der Dicke $t<d$ mit $\varepsilon_r$, der Rest ist Luft. Bestimme die Kapazität und die gebundene Flächenladung auf der Schicht.
+>
+> > [!success]- Lösung
+> > 1. **$\mathbf D$ zuerst:** $\mathbf D$ hat nur freie Ladungen als Quelle und seine Normalkomponente ist stetig – also überall $D = Q/A$.
+> > 2. **Felder:** $E_{\text{Luft}} = \dfrac{Q}{\varepsilon_0 A}$, $\ E_{\text{Diel}} = \dfrac{Q}{\varepsilon_0\varepsilon_r A}$.
+> > 3. **Spannung und Kapazität:**
+> >    $$U = E_{\text{Luft}}(d-t) + E_{\text{Diel}}\,t \quad\Rightarrow\quad C = \frac{\varepsilon_0 A}{d - t + t/\varepsilon_r}.$$
+> > 4. **Gebundene Ladung:** $P = D - \varepsilon_0 E_{\text{Diel}} = \dfrac{\varepsilon_r-1}{\varepsilon_r}\,\dfrac{Q}{A}$, also $\sigma_b = \pm P$ auf den beiden Schichtoberflächen.
+> > 5. **Grenzfälle:** $t=0$ gibt $\varepsilon_0 A/d$, $t=d$ gibt $\varepsilon_r\varepsilon_0 A/d$. ✓
+> >
+> > **Merke:** Bei Schichten parallel zu den Platten mit $\mathbf D$ anfangen, bei Schichten senkrecht dazu mit $\mathbf E$ (dann ist die Spannung überall gleich).
+
 ## 4. Energie und Kräfte in Dielektrika
 
 - **Energiedichte:** $u = \tfrac{1}{2} \mathbf{E} \cdot \mathbf{D} = \tfrac{1}{2} \varepsilon |\mathbf{E}|^2$

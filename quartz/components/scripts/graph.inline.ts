@@ -184,6 +184,8 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     "--dark",
     "--darkgray",
     "--bodyFont",
+    "--graph-link",
+    "--graph-link-active",
   ] as const
   const computedStyleMap = cssVars.reduce(
     (acc, key) => {
@@ -192,6 +194,11 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     },
     {} as Record<(typeof cssVars)[number], string>,
   )
+
+  // eigene Linienfarben (custom.scss), sonst Quartz-Standard
+  const linkColor = computedStyleMap["--graph-link"].trim() || computedStyleMap["--lightgray"]
+  const linkActiveColor =
+    computedStyleMap["--graph-link-active"].trim() || computedStyleMap["--gray"]
 
   // calculate color
   const color = (d: NodeData) => {
@@ -262,7 +269,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
         alpha = l.active ? 1 : 0.2
       }
 
-      l.color = l.active ? computedStyleMap["--gray"] : computedStyleMap["--lightgray"]
+      l.color = l.active ? linkActiveColor : linkColor
       tweenGroup.add(new Tweened<LinkRenderData>(l).to({ alpha }, 200))
     }
 
@@ -378,7 +385,8 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
       interactive: false,
       eventMode: "none",
       text: n.text,
-      alpha: 0,
+      // bei hohem opacityScale (lokaler Graph) Beschriftungen sofort zeigen
+      alpha: Math.min(Math.max((scale * opacityScale - 1) / 3.75, 0), 1),
       anchor: { x: 0.5, y: 1.2 },
       style: {
         fontSize: fontSize * 15,
@@ -441,7 +449,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     const linkRenderDatum: LinkRenderData = {
       simulationData: l,
       gfx,
-      color: computedStyleMap["--lightgray"],
+      color: linkColor,
       alpha: 1,
       active: false,
     }

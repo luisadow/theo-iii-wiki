@@ -30,7 +30,6 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.ContentMeta(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.TagList(),
   ],
   left: [
     Component.PageTitle(),
@@ -57,7 +56,25 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
   right: [
-    Component.Graph(),
+    Component.Graph({
+      // Tags ausblenden und Beschriftungen im lokalen Graphen direkt zeigen
+      localGraph: {
+        showTags: false,
+        depth: 1,
+        scale: 1.15,
+        repelForce: 0.9,
+        linkDistance: 55,
+        fontSize: 0.75,
+        opacityScale: 4,
+        focusOnHover: true,
+      },
+      globalGraph: {
+        showTags: false,
+        repelForce: 0.7,
+        linkDistance: 45,
+        fontSize: 0.7,
+      },
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],

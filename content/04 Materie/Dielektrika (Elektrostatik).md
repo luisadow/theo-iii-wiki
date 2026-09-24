@@ -25,7 +25,7 @@ Diese Notiz bündelt alle Aspekte zu polarisierbaren Medien in der Elektrostatik
 
 - **Molekulare Polarisierbarkeit:** $\alpha$ (Einheit C·m²/V). Ein einzelnes Dipolmoment: $\mathbf p = \alpha \mathbf E_{\text{lokal}}$.
 - **Dichte von Dipolen:** $N$ Teilchen pro Volumen. Makroskopisch: $\mathbf P = N \langle \mathbf p \rangle \approx N \alpha \mathbf E$ (für schwache Felder, isotrop, linear).
-- **Brücke zu $\chi_e$:** $\chi_e = \dfrac{N \alpha}{\varepsilon_0}$ (Clausius-Mossotti/Lorentz-Lorenz verfeinert mit lokalen Feldern; Klausur-Standard meist die einfache Relation).
+- **Brücke zu $\chi_e$:** $\chi_e = \dfrac{N \alpha}{\varepsilon_0}$ (Clausius-Mossotti/Lorentz-Lorenz verfeinert mit lokalen Feldern; in Standardaufgaben reicht meist die einfache Relation).
 - **Interpretation:** Große $\alpha$ oder hohe Dichte $N$ → starke Polarisation → große $\chi_e$ → große $\varepsilon_r$.
 
 ### Gebundene Ladungen
@@ -150,7 +150,6 @@ Zum Vergleich bei fester Ladung $Q$: $E$ sinkt auf $E_0/\varepsilon_r$, das ist 
 
 ## 9. Ressourcen & Literatur
 
-- **Tafelbilder:** V8–V10 (Felder in Materie, Randbedingungen, Entelektrisierungsfeld, Energie im Dielektrikum)
 - **Literatur:** Griffiths Kap. 4, Jackson Kap. 4.4
 - **Siehe auch:** [[Elektrostatik]] (Hub) · [[Elektrostatik in Materie]]
 
@@ -162,7 +161,3 @@ Zum Vergleich bei fester Ladung $Q$: $E$ sinkt auf $E_0/\varepsilon_r$, das ist 
 - Kapazität: $C = \varepsilon_0 b\left( \tfrac{x \varepsilon_r}{d} + \tfrac{L-x}{d} \right)$.
 - Kraft (unter Spannung $V$): $F = \tfrac{1}{2} V^2 \tfrac{\partial C}{\partial x} = \tfrac{1}{2} V^2 \varepsilon_0 b \tfrac{\varepsilon_r-1}{d}$ (zieht das Dielektrikum hinein).
 - Skizze: Kraft nach innen, Oberflächenladungen an Front-/Rückkante; für konstante Ladung analog mit $C$-Zunahme.
-
-### 10.2 Übungen & Verknüpfungen (WS 25/26)
-
-- HA 1 (Grundlagen), HA 8 (Materialeinfluss), HA 9, Aufg. 28 (Gauge + Materie-Kopplung).

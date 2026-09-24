@@ -13,7 +13,7 @@ tags:
   - materialgesetze
 ---
 
-Kerne aus V14: lineare/aniso Materialien, Permeabilität, Hysterese, Randbedingungen.
+Wie hängen $\mathbf B$, $\mathbf H$ und $\mathbf M$ in Materie zusammen? Lineare und anisotrope Materialien, Permeabilität, Hysterese und Randbedingungen im Überblick.
 
 ---
 

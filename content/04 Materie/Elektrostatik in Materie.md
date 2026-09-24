@@ -64,12 +64,6 @@ Verweise auf konkrete Beispiele finden sich in [[Dielektrika (Elektrostatik)]] u
 
 ## 4. Ressourcen
 
-**Tafelbilder:**
-
-- `V8` Multipolentwicklung & elektrische Felder in Materie
-- `V9` Elektrostatik in Materie & Randbedingungen
-- `V10` Entelektrisierungsfeld und Dielektrika
-
 **Literatur:** Griffiths Kap. 4, Jackson Kap. 4, MIT OCW 8.07 (Dielectrics & Electrostatic Energy)
 
 **Backlink:** [[Elektrostatik]] (Hub) · [[Dielektrika (Elektrostatik)]] · [[Energie und Kapazität in der Elektrostatik]]
@@ -79,7 +73,6 @@ Verweise auf konkrete Beispiele finden sich in [[Dielektrika (Elektrostatik)]] u
 ## 5. Ergänzungen
 
 - Dielektrischer Einsatz im Kondensator: Herleitung in [[Dielektrika (Elektrostatik)#10.1 Teilweise Einschiebung eines Dielektrikums]]; Stress-Tensor-Check $p=\varepsilon_0(\varepsilon_r-1)E^2/2$.
-- Übungsaufgaben (WS 25/26): HA 1, HA 8, HA 9, Aufg. 28.
 
 ---
 

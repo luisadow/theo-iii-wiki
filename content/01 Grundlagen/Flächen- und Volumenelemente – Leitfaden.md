@@ -3,7 +3,7 @@ description: "Flächen- und Volumenelemente richtig aufstellen: dA und dV in Zyl
 title: "Flächen- und Volumenelemente – Leitfaden"
 ---
 
-Kurz-Anleitung, wie man für Integrale in Elektro-/Magnetostatik schnell das richtige Flächen- oder Volumenelement setzt (spezialisiert für Draht-/Zylindersymmetrien wie in HA8/Aufgabe 25).
+Kurz-Anleitung, wie man für Integrale in Elektro-/Magnetostatik schnell das richtige Flächen- oder Volumenelement setzt, vor allem bei Draht- und Zylindersymmetrie.
 
 ## 1) Grundprinzip
 
@@ -57,7 +57,7 @@ $$
 
 **Schnelltest:** In Zylinderkoordinaten kommt immer ein Faktor $\rho$ vor, in Kugelkoordinaten $r^2\sin\theta$.
 
-## 4) Leitfaden für „eingeschlossenen Strom“ (HA8/A25)
+## 4) Beispiel: eingeschlossener Strom in einem Draht
 
 1. **Stromdichte definieren** (homogen):
 

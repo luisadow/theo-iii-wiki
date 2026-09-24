@@ -161,7 +161,6 @@ $$
 
 - Weiterführend: **[[Energie und Kapazität in der Elektrostatik]]**
 - Vertiefung: [[Randwertprobleme (Elektrostatik)]], [[Spiegelmethode (Elektrostatik)]], [[Multipolentwicklung (Elektrostatik)]]
-- Tafelbilder: V3 (Coulomb, Feldgleichung) · V5 (Maxwell-Spannungstensor) · V6 (Randwertprobleme)
 - Literatur: Griffiths – _Introduction to Electrodynamics_ · MIT OCW 8.07 Notes
 - Nützlich: [[Vektoranalysis]] (Operatoren & Identitäten)
 
@@ -271,9 +270,3 @@ Problem: $\nabla^2\phi=0$ für $R_1<r<R_2$, keine Winkelabhängigkeit.
     Grenzfall $R_2\to\infty$, $V_2=0$ liefert $\phi(r)=V_1 R_1/r$ (wie Punktladung außerhalb des Gebiets).
 
 ---
-
-## Übungen (WS 25/26)
-
-- HA 1 über Gauß-Flächen, Basis-Poisson/Laplace und Kondensator-Formeln.
-- HA 8 für Randwert-Mix (Dirichlet/Neumann) und Materialeinsatz; siehe auch [[Randwertprobleme (Elektrostatik)]].
-- HA 9, Aufg. 27 (Helmholtz/Gauges) zur Verbindung Feld-/Potentialdarstellung.

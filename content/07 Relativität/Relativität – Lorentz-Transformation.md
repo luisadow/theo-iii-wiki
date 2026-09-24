@@ -11,7 +11,7 @@ tags:
   - elektrodynamik
 ---
 
-Kerne aus V19/V20: Einsteins Relativitätsprinzip, konstante Lichtgeschwindigkeit, Lorentz-Trafo (Boosts), Basis für kovariante Maxwell-Darstellung.
+Aus Einsteins Relativitätsprinzip und der Konstanz der Lichtgeschwindigkeit folgt die Lorentz-Transformation – die Grundlage, unter der die Maxwell-Gleichungen forminvariant sind.
 
 ---
 

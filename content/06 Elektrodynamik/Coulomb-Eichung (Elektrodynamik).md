@@ -13,7 +13,7 @@ tags:
   - vektorpotential
 ---
 
-Eichbedingung: $\nabla \cdot \mathbf{A} = 0$. Skalarpotential folgt sofort aus Poisson, das Vektorpotential aus der transversalen Stromdichte. Relevanz: ÜB9 Aufgabe 27.
+Eichbedingung: $\nabla \cdot \mathbf{A} = 0$. Skalarpotential folgt sofort aus Poisson, das Vektorpotential aus der transversalen Stromdichte.
 
 ---
 

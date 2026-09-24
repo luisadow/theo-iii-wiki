@@ -13,7 +13,7 @@ tags:
   - vektorpotential
 ---
 
-Eichbedingung: $\mathbf{r} \cdot \mathbf{A}_p(\mathbf{r}, t) = 0$ (daraus folgt insbesondere $\int_0^1 du\, \mathbf{A}_p(u\mathbf{r}, t)\cdot\mathbf{r}=0$). Nutze sie, um Potentiale direkt aus Feldern auszudrücken. Relevanz: ÜB9 Aufgabe 28.
+Eichbedingung: $\mathbf{r} \cdot \mathbf{A}_p(\mathbf{r}, t) = 0$ (daraus folgt insbesondere $\int_0^1 du\, \mathbf{A}_p(u\mathbf{r}, t)\cdot\mathbf{r}=0$). Nutze sie, um Potentiale direkt aus Feldern auszudrücken.
 
 ---
 
@@ -41,7 +41,7 @@ Eichwechsel: $\mathbf{A}_p = \mathbf{A} + \nabla \chi$, $\phi_p = \phi - \partia
 
 - Die Darstellung nutzt Feldwerte entlang der Linie $u\mathbf{r}$ (radiale Integration).
 - Konsistenz prüfen: Einsetzen in Felddefinitionen muss $\mathbf{E}, \mathbf{B}$ reproduzieren.
-- Praktisch vor allem für Aufgaben, die explizit nach dieser Eichung fragen (ÜB9/28).
+- Praktisch vor allem für Aufgaben, die explizit nach dieser Eichung fragen.
 
 ---
 

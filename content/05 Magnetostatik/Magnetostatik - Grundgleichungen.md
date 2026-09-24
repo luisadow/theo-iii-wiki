@@ -115,7 +115,7 @@ Diese Beziehungen werden wichtig, sobald magnetische Materialien (Dia-, Para-, F
 
 ---
 
-## 8. Lern- & Prüfungsanker
+## 8. Das solltest du können
 
 1. Symmetrien analysieren → Ampère oder Biot–Savart wählen.
 2. Stromdichte korrekt formulieren (Volumen-, Flächen-, Linienströme).
@@ -138,7 +138,7 @@ $$
 \end{aligned}
 $$
 
-Wichtige Konsequenzen für Theo III (ÜB 9 und folgend):
+Wichtige Konsequenzen für Theo III:
 
 - Wellengleichungen: $\Box \mathbf{E} = \mu_0 \varepsilon_0 \partial_t \mathbf{J} + \nabla(\rho/\varepsilon_0)$, $\Box \mathbf{B} = -\mu_0 \nabla \times \mathbf{J}$ mit $\Box = \nabla^2 - \tfrac{1}{c^2}\partial_t^2$.
 - Potentiale und Eichungen: Coulomb- vs. Lorenz- vs. Poincaré-Eichung steuern, welche Quellanteile ($\rho$, $\mathbf{j}_T$) wirken.
@@ -150,6 +150,5 @@ Siehe [[Helmholtz-Zerlegung (Vektorfelder)]], [[Coulomb-Eichung (Elektrodynamik)
 
 ## 10. Ressourcen
 
-- **Tafelbilder:** V11–V13 (Magnetostatik, Stromverteilungen, Magnetfeld in Materie).
 - **Literatur:** Griffiths Kap. 5, Jackson Kap. 5, MIT OCW 8.02/8.07.
 - **Verknüpfungen:** [[Elektrostatik]], [[Randwertprobleme (Elektrostatik)]], [[Stromverteilungen und Magnetisches Vektorpotential]], [[Magnetische Felder in Materie]], [[Materialgesetze Magnetik]], [[Induktivität und magnetische Energie]].

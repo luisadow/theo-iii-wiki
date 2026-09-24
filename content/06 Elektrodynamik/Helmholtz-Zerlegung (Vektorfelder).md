@@ -13,7 +13,7 @@ tags:
   - methode
 ---
 
-Jedes hinreichend schnell abfallende Feld $\mathbf{V}$ (Ausstrahlungsbedingung) lässt sich eindeutig in einen transversalen und einen longitudinalen Anteil zerlegen. Diese Seite ist Referenz für ÜB9 und alle Gauge-Diskussionen.
+Jedes hinreichend schnell abfallende Feld $\mathbf{V}$ (Ausstrahlungsbedingung) lässt sich eindeutig in einen transversalen und einen longitudinalen Anteil zerlegen. Grundlage für die Diskussion der Eichungen.
 
 ---
 
@@ -35,7 +35,7 @@ Hilfsidentitäten (Indexschreibweise): $\partial_i (1/|\mathbf{r}-\mathbf{r}'|)=
 
 ---
 
-## 2. Rechenhinweise (ÜB9)
+## 2. Rechenhinweise
 
 - Ableitungen dürfen unter das Integral, wenn $\mathbf{V}$ schnell genug abfällt.
 - Prüfe $\nabla \cdot \mathbf{V}_T = 0$ und $\nabla \times \mathbf{V}_L = 0$ explizit als Konsistenzcheck.

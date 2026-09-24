@@ -139,5 +139,4 @@ mit denselben Formfaktoren (Kugel $1/3$, Platte senkrecht $1$, langer Stab paral
 ## 9. Ressourcen & Verknüpfungen
 
 - **Notizen:** [[Magnetostatik - Grundgleichungen]], [[Stromverteilungen und Magnetisches Vektorpotential]], [[Elektrostatik in Materie]], [[Dielektrika (Elektrostatik)]]
-- **Tafelbilder:** `V11` Magnetostatik – Grundgleichungen, `V12` Ströme und Verteilungen, `V13` Magnetfeld in Materie
 - **Literatur:** Griffiths Kap. 6, Jackson Kap. 6, MIT OCW 8.07 „Magnetostatics in Matter“

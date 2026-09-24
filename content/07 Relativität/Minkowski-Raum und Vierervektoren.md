@@ -12,7 +12,7 @@ tags:
   - elektrodynamik
 ---
 
-Kerne aus V20: Raumzeitstruktur, Lorentz-Trafo als Poincaré-Gruppe, Norm und Metrik.
+Die spezielle Relativitätstheorie lässt sich am elegantesten im vierdimensionalen Minkowski-Raum formulieren: Metrik, Vierervektoren, Lorentz- und Poincaré-Gruppe.
 
 ---
 

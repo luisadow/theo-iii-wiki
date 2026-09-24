@@ -13,7 +13,7 @@ tags:
   - energie
 ---
 
-Kerne aus V16: L für Einzelspulen und Kopplung, Energie im Magnetfeld, quasistatische Annahme (keine Abstrahlung).
+Selbst- und Gegeninduktivität, die im Magnetfeld gespeicherte Energie und typische Induktivitäten – alles in quasistatischer Näherung (ohne Abstrahlung).
 
 ---
 

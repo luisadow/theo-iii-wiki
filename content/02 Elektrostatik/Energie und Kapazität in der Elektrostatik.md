@@ -208,7 +208,6 @@ Siehe [[Dielektrika (Elektrostatik)]] und [[Elektrostatik in Materie]]; Randbedi
 
 ## 7. Ressourcen
 
-- **Tafelbilder**: V4 Energie & Kapazitäten · V5 Spannungstensor · V6 Randwertprobleme
 - **Literatur**: Griffiths Kap. 2–3 · Jackson Kap. 2 · MIT OCW 8.07 (Electrostatic Energy & Dielectrics)
 
 ---
@@ -226,7 +225,3 @@ Siehe [[Dielektrika (Elektrostatik)]] und [[Elektrostatik in Materie]]; Randbedi
 - Aus $\mathbf J=\sigma\mathbf E$ (hier $\sigma$ = Leitfähigkeit) und Kontinuitätsgleichung: $\partial_t\rho = -\tfrac{\sigma}{\varepsilon}\rho$, also $Q(t)=Q_0e^{-t/\tau}$ mit $\tau = \varepsilon/\sigma$.
 - Energieabfall: $W(t)=W_0 e^{-2t/\tau}$ (da $W\propto Q^2$); konsistent zu $\dot{W}=-\int \mathbf{J}\cdot\mathbf{E}\, d^3r$.
 - Nicht verwechseln mit der **Entelektrisierung** (Depolarisationsfeld), siehe [[Dielektrika (Elektrostatik)#5. Entelektrisierung (Depolarisationsfeld)]].
-
-### 8.3 Übungen (WS 25/26)
-
-- HA 1 (Grundlagen, Kugel/Platte), HA 8 (gemischte RB), HA 9, Aufg. 27 (Helmholtz/Energiefluss).

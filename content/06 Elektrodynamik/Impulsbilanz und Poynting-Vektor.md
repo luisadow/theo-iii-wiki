@@ -13,7 +13,7 @@ tags:
   - impuls
 ---
 
-Kerne aus V18: Energie- und Impulsströme des EM-Feldes, dynamische Stress-Tensor-Form, Verbindung zur speziellen Relativität.
+Das elektromagnetische Feld transportiert Energie und Impuls. Diese Seite fasst Energie- und Impulsdichte, den Poynting-Vektor und den vollen Maxwell-Spannungstensor zusammen.
 
 ---
 

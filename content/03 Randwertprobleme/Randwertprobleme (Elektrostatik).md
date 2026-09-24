@@ -127,9 +127,6 @@ Randwertprobleme (RWP) liefern Potential- und Feldverteilungen auf Basis vorgege
 
 ## 8. Verweise & Ressourcen
 
-- **Tafelbilder:**
-  - V6 Randwertprobleme
-  - V7 Laplace-Gleichung & Multipolentwicklung
 - **Literatur:** Griffiths Kap. 3 · Jackson Kap. 3 · MIT OCW 8.07 „Boundary-Value Problems“
 - **Backlink:** [[Elektrostatik]] (Hub)
 
@@ -155,7 +152,3 @@ Randwertprobleme (RWP) liefern Potential- und Feldverteilungen auf Basis vorgege
 - 2D, periodisch in $x$ (Periode $L$): Separation liefert
   $$\phi(x,y) = A_0 + B_0 y + \sum_{n\neq 0}\left(A_n e^{|k_n| y} + B_n e^{-|k_n| y}\right)e^{i k_n x},\qquad k_n = \frac{2\pi n}{L}.$$
   Die Koeffizienten folgen aus den RB in $y$-Richtung; jede Fourier-Mode wächst oder fällt exponentiell in $y$.
-
-### 9.4 Übungsreferenzen (WS 25/26)
-
-- HA 1 (klassische RB), HA 8 (gemischte RB), HA 9, Aufg. 27 (Gauge/Helmholtz als Randzerlegung).

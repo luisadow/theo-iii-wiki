@@ -133,9 +133,6 @@ Merke: Das führende nichtverschwindende Moment ist unabhängig von der Wahl des
 
 ## 8. Ressourcen & Verweise
 
-- Tafelbilder:
-  - V7 Laplace-Gleichung & Multipolentwicklung
-  - V8 Multipolentwicklung & elektrische Felder in Materie
 - Literatur: Griffiths Kap. 3.2–3.4, Jackson Kap. 3, MIT OCW 8.07 „Multipole Expansion“.
 - Verknüpfungen: [[Elektrostatik]], [[Randwertprobleme (Elektrostatik)]], [[Vektoranalysis]], [[Maxwell-Spannungstensor (Elektrostatik)]].
 - Backlink: [[Elektrostatik]] (Hub)
@@ -155,10 +152,6 @@ Merke: Das führende nichtverschwindende Moment ist unabhängig von der Wahl des
 ### 9.2 Green-Funktionen Link
 
 - Siehe [[Green-Funktionen (Elektrostatik)]] für $G$ und Ableitung der Legendre-Reihen; Multipolkoeffizienten folgen aus der Projektion $\phi(r,\theta)=\sum A_\ell r^{-(\ell+1)}P_\ell(\cos\theta)$.
-
-### 9.3 Übungsbezüge (WS 25/26)
-
-- HA 1 (Monopol/Dipol), HA 8 (gemischte RB), HA 9, Aufg. 27 (Helmholtz-Projektion ↔ Multipol-Longitudinalanteile).
 
 ### 9.4 Kräfte via Stress-Tensor
 

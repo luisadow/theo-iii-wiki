@@ -115,7 +115,6 @@ Dabei liefert die Differenz der Tensoren direkt die Oberflächenkraftdichte, z.�
 
 ## 7. Ressourcen
 
-- Tafelbilder V4 (Elektrostatische Energie, Kapazitäten) und V5 (Maxwell-Spannungstensor, Randbedingungen)
 - David J. Griffiths, _Introduction to Electrodynamics_, Kap. 2.6
 - Jackson, _Classical Electrodynamics_, Kap. 1.10 & 4
 - MIT OCW 8.07 Notes: „Electrostatic Energy and Pressure“
@@ -140,10 +139,6 @@ Dabei liefert die Differenz der Tensoren direkt die Oberflächenkraftdichte, z.�
 ### 9.2 Bezug zu Dielektrika
 
 - Siehe [[Dielektrika (Elektrostatik)#10.1 Teilweise Einschiebung eines Dielektrikums]] für Kraftformel; dortige Kraft $F$ erfüllt $F = \oint \mathbf{T}\cdot\mathbf{n}\, dA$ mit $\mathbf{T}$ dieser Notiz.
-
-### 9.3 Übungsaufgaben (WS 25/26)
-
-- HA 1 (Grundlagen Druck), HA 8 (gemischte RB + Materie), HA 9, Aufg. 27 (Helmholtz/Stress-Bezug bei Feldern).
 
 ### 9.4 Herleitung per Energievariation
 

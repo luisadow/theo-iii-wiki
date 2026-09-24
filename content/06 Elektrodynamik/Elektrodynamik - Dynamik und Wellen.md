@@ -47,7 +47,7 @@ $$
 
 **Poincaré-Eichung (radial)** $\mathbf{r} \cdot \mathbf{A}_p = 0$ → siehe [[Poincaré-Eichung (Elektrodynamik)]].
 
-Eichwechsel: $\chi$ so wählen, dass die jeweilige Bedingung erfüllt ist; erhalte neue $\phi, \mathbf{A}$ via Transformation. ÜB 9 prüft diese Zusammenhänge explizit.
+Eichwechsel: $\chi$ so wählen, dass die jeweilige Bedingung erfüllt ist; erhalte neue $\phi, \mathbf{A}$ via Transformation.
 
 ---
 
@@ -115,9 +115,9 @@ Nutze dies als Fernfeld-Test für Lösungen aus retardierten Potentialen; für b
 
 ---
 
-## 8. Prüfungsanker
+## 8. Das solltest du können
 
-- Helmholtz-Zerlegung sauber beherrschen (ÜB 9).
+- Helmholtz-Zerlegung sauber beherrschen.
 - Gaußsche vs. Wellengleichungen konsistent setzen; prüfe Eichbedingungen.
 - Retardierte Potentiale einsetzen können (mind. stationäre Quellen, Dipol-Approx).
 - Plane Welle: Polarisationsbedingungen und Poynting-Fluss ausrechnen.
@@ -133,4 +133,3 @@ Nutze dies als Fernfeld-Test für Lösungen aus retardierten Potentialen; für b
 - Induktion/Magnetenergie: [[Faraday-Induktion (Elektrodynamik)]], [[Induktivität und magnetische Energie]].
 - Kräfte/Energie/Impuls: [[Maxwell-Spannungstensor (Elektrostatik)]], [[Impulsbilanz und Poynting-Vektor]].
 - Relativität: [[Relativität – Lorentz-Transformation]], [[Minkowski-Raum und Vierervektoren]].
-- Übungen (WS 25/26): HA 9 (Helmholtz, Eichungen).

@@ -62,7 +62,7 @@ Dieser Hub fasst alle laufenden Notizen zum Modul **Theoretische Physik III: El
 
 ---
 
-## 3. Kerndefinitionen & Prüfungsformeln (Spickzettel)
+## 3. Kerndefinitionen & wichtigste Formeln (Spickzettel)
 
 - **Coulomb-Kraft:**
   $$
@@ -86,8 +86,6 @@ Siehe [[Elektrostatik - Lernseite (Grundlagen)]] für Herleitungen und [[Energie
 
 ## 4. Ressourcen & Literatur
 
-- **Tafelbilder (PDF):**
-  - V3 Coulomb/Feldgleichungen, V4 Energie/Kapazität, V5 Maxwell-Spannungstensor & Randbedingungen, V6 Randwertprobleme, V7 Laplace & Multipole.
 - **Standardliteratur:**
   - David J. Griffiths – _Introduction to Electrodynamics_ (Kap. 1–3)
   - Jackson – _Classical Electrodynamics_ (Kap. 1–2) für vertiefte Randwertmethoden.
@@ -97,11 +95,14 @@ Siehe [[Elektrostatik - Lernseite (Grundlagen)]] für Herleitungen und [[Energie
 
 ---
 
-## 5. Übungsblätter ↔ Notizen (WS 25/26)
+## 5. Typische Aufgabentypen → passende Seite
 
-| Übungsblatt / Aufgabe            | Thema                                        | Relevante Notizen                                                                                                                       |
-| -------------------------------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| HA1 (Grundlagen E-Feld, Gauß)    | Gauß-Flächen, einfache Ladungsverteilungen   | [[Elektrostatik - Lernseite (Grundlagen)]], [[Elektrostatik]], [[Randwertprobleme (Elektrostatik)]]                                     |
-| HA8 (Randwerte/Materie)          | gemischte Dirichlet/Neumann, Materialeinsatz | [[Randwertprobleme (Elektrostatik)]], [[Spiegelmethode (Elektrostatik)]], [[Dielektrika (Elektrostatik)]], [[Elektrostatik in Materie]] |
-| HA9 Aufgabe 27 (Helmholtz/Gauge) | Helmholtz-Projektion, Coulomb-Gauge          | [[Helmholtz-Zerlegung (Vektorfelder)]], [[Coulomb-Eichung (Elektrodynamik)]], [[Elektrodynamik - Dynamik und Wellen]]                   |
-| HA9 Aufgabe 28 (Poincaré-Gauge)  | radiale Eichung, Potentiale aus Feldern      | [[Poincaré-Eichung (Elektrodynamik)]], [[Lorenz-Eichung (Elektrodynamik)]], [[Helmholtz-Zerlegung (Vektorfelder)]]                      |
+| Aufgabe | Methode | Seite |
+| --- | --- | --- |
+| Feld einer symmetrischen Ladungsverteilung (Kugel, Zylinder, Platte) | Gaußsches Gesetz mit passender Gauß-Fläche | [[Elektrostatik - Lernseite (Grundlagen)]] |
+| Kapazität oder Feldenergie einer Leiteranordnung | Feld → Spannung → $C=Q/U$, oder $W=\tfrac{\varepsilon_0}{2}\int E^2$ | [[Energie und Kapazität in der Elektrostatik]], [[Kugelkondensator]], [[Zylinderkondensator]] |
+| Punktladung vor geerdeter Ebene oder Kugel | Bildladungen | [[Spiegelmethode (Elektrostatik)]] |
+| Potential bei vorgegebenen Randwerten auf Kugel oder Kasten | Separation der Variablen, Legendre-Reihe | [[Randwertprobleme (Elektrostatik)]], [[Legendre-Ansatz und Grenzflächen]] |
+| Fernfeld einer lokalisierten Ladungsverteilung | Monopol-, Dipol-, Quadrupolmoment berechnen | [[Multipolentwicklung (Elektrostatik)]] |
+| Kraft auf Leiter oder Dielektrikum | Spannungstensor oder Energie: $F=-\partial W/\partial x\,\vert_Q = +\partial W/\partial x\,\vert_U$ | [[Maxwell-Spannungstensor (Elektrostatik)]] |
+| Kugel oder Platte aus Dielektrikum im äußeren Feld | Randbedingungen für $\mathbf D$ und $\mathbf E$, Entelektrisierung | [[Dielektrika (Elektrostatik)]] |

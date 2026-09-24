@@ -13,7 +13,7 @@ tags:
   - maxwell
 ---
 
-Kerne aus V15: Änderung magnetischen Flusses erzeugt Ringspannung/Wirbelfeld. Gilt für ruhende Schleifen (Flussänderung) und bewegte Leiter (motional emf).
+Ändert sich der magnetische Fluss durch eine Leiterschleife, entsteht eine Ringspannung – im ruhenden Leiter durch ein elektrisches Wirbelfeld, im bewegten Leiter durch die Lorentzkraft (Bewegungsinduktion).
 
 ---
 

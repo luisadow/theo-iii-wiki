@@ -126,8 +126,6 @@ Weitere Fälle (z. B. Kombination mehrerer Ebenen) erfordern iterative Spiegel
 
 - **Notizen:** [[Elektrostatik]], [[Randwertprobleme (Elektrostatik)]], [[Multipolentwicklung (Elektrostatik)]], [[Maxwell-Spannungstensor (Elektrostatik)]], [[Dielektrika (Elektrostatik)]].
 
-- **Material:** Tafelbilder V6 (Randwertprobleme) und V7 (Laplace & Multipole).
-
 - **Literatur:** Griffiths – _Introduction to Electrodynamics_ Kap. 3.2, Jackson – _Classical Electrodynamics_ Kap. 2, MIT OCW 8.07 (Lecture „Method of Images“).
 
 ---
@@ -159,5 +157,4 @@ Gegeben: Kugelradius $R$, Punktladung $q$ auf der $z$-Achse bei $r_0>R$.
 
 ## 9. Aufgaben- und Ressourcenverweise
 
-- Übungen: HA 1 (klassische Bildladung), HA 8 (Randwertmix), HA 9, Aufg. 28 (Gauge-Bezug).
 - Crosslinks: [[Randwertprobleme (Elektrostatik)]], [[Elektrostatik]].

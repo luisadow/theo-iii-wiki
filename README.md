@@ -10,8 +10,8 @@ gebaut als statische Website aus Markdown-Notizen.
 
 ## Inhalt
 
-34 Seiten in sieben Themenblöcken, entlang der Tafelbilder V1–V20 der
-Vorlesung im WiSe 25/26:
+34 Seiten in sieben Themenblöcken, in der Reihenfolge einer typischen
+Elektrodynamik-Vorlesung (entstanden aus Theo III an der TU Berlin):
 
 | Block | Themen |
 | --- | --- |
@@ -23,7 +23,9 @@ Vorlesung im WiSe 25/26:
 | 06 Elektrodynamik | Induktion, Maxwell-Gleichungen, Eichungen, Wellen, Poynting |
 | 07 Relativität | Lorentz-Transformation, Minkowski-Raum |
 
-Dazu kommen Navigatoren mit Lernpfaden pro Themenblock. Alle Seiten wurden
+Dazu kommen eine **Formelsammlung** mit allen zentralen Formeln und fünf
+**Lernpfade** mit Schritten, Selbsttest zum Abhaken und typischen Fehlern.
+Alle Seiten wurden
 fachlich durchgesehen (Vorzeichen, Dimensionen, Grenzfälle). Es bleiben
 studentische Notizen – Fehler bitte als
 [Issue](https://github.com/luisadow/theo-iii-wiki/issues/new) melden.
@@ -33,11 +35,13 @@ studentische Notizen – Fehler bitte als
 - **Obsidian-Workflow:** Notizen entstehen als Markdown mit Wikilinks und
   LaTeX in Obsidian und werden 1:1 zur Website.
 - **Formeln** mit KaTeX, **Volltextsuche**, Link-Vorschau beim Hover,
-  Graphansicht, Rückverweise und Inhaltsverzeichnis pro Seite.
+  Graphansicht, Rückverweise und Inhaltsverzeichnis pro Seite; Selbsttests
+  mit im Browser gespeicherten Checkboxen.
 - **Eigenes Design:** Startseite mit Themenkarten, heller und dunkler Modus,
   responsiv bis Smartphone-Breite.
 - **SEO:** individuelle Meta-Beschreibungen, Canonical-URLs, strukturierte
-  Daten (schema.org `LearningResource`), Sitemap, RSS und Open-Graph-Bilder.
+  Daten (schema.org `LearningResource`), Sitemap, RSS und Open-Graph-Bilder;
+  nach jedem Deploy werden alle URLs per **IndexNow** an Bing & Co. gemeldet.
 - **Deployment:** jeder Push auf `main` baut die Seite per GitHub Actions und
   veröffentlicht sie auf GitHub Pages.
 
@@ -52,7 +56,9 @@ studentische Notizen – Fehler bitte als
 
 Angepasst gegenüber dem Quartz-Standard: Layout (`quartz.layout.ts`),
 Head-Metadaten und strukturierte Daten (`quartz/components/Head.tsx`),
-Explorer-Sortierung nach Vorlesungsreihenfolge, eigenes Theme und Favicon.
+Explorer-Sortierung nach Themenreihenfolge, übersichtlicherer Graph (ohne
+Tags, Beschriftungen sichtbar), Ordnerlisten mit Seitenbeschreibungen,
+keine Tag- und Weiterleitungsseiten (dünne Inhalte), eigenes Theme und Favicon.
 
 ## Lokal bauen
 
@@ -69,7 +75,8 @@ Voraussetzung: Node.js 22 (siehe `.node-version`).
 content/
   index.md               Startseite
   01 Grundlagen/ … 07 Relativität/
-  Navigatoren/           Lernpfade
+  Lernpfade/             fünf Lernpfade mit Selbsttest
+  Formelsammlung.md
 quartz/                  Quartz-Quellcode (inkl. eigener Anpassungen)
 quartz.config.ts         Titel, Theme, Plugins
 quartz.layout.ts         Seitenaufbau

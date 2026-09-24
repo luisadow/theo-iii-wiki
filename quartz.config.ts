@@ -55,7 +55,8 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "git", "filesystem"],
+        // Git zuerst, damit lastmod in der Sitemap echte Änderungen widerspiegelt
+        priority: ["git", "frontmatter", "filesystem"],
       }),
       Plugin.SyntaxHighlighting({
         theme: {
@@ -64,7 +65,7 @@ const config: QuartzConfig = {
         },
         keepBackground: false,
       }),
-      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
+      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false, enableCheckbox: true }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
@@ -73,11 +74,11 @@ const config: QuartzConfig = {
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
-      Plugin.AliasRedirects(),
+      // Keine Alias-Weiterleitungen: GitHub Pages kann nur meta-refresh, das werten
+      // Suchmaschinen als dünne Seiten. Tag-Seiten aus demselben Grund deaktiviert.
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
       Plugin.FolderPage(),
-      Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: true,

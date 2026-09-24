@@ -43,3 +43,29 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Nach dem Deploy alle URLs aus der Sitemap per IndexNow melden (Bing, Yandex, Seznam, …).
+  # Der Schlüssel ist öffentlich und liegt als content/ad383026f04871bd60ac72bb0b623d16.txt im Wurzelverzeichnis der Seite.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    env:
+      HOST: theo3.sadowski-dos-santos.de
+      INDEXNOW_KEY: ad383026f04871bd60ac72bb0b623d16
+    steps:
+      - name: URLs an IndexNow melden
+        run: |
+          sleep 30
+          curl -fsSL "https://$HOST/sitemap.xml" -o sitemap.xml
+          python3 - <<'PY'
+          import json, os, re, urllib.request
+          host, key = os.environ["HOST"], os.environ["INDEXNOW_KEY"]
+          urls = re.findall(r"<loc>([^<]+)</loc>", open("sitemap.xml").read())
+          body = json.dumps({"host": host, "key": key,
+                             "keyLocation": f"https://{host}/{key}.txt",
+                             "urlList": urls}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          with urllib.request.urlopen(req) as r:
+              print(f"IndexNow: {len(urls)} URLs gemeldet, Status {r.status}")
+          PY

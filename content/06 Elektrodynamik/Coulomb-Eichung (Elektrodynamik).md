@@ -48,7 +48,21 @@ $$
 
 ---
 
-## 3. Hinweise & Checks
+## 3. Warum ist $\phi$ instantan – und trotzdem kausal?
+
+In Coulomb-Eichung ist das Skalarpotential das instantane Coulomb-Potential,
+$$\phi(\mathbf r,t) = \frac{1}{4\pi\varepsilon_0}\int\frac{\rho(\mathbf r',t)}{\lvert\mathbf r-\mathbf r'\rvert}\,d^3r'.$$
+Ändert sich irgendwo die Ladung, reagiert $\phi$ überall sofort. Das widerspricht nicht der Relativität, denn $\phi$ ist nicht messbar – messbar sind nur die Felder $\mathbf E = -\nabla\phi - \partial_t\mathbf A$ und $\mathbf B$.
+
+Der transversale Strom $\mathbf J_T$, der $\mathbf A$ antreibt, ist selbst nichtlokal (siehe [[Helmholtz-Zerlegung (Vektorfelder)]]) und enthält einen instantanen Anteil. Dieser hebt im elektrischen Feld den instantanen Beitrag von $-\nabla\phi$ genau auf. Übrig bleiben retardierte Felder – dieselben wie in der [[Lorenz-Eichung (Elektrodynamik)|Lorenz-Eichung]].
+
+### Wie kommt man in die Coulomb-Eichung?
+
+Hat man Potentiale mit $\nabla\cdot\mathbf A \neq 0$, wählt man $\chi$ als Lösung von
+$$\nabla^2\chi = -\nabla\cdot\mathbf A.$$
+Dann erfüllt $\mathbf A' = \mathbf A + \nabla\chi$ die Bedingung $\nabla\cdot\mathbf A' = 0$, und $\phi' = \phi - \partial_t\chi$.
+
+## 4. Hinweise & Checks
 
 - $\nabla \cdot \mathbf{j}_T = 0$ muss gelten.
 - In der Statik fällt der Zeitableitungsterm weg → $\nabla^2 \mathbf{A} = -\mu_0 \mathbf{j}_T$.
@@ -56,7 +70,7 @@ $$
 
 ---
 
-## 4. Verknüpfungen
+## 5. Verknüpfungen
 
 - Methoden: [[Helmholtz-Zerlegung (Vektorfelder)]], [[Stromverteilungen und Magnetisches Vektorpotential]], [[Vektoranalysis]].
 - Dynamik: [[Elektrodynamik - Dynamik und Wellen]].

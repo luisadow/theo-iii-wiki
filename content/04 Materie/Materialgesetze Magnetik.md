@@ -54,7 +54,15 @@ Gebundene Ströme: $\mathbf{J}_b = \nabla \times \mathbf{M}$, $\mathbf{K}_b = \m
 
 ---
 
-## 5. Verknüpfungen
+## 5. Beispiel: Brechung der Feldlinien an Eisen
+
+An der Grenze zwischen Eisen (Medium 1, $\mu_1 = \mu_r\mu_0$ mit $\mu_r\approx 1000$) und Luft (Medium 2, $\mu_2 = \mu_0$) fließen keine freien Flächenströme. Dann sind $B_n$ und $H_t$ stetig. Mit dem Winkel $\alpha$ zwischen Feldlinie und Flächennormale gilt $\tan\alpha = B_t/B_n = \mu H_t/B_n$, also
+$$\frac{\tan\alpha_1}{\tan\alpha_2} = \frac{\mu_1}{\mu_2} = \mu_r.$$
+Verlaufen die Feldlinien im Eisen unter $\alpha_1 = 80^\circ$ ($\tan\alpha_1\approx 5{,}7$), treten sie unter $\tan\alpha_2 \approx 0{,}0057$, also $\alpha_2\approx 0{,}3^\circ$, in die Luft aus – praktisch senkrecht zur Oberfläche.
+
+**Folge:** Eisen „führt“ den magnetischen Fluss wie ein Leiter den Strom (magnetische Kreise, Transformatorkerne). Das elektrische Gegenstück mit $\varepsilon_r$ steht in [[Dielektrika (Elektrostatik)]].
+
+## 6. Verknüpfungen
 
 - Grundlagen: [[Magnetische Felder in Materie]].
 - Felder/Ströme: [[Stromverteilungen und Magnetisches Vektorpotential]], [[Magnetostatik - Grundgleichungen]].

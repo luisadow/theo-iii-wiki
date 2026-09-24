@@ -43,7 +43,19 @@ Hilfsidentitäten (Indexschreibweise): $\partial_i (1/|\mathbf{r}-\mathbf{r}'|)=
 
 ---
 
-## 3. Verknüpfungen
+## 3. Warum eindeutig – und wozu?
+
+**Eindeutigkeit.** Angenommen, es gäbe zwei Zerlegungen $\mathbf V = \mathbf V_T + \mathbf V_L = \mathbf V_T' + \mathbf V_L'$. Die Differenz $\mathbf W = \mathbf V_L - \mathbf V_L' = \mathbf V_T' - \mathbf V_T$ ist dann gleichzeitig wirbelfrei und quellenfrei, also $\mathbf W = \nabla\psi$ mit $\nabla^2\psi = 0$. Fällt $\mathbf W$ im Unendlichen ab, muss $\psi$ konstant sein – also $\mathbf W = 0$.
+
+**Im Fourierraum** werden die Projektoren algebraisch: mit $\hat{\mathbf k} = \mathbf k/k$
+$$\tilde{\mathbf V}_L = \hat{\mathbf k}\,(\hat{\mathbf k}\cdot\tilde{\mathbf V}),\qquad \tilde{\mathbf V}_T = \tilde{\mathbf V} - \hat{\mathbf k}\,(\hat{\mathbf k}\cdot\tilde{\mathbf V}).$$
+Longitudinal heißt „parallel zu $\mathbf k$“, transversal „senkrecht zu $\mathbf k$“.
+
+**Anwendung: Kontinuitätsgleichung.** Weil $\nabla\cdot\mathbf J_T = 0$, gilt $\nabla\cdot\mathbf J = \nabla\cdot\mathbf J_L$ und damit
+$$\partial_t\rho + \nabla\cdot\mathbf J_L = 0.$$
+Der longitudinale Strom ist also vollständig durch die Änderung der Ladungsdichte festgelegt. Nur der transversale Anteil $\mathbf J_T$ ist „frei“ – er treibt in der [[Coulomb-Eichung (Elektrodynamik)|Coulomb-Eichung]] das Vektorpotential und damit die Abstrahlung.
+
+## 4. Verknüpfungen
 
 - Methoden: [[Vektoranalysis]], [[Randwertprobleme (Elektrostatik)]], [[Stromverteilungen und Magnetisches Vektorpotential]].
 - Gauges: [[Coulomb-Eichung (Elektrodynamik)]], [[Lorenz-Eichung (Elektrodynamik)]], [[Poincaré-Eichung (Elektrodynamik)]].

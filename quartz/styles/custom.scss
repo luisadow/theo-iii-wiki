@@ -50,6 +50,11 @@ h4 {
   }
 }
 
+// Die Notizen trennen Abschnitte oft mit „---“; die H2 hat schon eine Linie
+article > hr:has(+ h2) {
+  display: none;
+}
+
 article > h2 {
   margin-top: 2.6rem;
   padding-top: 1.2rem;
@@ -126,6 +131,16 @@ a.external {
   border-width: 1px;
   border-left-width: 4px;
   border-left-color: var(--color);
+}
+
+// Eingeklappte Callouts: Rahmen verschachtelter Callouts (z. B. „Lösung“) nicht durchblitzen lassen
+.callout.is-collapsed > .callout-content > * {
+  border-width: 0 !important;
+}
+
+.callout[data-callout="example"] > .callout-content,
+.callout[data-callout="success"] > .callout-content {
+  line-height: 1.65;
 }
 
 blockquote:not(.callout) {

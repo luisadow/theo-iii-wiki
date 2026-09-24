@@ -5,7 +5,42 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    // Zurück/Weiter entlang der Lernpfade (Reihenfolge = Lernpfad 1 bis 5)
+    Component.PrevNext({
+      order: [
+        "Vektoranalysis",
+        "Flächen- und Volumenelemente – Leitfaden",
+        "Elektrostatik - Lernseite (Grundlagen)",
+        "Elektrostatik",
+        "Energie und Kapazität in der Elektrostatik",
+        "Kugelkondensator",
+        "Zylinderkondensator",
+        "Maxwell-Spannungstensor (Elektrostatik)",
+        "Randwertprobleme (Elektrostatik)",
+        "Spiegelmethode (Elektrostatik)",
+        "Legendre-Ansatz und Grenzflächen",
+        "Multipolentwicklung (Elektrostatik)",
+        "Green-Funktionen (Elektrostatik)",
+        "Magnetostatik - Grundgleichungen",
+        "Stromverteilungen und Magnetisches Vektorpotential",
+        "Induktivität und magnetische Energie",
+        "Elektrostatik in Materie",
+        "Dielektrika (Elektrostatik)",
+        "Magnetische Felder in Materie",
+        "Materialgesetze Magnetik",
+        "Faraday-Induktion (Elektrodynamik)",
+        "Elektrodynamik - Dynamik und Wellen",
+        "Impulsbilanz und Poynting-Vektor",
+        "Helmholtz-Zerlegung (Vektorfelder)",
+        "Coulomb-Eichung (Elektrodynamik)",
+        "Lorenz-Eichung (Elektrodynamik)",
+        "Poincaré-Eichung (Elektrodynamik)",
+        "Relativität – Lorentz-Transformation",
+        "Minkowski-Raum und Vierervektoren",
+      ],
+    }),
+  ],
   footer: Component.Footer({
     links: {
       "Quellcode auf GitHub": "https://github.com/luisadow/theo-iii-wiki",
@@ -57,15 +92,15 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.Graph({
-      // Tags ausblenden und Beschriftungen im lokalen Graphen direkt zeigen
+      // Tags ausblenden; Namen nur für aktuelle Seite und meistverlinkte Notizen
       localGraph: {
         showTags: false,
         depth: 1,
         scale: 1.15,
         repelForce: 0.9,
         linkDistance: 55,
-        fontSize: 0.75,
-        opacityScale: 4,
+        fontSize: 0.7,
+        opacityScale: 2, // >= 2: lokaler Graph beschriftet die 4 wichtigsten Nachbarn
         focusOnHover: true,
       },
       globalGraph: {

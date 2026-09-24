@@ -195,6 +195,24 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     {} as Record<(typeof cssVars)[number], string>,
   )
 
+  // Beschriftungen nur für wichtige Knoten: aktuelle Seite + die am stärksten verlinkten
+  // Notizen. Alle anderen Namen erscheinen erst beim Hovern (Nachbarn) oder Zoomen.
+  const labelTopN = (opacityScale >= 2 ? 4 : 8) as number
+  const degree = new Map<string, number>()
+  for (const l of graphData.links) {
+    degree.set(l.source.id, (degree.get(l.source.id) ?? 0) + 1)
+    degree.set(l.target.id, (degree.get(l.target.id) ?? 0) + 1)
+  }
+  const importantIds = new Set<string>([slug])
+  for (const [id] of [...degree.entries()]
+    .filter(([id, d]) => id !== slug && d >= 3)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, labelTopN)) {
+    importantIds.add(id)
+  }
+  let zoomLabelOpacity = 0
+  const baseLabelAlpha = (id: string) => (importantIds.has(id) ? 1 : zoomLabelOpacity)
+
   // eigene Linienfarben (custom.scss), sonst Quartz-Standard
   const linkColor = computedStyleMap["--graph-link"].trim() || computedStyleMap["--lightgray"]
   const linkActiveColor =
@@ -305,7 +323,8 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
         tweenGroup.add(
           new Tweened<Text>(n.label).to(
             {
-              alpha: n.label.alpha,
+              alpha:
+                hoveredNodeId && hoveredNeighbours.has(nodeId) ? 1 : baseLabelAlpha(nodeId),
               scale: { x: defaultScale, y: defaultScale },
             },
             100,
@@ -385,8 +404,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
       interactive: false,
       eventMode: "none",
       text: n.text,
-      // bei hohem opacityScale (lokaler Graph) Beschriftungen sofort zeigen
-      alpha: Math.min(Math.max((scale * opacityScale - 1) / 3.75, 0), 1),
+      alpha: baseLabelAlpha(nodeId),
       anchor: { x: 0.5, y: 1.2 },
       style: {
         fontSize: fontSize * 15,
@@ -519,13 +537,9 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
 
           // zoom adjusts opacity of labels too
           const scale = transform.k * opacityScale
-          let scaleOpacity = Math.max((scale - 1) / 3.75, 0)
-          const activeNodes = nodeRenderData.filter((n) => n.active).flatMap((n) => n.label)
-
-          for (const label of labelsContainer.children) {
-            if (!activeNodes.includes(label)) {
-              label.alpha = scaleOpacity
-            }
+          zoomLabelOpacity = Math.min(Math.max((scale - 1) / 3.75, 0), 1)
+          for (const n of nodeRenderData) {
+            if (!n.active) n.label.alpha = baseLabelAlpha(n.simulationData.id)
           }
         }),
     )

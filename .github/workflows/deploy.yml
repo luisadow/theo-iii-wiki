@@ -14,9 +14,14 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  HOST: theo3.sadowski-dos-santos.de
+
 jobs:
   build:
     runs-on: ubuntu-22.04
+    outputs:
+      changed_urls: ${{ steps.diff.outputs.urls }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,6 +33,22 @@ jobs:
         run: npm ci
       - name: Build Quartz
         run: npx quartz build
+      # Neue Sitemap mit der live stehenden vergleichen: nur neue, geänderte (lastmod)
+      # und gelöschte URLs werden später per IndexNow gemeldet.
+      - name: Geänderte URLs bestimmen
+        id: diff
+        run: |
+          curl -fsSL "https://$HOST/sitemap.xml" -o old-sitemap.xml || echo "" > old-sitemap.xml
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, re
+          def entries(path):
+              xml = open(path, encoding="utf-8").read()
+              return dict(re.findall(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]*)</lastmod>", xml))
+          old, new = entries("old-sitemap.xml"), entries("public/sitemap.xml")
+          changed = [u for u, m in new.items() if old.get(u) != m]
+          removed = [u for u in old if u not in new]
+          print("urls=" + json.dumps(changed + removed))
+          PY
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -44,28 +65,29 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  # Nach dem Deploy alle URLs aus der Sitemap per IndexNow melden (Bing, Yandex, Seznam, …).
+  # Nach dem Deploy nur die geänderten URLs per IndexNow melden (Bing, Yandex, Seznam, …).
   # Der Schlüssel ist öffentlich und liegt als content/ad383026f04871bd60ac72bb0b623d16.txt im Wurzelverzeichnis der Seite.
   indexnow:
-    needs: deploy
+    needs: [build, deploy]
+    if: needs.build.outputs.changed_urls != '[]'
     runs-on: ubuntu-latest
     env:
-      HOST: theo3.sadowski-dos-santos.de
       INDEXNOW_KEY: ad383026f04871bd60ac72bb0b623d16
+      URLS: ${{ needs.build.outputs.changed_urls }}
     steps:
-      - name: URLs an IndexNow melden
+      - name: Geänderte URLs an IndexNow melden
         run: |
-          sleep 30
-          curl -fsSL "https://$HOST/sitemap.xml" -o sitemap.xml
           python3 - <<'PY'
-          import json, os, re, urllib.request
+          import json, os, urllib.request
           host, key = os.environ["HOST"], os.environ["INDEXNOW_KEY"]
-          urls = re.findall(r"<loc>([^<]+)</loc>", open("sitemap.xml").read())
+          urls = json.loads(os.environ["URLS"])
           body = json.dumps({"host": host, "key": key,
                              "keyLocation": f"https://{host}/{key}.txt",
                              "urlList": urls}).encode()
           req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
                                        headers={"Content-Type": "application/json; charset=utf-8"})
           with urllib.request.urlopen(req) as r:
-              print(f"IndexNow: {len(urls)} URLs gemeldet, Status {r.status}")
+              print(f"IndexNow: {len(urls)} geänderte URLs gemeldet, Status {r.status}")
+              for u in urls:
+                  print("  ", u)
           PY

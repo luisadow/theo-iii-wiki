@@ -31,7 +31,10 @@ export default (() => {
 
     // Url of current page
     const socialUrl =
-      fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
+      fileData.slug === "404"
+        ? url.toString()
+        : // wie in der Sitemap prozentkodieren, damit Canonical und Sitemap identisch sind
+          joinSegments(url.toString(), encodeURI(fileData.slug!))
 
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some(
       (e) => e.name === CustomOgImagesEmitterName,

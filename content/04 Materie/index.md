@@ -12,3 +12,5 @@ $$\nabla\cdot\mathbf D = \rho_{\text{frei}},\qquad \nabla\times\mathbf H = \math
 und an Grenzflächen bestimmen die Stetigkeitsbedingungen, wie Felder „gebrochen“ werden. Elektrische und magnetische Materie laufen dabei fast parallel.
 
 **Lesereihenfolge:** [[Elektrostatik in Materie]] (Überblick) → [[Dielektrika (Elektrostatik)]] → [[Magnetische Felder in Materie]] → [[Materialgesetze Magnetik]]. Geführt: [[Lernpfad 3 - Magnetostatik und Materie|Lernpfad 3]].
+
+*In der Vorlesung Theoretische Physik III: VL 8–10 und 13–14.*

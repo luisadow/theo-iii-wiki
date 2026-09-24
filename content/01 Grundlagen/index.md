@@ -10,3 +10,5 @@ Die Elektrodynamik ist in der Sprache der Vektoranalysis geschrieben: Die Maxwel
 $$\int_V \nabla\cdot\mathbf F\,dV = \oint_{\partial V}\mathbf F\cdot d\mathbf A$$
 
 **Lesereihenfolge:** Erst [[Vektoranalysis]] für Operatoren in Kugel- und Zylinderkoordinaten, dann [[Flächen- und Volumenelemente – Leitfaden]], um Integrale sicher aufzustellen. Wer schon sattelfest ist, springt direkt zur [[02 Elektrostatik/index|Elektrostatik]].
+
+*In der Vorlesung Theoretische Physik III: VL 1–2.*

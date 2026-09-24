@@ -10,18 +10,18 @@ gebaut als statische Website aus Markdown-Notizen.
 
 ## Inhalt
 
-34 Seiten in sieben Themenblöcken, in der Reihenfolge einer typischen
-Elektrodynamik-Vorlesung (entstanden aus Theo III an der TU Berlin):
+34 Seiten in sieben Themenblöcken. Die Notizen habe ich auf Basis der Vorlesung
+Theoretische Physik III an der TU Berlin (WiSe 25/26, VL 1–20) selbst angefertigt:
 
-| Block | Themen |
-| --- | --- |
-| 01 Grundlagen | Operatoren in krummlinigen Koordinaten, Integralsätze, Flächenelemente |
-| 02 Elektrostatik | Gauß, Potential, Feldenergie, Kapazität, Maxwell-Spannungstensor |
-| 03 Randwertprobleme | Spiegelladungen, Green-Funktionen, Legendre-Ansatz, Multipole |
-| 04 Felder in Materie | Dielektrika, Entelektrisierung, Magnetisierung, Materialgesetze |
-| 05 Magnetostatik | Biot–Savart, Ampère, Vektorpotential, Induktivität |
-| 06 Elektrodynamik | Induktion, Maxwell-Gleichungen, Eichungen, Wellen, Poynting |
-| 07 Relativität | Lorentz-Transformation, Minkowski-Raum |
+| Block | VL | Themen |
+| --- | --- | --- |
+| 01 Grundlagen | 1–2 | Operatoren in krummlinigen Koordinaten, Integralsätze, Flächenelemente |
+| 02 Elektrostatik | 3–5 | Gauß, Potential, Feldenergie, Kapazität, Maxwell-Spannungstensor |
+| 03 Randwertprobleme | 6–8 | Spiegelladungen, Green-Funktionen, Legendre-Ansatz, Multipole |
+| 04 Felder in Materie | 8–10, 13–14 | Dielektrika, Entelektrisierung, Magnetisierung, Materialgesetze |
+| 05 Magnetostatik | 11–12, 16 | Biot–Savart, Ampère, Vektorpotential, Induktivität |
+| 06 Elektrodynamik | 15–18 | Induktion, Maxwell-Gleichungen, Eichungen, Wellen, Poynting |
+| 07 Relativität | 18–20 | Lorentz-Transformation, Minkowski-Raum |
 
 Dazu kommen eine **Formelsammlung**, ein **Glossar** mit Kurzerklärungen,
 fünf **Lernpfade** mit Schritten, Selbsttest und typischen Fehlern sowie
@@ -89,5 +89,5 @@ quartz.layout.ts         Seitenaufbau
 ## Lizenz
 
 Der Quartz-Code steht unter der MIT-Lizenz (`LICENSE.txt`). Die Notizen in
-`content/` sind von mir; Tafelbilder und Übungsmaterialien der Vorlesung sind
-bewusst nicht enthalten.
+`content/` habe ich auf Basis der Vorlesung selbst geschrieben; Materialien der
+Vorlesung selbst sind nicht enthalten.

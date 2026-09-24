@@ -12,3 +12,5 @@ $$\nabla\times\mathbf E = -\partial_t\mathbf B,\qquad \nabla\times\mathbf B = \m
 zusammen mit den Quellengleichungen. Mit Potentialen und einer geschickt gewählten Eichung werden daraus Wellengleichungen; der Poynting-Vektor beschreibt, wie das Feld Energie transportiert.
 
 **Lesereihenfolge:** [[Faraday-Induktion (Elektrodynamik)]] → [[Elektrodynamik - Dynamik und Wellen]] → [[Impulsbilanz und Poynting-Vektor]] → [[Helmholtz-Zerlegung (Vektorfelder)]] → [[Coulomb-Eichung (Elektrodynamik)|Coulomb-]], [[Lorenz-Eichung (Elektrodynamik)|Lorenz-]] und [[Poincaré-Eichung (Elektrodynamik)|Poincaré-Eichung]]. Geführt: [[Lernpfad 4 - Elektrodynamik und Wellen|Lernpfad 4]] und [[Lernpfad 5 - Potentiale, Eichungen und Relativität|Lernpfad 5]].
+
+*In der Vorlesung Theoretische Physik III: VL 15–18.*

@@ -12,3 +12,5 @@ $$s^2 = c^2t^2 - \lvert\mathbf x\rvert^2$$
 erhalten bleibt. Zeitdilatation und Längenkontraktion folgen direkt daraus. Im vierdimensionalen Minkowski-Raum lassen sich Ladung und Strom sowie Skalar- und Vektorpotential zu Vierervektoren zusammenfassen – die Elektrodynamik wird damit manifest relativistisch.
 
 **Lesereihenfolge:** [[Relativität – Lorentz-Transformation]] → [[Minkowski-Raum und Vierervektoren]]. Geführt: [[Lernpfad 5 - Potentiale, Eichungen und Relativität|Lernpfad 5]].
+
+*In der Vorlesung Theoretische Physik III: VL 18–20.*

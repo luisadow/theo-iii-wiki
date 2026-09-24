@@ -8,3 +8,5 @@ Sobald Leiter oder Grenzflächen im Spiel sind, ist nicht mehr die Ladungsvertei
 **Kernidee:** Der Eindeutigkeitssatz garantiert, dass es genau eine Lösung gibt. Deshalb darf man sie mit jeder Methode finden, die funktioniert – durch geschicktes Raten (Bildladungen), durch Separation der Variablen (Legendre-Reihen) oder allgemein über Green-Funktionen. Weit weg von einer Ladungsverteilung reicht oft die Multipolentwicklung.
 
 **Lesereihenfolge:** [[Randwertprobleme (Elektrostatik)]] → [[Spiegelmethode (Elektrostatik)]] → [[Legendre-Ansatz und Grenzflächen]] → [[Multipolentwicklung (Elektrostatik)]] → [[Green-Funktionen (Elektrostatik)]]. Geführt: [[Lernpfad 2 - Randwertprobleme und Multipole|Lernpfad 2]].
+
+*In der Vorlesung Theoretische Physik III: VL 6–8.*

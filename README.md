@@ -23,8 +23,9 @@ Elektrodynamik-Vorlesung (entstanden aus Theo III an der TU Berlin):
 | 06 Elektrodynamik | Induktion, Maxwell-Gleichungen, Eichungen, Wellen, Poynting |
 | 07 Relativität | Lorentz-Transformation, Minkowski-Raum |
 
-Dazu kommen eine **Formelsammlung** mit allen zentralen Formeln und fünf
-**Lernpfade** mit Schritten, Selbsttest zum Abhaken und typischen Fehlern.
+Dazu kommen eine **Formelsammlung**, ein **Glossar** mit Kurzerklärungen,
+fünf **Lernpfade** mit Schritten, Selbsttest und typischen Fehlern sowie
+zehn **Beispielaufgaben** mit ausklappbarer Lösung auf den passenden Seiten.
 Alle Seiten wurden
 fachlich durchgesehen (Vorzeichen, Dimensionen, Grenzfälle). Es bleiben
 studentische Notizen – Fehler bitte als
@@ -36,7 +37,8 @@ studentische Notizen – Fehler bitte als
   LaTeX in Obsidian und werden 1:1 zur Website.
 - **Formeln** mit KaTeX, **Volltextsuche**, Link-Vorschau beim Hover,
   Graphansicht, Rückverweise und Inhaltsverzeichnis pro Seite; Selbsttests
-  mit im Browser gespeicherten Checkboxen.
+  mit im Browser gespeicherten Checkboxen; Zurück/Weiter-Navigation entlang
+  der Lernpfade.
 - **Eigenes Design:** Startseite mit Themenkarten, heller und dunkler Modus,
   responsiv bis Smartphone-Breite.
 - **SEO:** individuelle Meta-Beschreibungen, Canonical-URLs, strukturierte
@@ -56,8 +58,9 @@ studentische Notizen – Fehler bitte als
 
 Angepasst gegenüber dem Quartz-Standard: Layout (`quartz.layout.ts`),
 Head-Metadaten und strukturierte Daten (`quartz/components/Head.tsx`),
-Explorer-Sortierung nach Themenreihenfolge, übersichtlicherer Graph (ohne
-Tags, Beschriftungen sichtbar), Ordnerlisten mit Seitenbeschreibungen,
+Explorer-Sortierung nach Themenreihenfolge, eigene Komponente
+`quartz/components/PrevNext.tsx`, übersichtlicherer Graph (ohne Tags, Namen
+nur für die meistverlinkten Notizen), Ordnerlisten mit Seitenbeschreibungen,
 keine Tag- und Weiterleitungsseiten (dünne Inhalte), eigenes Theme und Favicon.
 
 ## Lokal bauen
@@ -77,6 +80,7 @@ content/
   01 Grundlagen/ … 07 Relativität/
   Lernpfade/             fünf Lernpfade mit Selbsttest
   Formelsammlung.md
+  Glossar.md
 quartz/                  Quartz-Quellcode (inkl. eigener Anpassungen)
 quartz.config.ts         Titel, Theme, Plugins
 quartz.layout.ts         Seitenaufbau

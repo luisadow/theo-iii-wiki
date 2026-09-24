@@ -48,11 +48,13 @@ Dieses Wiki behandelt die klassische Elektrodynamik auf dem Niveau eines Physik-
 - **Suche** mit <kbd>Strg</kbd>/<kbd>⌘</kbd> + <kbd>K</kbd> findet Begriffe auf allen Seiten.
 - **[[Lernpfade/index|Lernpfade]]** führen Schritt für Schritt durch einen Themenblock, mit Selbsttest zum Abhaken.
 - **[[Formelsammlung]]**: alle wichtigen Formeln auf einer Seite, jeweils mit Link zur Herleitung.
+- **[[Glossar]]**: die wichtigsten Begriffe in je zwei, drei Sätzen.
+- **Beispielaufgaben** mit ausklappbarer Lösung findest du auf vielen Seiten – erst selbst rechnen, dann aufklappen.
 - **Hover** über einen Link zeigt eine Vorschau, rechts findest du Inhaltsverzeichnis, Graph und Rückverweise.
 
 ## Alle Seiten nach Themen
 
-Alles Wichtige kompakt: [[Formelsammlung|Formelsammlung Elektrodynamik]].
+Alles Wichtige kompakt: [[Formelsammlung|Formelsammlung Elektrodynamik]] · [[Glossar|Glossar]].
 
 ### Mathematische Grundlagen
 

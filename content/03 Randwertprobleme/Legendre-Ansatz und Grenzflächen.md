@@ -1,5 +1,5 @@
 ---
-description: "Legendre-Ansatz für axialsymmetrische Laplace-Probleme: dielektrische und leitende Kugel im homogenen Feld, Randbedingungen an Grenzflächen, geladener Ring."
+description: "Legendre-Ansatz für Laplace-Probleme: dielektrische und leitende Kugel im Feld, Randbedingungen an Grenzflächen, geladener Ring."
 title: "Legendre-Ansatz und Grenzflächen"
 aliases:
   - Legendre Ansatz Grenzflächen

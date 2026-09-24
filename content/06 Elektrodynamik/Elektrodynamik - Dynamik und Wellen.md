@@ -1,5 +1,5 @@
 ---
-description: "Maxwell-Gleichungen, Potentiale und Eichungen, retardierte Potentiale, elektromagnetische Wellen, Poynting-Theorem und Dipolstrahlung – Überblick für Theo III."
+description: "Maxwell-Gleichungen, Potentiale, Eichungen, retardierte Potentiale, EM-Wellen, Poynting-Theorem und Dipolstrahlung im Überblick."
 title: "Elektrodynamik – Dynamik und Wellen"
 aliases:
   - Dynamische Maxwell-Gleichungen

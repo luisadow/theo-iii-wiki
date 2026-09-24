@@ -1,11 +1,11 @@
 ---
 title: "Theo III Elektrodynamik – Lernwiki (TU Berlin)"
-description: "Kostenloses Lernwiki zu Theo III (Theoretische Physik III: Elektrodynamik) an der TU Berlin: Zusammenfassungen, Formeln und Herleitungen zur Klausurvorbereitung – von Elektrostatik über Randwertprobleme bis zur Relativität."
+description: "Lernwiki zu Theo III (Elektrodynamik) an der TU Berlin: Zusammenfassungen, Formeln und Herleitungen zur Klausurvorbereitung."
 ---
 
 <section class="hero">
   <p class="hero-eyebrow">TU Berlin · Theoretische Physik III</p>
-  <p class="hero-title">Elektrodynamik,<br/>verständlich sortiert.</p>
+  <h1 class="hero-title">Theo III: Elektrodynamik,<br/>verständlich sortiert.</h1>
   <p class="hero-lead">Zusammenfassungen, Formeln und durchgerechnete Herleitungen zu <strong>Theo III</strong> – in der Reihenfolge der Vorlesung, fachlich durchgesehen und zum Nachschlagen vor der Klausur.</p>
   <div class="hero-actions">
     <a class="btn btn-primary internal" href="./01-Grundlagen/Vektoranalysis">Mit den Grundlagen starten</a>

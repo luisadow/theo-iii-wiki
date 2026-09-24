@@ -1,5 +1,5 @@
 ---
-description: "Dielektrika in Theo III: Polarisation, Suszeptibilität, Randbedingungen für E und D, Entelektrisierungsfaktor, dielektrische Kugel im Feld, Kraft auf Dielektrikum."
+description: "Dielektrika: Polarisation, Randbedingungen für E und D, Entelektrisierungsfaktor, dielektrische Kugel im Feld."
 title: "Dielektrika in der Elektrostatik"
 aliases:
   - Dielektrika Elektrostatik

@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  # „Run workflow“-Knopf im Actions-Tab, um ohne Push neu zu deployen
+  workflow_dispatch:
 
 permissions:
   contents: read

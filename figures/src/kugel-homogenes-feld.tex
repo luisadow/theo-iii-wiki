@@ -1,0 +1,31 @@
+% Leitende und dielektrische Kugel im homogenen Feld E0 ez (Legendre-Ansatz, l = 1)
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  % ---------- Leiter ----------
+  \begin{scope}
+    \input{data/kugel-feld-leiter}
+    \fill[bg] (0,0) circle (1);
+    \draw[main, fill=mu, fill opacity=0.18] (0,0) circle (1);
+    \draw[main] (0,0) circle (1);
+    % Influenzladung sigma = 3 eps0 E0 cos(theta)
+    \foreach \w in {30,60,...,150} \node[warm, font=\scriptsize] at (\w:0.8) {$+$};
+    \foreach \w in {210,240,...,330} \node[blue, font=\scriptsize] at (\w:0.8) {$-$};
+    \node at (0,0) {$\vv E=0$};
+    \node[font=\small, anchor=south] at (0,2.15) {Leiter};
+    \node[anchor=north, font=\footnotesize, align=center] at (0,-2.2) {$\vv E\perp$ Oberfläche, $\sigma=3\varepsilon_0E_0\cos\theta$};
+  \end{scope}
+  % ---------- Dielektrikum ----------
+  \begin{scope}[xshift=6.0cm]
+    \fill[acc, fill opacity=0.12] (0,0) circle (1);
+    \input{data/kugel-feld-dielektrikum}
+    \draw[main, acc] (0,0) circle (1);
+    \foreach \w in {45,90,135} \node[warm, font=\scriptsize] at (\w:0.84) {$+$};
+    \foreach \w in {225,270,315} \node[blue, font=\scriptsize] at (\w:0.84) {$-$};
+    \node[font=\small, anchor=south] at (0,2.15) {Dielektrikum, $\varepsilon_r=3$};
+    \node[acc, anchor=north, font=\footnotesize, align=center] at (0,-2.2) {innen homogen: $\vv E_{\text{in}}=\tfrac{3}{\varepsilon_r+2}\vv E_0=0{,}6\,\vv E_0$\\[1pt]{\color{mu}Linien: $\vv D\parallel\vv E$, innen dichter}};
+  \end{scope}
+  % E0-Pfeil
+  \draw[vec, line width=1.4pt] (3.0,-0.6) -- (3.0,0.5) node[anchor=south] {$\vv E_0$};
+\end{tikzpicture}
+\end{document}

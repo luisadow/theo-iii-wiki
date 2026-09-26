@@ -1,0 +1,24 @@
+% Dirichlet-Green-Funktion der Kugel: Höhenlinien von G(r, r') mit G = 0 auf dV
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  \input{data/green-kugel}
+  % Volumen V und Rand
+    \draw[main, line width=1.3pt] (0,0) circle (\Rk);
+  \node[anchor=south east] at (135:\Rk) {$\partial V:\ G_D=0$};
+  \node[mu] at (-0.9,-0.75) {$V$};
+  % Quelle und Bildpunkt (auf derselben Geraden durch den Mittelpunkt)
+  \draw[aux] (0,0) -- (\imgx,\imgy);
+  \node[dot, mu] at (0,0) {};
+  \node[qpos] (S) at (\srcx,\srcy) {};
+  \node[warm, lbl, anchor=south, inner sep=1pt] at ($(S)+(0,0.18)$) {$\vv r'$};
+  \draw[mu, thin, dash pattern=on 2pt off 1.5pt] (\imgx,\imgy) circle (0.13);
+  \node[mu, anchor=west, font=\footnotesize] at (\imgx+0.18,\imgy) {Bildpunkt $\vv r''=\tfrac{R^2}{r'^2}\vv r'$};
+  % Normale am Rand
+  \draw[vec, mu] (-30:\Rk) -- (-30:\Rk+0.75) node[anchor=north west, text=mu] {$\vv n'$};
+  % Aufpunkt
+  \node[dot] at (-0.55,0.75) {};
+  \node[anchor=south east, inner sep=1pt] at (-0.55,0.75) {$\vv r$};
+  \node[acc, font=\footnotesize, anchor=north west, align=left] at (1.9,-0.35) {Höhenlinien\\$G_D(\vv r,\vv r')=\text{const}$};
+\end{tikzpicture}
+\end{document}

@@ -52,6 +52,8 @@ Dichte: $u_B = |\mathbf{B}|^2/(2\mu_0)$.
 - Solenoid: $L = \mu_0 n^2 A \ell$ (ohne Kern). Mit Kern: $\mu \to \mu_r \mu_0$.
 - Toroid: $L = \tfrac{\mu_0 N^2 A}{2\pi r_m}$.
 
+![[spule-feld.svg|Endliche Spule mit 14 Windungen, Feldlinien exakt aus der Summe der Ringströme berechnet. Innen ist B nahezu homogen, daher Φ = BA pro Windung und L = μ₀n²Aℓ. Außen verteilt sich der Rückfluss auf einen großen Raum.]]
+
 ---
 
 ## Beispielaufgabe

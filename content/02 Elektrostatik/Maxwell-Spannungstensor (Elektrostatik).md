@@ -60,6 +60,8 @@ Für eine Oberfläche mit Normalenvektor $\mathbf{n}$:
 
 Hierbei sind $E_n = \mathbf{E} \cdot \mathbf{n}$ und $\mathbf{E}_t = \mathbf{E} - E_n \mathbf{n}$.
 
+![[spannungstensor-zug.svg|Die Kraft pro Fläche T·n hat den Betrag ε₀E²/2 und bildet mit n den Winkel 2θ, E halbiert also den Winkel zwischen n und T·n. Entlang der Feldlinien zieht das Feld (θ = 0), quer dazu drückt es (θ = 90°).]]
+
 ### 3.2 Druck auf leitende Flächen
 
 Für perfekte Leiter (innen $\mathbf{E} = 0$, nur $E_n \neq 0$ außen):

@@ -1,0 +1,33 @@
+% Gebundene Ströme: atomare Kreisströme heben sich innen auf, außen bleibt K_b = M x n
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  \def\W{4.2} \def\H{2.4}
+  \fill[mu, fill opacity=0.1] (0,0) rectangle (\W,\H);
+  % atomare Kreisströme (gegen den Uhrzeigersinn -> m aus der Ebene)
+  \foreach \i in {0,...,6} \foreach \j in {0,...,3} {
+    \pgfmathsetmacro{\x}{0.3+\i*0.6}
+    \pgfmathsetmacro{\y}{0.3+\j*0.6}
+    \draw[thin, postaction={decorate}, decoration={markings,
+        mark=at position 0.1 with {\arrow{Stealth[length=3.2pt,width=2.8pt]}}}]
+      (\x+0.22,\y) arc[start angle=0, end angle=360, radius=0.22];
+  }
+  % Oberflächenstrom K_b, ebenfalls gegen den Uhrzeigersinn
+  \draw[acc, line width=2pt, postaction={decorate}, decoration={markings,
+      mark=at position 0.12 with {\arrow{Stealth[length=7pt,width=6pt]}},
+      mark=at position 0.37 with {\arrow{Stealth[length=7pt,width=6pt]}},
+      mark=at position 0.62 with {\arrow{Stealth[length=7pt,width=6pt]}},
+      mark=at position 0.87 with {\arrow{Stealth[length=7pt,width=6pt]}}}]
+    (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % rechte Seite: n nach außen, K_b = M x n = ez x ex = ey
+  \draw[vec, mu] (\W,1.5) -- (\W+0.75,1.5) node[anchor=west, text=mu] {$\vv n$};
+  \node[acc, anchor=west] at (\W+0.2,0.75) {$\vv K_b=\vv M\times\vv n$};
+  % M aus der Ebene
+  \begin{scope}[shift={(-0.75,1.95)}]
+    \draw[line width=1pt] (0,0) circle (0.16);
+    \fill (0,0) circle (0.05);
+    \node[anchor=north] at (0,-0.2) {$\vv M$};
+  \end{scope}
+  \node[mu, font=\footnotesize, align=center, anchor=north] at (\W/2,-0.2) {innen heben sich benachbarte Ströme auf};
+\end{tikzpicture}
+\end{document}

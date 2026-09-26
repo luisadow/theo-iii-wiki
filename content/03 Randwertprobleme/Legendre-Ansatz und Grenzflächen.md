@@ -65,6 +65,8 @@ Nur $\ell=1$ relevant. Äußeres Feld $E_0\hat z$, Kugelradius $a$:
 - Koeffizienten: $A_1=-\dfrac{3\varepsilon_{\text{out}}}{\varepsilon_{\text{in}}+2\varepsilon_{\text{out}}}E_0$ (Innenfeld homogen, $\mathbf E_{\text{in}} = -A_1\hat z$), $\displaystyle B_1=a^3E_0\frac{\varepsilon_{\text{in}}-\varepsilon_{\text{out}}}{\varepsilon_{\text{in}}+2\varepsilon_{\text{out}}}$.
 - Induziertes Dipolmoment (definiert über $\Phi_{\text{Dipol}} = p\cos\theta/(4\pi\varepsilon_{\text{out}} r^2)$): $p=4\pi\varepsilon_{\text{out}} a^3 E_0\dfrac{\varepsilon_{\text{in}}-\varepsilon_{\text{out}}}{\varepsilon_{\text{in}}+2\varepsilon_{\text{out}}}$.
 
+![[kugel-homogenes-feld.svg|Links die leitende Kugel (Grenzfall ε_in → ∞): Innen ist E = 0, außen treffen die Feldlinien senkrecht auf die Influenzladung σ = 3ε₀E₀cos θ. Rechts die dielektrische Kugel mit ε_r = 3: Das Innenfeld ist homogen und auf 0,6 E₀ geschwächt. Die Linien sind exakt aus der ℓ = 1-Lösung berechnet.]]
+
 ### Leseschlüssel
 
 - $A_1$: Innenfeld-Proportionalität (skaliert $E_0$ im Medium innen).

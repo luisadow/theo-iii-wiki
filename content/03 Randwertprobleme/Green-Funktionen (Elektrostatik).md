@@ -46,6 +46,8 @@ $$
 - $r_< = \min(r,r')$, $r_> = \max(r,r')$, $\gamma$ Winkel zwischen $\mathbf{r}$ und $\mathbf{r}'$.
 - Check: für $r_>=R$ verschwindet jeder Summand; für $R \to \infty$ folgt $G \to G_0$.
 
+![[green-kugel.svg|Höhenlinien der Dirichlet-Green-Funktion der Kugel für eine Quelle bei r′ (exakt berechnet). Nahe der Quelle sind sie kreisförmig wie bei G₀, zum Rand hin drückt der Bildterm sie auf G_D = 0. Der Bildpunkt r″ liegt außerhalb auf derselben Geraden.]]
+
 ## 4. Zylinder (geerdete Wand, Radius $R$)
 
 Innenraum $\rho,\rho'<R$:

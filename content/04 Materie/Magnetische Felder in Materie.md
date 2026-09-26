@@ -96,6 +96,8 @@ _Ferromagnetismus_ erfordert nichtlineare Modelle (B-H-Kurven, Hysterese), siehe
   - $\mathbf{K}_{\text{b}} = \mathbf{M} \times \mathbf{n}$ → Strom entlang der Oberfläche.
 - Nicht-homogene $\mathbf{M}$ erzeugt interne Ströme, analog zu $\rho_{\text{b}} = -\nabla \cdot \mathbf{P}$ in der Elektrostatik.
 
+![[magnetisierung-stroeme.svg|Homogene Magnetisierung M (aus der Ebene) als Gitter atomarer Kreisströme. Innen fließen benachbarte Ströme entgegengesetzt und heben sich auf. Am Rand bleibt der Oberflächenstrom K_b = M × n.]]
+
 ---
 
 ## 6. Beispiel: Zylindrischer Magnet im externen Feld

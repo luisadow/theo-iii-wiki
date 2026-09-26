@@ -19,6 +19,8 @@ $$
 E(r)=\frac{\lambda}{2\pi\varepsilon\,r}, \quad a<r<b.
 $$
 
+![[zylinderkondensator.svg|Das Feld steht senkrecht auf der Achse und durchsetzt nur den Mantel des Gauß-Zylinders (Radius r, Länge L), nicht die Deckel. Daraus folgt E(r) = λ/(2πεr) zwischen a und b, außen ist E = 0.]]
+
 ### Potential
 $$
 \phi(r)-\phi(b) = -\int_b^r E(r')\,dr' = -\frac{\lambda}{2\pi\varepsilon}\int_b^r \frac{dr'}{r'} = \frac{\lambda}{2\pi\varepsilon}\ln\frac{b}{r}.

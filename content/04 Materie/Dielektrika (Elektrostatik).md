@@ -61,6 +61,8 @@ Grenzfläche zwischen Medium 1 ($\varepsilon_1$) und Medium 2 ($\varepsilon_2$):
 
 Konvention: $\mathbf n$ zeigt von Medium 2 nach Medium 1.
 
+![[grenzflaeche-brechung.svg|Ohne freie Flächenladung ist E_t stetig, D_n = εE_n ebenfalls. Im Medium mit größerem ε wird die Normalkomponente kleiner, die Feldlinie knickt von der Normalen weg: tan α₁/tan α₂ = ε₁/ε₂ (hier α₁ = 30°, α₂ ≈ 55°).]]
+
 Nutze diese RBs gemeinsam mit [[Maxwell-Spannungstensor (Elektrostatik)]] zur Bestimmung von Drücken und Zugspannungen.
 
 ### Beispielaufgabe: ebene Grenzfläche, schräges Feld

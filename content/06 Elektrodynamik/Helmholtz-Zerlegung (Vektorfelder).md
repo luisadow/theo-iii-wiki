@@ -23,6 +23,8 @@ $$
 \mathbf{V} = \mathbf{V}_T + \mathbf{V}_L, \qquad \nabla \cdot \mathbf{V}_T = 0, \; \nabla \times \mathbf{V}_L = 0.
 $$
 
+![[helmholtz-zerlegung.svg|Ein Wirbel mit Quelle zerfällt in einen wirbelfreien Anteil V_L (radial, Gradientenfeld) und einen quellenfreien Anteil V_T (Zirkulation). Beide sind hier exakt berechnet.]]
+
 Explizite Projektoren:
 
 $$

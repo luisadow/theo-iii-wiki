@@ -39,6 +39,8 @@ $$
 
 wobei $P_\ell$ Legendre-Polynome und $\gamma$ der Winkel zwischen $\mathbf{r}$ und $\mathbf{r}'$ ist.
 
+![[multipol-geometrie.svg|Geometrie der Entwicklung: Die Ladung sitzt innerhalb einer Kugel vom Radius R, der Aufpunkt r liegt weit außerhalb. Entwickelt wird in r′/r, der Winkel γ steckt in den Legendre-Polynomen.]]
+
 ---
 
 ## 3. Multipolmomente
@@ -62,6 +64,8 @@ $$
 \phi_1(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \frac{\mathbf{p} \cdot \hat{\mathbf{r}}}{r^2}, \qquad
 \mathbf{E}_1(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \left[\frac{3(\mathbf{p} \cdot \hat{\mathbf{r}})\hat{\mathbf{r}} - \mathbf{p}}{r^3}\right].
 $$
+
+![[dipol-feld.svg|Feldlinien des Punktdipols p = p ẑ, exakt aus r = C·sin²θ. Das eingezeichnete E folgt aus E₁ ∝ 3(p·r̂)r̂ − p und liegt tangential zur Feldlinie.]]
 
 ### 3.3 Quadrupolmoment (trazefrei)
 

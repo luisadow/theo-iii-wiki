@@ -1,0 +1,7 @@
+% Icon 06 Elektrodynamik: Welle mit Ausbreitungsrichtung
+\input{icon-head}
+\begin{document}\begin{tikzpicture}\iconbox
+  \draw[mu, line width=1pt] (-0.95,0) -- (0.95,0);
+  \draw[domain=-0.95:0.6, samples=80] plot (\x,{0.55*sin(360*(\x+0.95)/1.05)});
+  \draw[acc, ->] (0.3,-0.72) -- (0.95,-0.72);
+\end{tikzpicture}\end{document}

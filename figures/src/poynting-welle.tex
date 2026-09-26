@@ -1,0 +1,32 @@
+% Ebene Welle: E (x), B (y), S = E x B / mu0 in Ausbreitungsrichtung z
+\input{style}
+\begin{document}
+% Projektion: z nach rechts, x nach oben, y aus der Ebene (schräg nach vorn-unten).
+% Rechtshändig: x (oben) × y (vorn) = z (rechts).
+\begin{tikzpicture}[x={(0,1cm)}, y={(-0.55cm,-0.4cm)}, z={(1cm,0)}]
+  \def\L{6.4} \def\lam{3.2} \def\A{1.15}
+  \draw[axis] (0,0,0) -- (0,0,\L+1.9) node[anchor=west, text=fg] {$z$};
+  \draw[axis] (0,0,0) -- (1.6,0,0) node[anchor=south, text=fg] {$x$};
+  \draw[axis] (0,0,0) -- (0,1.6,0) node[anchor=north east, text=fg] {$y$};
+  % B in der yz-Ebene (hinten zuerst zeichnen)
+  \foreach \k in {1,...,32} {
+    \pgfmathsetmacro{\zz}{\k*\L/32}
+    \draw[blue, thin, opacity=0.8] (0,0,\zz) -- (0,{\A*0.8*sin(360*\zz/\lam)},\zz);
+  }
+  \draw[blue, main, domain=0:\L, samples=120, variable=\t] plot (0,{\A*0.8*sin(360*\t/\lam)},\t);
+  % E in der xz-Ebene
+  \foreach \k in {1,...,32} {
+    \pgfmathsetmacro{\zz}{\k*\L/32}
+    \draw[fg, thin] (0,0,\zz) -- ({\A*sin(360*\zz/\lam)},0,\zz);
+  }
+  \draw[fg, main, domain=0:\L, samples=120, variable=\t] plot ({\A*sin(360*\t/\lam)},0,\t);
+  % Beschriftung am ersten Maximum z = lambda/4
+  \node[anchor=south] at (\A,0,\lam/4) {$\vv E$};
+  \node[blue, anchor=north east] at (0,\A*0.8,\lam/4) {$\vv B$};
+  % Poynting-Vektor
+  \draw[vec, acc, line width=2pt] (0,0,\L+0.2) -- (0,0,\L+1.6);
+  \node[acc, anchor=south] at (0.3,0,\L+0.95) {$\vv S=\tfrac{1}{\mu_0}\vv E\times\vv B$};
+  % Wellenlänge
+  \draw[aux, |-|] (-\A-0.25,0,\lam/4) -- node[lbl, text=mu, font=\footnotesize] {$\lambda$} (-\A-0.25,0,\lam/4+\lam);
+\end{tikzpicture}
+\end{document}

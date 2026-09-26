@@ -3,6 +3,8 @@ title: "Felder in Materie"
 description: "Elektrische und magnetische Felder in Materie: Polarisation, Magnetisierung, D- und H-Feld, gebundene Ladungen, Randbedingungen und Entelektrisierung."
 ---
 
+![[icon-materie.svg]]
+
 In Materie reagieren Atome und Moleküle auf äußere Felder: Sie werden polarisiert oder magnetisiert und erzeugen dadurch selbst Felder. Statt alle mikroskopischen Ladungen zu verfolgen, beschreibt man diese Antwort makroskopisch durch die Polarisation $\mathbf P$ und die Magnetisierung $\mathbf M$.
 
 **Kernidee:** Man trennt freie von gebundenen Quellen. Die Hilfsfelder $\mathbf D$ und $\mathbf H$ haben nur freie Ladungen bzw. Ströme als Quellen,

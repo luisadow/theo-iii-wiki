@@ -33,6 +33,8 @@ $$
 
 Vorzeichen (Lenz): induzierte $\mathbf{E}$ wirkt Flussänderung entgegen.
 
+![[faraday-induktion.svg|Nimmt der Fluss durch A zu, läuft das induzierte E entgegen der zu dA passenden Umlaufrichtung. Ein Strom in dieser Richtung erzeugt ein Gegenfeld B_ind (Lenzsche Regel).]]
+
 ---
 
 ## 2. Bewegte Leiter (motional emf)

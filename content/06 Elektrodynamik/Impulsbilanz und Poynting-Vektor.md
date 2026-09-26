@@ -28,6 +28,8 @@ $$
 
 Poynting-Theorem: $\partial_t u + \nabla \cdot \mathbf{S} = -\mathbf{J}\cdot\mathbf{E}$.
 
+![[poynting-welle.svg|Linear polarisierte ebene Welle: E schwingt in x-, B in y-Richtung, beide in Phase. Der Poynting-Vektor S = E × B / μ₀ zeigt in Ausbreitungsrichtung z.]]
+
 ---
 
 ## 2. Impulsdichte und Kraftdichte

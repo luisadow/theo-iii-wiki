@@ -1,0 +1,12 @@
+% Icon 01 Grundlagen: Koordinatensystem mit Volumenelement
+\input{icon-head}
+\begin{document}\begin{tikzpicture}\iconbox
+  \draw[->] (-0.75,-0.65) -- (-0.75,0.9);
+  \draw[->] (-0.75,-0.65) -- (0.95,-0.65);
+  \draw[->] (-0.75,-0.65) -- (-0.1,-0.05);
+  \begin{scope}[acc]
+    \fill[acc, fill opacity=0.25] (0.05,-0.2) -- (0.55,-0.2) -- (0.55,0.3) -- (0.05,0.3) -- cycle;
+    \draw (0.05,-0.2) rectangle (0.55,0.3);
+    \draw (0.05,0.3) -- (0.3,0.52) -- (0.8,0.52) -- (0.55,0.3) (0.8,0.52) -- (0.8,0.02) -- (0.55,-0.2);
+  \end{scope}
+\end{tikzpicture}\end{document}

@@ -75,6 +75,8 @@ $$
 \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0},\quad \oint_{\partial V} \mathbf{E}\cdot d\mathbf{A} = \frac{Q_\text{in}}{\varepsilon_0}
 $$
 
+![[gauss-flaeche.svg|Gesamtfeld der vier Ladungen (numerisch berechnete Feldlinien). Zum Fluss durch ∂V trägt nur Q_in bei. Das Feld von q₄ allein würde ∂V genauso oft durchsetzen, wie es sie wieder verlässt.]]
+
 ### Symmetrie-Check (Faustregel vor jedem Gauß-Integral)
 
 - **Bestimme die Isotropie:** Kugel (Punktladung), Zylinder (Linienladung), Ebene (Flächenladung).

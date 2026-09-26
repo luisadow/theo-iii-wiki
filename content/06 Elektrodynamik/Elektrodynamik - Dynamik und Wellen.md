@@ -76,6 +76,8 @@ $$
 \mathbf{B} = \frac{1}{\omega} \mathbf{k} \times \mathbf{E}, \quad \mathbf{k} \cdot \mathbf{E} = 0.
 $$
 
+![[poynting-welle.svg|Linear polarisierte ebene Welle: E schwingt in x-, B in y-Richtung, beide in Phase. Der Poynting-Vektor S = E × B / μ₀ zeigt in Ausbreitungsrichtung z.]]
+
 **Polarisation**: linear, zirkular, elliptisch; Jones-Vektoren; Stokes-Parameter optional.
 
 ---

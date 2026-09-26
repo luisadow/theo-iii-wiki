@@ -3,6 +3,8 @@ title: "Grundlagen"
 description: "Vektoranalysis für die Elektrodynamik: Gradient, Divergenz, Rotation, Integralsätze und Flächenelemente – das Werkzeug für alle weiteren Themen."
 ---
 
+![[icon-grundlagen.svg]]
+
 Die Elektrodynamik ist in der Sprache der Vektoranalysis geschrieben: Die Maxwell-Gleichungen sind Aussagen über Divergenz und Rotation von Feldern, und die Integralsätze von Gauß und Stokes übersetzen sie in die anschauliche Integralform.
 
 **Kernidee:** Die Divergenz misst Quellen, die Rotation misst Wirbel eines Feldes. Gauß und Stokes verbinden das, was im Inneren passiert, mit dem, was über den Rand fließt:

@@ -1,0 +1,31 @@
+% Feld eines Punktdipols p = p e_z: Feldlinien r = C sin^2(theta), exakt
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  \begin{scope}
+    % z-Achse als Grenzfall C -> unendlich
+    \draw[field=0.7] (0,0.3) -- (0,2.5);
+    \draw[field=0.3] (0,-2.5) -- (0,-0.3);
+    \input{data/dipol-feld}
+  \end{scope}
+  % Dipolmoment
+  \fill[bg] (0,0) circle (0.28);
+  \draw[vec, acc, line width=1.6pt] (0,-0.26) -- (0,0.3);
+  \node[acc, anchor=east] at (-0.12,0.05) {$\vv p$};
+  % Punkt P auf der Linie C = 5.4 bei theta = 38 Grad
+  \pgfmathsetmacro{\th}{38}
+  \pgfmathsetmacro{\r}{5.4*sin(\th)^2}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at ({\r*sin(\th)},{\r*cos(\th)});
+  \draw[aux] (O) -- (P);
+  \path (O) -- (P) node[pos=0.62, lbl, text=mu, font=\footnotesize, inner sep=1pt] {$r$};
+  \coordinate (Z) at (0,1);
+  \pic[draw, mu, thin, angle radius=0.95cm, "$\theta$"{font=\footnotesize, text=mu, fill=bg, inner sep=1pt}, angle eccentricity=1.3] {angle = P--O--Z};
+  % E in P: E ~ (3 sin cos, 3 cos^2 - 1)
+  \pgfmathsetmacro{\ex}{3*sin(\th)*cos(\th)}
+  \pgfmathsetmacro{\ez}{3*cos(\th)^2-1}
+  \pgfmathsetmacro{\n}{sqrt(\ex*\ex+\ez*\ez)}
+  \draw[vec] (P) -- ++({0.95*\ex/\n},{0.95*\ez/\n}) node[anchor=south west, inner sep=1pt] {$\vv E$};
+  \node[dot] at (P) {};
+\end{tikzpicture}
+\end{document}

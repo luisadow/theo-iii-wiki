@@ -33,6 +33,8 @@ Diese Notiz bündelt alle Aspekte zu polarisierbaren Medien in der Elektrostatik
 - **Volumenladungsdichte:** $\rho_b = -\nabla \cdot \mathbf{P}$.
 - **Oberflächenladungsdichte:** $\sigma_b = \mathbf{P} \cdot \mathbf{n}$.
 
+![[dielektrikum-polarisation.svg|Dielektrikum im Plattenkondensator: Die Dipole richten sich parallel zu E aus. Innen heben sich die Ladungen auf, an den Oberflächen bleibt σ_b = P·n übrig. Dieses Gegenfeld schwächt E im Inneren auf E₀/ε_r.]]
+
 Damit lässt sich jede dielektrische Reaktion auf externe Felder auf Quellenebene formulieren.
 
 ---

@@ -13,6 +13,14 @@
   --card-bg: color-mix(in srgb, var(--lightgray) 22%, var(--light));
   --card-border: color-mix(in srgb, var(--gray) 35%, transparent);
   --radius: 12px;
+  // Zusatzfarben der Abbildungen (figures/style.tex: blue, warm)
+  --fig-blue: #2563a8;
+  --fig-warm: #b8432b;
+}
+
+:root[saved-theme="dark"] {
+  --fig-blue: #7aa7ff;
+  --fig-warm: #ff8f6b;
 }
 
 body {
@@ -96,6 +104,42 @@ a.external {
 
 .katex-display {
   padding: 0.35rem 0;
+}
+
+// --- Abbildungen (figures/, eingebettet von InlineFigures) --------------------
+
+figure.fig {
+  margin: 1.8rem 0;
+  text-align: center;
+
+  svg.tikzfig {
+    max-width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--darkgray);
+  }
+}
+
+.fig-icon {
+  display: block;
+  width: 72px;
+
+  svg.tikzfig {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// Ordnerseiten: Kapitel-Icon rechts neben der Einleitung
+article > p:has(> .fig-icon:only-child) {
+  float: right;
+  margin: 0.2rem 0 0.6rem 1.4rem;
 }
 
 // --- Tabellen ----------------------------------------------------------------
@@ -265,6 +309,7 @@ a.btn {
 }
 
 a.topic-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -286,6 +331,18 @@ a.topic-card {
     border-color: var(--secondary);
     box-shadow: 0 8px 24px -12px var(--accent-line);
     color: var(--darkgray);
+  }
+
+  .fig-icon {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.7rem;
+    width: 30px;
+    opacity: 0.9;
+    transition: opacity 0.15s ease;
+  }
+  &:hover .fig-icon {
+    opacity: 1;
   }
 
   .topic-num {
@@ -509,6 +566,14 @@ article ul.contains-task-list {
   }
   a.topic-card .topic-desc {
     display: none;
+  }
+  a.topic-card .fig-icon {
+    top: 0.45rem;
+    right: 0.5rem;
+    width: 26px;
+  }
+  article > p:has(> .fig-icon:only-child) .fig-icon {
+    width: 56px;
   }
   .article-title {
     font-size: 1.7rem;

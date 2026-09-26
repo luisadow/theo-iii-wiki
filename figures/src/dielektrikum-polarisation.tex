@@ -1,0 +1,40 @@
+% Dielektrikum im Plattenkondensator: ausgerichtete Dipole, gebundene Flächenladungen, geschwächtes Feld
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  \def\W{5.6}
+  % Platten mit freien Ladungen
+  \draw[warm, line width=2.4pt] (0,2.6) -- (\W,2.6);
+  \draw[blue, line width=2.4pt] (0,0) -- (\W,0);
+  \foreach \x in {0.35,0.85,...,5.4} {
+    \node[warm, font=\footnotesize] at (\x,2.85) {$+$};
+    \node[blue, font=\footnotesize] at (\x,-0.25) {$-$};
+  }
+  \node[warm, anchor=west] at (\W+0.15,2.6) {$+\sigma_f$};
+  \node[blue, anchor=west] at (\W+0.15,0) {$-\sigma_f$};
+  % Dielektrikum
+  \fill[mu, fill opacity=0.1] (0,0.55) rectangle (\W,2.05);
+  \draw[mu, thin] (0,0.55) rectangle (\W,2.05);
+  % Dipole (p parallel zu E, also nach unten): oben negativ, unten positiv
+  \foreach \x in {2.5,3.35,4.2,5.05} \foreach \y in {1.04,1.56} {
+    \draw[acc, thin] (\x,\y) ellipse (0.12 and 0.22);
+    \draw[acc, ->, line width=0.9pt] (\x,\y+0.15) -- (\x,\y-0.17);
+  }
+  % gebundene Flächenladungen sigma_b = P.n
+  \foreach \x in {0.25,0.65,...,5.45} {
+    \node[blue, font=\scriptsize] at (\x,1.93) {$-$};
+    \node[warm, font=\scriptsize] at (\x,0.67) {$+$};
+  }
+  % Felder: im Spalt E_0, im Dielektrikum schwächer
+  \draw[vec] (0.45,2.5) -- (0.45,2.1);
+  \draw[vec] (0.45,0.5) -- (0.45,0.1);
+  \node[anchor=west, font=\footnotesize] at (0.5,2.32) {$\vv E_0$};
+  \node[anchor=west, font=\footnotesize] at (0.5,0.32) {$\vv E_0$};
+  \draw[vec, line width=0.8pt] (0.45,1.5) -- (0.45,1.1);
+  \node[anchor=west, font=\footnotesize] at (0.5,1.3) {$\vv E=\vv E_0/\varepsilon_r$};
+  % Beschriftung
+  \node[acc, anchor=west] at (\W+0.15,1.3) {$\vv P$};
+  \node[blue, anchor=west, font=\footnotesize] at (\W+0.15,1.93) {$\sigma_b=-P$};
+  \node[warm, anchor=west, font=\footnotesize] at (\W+0.15,0.67) {$\sigma_b=+P$};
+\end{tikzpicture}
+\end{document}

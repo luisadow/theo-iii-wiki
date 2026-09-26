@@ -3,6 +3,8 @@ title: "Spezielle Relativität"
 description: "Spezielle Relativitätstheorie für die Elektrodynamik: Relativitätsprinzip, Lorentz-Transformation, Zeitdilatation, Minkowski-Raum und Vierervektoren."
 ---
 
+![[icon-relativitaet.svg]]
+
 Die Maxwell-Gleichungen sagen eine feste Lichtgeschwindigkeit voraus – unabhängig davon, wie schnell sich Beobachter bewegen. Das ist mit der Galilei-Transformation der klassischen Mechanik unvereinbar und führt auf die spezielle Relativitätstheorie.
 
 **Kernidee:** Zwischen Inertialsystemen gilt die Lorentz-Transformation, unter der das Raumzeit-Intervall

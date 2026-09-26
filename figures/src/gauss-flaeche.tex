@@ -1,0 +1,28 @@
+% Gaußsches Gesetz: nur die eingeschlossene Ladung zählt
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  % Feldlinien (gen/gauss-flaeche.py) und exakte Feldrichtung \EangP im Punkt P
+  \input{data/gauss-flaeche}
+  % geschlossene Fläche S; bei P ist die Tangente senkrecht, die Normale waagerecht
+  \draw[acc, main] plot[smooth cycle, tension=0.75] coordinates
+    {(-2.4,0.1) (-1.6,1.3) (0,1.6) (1.6,1.2) (2.4,0) (1.6,-1.2) (0,-1.55) (-1.6,-1.25)};
+  \node[acc] at (-2.25,1.3) {$\partial V$};
+  % Ladungen innen
+  \node[qpos, label={[font=\small, lbl, inner sep=1pt]right:$q_1$}] at (0.9,-0.6) {};
+  \node[qneg, label={[font=\small, lbl, inner sep=1pt]right:$q_2$}] at (-1.2,0.1) {};
+  \node[qpos, label={[font=\small, lbl, inner sep=1pt]right:$q_3$}] at (-0.3,0.85) {};
+  \node[lbl] at (-0.2,-1.02) {$Q_{\text{in}}=q_1+q_2+q_3$};
+  % Ladung außen
+  \node[qpos, label={[font=\small, lbl, inner sep=1pt]right:$q_4$}] at (4.2,-1.9) {};
+  \node[mu, font=\footnotesize, anchor=north east] at (5.2,-2.7) {$q_4$ liegt außen: Nettofluss durch $\partial V$ ist null};
+  % Flächenelement bei P
+  \coordinate (P) at (2.4,0);
+  \draw[acc, line width=2.6pt, line cap=butt] ($(P)+(0,-0.3)$) -- ($(P)+(0,0.3)$);
+  \draw[vec, acc] (P) -- ++(1.15,0) node[right] {$d\vv A=\hat{\vv n}\,dA$};
+  \draw[vec] (P) -- ++(\EangP:1.25) node[above right=-1pt] {$\vv E$};
+  \path (P) ++(1,0) coordinate (A) (P) ++(\EangP:1) coordinate (B);
+  \pic[draw, mu, thin, angle radius=0.55cm, "$\theta$"{font=\footnotesize, mu}, angle eccentricity=1.35]
+    {angle = A--P--B};
+\end{tikzpicture}
+\end{document}

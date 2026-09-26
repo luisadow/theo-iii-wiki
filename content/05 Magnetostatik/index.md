@@ -3,6 +3,8 @@ title: "Magnetostatik"
 description: "Magnetostatik: Biot-Savart, Ampèresches Gesetz, Vektorpotential, magnetische Energie und Induktivität stationärer Ströme."
 ---
 
+![[icon-magnetostatik.svg]]
+
 Die Magnetostatik beschreibt die Magnetfelder stationärer Ströme. Sie ist das Gegenstück zur Elektrostatik – mit dem Unterschied, dass das Magnetfeld keine Quellen, sondern nur Wirbel hat.
 
 **Kernidee:**

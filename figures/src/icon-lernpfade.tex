@@ -1,0 +1,9 @@
+% Icon Lernpfade: Weg mit Stationen und Ziel
+\input{icon-head}
+\begin{document}\begin{tikzpicture}\iconbox
+  \draw[mu, line width=1pt, dash pattern=on 3pt off 2.5pt] (-0.75,-0.75) to[out=0, in=-90] (0.1,-0.1) to[out=90, in=180] (0.65,0.6);
+  \fill[fg] (-0.75,-0.75) circle (0.13);
+  \fill[fg] (0.1,-0.1) circle (0.13);
+  \draw[acc] (0.65,0.25) -- (0.65,0.95);
+  \fill[acc] (0.65,0.95) -- (0.98,0.83) -- (0.65,0.7) -- cycle;
+\end{tikzpicture}\end{document}

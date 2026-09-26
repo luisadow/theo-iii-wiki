@@ -31,6 +31,8 @@ Die Spiegelmethode ersetzt leitende Randflächen durch äquivalente Bildladungen
 
 4. **Physikalische Größen ableiten:** Kräfte, Energien und Oberflächenladungsdichten folgen aus den so bestimmten Feldern.
 
+![[spiegelmethode.svg|Links: Ladung +Q vor einer geerdeten Ebene. Die Feldlinien enden senkrecht auf dem Leiter, dort sitzt die influenzierte Ladung σ(x). Rechts: Das Paar +Q/−Q ohne Leiter erzeugt im oberen Halbraum exakt dasselbe Feld (numerisch berechnete Feldlinien).]]
+
 ---
 
 ## 2. Standardkonfigurationen

@@ -3,6 +3,8 @@ title: "Elektrodynamik"
 description: "Elektrodynamik: Induktion, vollständige Maxwell-Gleichungen, Potentiale und Eichungen, Poynting-Vektor, elektromagnetische Wellen und Strahlung."
 ---
 
+![[icon-elektrodynamik.svg]]
+
 Werden die Felder zeitabhängig, koppeln Elektrizität und Magnetismus: Ein sich änderndes Magnetfeld erzeugt ein elektrisches Wirbelfeld (Induktion), ein sich änderndes elektrisches Feld wirkt wie ein Strom (Verschiebungsstrom). Aus dieser Kopplung folgen elektromagnetische Wellen, die sich mit Lichtgeschwindigkeit ausbreiten.
 
 **Kernidee:** Die vollständigen Maxwell-Gleichungen,

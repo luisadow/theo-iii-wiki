@@ -19,6 +19,8 @@ $$
 E_r(r)=\frac{Q}{4\pi \varepsilon r^2}, \quad R_1<r<R_2.
 $$
 
+![[kugelkondensator.svg|Das Feld zeigt radial von der inneren Kugel (+Q) zur äußeren Schale (−Q). Die Gauß-Kugel mit Radius r schließt nur +Q ein, deshalb fällt E_r zwischen R₁ und R₂ wie 1/r² ab und ist außerhalb null.]]
+
 ### Potential
 $$
 \phi(r)-\phi(R_2) = -\int_{R_2}^r E_r(r')\,dr' = -\frac{Q}{4\pi\varepsilon}\int_{R_2}^r \frac{dr'}{r'^2}

@@ -26,6 +26,8 @@ $$
 
 Kontravariant vs. kovariant: $x_\mu = \eta_{\mu\nu} x^\nu$.
 
+![[minkowski-diagramm.svg|Minkowski-Diagramm für β = 0,5: Die Achsen von S′ kippen symmetrisch zum Lichtkegel. Ihre Einheiten liegen auf den Hyperbeln s² = ±1. A und B liegen auf einer Parallelen zur x′-Achse: gleichzeitig in S′, nicht in S.]]
+
 ---
 
 ## 2. Lorentz-Transformation (allgemein)

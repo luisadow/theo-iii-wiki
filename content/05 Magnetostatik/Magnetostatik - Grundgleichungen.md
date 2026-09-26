@@ -37,6 +37,8 @@ $$
 \mathbf{B}(\mathbf{r}) = \frac{\mu_0 I}{4\pi} \int_{\mathcal{L}} \frac{d\mathbf{\ell}' \times (\mathbf{r} - \mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|^3}
 $$
 
+![[biot-savart.svg|Beitrag eines Leiterelements dℓ′ am Ort r′: dB steht senkrecht auf dℓ′ und auf r − r′. Hier zeigt es in die Zeichenebene hinein (Rechte-Hand-Regel).]]
+
 ---
 
 ## 3. Grundgleichungen (Differentialform)

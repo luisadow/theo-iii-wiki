@@ -3,6 +3,8 @@ title: "Lernpfade"
 description: "Fünf Lernpfade durch die Elektrodynamik: jeweils Schritte in sinnvoller Reihenfolge, Selbsttest zum Abhaken und typische Fehler."
 ---
 
+![[icon-lernpfade.svg]]
+
 Die Lernpfade führen in fester Reihenfolge durch die Themen – vom ersten Gaußschen Gesetz bis zur kovarianten Formulierung. Jeder Pfad hat **Schritte**, einen **Selbsttest** zum Abhaken (bleibt in deinem Browser gespeichert) und eine Liste **häufiger Fehler**.
 
 <div class="path-list">

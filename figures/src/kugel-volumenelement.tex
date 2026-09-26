@@ -1,0 +1,48 @@
+% Volumenelement in Kugelkoordinaten: Kantenlängen dr, r dtheta, r sin(theta) dphi
+\input{style}
+\begin{document}
+% Projektion: x nach vorn-links, y nach rechts, z nach oben. Blickrichtung und (theta, phi)
+% so gewählt, dass r-, theta- und phi-Kanten auf dem Bildschirm >= 55 Grad auseinanderliegen.
+\begin{tikzpicture}[declare function={sx(\R,\T,\P)=\R*sin(\T)*cos(\P); sy(\R,\T,\P)=\R*sin(\T)*sin(\P); sz(\R,\T)=\R*cos(\T);},
+  x={(-0.47cm,-0.17cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}]
+  \def\r{2.5} \def\dr{0.75}
+  \def\th{40} \def\dth{16}
+  \def\ph{55} \def\dph{25}
+  % Punkt in Kugelkoordinaten
+  \newcommand{\sph}[3]{({(#1)*sin(#2)*cos(#3)},{(#1)*sin(#2)*sin(#3)},{(#1)*cos(#2)})}
+  % Achsen
+  \draw[axis] (0,0,0) -- (3.2,0,0) node[anchor=north east, text=fg] {$x$};
+  \draw[axis] (0,0,0) -- (0,3.4,0) node[anchor=west, text=fg] {$y$};
+  \draw[axis] (0,0,0) -- (0,0,3.3) node[anchor=south, text=fg] {$z$};
+  % Hilfslinien: Radiusvektor, Projektion in die xy-Ebene
+  \draw[thin] (0,0,0) -- \sph{\r}{\th}{\ph};
+  \draw[aux] (0,0,0) -- \sph{\r}{90}{\ph} -- \sph{\r}{\th}{\ph};
+  % Winkel theta (in der Ebene phi = const) und phi (in der xy-Ebene)
+  \draw[mu, thin, domain=0:\th, samples=30, variable=\t] plot ({sx(1.15,\t,\ph)},{sy(1.15,\t,\ph)},{sz(1.15,\t)});
+  \node[text=mu, font=\footnotesize] at \sph{1.42}{\th/2}{\ph} {$\theta$};
+  \draw[mu, thin, domain=0:\ph, samples=30, variable=\t] plot ({sx(1.1,90,\t)},{sy(1.1,90,\t)},{sz(1.1,90)});
+  \node[text=mu, font=\footnotesize] at \sph{1.4}{90}{\ph/2} {$\phi$};
+  % Volumenelement: Außenfläche (r+dr) getönt
+  \fill[acc, fill opacity=0.22]
+    plot[domain=\th:\th+\dth, samples=12, variable=\t] ({sx(\r+\dr,\t,\ph)},{sy(\r+\dr,\t,\ph)},{sz(\r+\dr,\t)})
+    -- plot[domain=\ph:\ph+\dph, samples=12, variable=\t] ({sx(\r+\dr,\th+\dth,\t)},{sy(\r+\dr,\th+\dth,\t)},{sz(\r+\dr,\th+\dth)})
+    -- plot[domain=\th+\dth:\th, samples=12, variable=\t] ({sx(\r+\dr,\t,\ph+\dph)},{sy(\r+\dr,\t,\ph+\dph)},{sz(\r+\dr,\t)})
+    -- plot[domain=\ph+\dph:\ph, samples=12, variable=\t] ({sx(\r+\dr,\th,\t)},{sy(\r+\dr,\th,\t)},{sz(\r+\dr,\th)}) -- cycle;
+  \begin{scope}[acc, line width=1pt]
+    \foreach \R in {\r,\r+\dr} {
+      \draw plot[domain=\th:\th+\dth, samples=12, variable=\t] ({sx(\R,\t,\ph)},{sy(\R,\t,\ph)},{sz(\R,\t)});
+      \draw plot[domain=\th:\th+\dth, samples=12, variable=\t] ({sx(\R,\t,\ph+\dph)},{sy(\R,\t,\ph+\dph)},{sz(\R,\t)});
+      \draw plot[domain=\ph:\ph+\dph, samples=12, variable=\t] ({sx(\R,\th,\t)},{sy(\R,\th,\t)},{sz(\R,\th)});
+      \draw plot[domain=\ph:\ph+\dph, samples=12, variable=\t] ({sx(\R,\th+\dth,\t)},{sy(\R,\th+\dth,\t)},{sz(\R,\th+\dth)});
+    }
+    \foreach \T/\P in {\th/\ph, \th+\dth/\ph, \th/\ph+\dph, \th+\dth/\ph+\dph}
+      \draw \sph{\r}{\T}{\P} -- \sph{\r+\dr}{\T}{\P};
+  \end{scope}
+  % Kantenbeschriftung (Kanten an der vorderen rechten Ecke theta+dtheta, phi+dphi)
+  \node[anchor=north west, font=\footnotesize] at \sph{\r+\dr/2}{\th+\dth}{\ph+\dph} {$dr$};
+  \node[anchor=west, font=\footnotesize] at \sph{\r+\dr}{\th+\dth/2}{\ph+\dph} {$r\,d\theta$};
+  \node[anchor=north, font=\footnotesize] at \sph{\r}{\th+\dth}{\ph+\dph/2} {$r\sin\theta\,d\phi$};
+  \path \sph{\r+\dr}{\th}{\ph+\dph} coordinate (T);
+  \node[anchor=south west] at ($(T)+(0,0.35,0.05)$) {$dV=r^2\sin\theta\,dr\,d\theta\,d\phi$};
+\end{tikzpicture}
+\end{document}

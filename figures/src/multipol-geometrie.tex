@@ -1,0 +1,25 @@
+% Geometrie der Multipolentwicklung: Quellpunkt r', Aufpunkt r, Winkel gamma
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  \coordinate (O) at (0,0);
+  % kompakte Ladungsverteilung
+  \draw[acc, main, soft] plot[smooth cycle, tension=0.8] coordinates
+    {(-1.0,-0.2) (-0.6,0.75) (0.3,0.95) (1.0,0.45) (0.85,-0.55) (0.0,-0.9) (-0.75,-0.75)};
+  \node[acc, anchor=east] at (-1.2,0.95) {$\rho(\vv r')$};
+  \draw[aux] (O) circle (1.25);
+  \node[mu, font=\footnotesize, anchor=north] at (0,-1.28) {$r'<R$};
+  \coordinate (Q) at (-0.35,0.6);
+  \coordinate (P) at (4.6,1.9);
+  \node[dot] at (O) {};
+  \node[mu, font=\footnotesize, anchor=north east] at (O) {$O$};
+  \draw[vec] (O) -- (Q) node[pos=0.5, anchor=north east, inner sep=1pt] {$\vv r'$};
+  \draw[vec] (O) -- (P) node[pos=0.6, anchor=north west] {$\vv r$};
+  \draw[vec, acc] (Q) -- (P) node[pos=0.5, anchor=south east] {$\vv r-\vv r'$};
+  \node[dot] at (Q) {};
+  \node[dot] at (P) {};
+  \node[anchor=west] at (P) {Aufpunkt};
+  \pic[draw, mu, thin, angle radius=0.45cm, "$\gamma$"{font=\footnotesize, text=mu}, angle eccentricity=1.35] {angle = P--O--Q};
+  \node[mu, font=\footnotesize, align=left, anchor=west] at (2.4,-0.4) {für $r>R$: Entwicklung\\in Potenzen von $r'/r$};
+\end{tikzpicture}
+\end{document}

@@ -55,6 +55,8 @@ $$
 - Kugel:  
   $$dV = r^2\sin\theta\,dr\,d\theta\,d\phi$$
 
+![[kugel-volumenelement.svg|Volumenelement in Kugelkoordinaten: Die Kanten dr, r dθ und r sinθ dφ stehen senkrecht aufeinander. Ihr Produkt ergibt dV = r² sinθ dr dθ dφ.]]
+
 **Schnelltest:** In Zylinderkoordinaten kommt immer ein Faktor $\rho$ vor, in Kugelkoordinaten $r^2\sin\theta$.
 
 ## 4) Beispiel: eingeschlossener Strom in einem Draht

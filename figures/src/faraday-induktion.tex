@@ -1,0 +1,28 @@
+% Faraday/Lenz: zunehmender Fluss durch A induziert E entgegen der Orientierung von \partial A
+\input{style}
+\begin{document}
+\begin{tikzpicture}[yscale=1]
+  \def\R{1.8} \def\h{0.55} % Ellipse: Halbachsen R (x) und h (Tiefe)
+  % B-Feldlinien (hinter der Fläche beginnen)
+  \foreach \x/\y in {-1.0/0.1, -0.35/-0.2, 0.35/0.2, 1.0/-0.1, 0/0.3, -0.6/0.28, 0.6/-0.3} {
+    \draw[blue, line width=0.8pt, ->] (\x,\y-1.5) -- (\x,\y+1.9);
+  }
+  % Fläche A mit Rand; Rückseite zuerst
+  \fill[acc, fill opacity=0.12] (0,0) ellipse ({\R} and {\h});
+  % Blick von vorn-oben: vorderer Rand = unten im Bild. Positive Orientierung zu dA (nach oben)
+  % ist von oben gesehen gegen den Uhrzeigersinn, vorne also nach rechts. Lenz: E_ind läuft
+  % umgekehrt, also Bogen im Uhrzeigersinn (360 -> 0): vorne nach links, hinten nach rechts.
+  \draw[main, postaction={decorate}, decoration={markings,
+      mark=at position 0.25 with {\arrow{Stealth[length=6pt,width=5pt]}},
+      mark=at position 0.75 with {\arrow{Stealth[length=6pt,width=5pt]}}}]
+    (\R,0) arc[start angle=360, end angle=0, x radius=\R, y radius=\h];
+  % Normale dA
+  \draw[vec, acc, line width=1.4pt] (1.35,-0.15) -- ++(0,1.0) node[anchor=west] {$d\vv A$};
+  % induziertes Gegenfeld
+  \draw[blue, line width=1.2pt, dash pattern=on 3pt off 2pt, ->] (-1.4,0.75) -- (-1.4,-0.55);
+  \node[blue, anchor=east, font=\footnotesize] at (-1.9,0.55) {$\vv B_{\text{ind}}$};
+  \node[blue, anchor=west] at (1.2,1.7) {$\vv B$, \ $\partial_t B>0$};
+  \node[anchor=north west] at (0.9,-0.55) {$\vv E_{\text{ind}}$};
+  \node[acc] at (-0.55,-0.05) {$A$};
+\end{tikzpicture}
+\end{document}

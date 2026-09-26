@@ -3,6 +3,8 @@ title: "Elektrostatik"
 description: "Elektrostatik: Coulomb-Gesetz, Gaußsches Gesetz, Potential, Poisson-Gleichung, Feldenergie, Kapazität und Maxwell-Spannungstensor."
 ---
 
+![[icon-elektrostatik.svg]]
+
 Die Elektrostatik beschreibt ruhende Ladungen und ihre zeitunabhängigen Felder. Weil sich nichts bewegt, ist das elektrische Feld wirbelfrei und lässt sich aus einem skalaren Potential ableiten – das macht die meisten Rechnungen deutlich einfacher.
 
 **Kernidee:** Alles folgt aus zwei Gleichungen,

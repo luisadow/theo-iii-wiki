@@ -1,0 +1,41 @@
+% Spiegelmethode: Ladung vor geerdeter Ebene == Ladungspaar +Q/-Q (für y > 0)
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  \def\a{1.1}
+  % ---------- links: reale Anordnung ----------
+  \begin{scope}
+    \input{data/spiegelmethode-real}
+    % geerdete Ebene
+    \draw[main] (-2.3,0) -- (2.3,0);
+    % influenzierte Flächenladung sigma(x) ~ -a/(x^2+a^2)^{3/2}
+    \fill[blue, fill opacity=0.35, domain=-2.3:2.3, samples=80]
+      plot (\x, {-0.75*\a^3/((\x)^2+\a^2)^1.5}) -- (2.3,0) -- (-2.3,0) -- cycle;
+    \draw[blue, thin, domain=-2.3:2.3, samples=80] plot (\x, {-0.75*\a^3/((\x)^2+\a^2)^1.5});
+  \end{scope}
+  \draw[main] (2.0,0) -- (2.0,-0.35) (1.8,-0.35) -- (2.2,-0.35);
+  \draw[thin] (1.87,-0.43) -- (2.13,-0.43) (1.94,-0.51) -- (2.06,-0.51);
+  \node[qpos] (Q) at (0,\a) {};
+  \node[lbl, anchor=west] at (0.2,\a+0.22) {$+Q$};
+  \draw[aux, |-|] (-1.95,0) -- node[lbl, font=\footnotesize, text=mu] {$a$} (-1.95,\a);
+  \node[blue, font=\footnotesize, anchor=north] at (0.9,-0.72) {$\sigma(x)<0$};
+  \node[mu, font=\footnotesize, anchor=west] at (2.22,-0.4) {$\phi=0$};
+  \node[font=\small, anchor=south] at (0,2.65) {Leiter (geerdet)};
+
+  % ---------- Äquivalenz ----------
+  \node[acc, font=\Large] at (3.05,0.65) {$\Leftrightarrow$};
+  \node[acc, font=\footnotesize, align=center] at (3.05,0.05) {gleich\\für $y>0$};
+
+  % ---------- rechts: Ersatzanordnung ----------
+  \begin{scope}[xshift=6.1cm]
+    \input{data/spiegelmethode-bild}
+    \draw[aux] (-2.3,0) -- (2.3,0);
+    \node[qpos] at (0,\a) {};
+    \node[lbl, anchor=west] at (0.2,\a+0.22) {$+Q$};
+    \node[qneg] at (0,-\a) {};
+    \node[anchor=west, text=mu] at (0.2,-\a-0.22) {$-Q$ (Bildladung)};
+    \draw[aux, |-|] (-1.95,0) -- node[lbl, font=\footnotesize, text=mu] {$a$} (-1.95,-\a);
+    \node[font=\small, anchor=south] at (0,2.65) {Ersatzproblem};
+  \end{scope}
+\end{tikzpicture}
+\end{document}

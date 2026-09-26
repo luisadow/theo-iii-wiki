@@ -43,6 +43,8 @@ Inverse: $\beta \to -\beta$. Galilei-Grenze $v\ll c$ → $x'=x-vt$, $t'=t$.
 - Längenkontraktion: $L = L_0/\gamma$ entlang der Bewegungsrichtung ($L_0$ = Ruhelänge).
 - Relativität der Gleichzeitigkeit.
 
+![[minkowski-diagramm.svg|Minkowski-Diagramm für β = 0,5: Die Achsen von S′ kippen symmetrisch zum Lichtkegel. Ihre Einheiten liegen auf den Hyperbeln s² = ±1. A und B liegen auf einer Parallelen zur x′-Achse: gleichzeitig in S′, nicht in S.]]
+
 ---
 
 ## Beispielaufgabe

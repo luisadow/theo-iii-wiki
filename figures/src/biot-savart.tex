@@ -1,0 +1,28 @@
+% Biot-Savart: Beitrag dB eines Leiterelements d\ell' am Aufpunkt r
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  % Leiter mit Strom I
+  \draw[main, postaction={decorate}, decoration={markings,
+      mark=at position 0.12 with {\arrow{Stealth[length=6pt,width=5pt]}},
+      mark=at position 0.8 with {\arrow{Stealth[length=6pt,width=5pt]}}}]
+    plot[smooth, tension=0.7] coordinates {(-0.6,-1.4) (0.2,-0.2) (0.4,1.0) (1.4,2.1) (2.8,2.5)};
+  \node[anchor=west] at (-0.2,-1.1) {$I$};
+  % Element d\ell' bei r'
+  \coordinate (Q) at (0.33,0.55);
+  \draw[vec, acc, line width=1.5pt] (Q) -- ++(0.05,0.62) node[anchor=east] {$d\boldsymbol\ell'$};
+  % Ursprung, Aufpunkt
+  \coordinate (O) at (-1.9,-0.9);
+  \coordinate (P) at (3.6,0.2);
+  \node[dot] at (O) {}; \node[mu, anchor=north, font=\footnotesize] at (O) {$O$};
+  \draw[vec, mu, thin] (O) -- (Q) node[pos=0.55, anchor=south east, text=mu, font=\footnotesize] {$\vv r'$};
+  \draw[vec, mu, thin, shorten >=5.5pt] (O) -- (P) node[pos=0.5, anchor=north, text=mu, font=\footnotesize] {$\vv r$};
+  \draw[vec, shorten >=5.5pt] (Q) -- (P) node[pos=0.55, anchor=south, sloped] {$\vv r-\vv r'$};
+  \node[dot] at (Q) {};
+  % dB = dl' x (r-r'): z-Komponente 0.05*(-0.35) - 0.62*3.27 < 0 -> in die Ebene hinein
+  \draw[blue, line width=1.1pt] (P) circle (0.17);
+  \draw[blue, line width=1.1pt] ($(P)+(-0.11,-0.11)$) -- ++(0.22,0.22) ($(P)+(-0.11,0.11)$) -- ++(0.22,-0.22);
+  \node[blue, anchor=west] at ($(P)+(0.2,0.05)$) {$d\vv B\perp d\boldsymbol\ell',\ \vv r-\vv r'$};
+  \node[blue, anchor=west, font=\footnotesize] at ($(P)+(0.2,-0.4)$) {(in die Zeichenebene hinein)};
+\end{tikzpicture}
+\end{document}

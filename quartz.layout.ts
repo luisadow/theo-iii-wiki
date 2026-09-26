@@ -43,6 +43,7 @@ export const sharedPageComponents: SharedLayout = {
   ],
   footer: Component.Footer({
     links: {
+      "Über mich": "https://sadowski-dos-santos.de",
       "Quellcode auf GitHub": "https://github.com/luisadow/theo-iii-wiki",
       "Fehler melden": "https://github.com/luisadow/theo-iii-wiki/issues/new",
     },

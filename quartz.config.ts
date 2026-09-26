@@ -53,7 +53,9 @@ const config: QuartzConfig = {
   },
   plugins: {
     transformers: [
-      Plugin.FrontMatter(),
+      // Aliase nicht als Link-Ziele: AliasRedirects ist aus (siehe emitters), sonst
+      // lösen Wikilinks wie [[Kugelkondensator]] auf /Kugelkondensator (404) auf.
+      Plugin.FrontMatter({ aliasLinkTargets: false }),
       Plugin.CreatedModifiedDate({
         // Git zuerst, damit lastmod in der Sitemap echte Änderungen widerspiegelt
         priority: ["git", "frontmatter", "filesystem"],

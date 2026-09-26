@@ -10,11 +10,15 @@ import { i18n } from "../../i18n"
 export interface Options {
   delimiters: string | [string, string]
   language: "yaml" | "toml"
+  /** Aliase als Link-Ziele registrieren. Nur sinnvoll, wenn AliasRedirects die
+   * Weiterleitungsseiten auch erzeugt; sonst zeigen Wikilinks auf nicht existierende Seiten. */
+  aliasLinkTargets: boolean
 }
 
 const defaultOptions: Options = {
   delimiters: "---",
   language: "yaml",
+  aliasLinkTargets: true,
 }
 
 function coalesceAliases(data: { [key: string]: any }, aliases: string[]) {
@@ -84,7 +88,7 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             if (aliases) {
               data.aliases = aliases // frontmatter
               file.data.aliases = getAliasSlugs(aliases)
-              allSlugs.push(...file.data.aliases)
+              if (opts.aliasLinkTargets) allSlugs.push(...file.data.aliases)
             }
 
             if (data.permalink != null && data.permalink.toString() !== "") {

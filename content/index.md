@@ -4,7 +4,7 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
 ---
 
 <section class="hero">
-  <p class="hero-eyebrow">TU Berlin · Theoretische Physik III</p>
+  <p class="hero-eyebrow">TU Berlin · Theoretische Physik III · WiSe 26/27</p>
   <h1 class="hero-title">Theo III: Elektrodynamik,<br/>verständlich sortiert.</h1>
   <p class="hero-lead">Zusammenfassungen, Formeln und durchgerechnete Herleitungen zur theoretischen Elektrodynamik – in der Reihenfolge der Vorlesung <strong>Theo III</strong> an der TU Berlin, fachlich durchgesehen und für alle, die das Thema lernen wollen.</p>
   <div class="hero-actions">
@@ -15,7 +15,7 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
 </section>
 
 <div class="topic-grid">
-  <a class="topic-card internal" href="./01-Grundlagen/"><img src="./assets/figures/icon-grundlagen.svg" alt=""><span class="topic-num">01</span><span class="topic-name">Grundlagen</span><span class="topic-lec">VL 1–2 · 2 Seiten</span><span class="topic-desc">Operatoren in Kugel- und Zylinderkoordinaten, Integralsätze, Flächenelemente</span></a>
+  <a class="topic-card internal" href="./01-Grundlagen/"><img src="./assets/figures/icon-grundlagen.svg" alt=""><span class="topic-num">01</span><span class="topic-name">Grundlagen</span><span class="topic-lec">VL 1–2 · 3 Seiten</span><span class="topic-desc">Operatoren in Kugel- und Zylinderkoordinaten, Indexschreibweise, Integralsätze</span></a>
   <a class="topic-card internal" href="./02-Elektrostatik/"><img src="./assets/figures/icon-elektrostatik.svg" alt=""><span class="topic-num">02</span><span class="topic-name">Elektrostatik</span><span class="topic-lec">VL 3–5 · 6 Seiten</span><span class="topic-desc">Gauß, Potential, Feldenergie, Kapazität, Maxwell-Spannungstensor</span></a>
   <a class="topic-card internal" href="./03-Randwertprobleme/"><img src="./assets/figures/icon-randwertprobleme.svg" alt=""><span class="topic-num">03</span><span class="topic-name">Randwert&shy;probleme</span><span class="topic-lec">VL 6–8 · 5 Seiten</span><span class="topic-desc">Spiegelladungen, Green-Funktionen, Legendre-Ansatz, Multipole</span></a>
   <a class="topic-card internal" href="./04-Materie/"><img src="./assets/figures/icon-materie.svg" alt=""><span class="topic-num">04</span><span class="topic-name">Felder in Materie</span><span class="topic-lec">VL 8–10, 13–14 · 4 Seiten</span><span class="topic-desc">Dielektrika, Entelektrisierung, Magnetisierung, Materialgesetze</span></a>
@@ -24,6 +24,12 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
   <a class="topic-card internal" href="./07-Relativität/"><img src="./assets/figures/icon-relativitaet.svg" alt=""><span class="topic-num">07</span><span class="topic-name">Relativität</span><span class="topic-lec">VL 18–20 · 2 Seiten</span><span class="topic-desc">Lorentz-Transformation, Minkowski-Raum, Vierervektoren</span></a>
   <a class="topic-card topic-card-paths internal" href="./Lernpfade/"><img src="./assets/figures/icon-lernpfade.svg" alt=""><span class="topic-num">→</span><span class="topic-name">Lernpfade</span><span class="topic-lec">5 Pfade</span><span class="topic-desc">Schritt für Schritt mit Selbsttest und typischen Fehlern</span></a>
 </div>
+
+## Neu im Wintersemester 26/27
+
+Das Wiki wächst mit der laufenden Vorlesung. Erster Schwerpunkt ist die **Indexschreibweise**: Einsteinsche Summenkonvention, Kronecker-Delta und Levi-Civita-Symbol ($\varepsilon$-Tensor). Damit werden Kreuzprodukte, die BAC-CAB-Regel und $\nabla\times\nabla\phi=0$ zu Rechnungen von wenigen Zeilen → [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]].
+
+Weitere Seiten zum aktuellen Semester kommen hier dazu, sobald sie fertig sind. Alle Formeln bleiben in SI-Einheiten.
 
 ## Alles in vier Gleichungen
 
@@ -38,7 +44,7 @@ $$
 
 ## Worum es geht
 
-Dieses Wiki behandelt die klassische Elektrodynamik auf dem Niveau eines Physik-Bachelors: Elektro- und Magnetostatik, Randwertprobleme, Felder in Materie, Maxwell-Gleichungen, Eichungen und spezielle Relativität. Die Notizen habe ich auf Basis der Vorlesung **Theoretische Physik III** an der **TU Berlin** (WiSe 25/26) selbst angefertigt, zur Vorbereitung auf die Prüfung. Die Angaben **VL 1–20** zeigen, in welcher Vorlesung ein Thema dran war – der Inhalt eignet sich aber für jede Elektrodynamik-Vorlesung. Es ersetzt kein Lehrbuch, soll dir aber schnell helfen, wenn du bei einem Thema hängst: jede Seite fasst Definitionen, zentrale Formeln und typische Rechenwege zusammen und verlinkt verwandte Themen.
+Dieses Wiki behandelt die klassische Elektrodynamik auf dem Niveau eines Physik-Bachelors: Elektro- und Magnetostatik, Randwertprobleme, Felder in Materie, Maxwell-Gleichungen, Eichungen und spezielle Relativität. Die Notizen habe ich auf Basis der Vorlesung **Theoretische Physik III** an der **TU Berlin** (WiSe 25/26) selbst angefertigt, zur Vorbereitung auf die Prüfung, und ergänze sie im WiSe 26/27 laufend. Die Angaben **VL 1–20** zeigen, in welcher Vorlesung ein Thema dran war – der Inhalt eignet sich aber für jede Elektrodynamik-Vorlesung. Es ersetzt kein Lehrbuch, soll dir aber schnell helfen, wenn du bei einem Thema hängst: jede Seite fasst Definitionen, zentrale Formeln und typische Rechenwege zusammen und verlinkt verwandte Themen.
 
 > [!warning] Keine offizielle Quelle
 > Studentische Notizen – fachlich durchgesehen, trotzdem können Fehler drin sein. Im Zweifel gelten Vorlesung und Lehrbuch. Fehler oder Unklarheiten gern [als Issue melden](https://github.com/luisadow/theo-iii-wiki/issues/new).
@@ -59,6 +65,7 @@ Alles Wichtige kompakt: [[Formelsammlung|Formelsammlung Elektrodynamik]] · [[Gl
 ### Mathematische Grundlagen (VL 1–2)
 
 - [[Vektoranalysis]]: Operatoren, Koordinatensysteme, Integralsätze
+- [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]]: Summenkonvention, $\delta_{ij}$, $\varepsilon_{ijk}$ und Beweise
 - [[Flächen- und Volumenelemente – Leitfaden]]
 
 ### Elektrostatik (VL 3–5)

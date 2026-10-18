@@ -20,7 +20,7 @@ Alle zentralen Formeln auf einer Seite (SI-Einheiten). Die Links führen jeweils
 
 ## Vektoranalysis
 
-→ [[Vektoranalysis]]
+→ [[Vektoranalysis]] · [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]]
 
 $$
 \int_V \nabla\cdot\mathbf F\,dV = \oint_{\partial V}\mathbf F\cdot d\mathbf A,
@@ -36,6 +36,12 @@ $$
 
 $$
 \nabla^2\frac{1}{\lvert\mathbf r-\mathbf r'\rvert} = -4\pi\,\delta^3(\mathbf r-\mathbf r')
+$$
+
+$$
+(\mathbf a\times\mathbf b)_i = \varepsilon_{ijk}a_jb_k,\qquad
+(\nabla\times\mathbf F)_i = \varepsilon_{ijk}\partial_jF_k,\qquad
+\varepsilon_{ijk}\varepsilon_{imn} = \delta_{jm}\delta_{kn} - \delta_{jn}\delta_{km}
 $$
 
 ## Elektrostatik

@@ -49,6 +49,10 @@ Umformung $\mathbf A\to\mathbf A+\nabla\chi$, $\phi\to\phi-\partial_t\chi$, die 
 
 Die Lösung der Poisson-Gleichung ist durch die Ladungsverteilung und Dirichlet- oder Neumann-Randbedingungen eindeutig bestimmt (bei Neumann bis auf eine Konstante). Deshalb darf man Lösungen „raten“, z. B. mit Bildladungen. → [[Randwertprobleme (Elektrostatik)]]
 
+### Einsteinsche Summenkonvention
+
+Regel für die Indexschreibweise: Ein Index, der in einem Term zweimal vorkommt, wird von 1 bis 3 aufsummiert, das Summenzeichen lässt man weg, $a_ib_i = \sum_i a_ib_i$. Freie Indizes müssen auf beiden Seiten einer Gleichung übereinstimmen. → [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]]
+
 ### Entelektrisierung
 
 Die Polarisationsladungen an der Oberfläche eines Körpers erzeugen im Inneren ein Gegenfeld, das das äußere Feld abschwächt. Für Ellipsoide gilt $\mathbf E_{\text{in}} = \mathbf E_0 - \mathsf N\mathbf P/\varepsilon_0$ mit dem Entelektrisierungsfaktor $N$ (Kugel $1/3$). → [[Dielektrika (Elektrostatik)]]
@@ -87,6 +91,10 @@ Verhältnis von Ladung zu Spannung, $C = Q/U$. Hängt nur von Geometrie und Mate
 
 $\partial_t\rho + \nabla\cdot\mathbf J = 0$: Ladung kann nicht entstehen oder verschwinden, nur fließen. Sie folgt aus den Maxwell-Gleichungen – aber nur mit dem Verschiebungsstrom. → [[Elektrodynamik - Dynamik und Wellen]]
 
+### Kronecker-Delta
+
+$\delta_{ij} = 1$ für $i=j$ und $0$ sonst – die Einheitsmatrix in Indexschreibweise. Es tauscht Indizes aus, $\delta_{ij}a_j = a_i$, und seine Spur ist $\delta_{ii} = 3$ (in $d$ Dimensionen $d$). → [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]]
+
 ### Laplace- und Poisson-Gleichung
 
 $\nabla^2\phi = -\rho/\varepsilon_0$ (Poisson) bzw. $\nabla^2\phi = 0$ im ladungsfreien Raum (Laplace). Die zentrale Gleichung der Elektrostatik. → [[Elektrostatik - Lernseite (Grundlagen)]]
@@ -98,6 +106,10 @@ Die Winkelfunktionen $P_\ell(\cos\theta)$, die bei der Separation der Laplace-Gl
 ### Lenzsche Regel
 
 Der induzierte Strom ist so gerichtet, dass er der Flussänderung entgegenwirkt – das Minuszeichen im Induktionsgesetz. → [[Faraday-Induktion (Elektrodynamik)]]
+
+### Levi-Civita-Symbol
+
+$\varepsilon_{ijk} = +1$ für zyklische $(i,j,k)$, $-1$ für antizyklische, $0$ bei zwei gleichen Indizes. Total antisymmetrisch; damit werden Kreuzprodukte und Rotationen zu Komponentenausdrücken, $(\nabla\times\mathbf F)_i = \varepsilon_{ijk}\partial_jF_k$. → [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]]
 
 ### Lorentz-Transformation
 

@@ -10,12 +10,13 @@ gebaut als statische Website aus Markdown-Notizen.
 
 ## Inhalt
 
-34 Seiten in sieben Themenblöcken. Die Notizen habe ich auf Basis der Vorlesung
-Theoretische Physik III an der TU Berlin (WiSe 25/26, VL 1–20) selbst angefertigt:
+35 Seiten in sieben Themenblöcken. Die Notizen habe ich auf Basis der Vorlesung
+Theoretische Physik III an der TU Berlin (WiSe 25/26, VL 1–20) selbst angefertigt
+und ergänze sie im WiSe 26/27 laufend:
 
 | Block | VL | Themen |
 | --- | --- | --- |
-| 01 Grundlagen | 1–2 | Operatoren in krummlinigen Koordinaten, Integralsätze, Flächenelemente |
+| 01 Grundlagen | 1–2 | Operatoren in krummlinigen Koordinaten, Indexschreibweise, Integralsätze, Flächenelemente |
 | 02 Elektrostatik | 3–5 | Gauß, Potential, Feldenergie, Kapazität, Maxwell-Spannungstensor |
 | 03 Randwertprobleme | 6–8 | Spiegelladungen, Green-Funktionen, Legendre-Ansatz, Multipole |
 | 04 Felder in Materie | 8–10, 13–14 | Dielektrika, Entelektrisierung, Magnetisierung, Materialgesetze |
@@ -25,7 +26,7 @@ Theoretische Physik III an der TU Berlin (WiSe 25/26, VL 1–20) selbst angefert
 
 Dazu kommen eine **Formelsammlung**, ein **Glossar** mit Kurzerklärungen,
 fünf **Lernpfade** mit Schritten, Selbsttest und typischen Fehlern sowie
-zehn **Beispielaufgaben** mit ausklappbarer Lösung auf den passenden Seiten.
+elf **Beispielaufgaben** mit ausklappbarer Lösung auf den passenden Seiten.
 Alle Seiten wurden
 fachlich durchgesehen (Vorzeichen, Dimensionen, Grenzfälle). Es bleiben
 studentische Notizen – Fehler bitte als

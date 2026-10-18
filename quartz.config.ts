@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { theo3Image } from "./quartz/util/og"
 
 /**
  * Quartz 4 Configuration
@@ -90,8 +91,8 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      // Link-Vorschaubilder (PNG, dunkles Theme mit Kapitel-Icon), Vorlage theo3Image in quartz/util/og.tsx
+      Plugin.CustomOgImages({ colorScheme: "darkMode", imageStructure: theo3Image }),
     ],
   },
 }

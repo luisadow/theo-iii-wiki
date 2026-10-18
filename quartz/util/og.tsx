@@ -1,9 +1,9 @@
-import { promises as fs } from "fs"
+import { promises as fs, readFileSync } from "fs"
 import { FontWeight, SatoriOptions } from "satori/wasm"
 import { GlobalConfiguration } from "../cfg"
 import { QuartzPluginData } from "../plugins/vfile"
 import { JSXInternal } from "preact/src/jsx"
-import { FontSpecification, getFontSpecificationName, ThemeKey } from "./theme"
+import { ColorScheme, FontSpecification, getFontSpecificationName, ThemeKey } from "./theme"
 import path from "path"
 import { QUARTZ } from "./path"
 import { formatDate, getDate } from "../components/Date"
@@ -373,6 +373,145 @@ export const defaultImage: SocialImageOptions["imageStructure"] = ({
           ))}
         </div>
       </div>
+    </div>
+  )
+}
+
+// Theo-III-Vorschaubild (Link-Vorschau in Telegram, WhatsApp, Discord …): dunkles Theme der Seite,
+// Kapitel-Kennung und Kapitel-Icon wie auf den Themenkarten der Startseite.
+const theo3Chapters: Record<string, { label: string; icon: string }> = {
+  "01-Grundlagen": { label: "01 · Grundlagen", icon: "icon-grundlagen" },
+  "02-Elektrostatik": { label: "02 · Elektrostatik", icon: "icon-elektrostatik" },
+  "03-Randwertprobleme": { label: "03 · Randwertprobleme", icon: "icon-randwertprobleme" },
+  "04-Materie": { label: "04 · Felder in Materie", icon: "icon-materie" },
+  "05-Magnetostatik": { label: "05 · Magnetostatik", icon: "icon-magnetostatik" },
+  "06-Elektrodynamik": { label: "06 · Elektrodynamik", icon: "icon-elektrodynamik" },
+  "07-Relativität": { label: "07 · Relativität", icon: "icon-relativitaet" },
+  Lernpfade: { label: "Lernpfade", icon: "icon-lernpfade" },
+  Formelsammlung: { label: "Formelsammlung", icon: "" },
+  Glossar: { label: "Glossar", icon: "" },
+}
+
+// Die TikZ-Icons färben sich per CSS-Variablen; für das Vorschaubild feste Farben des dunklen Themes einsetzen.
+const theo3IconCache = new Map<string, string | undefined>()
+function theo3Icon(name: string, colors: ColorScheme): string | undefined {
+  if (!name) return undefined
+  if (!theo3IconCache.has(name)) {
+    let svg: string | undefined
+    try {
+      svg = readFileSync(path.join("content", "assets", "figures", `${name}.svg`), "utf-8")
+        .replace(/<style>[\s\S]*?<\/style>/, "")
+        .replaceAll("var(--f-fg)", colors.dark)
+        .replaceAll("var(--f-acc)", colors.secondary)
+        .replaceAll("var(--f-mu)", colors.gray)
+        .replaceAll("var(--f-bg)", colors.light)
+    } catch {
+      svg = undefined
+    }
+    theo3IconCache.set(
+      name,
+      svg && `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`,
+    )
+  }
+  return theo3IconCache.get(name)
+}
+
+export const theo3Image: SocialImageOptions["imageStructure"] = ({
+  cfg,
+  userOpts,
+  title,
+  description,
+  fileData,
+  iconBase64,
+}) => {
+  const colors = cfg.theme.colors[userOpts.colorScheme]
+  const bodyFont = getFontSpecificationName(cfg.theme.typography.body)
+  const headerFont = getFontSpecificationName(cfg.theme.typography.header)
+  const slug = fileData.slug ?? ""
+  const isHome = slug === "index"
+  const chapter = theo3Chapters[slug.split("/")[0]]
+  const eyebrow = isHome ? "Theoretische Physik III" : (chapter?.label ?? "Theo III Wiki")
+  const chapterIcon = theo3Icon(chapter?.icon ?? "", colors)
+  const titleSize = title.length > 60 ? 54 : title.length > 34 ? 62 : 72
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        width: "100%",
+        backgroundColor: colors.light,
+        fontFamily: bodyFont,
+        borderBottom: `12px solid ${colors.secondary}`,
+        padding: "48px 64px 40px",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
+        {iconBase64 && <img src={iconBase64} width={56} height={56} style={{ borderRadius: 12 }} />}
+        <div style={{ display: "flex", fontSize: 32, fontFamily: headerFont, color: colors.dark }}>
+          Theo III Wiki
+        </div>
+        <div style={{ display: "flex", fontSize: 28, color: colors.gray }}>
+          Elektrodynamik · TU Berlin
+        </div>
+      </div>
+
+      <div style={{ display: "flex", flex: 1, alignItems: "center", gap: "40px" }}>
+        <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 28,
+              fontFamily: headerFont,
+              color: colors.secondary,
+              letterSpacing: "0.04em",
+              marginBottom: "14px",
+            }}
+          >
+            {eyebrow}
+          </div>
+          <div
+            style={{
+              fontSize: titleSize,
+              fontFamily: headerFont,
+              fontWeight: 700,
+              color: colors.dark,
+              lineHeight: 1.12,
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 3,
+              overflow: "hidden",
+              marginBottom: "22px",
+            }}
+          >
+            {title}
+          </div>
+          <div
+            style={{
+              fontSize: 28,
+              color: colors.darkgray,
+              lineHeight: 1.4,
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 3,
+              overflow: "hidden",
+            }}
+          >
+            {description}
+          </div>
+        </div>
+        {(chapterIcon || isHome) && (
+          <img
+            src={chapterIcon ?? iconBase64}
+            width={chapterIcon ? 220 : 200}
+            height={chapterIcon ? 220 : 200}
+            style={{ borderRadius: chapterIcon ? 0 : 40 }}
+          />
+        )}
+      </div>
+
+      <div style={{ display: "flex", fontSize: 26, color: colors.gray }}>{cfg.baseUrl}</div>
     </div>
   )
 }

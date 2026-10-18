@@ -22,7 +22,8 @@ const defaultOptions: SocialImageOptions = {
 }
 
 /**
- * Generates social image (OG/twitter standard) and saves it as `.webp` inside the public folder
+ * Generates social image (OG/twitter standard) and saves it as `.png` inside the public folder
+ * (PNG statt WebP: WhatsApp, LinkedIn und iMessage zeigen WebP-Vorschaubilder oft nicht an)
  * @param opts options for generating image
  */
 async function generateSocialImage(
@@ -62,7 +63,7 @@ async function generateSocialImage(
     },
   })
 
-  return sharp(Buffer.from(svg)).webp({ quality: 40 })
+  return sharp(Buffer.from(svg)).png({ palette: true, quality: 90, compressionLevel: 9 })
 }
 
 async function processOgImage(
@@ -73,9 +74,8 @@ async function processOgImage(
 ) {
   const cfg = ctx.cfg.configuration
   const slug = fileData.slug!
-  const titleSuffix = cfg.pageTitleSuffix ?? ""
-  const title =
-    (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+  // ohne pageTitleSuffix: Seitenname und Fach stehen ohnehin im Bild
+  const title = fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
   const description =
     fileData.frontmatter?.socialDescription ??
     fileData.frontmatter?.description ??
@@ -96,7 +96,7 @@ async function processOgImage(
     ctx,
     content: stream,
     slug: `${slug}-og-image` as FullSlug,
-    ext: ".webp",
+    ext: ".png",
   })
 }
 
@@ -154,11 +154,12 @@ export const CustomOgImages: QuartzEmitterPlugin<Partial<SocialImageOptions>> = 
             }
 
             const generatedOgImagePath = isRealFile
-              ? `https://${baseUrl}/${pageData.slug!}-og-image.webp`
+              ? `https://${baseUrl}/${encodeURI(pageData.slug!)}-og-image.png`
               : undefined
             const defaultOgImagePath = `https://${baseUrl}/static/og-image.png`
             const ogImagePath = userDefinedOgImagePath ?? generatedOgImagePath ?? defaultOgImagePath
-            const ogImageMimeType = `image/${getFileExtension(ogImagePath) ?? "png"}`
+            const ogImageMimeType = `image/${(getFileExtension(ogImagePath) ?? ".png").slice(1).replace("jpg", "jpeg")}`
+            const ogImageAlt = `Vorschau: ${pageData.frontmatter?.title ?? ""} – Theo III Wiki`
             return (
               <>
                 {!userDefinedOgImagePath && (
@@ -171,7 +172,10 @@ export const CustomOgImages: QuartzEmitterPlugin<Partial<SocialImageOptions>> = 
                 <meta property="og:image" content={ogImagePath} />
                 <meta property="og:image:url" content={ogImagePath} />
                 <meta name="twitter:image" content={ogImagePath} />
+                <meta property="og:image:secure_url" content={ogImagePath} />
                 <meta property="og:image:type" content={ogImageMimeType} />
+                <meta property="og:image:alt" content={ogImageAlt} />
+                <meta name="twitter:image:alt" content={ogImageAlt} />
               </>
             )
           },

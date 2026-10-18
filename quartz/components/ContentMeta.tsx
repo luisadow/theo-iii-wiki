@@ -5,6 +5,7 @@ import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
 import { JSX } from "preact"
 import style from "./styles/contentMeta.scss"
+import { isNewPage, NEW_TITLE } from "../util/newPages"
 
 interface ContentMetaOptions {
   /**
@@ -28,6 +29,10 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
     if (text) {
       const segments: (string | JSX.Element)[] = []
+
+      if (isNewPage(fileData)) {
+        segments.push(<span class="tag-neu">{NEW_TITLE}</span>)
+      }
 
       if (fileData.dates) {
         segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)

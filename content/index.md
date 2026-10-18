@@ -15,7 +15,7 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
 </section>
 
 <div class="topic-grid">
-  <a class="topic-card internal" href="./01-Grundlagen/"><img src="./assets/figures/icon-grundlagen.svg" alt=""><span class="topic-num">01</span><span class="topic-name">Grundlagen</span><span class="topic-lec">VL 1–2 · 3 Seiten</span><span class="topic-desc">Operatoren in Kugel- und Zylinderkoordinaten, Indexschreibweise, Integralsätze</span></a>
+  <a class="topic-card internal" href="./01-Grundlagen/"><img src="./assets/figures/icon-grundlagen.svg" alt=""><span class="topic-num">01 <span class="tag-neu">1 neu</span></span><span class="topic-name">Grundlagen</span><span class="topic-lec">VL 1–2 · 3 Seiten</span><span class="topic-desc">Operatoren in Kugel- und Zylinderkoordinaten, Indexschreibweise, Integralsätze</span></a>
   <a class="topic-card internal" href="./02-Elektrostatik/"><img src="./assets/figures/icon-elektrostatik.svg" alt=""><span class="topic-num">02</span><span class="topic-name">Elektrostatik</span><span class="topic-lec">VL 3–5 · 6 Seiten</span><span class="topic-desc">Gauß, Potential, Feldenergie, Kapazität, Maxwell-Spannungstensor</span></a>
   <a class="topic-card internal" href="./03-Randwertprobleme/"><img src="./assets/figures/icon-randwertprobleme.svg" alt=""><span class="topic-num">03</span><span class="topic-name">Randwert&shy;probleme</span><span class="topic-lec">VL 6–8 · 5 Seiten</span><span class="topic-desc">Spiegelladungen, Green-Funktionen, Legendre-Ansatz, Multipole</span></a>
   <a class="topic-card internal" href="./04-Materie/"><img src="./assets/figures/icon-materie.svg" alt=""><span class="topic-num">04</span><span class="topic-name">Felder in Materie</span><span class="topic-lec">VL 8–10, 13–14 · 4 Seiten</span><span class="topic-desc">Dielektrika, Entelektrisierung, Magnetisierung, Materialgesetze</span></a>
@@ -25,13 +25,14 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
   <a class="topic-card topic-card-paths internal" href="./Lernpfade/"><img src="./assets/figures/icon-lernpfade.svg" alt=""><span class="topic-num">→</span><span class="topic-name">Lernpfade</span><span class="topic-lec">5 Pfade</span><span class="topic-desc">Schritt für Schritt mit Selbsttest und typischen Fehlern</span></a>
 </div>
 
-## Neu im Wintersemester 26/27
+## Neu im WiSe 26/27
 
-Das Wiki wächst begleitend zur laufenden Vorlesung von **Prof. Hendrik Weimer** an der TU Berlin (WiSe 26/27): Neue Vorlesungsnotizen, Rechenmethoden und Ergänzungen zu den Hausaufgabenblättern kommen kontinuierlich dazu, ohne den modularen Aufbau zu verändern.
-
-Erster Schwerpunkt sind die mathematischen Grundlagen und die **Indexschreibweise**: Einsteinsche Summenkonvention, Kronecker-Delta, Levi-Civita-Symbol ($\varepsilon$-Tensor) und die Herleitung von Identitäten wie BAC-CAB oder $\nabla\times(\nabla\times\mathbf F)$ → [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]].
-
-Weitere Seiten und Ergänzungen zum aktuellen Vorlesungsfortschritt fließen laufend ein. Alle Formeln bleiben konsistent in SI-Einheiten.
+<div class="news">
+<p>Das Wiki läuft mit der Vorlesung von <strong>Prof. Hendrik Weimer</strong> weiter: Neue Seiten kommen im Takt der Vorlesung dazu und tragen die Markierung <span class="tag-neu">neu</span>. Alle übrigen Seiten stammen aus dem WiSe 25/26 und bleiben, wo sie sind.</p>
+<ul class="news-list">
+<li><time datetime="2026-10-18">18.10.</time><span><a class="internal" href="./01-Grundlagen/Indexschreibweise-und-Levi-Civita-Symbol">Indexschreibweise – Summenkonvention, δ und ε</a><span class="news-topic">01 Grundlagen · Kronecker-Delta, Levi-Civita-Symbol, ε-δ-Identität</span></span></li>
+</ul>
+</div>
 
 ## Alles in vier Gleichungen
 
@@ -46,7 +47,7 @@ $$
 
 ## Worum es geht
 
-Dieses Wiki behandelt die klassische Elektrodynamik auf dem Niveau eines Physik-Bachelors: Elektro- und Magnetostatik, Randwertprobleme, Felder in Materie, Maxwell-Gleichungen, Eichungen und spezielle Relativität. Die Notizen habe ich auf Basis der Vorlesung **Theoretische Physik III** an der **TU Berlin** (WiSe 25/26) selbst angefertigt, zur Vorbereitung auf die Prüfung, und ergänze sie im WiSe 26/27 laufend. Die Angaben **VL 1–20** zeigen, in welcher Vorlesung ein Thema dran war – der Inhalt eignet sich aber für jede Elektrodynamik-Vorlesung. Es ersetzt kein Lehrbuch, soll dir aber schnell helfen, wenn du bei einem Thema hängst: jede Seite fasst Definitionen, zentrale Formeln und typische Rechenwege zusammen und verlinkt verwandte Themen.
+Dieses Wiki behandelt die klassische Elektrodynamik auf dem Niveau eines Physik-Bachelors: Elektro- und Magnetostatik, Randwertprobleme, Felder in Materie, Maxwell-Gleichungen, Eichungen und spezielle Relativität. Grundlage sind meine eigenen Notizen zur Vorlesung **Theoretische Physik III** an der **TU Berlin** im WiSe 25/26, entstanden zur Prüfungsvorbereitung; die Angaben **VL 1–20** beziehen sich auf die Reihenfolge dieser Vorlesung. Im WiSe 26/27 ergänze ich das Wiki begleitend zur Vorlesung von Prof. Weimer (siehe oben). Der Inhalt eignet sich für jede Elektrodynamik-Vorlesung, alle Formeln in SI-Einheiten. Es ersetzt kein Lehrbuch, soll dir aber schnell helfen, wenn du bei einem Thema hängst: jede Seite fasst Definitionen, zentrale Formeln und typische Rechenwege zusammen und verlinkt verwandte Themen.
 
 > [!warning] Keine offizielle Quelle
 > Studentische Notizen – fachlich durchgesehen, trotzdem können Fehler drin sein. Im Zweifel gelten Vorlesung und Lehrbuch. Fehler oder Unklarheiten gern [als Issue melden](https://github.com/luisadow/theo-iii-wiki/issues/new).
@@ -67,7 +68,7 @@ Alles Wichtige kompakt: [[Formelsammlung|Formelsammlung Elektrodynamik]] · [[Gl
 ### Mathematische Grundlagen (VL 1–2)
 
 - [[Vektoranalysis]]: Operatoren, Koordinatensysteme, Integralsätze
-- [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]]: Summenkonvention, $\delta_{ij}$, $\varepsilon_{ijk}$ und Beweise
+- [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]] <span class="tag-neu">neu</span>: Summenkonvention, $\delta_{ij}$, $\varepsilon_{ijk}$ und Beweise
 - [[Flächen- und Volumenelemente – Leitfaden]]
 
 ### Elektrostatik (VL 3–5)

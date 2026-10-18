@@ -6,10 +6,14 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
-    // Zurück/Weiter entlang der Lernpfade (Reihenfolge = Lernpfad 1 bis 5)
+    // Zurück/Weiter entlang der Lernpfade (Reihenfolge = Lernpfad 1 bis 5).
+    // Jede neue Inhaltsseite hier eintragen (Dateiname ohne .md), sonst fehlt sie in der
+    // Navigation. Ergänzungen, die in keinem Lernpfad stehen, an der thematisch passenden
+    // Stelle einreihen, z. B. Indexschreibweise nach Vektoranalysis wie in 01 Grundlagen.
     Component.PrevNext({
       order: [
         "Vektoranalysis",
+        "Indexschreibweise und Levi-Civita-Symbol",
         "Flächen- und Volumenelemente – Leitfaden",
         "Elektrostatik - Lernseite (Grundlagen)",
         "Elektrostatik",

@@ -1,4 +1,5 @@
 import { isFolderPath, resolveRelative } from "../util/path"
+import { isNewPage, NEW_LABEL, NEW_TITLE } from "../util/newPages"
 import { QuartzPluginData } from "../plugins/vfile"
 import { Date, getDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
@@ -81,6 +82,11 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                   <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
                     {title}
                   </a>
+                  {isNewPage(page) && (
+                    <span class="tag-neu" title={NEW_TITLE}>
+                      {NEW_LABEL}
+                    </span>
+                  )}
                 </h3>
               </div>
               {/* Tag-Seiten sind deaktiviert; stattdessen die Seitenbeschreibung zeigen */}

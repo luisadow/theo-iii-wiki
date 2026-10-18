@@ -21,9 +21,16 @@ export async function getSatoriFonts(headerFont: FontSpecification, bodyFont: Fo
       ? defaultHeaderWeight
       : (headerFont.weights ?? defaultHeaderWeight)
   ) as FontWeight[]
-  const bodyWeights: FontWeight[] = (
-    typeof bodyFont === "string" ? defaultBodyWeight : (bodyFont.weights ?? defaultBodyWeight)
-  ) as FontWeight[]
+  // 700 zusätzlich: Oxanium hat keine griechischen Buchstaben, Satori weicht für δ, ε … auf die
+  // Textschrift aus – in fetter Ausführung passen sie zu fetten Überschriften
+  const bodyWeights: FontWeight[] = [
+    ...new Set([
+      ...((typeof bodyFont === "string"
+        ? defaultBodyWeight
+        : (bodyFont.weights ?? defaultBodyWeight)) as FontWeight[]),
+      700 as FontWeight,
+    ]),
+  ]
 
   const headerFontName = typeof headerFont === "string" ? headerFont : headerFont.name
   const bodyFontName = typeof bodyFont === "string" ? bodyFont : bodyFont.name
@@ -377,8 +384,10 @@ export const defaultImage: SocialImageOptions["imageStructure"] = ({
   )
 }
 
-// Theo-III-Vorschaubild (Link-Vorschau in Telegram, WhatsApp, Discord …): dunkles Theme der Seite,
-// Kapitel-Kennung und Kapitel-Icon wie auf den Themenkarten der Startseite.
+// Theo-III-Vorschaubild (Link-Vorschau in WhatsApp, Telegram, Discord …), dunkles Theme der Seite.
+// Titel und Beschreibung zeigen die Messenger ohnehin als Text unter dem Bild, deshalb steht im Bild
+// nur das Nötigste: Startseite zentriert mit Logo und Hinweis auf die laufende Vorlesung,
+// Unterseiten mit Kapitel, Titel und Icon.
 const theo3Chapters: Record<string, { label: string; icon: string }> = {
   "01-Grundlagen": { label: "01 · Grundlagen", icon: "icon-grundlagen" },
   "02-Elektrostatik": { label: "02 · Elektrostatik", icon: "icon-elektrostatik" },
@@ -388,9 +397,12 @@ const theo3Chapters: Record<string, { label: string; icon: string }> = {
   "06-Elektrodynamik": { label: "06 · Elektrodynamik", icon: "icon-elektrodynamik" },
   "07-Relativität": { label: "07 · Relativität", icon: "icon-relativitaet" },
   Lernpfade: { label: "Lernpfade", icon: "icon-lernpfade" },
-  Formelsammlung: { label: "Formelsammlung", icon: "" },
-  Glossar: { label: "Glossar", icon: "" },
+  Formelsammlung: { label: "Formelsammlung", icon: "icon-formelsammlung" },
+  Glossar: { label: "Glossar", icon: "icon-glossar" },
 }
+
+// Hinweis-Label auf dem Startseiten-Bild; zum Semesterende anpassen oder leeren
+const theo3HomeBadge = "Läuft mit: VL Prof. Weimer · WiSe 26/27"
 
 // Die TikZ-Icons färben sich per CSS-Variablen; für das Vorschaubild feste Farben des dunklen Themes einsetzen.
 const theo3IconCache = new Map<string, string | undefined>()
@@ -405,6 +417,8 @@ function theo3Icon(name: string, colors: ColorScheme): string | undefined {
         .replaceAll("var(--f-acc)", colors.secondary)
         .replaceAll("var(--f-mu)", colors.gray)
         .replaceAll("var(--f-bg)", colors.light)
+        .replaceAll("var(--f-blue)", "#7aa7ff")
+        .replaceAll("var(--f-warm)", "#ff8a6b")
     } catch {
       svg = undefined
     }
@@ -420,7 +434,6 @@ export const theo3Image: SocialImageOptions["imageStructure"] = ({
   cfg,
   userOpts,
   title,
-  description,
   fileData,
   iconBase64,
 }) => {
@@ -428,90 +441,147 @@ export const theo3Image: SocialImageOptions["imageStructure"] = ({
   const bodyFont = getFontSpecificationName(cfg.theme.typography.body)
   const headerFont = getFontSpecificationName(cfg.theme.typography.header)
   const slug = fileData.slug ?? ""
-  const isHome = slug === "index"
-  const chapter = theo3Chapters[slug.split("/")[0]]
-  const eyebrow = isHome ? "Theoretische Physik III" : (chapter?.label ?? "Theo III Wiki")
-  const chapterIcon = theo3Icon(chapter?.icon ?? "", colors)
-  const titleSize = title.length > 40 ? 54 : title.length > 28 ? 62 : 72
 
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100%",
-        width: "100%",
-        backgroundColor: colors.light,
-        fontFamily: bodyFont,
-        borderBottom: `12px solid ${colors.secondary}`,
-        padding: "48px 64px 40px",
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
-        {iconBase64 && <img src={iconBase64} width={56} height={56} style={{ borderRadius: 12 }} />}
-        <div style={{ display: "flex", fontSize: 32, fontFamily: headerFont, color: colors.dark }}>
-          Theo III Wiki
-        </div>
-        <div style={{ display: "flex", fontSize: 28, color: colors.gray }}>
-          Elektrodynamik · TU Berlin
-        </div>
-      </div>
+  const frame = {
+    display: "flex",
+    flexDirection: "column" as const,
+    height: "100%",
+    width: "100%",
+    backgroundColor: colors.light,
+    fontFamily: bodyFont,
+    borderBottom: `12px solid ${colors.secondary}`,
+  }
+  const url = <div style={{ display: "flex", fontSize: 24, color: colors.gray }}>{cfg.baseUrl}</div>
 
-      <div style={{ display: "flex", flex: 1, alignItems: "center", gap: "40px" }}>
-        <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
+  if (slug === "index") {
+    return (
+      <div style={{ ...frame, alignItems: "center", padding: "52px 64px 44px" }}>
+        <div
+          style={{
+            display: "flex",
+            flex: 1,
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {iconBase64 && (
+            <img src={iconBase64} width={150} height={150} style={{ marginBottom: 18 }} />
+          )}
           <div
             style={{
               display: "flex",
-              fontSize: 28,
               fontFamily: headerFont,
-              color: colors.secondary,
-              letterSpacing: "0.04em",
-              marginBottom: "14px",
+              fontWeight: 700,
+              fontSize: 84,
+              color: colors.dark,
+              marginBottom: 6,
             }}
           >
-            {eyebrow}
+            {cfg.pageTitle}
+          </div>
+          <div style={{ display: "flex", fontSize: 34, color: colors.darkgray, marginBottom: 32 }}>
+            Elektrodynamik, verständlich sortiert.
+          </div>
+          {theo3HomeBadge && (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+                border: `2px solid ${colors.secondary}`,
+                borderRadius: 999,
+                padding: "8px 20px",
+                fontSize: 24,
+                fontWeight: 700,
+                color: colors.secondary,
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  width: 10,
+                  height: 10,
+                  borderRadius: 999,
+                  backgroundColor: colors.secondary,
+                }}
+              />
+              {theo3HomeBadge}
+            </div>
+          )}
+        </div>
+        {url}
+      </div>
+    )
+  }
+
+  const chapter = theo3Chapters[slug.split("/")[0]] ?? theo3Chapters[slug]
+  // ohne eigenes Icon (künftige Seiten außerhalb der Kapitelordner): ∇-Logo als Ersatz
+  const chapterIcon = theo3Icon(chapter?.icon ?? "", colors)
+  const visual = chapterIcon ?? iconBase64
+  // kurzes letztes Wort (z. B. „ε“) per geschütztem Leerzeichen ans vorige binden, damit es
+  // nicht allein in der letzten Zeile steht
+  const safeTitle = title.replace(/ (\S{1,3})$/, "\u00a0$1")
+
+  return (
+    <div style={{ ...frame, padding: "52px 64px 44px" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          {iconBase64 && <img src={iconBase64} width={42} height={42} />}
+          <div
+            style={{ display: "flex", fontSize: 28, fontFamily: headerFont, color: colors.dark }}
+          >
+            {cfg.pageTitle}
+          </div>
+        </div>
+        {url}
+      </div>
+
+      <div style={{ display: "flex", flex: 1, alignItems: "center", gap: "48px" }}>
+        <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
+            {chapterIcon && <img src={chapterIcon} width={44} height={44} />}
+            <div
+              style={{
+                display: "flex",
+                fontSize: 28,
+                fontFamily: headerFont,
+                color: colors.secondary,
+                letterSpacing: "0.04em",
+              }}
+            >
+              {chapter?.label ?? cfg.pageTitle}
+            </div>
           </div>
           <div
             style={{
-              fontSize: titleSize,
+              fontSize: title.length > 34 ? 60 : 72,
               fontFamily: headerFont,
               fontWeight: 700,
               color: colors.dark,
-              lineHeight: 1.12,
-              display: "-webkit-box",
-              WebkitBoxOrient: "vertical",
-              WebkitLineClamp: 3,
-              overflow: "hidden",
-              marginBottom: "22px",
-            }}
-          >
-            {title}
-          </div>
-          <div
-            style={{
-              fontSize: 28,
-              color: colors.darkgray,
-              lineHeight: 1.4,
+              lineHeight: 1.1,
               display: "-webkit-box",
               WebkitBoxOrient: "vertical",
               WebkitLineClamp: 3,
               overflow: "hidden",
             }}
           >
-            {description}
+            {safeTitle}
           </div>
         </div>
-        {(chapterIcon || isHome) && (
+        {visual && (
           <img
-            src={chapterIcon ?? iconBase64}
-            width={chapterIcon ? 220 : 200}
-            height={chapterIcon ? 220 : 200}
-            style={{ borderRadius: chapterIcon ? 0 : 40 }}
+            src={visual}
+            width={240}
+            height={240}
+            style={{ borderRadius: chapterIcon ? 0 : 48 }}
           />
         )}
       </div>
 
-      <div style={{ display: "flex", fontSize: 26, color: colors.gray }}>{cfg.baseUrl}</div>
+      <div style={{ display: "flex", fontSize: 24, color: colors.gray }}>
+        Elektrodynamik · TU Berlin
+      </div>
     </div>
   )
 }

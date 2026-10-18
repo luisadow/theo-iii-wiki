@@ -27,9 +27,11 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
 
 ## Neu im Wintersemester 26/27
 
-Das Wiki wächst mit der laufenden Vorlesung. Erster Schwerpunkt ist die **Indexschreibweise**: Einsteinsche Summenkonvention, Kronecker-Delta und Levi-Civita-Symbol ($\varepsilon$-Tensor). Damit werden Kreuzprodukte, die BAC-CAB-Regel und $\nabla\times\nabla\phi=0$ zu Rechnungen von wenigen Zeilen → [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]].
+Das Wiki wächst begleitend zur laufenden Vorlesung von **Prof. Hendrik Weimer** an der TU Berlin (WiSe 26/27): Neue Vorlesungsnotizen, Rechenmethoden und Ergänzungen zu den Hausaufgabenblättern kommen kontinuierlich dazu, ohne den modularen Aufbau zu verändern.
 
-Weitere Seiten zum aktuellen Semester kommen hier dazu, sobald sie fertig sind. Alle Formeln bleiben in SI-Einheiten.
+Erster Schwerpunkt sind die mathematischen Grundlagen und die **Indexschreibweise**: Einsteinsche Summenkonvention, Kronecker-Delta, Levi-Civita-Symbol ($\varepsilon$-Tensor) und die Herleitung von Identitäten wie BAC-CAB oder $\nabla\times(\nabla\times\mathbf F)$ → [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]].
+
+Weitere Seiten und Ergänzungen zum aktuellen Vorlesungsfortschritt fließen laufend ein. Alle Formeln bleiben konsistent in SI-Einheiten.
 
 ## Alles in vier Gleichungen
 

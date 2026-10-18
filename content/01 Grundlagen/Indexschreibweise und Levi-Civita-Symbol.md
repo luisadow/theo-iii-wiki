@@ -118,6 +118,26 @@ $$
 
 Also ist der Faktor $1$.
 
+### Kombinatorik: Warum genau zwei Fälle und warum das Minuszeichen?
+
+Man kann sich die Identität auch direkt kombinatorisch klarmachen:
+
+1. **Welche Indizes überleben?**  
+   Damit $\varepsilon_{kij}\varepsilon_{klm} \neq 0$ ist, müssen $i \neq j$ sein. Im dreidimensionalen Raum gibt es für das Indexpaar $(i,j)$ genau einen verbleibenden Wert für $k$ (ist z. B. $i=1, j=2$, so muss $k=3$ sein). Im zweiten Tensor müssen $l$ und $m$ wiederum die beiden restlichen Werte annehmen – also dieselben Zahlen wie $\{i,j\}$. Es gibt folglich nur zwei Möglichkeiten:
+   - **Fall 1:** $l=i$ und $m=j$ (gleiche Reihenfolge)
+   - **Fall 2:** $l=j$ und $m=i$ (vertauschte Reihenfolge)
+2. **Warum kein Mal ($\cdot$)?**  
+   Weil $i \neq j$ gilt, schließen sich Fall 1 und Fall 2 gegenseitig aus (sie sind disjunkt). Tritt Fall 1 ein, ist $\delta_{im}\delta_{jl} = 0$. Ein Produkt $(\text{Fall 1})\cdot(\text{Fall 2})$ wäre stets null. Disjunkte Fälle werden addiert, nicht multipliziert.
+3. **Warum steht in der Mitte ein Minuszeichen?**  
+   Bringen wir den gemeinsamen Index $k$ an die erste Stelle: $\varepsilon_{kij}\varepsilon_{klm}$.
+   - In Fall 1 ist $(l,m) = (i,j)$: Wir berechnen $\varepsilon_{kij}\varepsilon_{kij} = (\varepsilon_{kij})^2 = \mathbf{+1}$.
+   - In Fall 2 ist $(l,m) = (j,i)$: Durch die Vertauschung der Indizes greift die totale Antisymmetrie, $\varepsilon_{kji} = -\varepsilon_{kij}$. Das Produkt liefert $\varepsilon_{kij}(-\varepsilon_{kij}) = -(\varepsilon_{kij})^2 = \mathbf{-1}$.
+   - Fasst man beide Fälle zusammen, gewichtet mit ihrem Vorzeichen, entsteht exakt:
+     $$\text{Wert} = (+1)\cdot(\delta_{il}\delta_{jm}) + (-1)\cdot(\delta_{im}\delta_{jl}) = \delta_{il}\delta_{jm} - \delta_{im}\delta_{jl}.$$
+
+> [!tip] Merke
+> Das Minuszeichen ist der direkte Fingerabdruck der Antisymmetrie: Eine Vertauschung zweier Indizes im Levi-Civita-Symbol kehrt das Vorzeichen um.
+
 > [!warning] Reihenfolge der Indizes
 > Die Identität gilt nur, wenn der gemeinsame Index in beiden Epsilons an derselben Position steht. Steht er – wie im Beweis unten – an verschiedenen Stellen, erst zyklisch umsortieren: $\varepsilon_{ijk}=\varepsilon_{kij}$, dann paaren. Eine ungerade Umsortierung würde das Vorzeichen der rechten Seite kippen.
 
@@ -128,6 +148,9 @@ Zu zeigen ist die Grassmann-Identität (englisch *BAC-CAB rule*):
 $$
 \mathbf A\times(\mathbf B\times\mathbf C) = \mathbf B\,(\mathbf A\cdot\mathbf C) - \mathbf C\,(\mathbf A\cdot\mathbf B).
 $$
+
+> [!info] Geometrische Bedeutung
+> Der Vektor $\mathbf n = \mathbf B\times\mathbf C$ steht senkrecht auf der von $\mathbf B$ und $\mathbf C$ aufgespannten Ebene. Das erneute Kreuzprodukt $\mathbf A\times\mathbf n$ steht senkrecht auf dieser Flächennormalen $\mathbf n$ – es muss also zwingend wieder **in der Ebene von $\mathbf B$ und $\mathbf C$** liegen. Das doppelte Kreuzprodukt lässt sich daher immer als Linearkombination aus $\mathbf B$ und $\mathbf C$ darstellen; die Koeffizienten liefern die Skalarprodukte.
 
 Der Beweis läuft komponentenweise; am Ende steht für jedes $i$ die richtige Komponente, also gilt die Vektorgleichung.
 
@@ -202,19 +225,35 @@ weil $\partial_k\partial_m$ symmetrisch und $\varepsilon_{kmn}$ antisymmetrisch 
 
 Physikalisch: Deshalb lässt sich das Magnetfeld als Rotation eines Vektorpotentials schreiben, $\mathbf B=\nabla\times\mathbf A$, und $\nabla\cdot\mathbf B=0$ ist dann automatisch erfüllt.
 
-## Bonus: doppelte Rotation
+## Doppelte Rotation rot rot
 
-Dieselbe Maschinerie liefert auch die dritte Standardidentität. Mit $\varepsilon_{ijk}\varepsilon_{klm}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}$ folgt
-
-$$
-\bigl[\nabla\times(\nabla\times\mathbf F)\bigr]_i = \partial_i(\partial_jF_j) - \partial_j\partial_jF_i ,
-$$
-
-also vektoriell
+Dieselbe Maschinerie liefert die zentrale Identität für die Vektoranalysis und Wellengleichung:
 
 $$
 \nabla\times(\nabla\times\mathbf F) = \nabla(\nabla\cdot\mathbf F) - \nabla^2\mathbf F .
 $$
+
+Die Herleitung läuft schrittweise analog zu BAC-CAB, wobei der Nabla-Operator $\nabla$ als partielle Ableitung $\partial_j$ wirkt:
+
+1. **Äußere Rotation:** $[\nabla\times(\nabla\times\mathbf F)]_i = \varepsilon_{ijk}\,\partial_j(\nabla\times\mathbf F)_k$.
+2. **Innere Rotation einsetzen** (frische Dummy-Indizes $l, m$ wählen):
+   $$[\nabla\times(\nabla\times\mathbf F)]_i = \varepsilon_{ijk}\,\partial_j\bigl(\varepsilon_{klm}\,\partial_l F_m\bigr) = \varepsilon_{ijk}\varepsilon_{klm}\,\partial_j\partial_l F_m.$$
+   *(Die konstanten Tensoren $\varepsilon_{klm}$ dürfen vor die Ableitung gezogen werden.)*
+3. **ε-δ-Identität einsetzen:** Mit $\varepsilon_{ijk}\varepsilon_{klm} = \delta_{il}\delta_{jm} - \delta_{im}\delta_{jl}$ folgt:
+   $$[\nabla\times(\nabla\times\mathbf F)]_i = (\delta_{il}\delta_{jm} - \delta_{im}\delta_{jl})\,\partial_j\partial_l F_m = \delta_{il}\delta_{jm}\,\partial_j\partial_l F_m - \delta_{im}\delta_{jl}\,\partial_j\partial_l F_m.$$
+4. **Kronecker-Deltas auswerten:**
+   - Im ersten Term: $l \to i$ und $m \to j \implies \partial_j\partial_i F_j$.
+   - Im zweiten Term: $m \to i$ und $l \to j \implies \partial_j\partial_j F_i$.
+5. **Satz von Schwarz anwenden:** Da die partiellen Ableitungen vertauschen ($\partial_j\partial_i = \partial_i\partial_j$), wird der erste Term zum Gradienten der Divergenz:
+   $$\partial_i(\partial_j F_j) = [\nabla(\nabla\cdot\mathbf F)]_i.$$
+   Der zweite Term ist die komponentenweise Wirkung des Laplace-Operators:
+   $$\partial_j\partial_j F_i = \nabla^2 F_i = (\nabla^2\mathbf F)_i.$$
+
+Zusammengesetzt ergibt sich exakt:
+$$[\nabla\times(\nabla\times\mathbf F)]_i = [\nabla(\nabla\cdot\mathbf F)]_i - (\nabla^2\mathbf F)_i \iff \nabla\times(\nabla\times\mathbf F) = \nabla(\nabla\cdot\mathbf F) - \nabla^2\mathbf F.$$
+
+> [!tip] Physikalische Bedeutung
+> In der Elektrodynamik ist diese Identität der Schlüssel zur Herleitung der **elektromagnetischen Wellengleichung**: Wendet man die Rotation auf das Faradaysche Induktionsgesetz an ($\nabla\times(\nabla\times\mathbf E) = -\partial_t(\nabla\times\mathbf B)$) und nutzt im Vakuum $\nabla\cdot\mathbf E=0$ sowie $\nabla\times\mathbf B = \mu_0\varepsilon_0\partial_t\mathbf E$, fällt die linke Seite auf $-\nabla^2\mathbf E$ zusammen – und liefert unmittelbar $\nabla^2\mathbf E - \mu_0\varepsilon_0\partial_t^2\mathbf E = 0$.
 
 ## Beispielaufgabe
 

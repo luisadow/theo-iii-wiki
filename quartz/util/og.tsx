@@ -432,7 +432,7 @@ export const theo3Image: SocialImageOptions["imageStructure"] = ({
   const chapter = theo3Chapters[slug.split("/")[0]]
   const eyebrow = isHome ? "Theoretische Physik III" : (chapter?.label ?? "Theo III Wiki")
   const chapterIcon = theo3Icon(chapter?.icon ?? "", colors)
-  const titleSize = title.length > 60 ? 54 : title.length > 34 ? 62 : 72
+  const titleSize = title.length > 40 ? 54 : title.length > 28 ? 62 : 72
 
   return (
     <div

@@ -1,8 +1,10 @@
 import { QuartzTransformerPlugin } from "../types"
-import { Root } from "mdast"
+import { Heading, Root } from "mdast"
 import { visit } from "unist-util-visit"
 import { toString } from "mdast-util-to-string"
 import Slugger from "github-slugger"
+import katex from "katex"
+import { escapeHTML } from "../../util/escape"
 
 export interface Options {
   maxDepth: 1 | 2 | 3 | 4 | 5 | 6
@@ -21,7 +23,20 @@ const defaultOptions: Options = {
 interface TocEntry {
   depth: number
   text: string
+  html: string // wie text, aber Formeln ($…$) mit KaTeX gerendert
   slug: string // this is just the anchor (#some-slug), not the canonical slug
+}
+
+// Überschrift als HTML fürs Inhaltsverzeichnis: Formeln wie im Text mit KaTeX statt als
+// LaTeX-Quelltext (sonst stünde dort z. B. „\phi_0“), alles andere als reiner Text
+function headingHtml(node: Heading): string {
+  return node.children
+    .map((child) =>
+      child.type === "inlineMath"
+        ? katex.renderToString(child.value, { output: "html", throwOnError: false })
+        : escapeHTML(toString(child)),
+    )
+    .join("")
 }
 
 const slugAnchor = new Slugger()
@@ -45,6 +60,7 @@ export const TableOfContents: QuartzTransformerPlugin<Partial<Options>> = (userO
                   toc.push({
                     depth: node.depth,
                     text,
+                    html: headingHtml(node),
                     slug: slugAnchor.slug(text),
                   })
                 }

@@ -42,3 +42,11 @@ node figures/preview.mjs out.png dipol-feld   # PNG-Vorschau hell/dunkel
 - Kein `plot[smooth]` auf sehr dichten Punktlisten (TeX-Überlauf); dichte Polygonzüge
   sehen bei 0,03 cm Abstand glatt aus.
 - Dateinamen mit `icon-` werden als dekorative Icons ohne Bildunterschrift eingesetzt.
+- Pfeile auf Bögen: kein `shorten` (die Spitze richtet sich dann an der ungekürzten Tangente
+  aus und sitzt schief), sondern Start-/Endwinkel direkt wählen und die Spitze mit `bend`
+  biegen, z. B. `-{Stealth[length=6pt,width=5pt,bend]}`. Gilt auch für kleine Kreise, dort
+  keine `markings`-Pfeile.
+- Farbe bei Beschriftungen mit Hintergrund (`lbl`, Knoten mit `fill=bg`) nur über `text=…`
+  bzw. `draw=…` setzen: Eine reine Farbangabe wie `acc` färbt auch die Füllung.
+- Beschriftungen nicht auf Linien legen. Wo es eng ist: `lbl` und den Knoten **nach** den
+  Linien zeichnen, sonst wird er übermalt.

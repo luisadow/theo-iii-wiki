@@ -1,0 +1,39 @@
+% Integralsätze: Gauß (Fluss durch geschlossene Fläche) und Stokes (Zirkulation um den Rand)
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  % --- Gauß: Volumen V, Rand dV, Normalen nach außen (Ellipse, Normalen exakt)
+  \begin{scope}
+    \def\a{1.45} \def\b{1.0}
+    \fill[soft] (0,0) ellipse ({\a} and {\b});
+    \draw[acc, main] (0,0) ellipse ({\a} and {\b});
+    \foreach \t in {20,75,130,200,255,320} {
+      \pgfmathsetmacro{\nx}{\b*cos(\t)} \pgfmathsetmacro{\ny}{\a*sin(\t)}
+      \pgfmathsetmacro{\nn}{sqrt(\nx*\nx+\ny*\ny)}
+      \draw[vec] ({\a*cos(\t)},{\b*sin(\t)}) -- ++({0.55*\nx/\nn},{0.55*\ny/\nn});
+    }
+    \node[acc] at (-0.35,0.15) {$V$};
+    \node[acc, anchor=north east] at (-1.05,-0.72) {$\partial V$};
+    \node[anchor=south west] at ({\a*cos(20)+0.5},{\b*sin(20)+0.1}) {$d\vec A$};
+    \node[anchor=north] at (0,-1.75) {$\displaystyle\int_V \nabla\cdot\vec F\,dV=\oint_{\partial V}\vec F\cdot d\vec A$};
+  \end{scope}
+
+  % --- Stokes: gewölbte Fläche A, Randkurve dA mit Umlaufsinn passend zu dA (rechte Hand)
+  \begin{scope}[xshift=5.4cm, yshift=-0.35cm]
+    \def\rx{1.5} \def\ry{0.45}
+    \fill[soft] (-\rx,0) .. controls (-1.35,1.25) and (1.35,1.25) .. (\rx,0)
+      arc[start angle=0, end angle=-180, x radius=\rx, y radius=\ry] -- cycle;
+    \draw[thin] (-\rx,0) .. controls (-1.35,1.25) and (1.35,1.25) .. (\rx,0);
+    % hinterer Teil des Randes gestrichelt
+    \draw[acc, main, dash pattern=on 3pt off 2pt] (\rx,0) arc[start angle=0, end angle=180, x radius=\rx, y radius=\ry];
+    % vorderer Teil mit Umlaufrichtung (von oben gesehen gegen den Uhrzeigersinn)
+    \draw[acc, main] (-\rx,0) arc[start angle=180, end angle=360, x radius=\rx, y radius=\ry];
+    \draw[acc, line width=1.1pt, -{Stealth[length=6pt,width=5pt,bend]}]
+      (250:{\rx} and {\ry}) arc[start angle=250, end angle=300, x radius=\rx, y radius=\ry];
+    \draw[vec] (0,0.94) -- (0,1.75) node[anchor=west] {$d\vec A$};
+    \node[acc] at (0.55,0.62) {$A$};
+    \node[acc, anchor=west] at (\rx+0.05,-0.15) {$\partial A$};
+    \node[anchor=north] at (0,-1.4) {$\displaystyle\int_A (\nabla\times\vec F)\cdot d\vec A=\oint_{\partial A}\vec F\cdot d\vec r$};
+  \end{scope}
+\end{tikzpicture}
+\end{document}

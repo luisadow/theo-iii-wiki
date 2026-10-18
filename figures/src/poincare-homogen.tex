@@ -1,0 +1,22 @@
+% Poincaré-Eichung im homogenen B-Feld: A_p = B x r / 2 kreist um den Ursprung, A_p senkrecht zu r
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  % homogenes B aus der Ebene: Fläche + Legende
+  \fill[soft=blue] (-2.7,-2.7) rectangle (2.7,2.7);
+  % A_p tangential (gegen den Uhrzeigersinn), mittig auf den Kreisen, Länge proportional zu r
+  \foreach \r in {0.8,1.6,2.4} {
+    \draw[aux] (0,0) circle (\r);
+    \foreach \w in {0,45,...,315}
+      \draw[acc, vec, line width=1pt] ($(\w:\r)+({\w-90}:0.11*\r)$) -- ++({\w+90}:{0.22*\r});
+  }
+  \fill (0,0) circle (1.6pt) node[anchor=north east, font=\footnotesize] {$O$};
+  \draw[vec, line width=0.8pt] (0,0) -- (22.5:2.4) node[pos=0.6, anchor=south east, font=\footnotesize] {$\vv r$};
+  \begin{scope}[shift={(3.25,2.2)}]
+    \draw[blue, line width=0.7pt] (0,0) circle (0.1); \fill[blue] (0,0) circle (0.035);
+    \node[blue, anchor=west] at (0.15,0) {$\vv B$ homogen, aus der Ebene};
+  \end{scope}
+  \node[acc, anchor=west] at (3.1,1.35) {$\vv A_p=\tfrac12\,\vv B\times\vv r$};
+  \node[anchor=west] at (3.1,0.7) {$\vv r\cdot\vv A_p=0$, $|\vv A_p|\propto r$};
+\end{tikzpicture}
+\end{document}

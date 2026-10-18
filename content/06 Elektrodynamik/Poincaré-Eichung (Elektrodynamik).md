@@ -43,6 +43,8 @@ Eichwechsel: $\mathbf{A}_p = \mathbf{A} + \nabla \chi$, $\phi_p = \phi - \partia
 $$\mathbf A_p = -\int_0^1 u\,du\;\mathbf r\times\mathbf B = -\tfrac12\,\mathbf r\times\mathbf B = \tfrac12\,\mathbf B\times\mathbf r.$$
 Check: $\mathbf r\cdot(\mathbf B\times\mathbf r) = 0$ ✓, und $\nabla\times\left(\tfrac12\mathbf B\times\mathbf r\right) = \tfrac12\left[\mathbf B(\nabla\cdot\mathbf r) - (\mathbf B\cdot\nabla)\mathbf r\right] = \tfrac12(3\mathbf B - \mathbf B) = \mathbf B$ ✓. Das ist die bekannte „symmetrische Eichung“.
 
+![[poincare-homogen.svg|Symmetrische Eichung im homogenen B-Feld: A_p kreist um den Ursprung, steht überall senkrecht auf r und wächst linear mit dem Abstand. Die Zirkulation längs eines Kreises ist damit πr²B, also genau der eingeschlossene Fluss.]]
+
 **Homogenes elektrisches Feld $\mathbf E$ (statisch):**
 $$\phi_p = -\int_0^1 du\;\mathbf r\cdot\mathbf E = -\mathbf E\cdot\mathbf r,\qquad -\nabla\phi_p = \mathbf E\ \checkmark$$
 

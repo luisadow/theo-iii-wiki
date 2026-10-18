@@ -41,6 +41,8 @@ Anisotrop: $M_i = \chi_{ij} H_j$, $B_i = \mu_{ij} H_j$ (Tensoren symmetrisch bei
 - Energieverlust pro Zyklus = Fläche der Schleife.
 - Entmagnetisierung: Rückführen entlang Minor Loop oder durch Wechselfeld/Erwärmung.
 
+![[hysterese.svg|Hysterese-Schleife: Die Neukurve führt vom unmagnetisierten Zustand in die Sättigung B_s. Bei fallendem H bleibt bei H = 0 die Remanenz B_r, erst beim Koerzitivfeld −H_c ist B = 0. Die eingeschlossene Fläche ist die Energie, die pro Umlauf als Wärme verloren geht.]]
+
 ---
 
 ## 4. Randbedingungen (magnetisch)

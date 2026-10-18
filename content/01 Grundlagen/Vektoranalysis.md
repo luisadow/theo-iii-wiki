@@ -63,6 +63,8 @@ Diese Formen sind essenziell für [[Randwertprobleme (Elektrostatik)]] und [[Mul
 | **Stokes**               | $\displaystyle \int_A (\nabla \times \vec{F}) \cdot d\vec{A} = \oint_{\partial A} \vec{F} \cdot d\vec{r}$ | Wirbel, Induktionsgesetz         |
 | **Gradientensatz**       | $\displaystyle \int_\gamma \nabla f \cdot d\vec{r} = f(B) - f(A)$                                         | Potentialdifferenzen             |
 
+![[integralsaetze.svg|Links der Satz von Gauß: Die Quellen in V zeigen sich als Nettofluss durch die geschlossene Fläche ∂V, dA zeigt nach außen. Rechts der Satz von Stokes: Die Wirbel auf der Fläche A ergeben die Zirkulation längs der Randkurve ∂A. Der Umlaufsinn passt nach der Rechte-Hand-Regel zu dA.]]
+
 Volumenelemente:
 
 - Kartesisch: $dV = dx\,dy\,dz$

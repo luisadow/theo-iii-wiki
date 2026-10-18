@@ -1,0 +1,20 @@
+% Plattenkondensator: homogenes Feld, Energiedichte u = eps0 E^2/2 überall gleich
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  \def\W{3.6} \def\d{1.6}
+  \fill[soft] (0,0) rectangle (\W,\d);
+  \foreach \x in {0.3,0.75,...,3.4} \draw[vec, line width=0.8pt] (\x,\d-0.08) -- (\x,0.1);
+  \draw[warm, line width=2.4pt] (0,\d) -- (\W,\d);
+  \draw[blue, line width=2.4pt] (0,0) -- (\W,0);
+  \node[warm, anchor=west] at (\W+0.1,\d) {$+Q$};
+  \node[blue, anchor=west] at (\W+0.1,0) {$-Q$};
+  \node[lbl, text=acc, font=\footnotesize] at (\W/2,\d/2) {$u=\tfrac12\varepsilon_0E^2$};
+  \node[anchor=west] at (\W+0.1,\d/2) {$\vv E$};
+  \draw[aux, |-|] (-0.35,0) -- node[lbl, text=mu, font=\footnotesize] {$d$} (-0.35,\d);
+  \draw[aux, |-|] (0,-0.4) -- node[lbl, text=mu, font=\footnotesize] {Fläche $A$} (\W,-0.4);
+  \node[anchor=west, align=left, font=\footnotesize] at (\W+1.2,0.95)
+    {$E=\dfrac{\sigma}{\varepsilon_0}=\dfrac{Q}{\varepsilon_0A}$\\[6pt] $C=\dfrac{\varepsilon_0A}{d}$\\[6pt] $W=u\cdot Ad=\tfrac12 C\Phi^2$};
+  \node[mu, font=\footnotesize, anchor=north] at (\W/2,-0.65) {Randfeld vernachlässigt ($d\ll\sqrt A$)};
+\end{tikzpicture}
+\end{document}

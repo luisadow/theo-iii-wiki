@@ -46,6 +46,8 @@ $$
 
 mit $t_r = t - |\mathbf{r}-\mathbf{r}'|/c$.
 
+![[retardierung.svg|Eine Änderung der Quelle bei r′ breitet sich als Kugelwelle mit Lichtgeschwindigkeit aus. Am Aufpunkt r zählt zur Zeit t deshalb der Zustand der Quelle zur früheren Zeit t_r. Für jedes r′ ist die Laufzeit |r − r′|/c eine andere.]]
+
 ---
 
 ## 4. Vergleich zu Coulomb- und Poincaré-Eichung

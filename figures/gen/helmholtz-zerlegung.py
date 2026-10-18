@@ -19,7 +19,8 @@ def arrows(fx, fy, style):
             m = math.hypot(vx, vy)
             if m < 1e-9:
                 continue
-            s = min(L, 0.45 * m) / m
+            # Mindestlänge: bei sehr kurzen Pfeilen wäre die Spitze länger als der Schaft
+            s = max(0.2, min(L, 0.45 * m)) / m
             x0, y0 = x - vx * s / 2, y - vy * s / 2
             out.append(f"\\draw[{style}] ({x0:.3f},{y0:.3f}) -- ++({vx * s:.3f},{vy * s:.3f});")
     return "\n".join(out) + "\n"
@@ -34,4 +35,4 @@ fields = {
 }
 for key, (fx, fy, col) in fields.items():
     with open(os.path.join(out, f"helmholtz-{key}.tex"), "w") as fh:
-        fh.write(arrows(fx, fy, f"{col}, line width=0.7pt, -{{Stealth[length=3.6pt,width=3pt]}}"))
+        fh.write(arrows(fx, fy, f"{col}, line width=0.7pt, line cap=butt, -{{Stealth[length=3.6pt,width=3pt]}}"))

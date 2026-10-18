@@ -64,6 +64,8 @@ Dieser Hub fasst alle laufenden Notizen zum Modul **Theoretische Physik III: El
 
 ## 3. Kerndefinitionen & wichtigste Formeln (Spickzettel)
 
+![[elektrostatik-dreieck.svg|Die drei Größen der Elektrostatik und alle sechs Wege zwischen ihnen. Ableiten (∇·, −∇, ∇²) ist meist leichter als Integrieren. In der Praxis rechnet man oft über das Potential: erst φ aus ρ, dann E = −∇φ.]]
+
 - **Coulomb-Kraft:**
   $$
   \mathbf{F}_{12} = \frac{1}{4\pi\varepsilon_0} \frac{q_1 q_2}{r^2}\,\hat{\mathbf{r}}_{12}

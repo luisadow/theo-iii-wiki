@@ -79,6 +79,8 @@ $$
 - Innen ($r < R$): $A_\varphi = \frac{1}{2}\mu_0 n I r$
 - Außen ($r > R$): $A_\varphi = \frac{1}{2}\mu_0 n I \frac{R^2}{r}$
 
+![[solenoid-vektorpotential.svg|Querschnitt durch ein langes Solenoid: B gibt es nur innen, A dagegen auch außen. A_φ wächst innen linear und fällt außen wie 1/r. Außen ist A rotationsfrei, aber nicht null, denn sein Umlaufintegral ist gleich dem eingeschlossenen Fluss.]]
+
 ---
 
 ## 4. Energie & Induktivität

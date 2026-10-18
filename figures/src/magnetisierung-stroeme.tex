@@ -8,9 +8,10 @@
   \foreach \i in {0,...,6} \foreach \j in {0,...,3} {
     \pgfmathsetmacro{\x}{0.3+\i*0.6}
     \pgfmathsetmacro{\y}{0.3+\j*0.6}
-    \draw[thin, postaction={decorate}, decoration={markings,
-        mark=at position 0.1 with {\arrow{Stealth[length=3.2pt,width=2.8pt]}}}]
-      (\x+0.22,\y) arc[start angle=0, end angle=360, radius=0.22];
+    % Kreis plus kurzer Bogen mit gebogener Spitze (Markierungen auf so kleinen Kreisen knicken)
+    \draw[thin] (\x,\y) circle (0.22);
+    \draw[thin, -{Stealth[length=3.2pt,width=2.8pt,bend]}]
+      (\x,\y) ++(-10:0.22) arc[start angle=-10, end angle=50, radius=0.22];
   }
   % Oberflächenstrom K_b, ebenfalls gegen den Uhrzeigersinn
   \draw[acc, line width=2pt, postaction={decorate}, decoration={markings,

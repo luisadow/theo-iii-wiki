@@ -21,7 +21,6 @@
   \node[acc, circle, fill=acc, inner sep=1.4pt] at ({\g*\b},{\g}) {};
   \node[acc, circle, fill=acc, inner sep=1.4pt] at ({\g},{\g*\b}) {};
   \node[acc, font=\footnotesize, anchor=south east] at ({\g*\b-0.06},{\g+0.04}) {$ct'=1$};
-  \node[acc, font=\footnotesize, anchor=north west] at ({\g+0.06},{\g*\b-0.06}) {$x'=1$};
   % Einheiten in S
   \node[dot] at (0,1) {}; \node[dot] at (1,0) {};
   % Gleichzeitigkeit in S': Linie parallel zur x'-Achse durch ct'=1
@@ -33,5 +32,7 @@
   \draw[aux] (A) -- (A |- 0,0);
   \draw[aux] (B) -- (B |- 0,0);
   \node[mu, font=\footnotesize, align=center, anchor=north] at (0.1,-1.5) {$A$ und $B$ sind gleichzeitig in $S'$, in $S$ nicht};
+  % zuletzt, damit die Aussparung über der gestrichelten Linie von B liegt
+  \node[acc, font=\footnotesize, anchor=north west, lbl] at ({\g+0.06},{\g*\b-0.06}) {$x'=1$};
 \end{tikzpicture}
 \end{document}

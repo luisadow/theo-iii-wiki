@@ -31,6 +31,8 @@ Randwertprobleme (RWP) liefern Potential- und Feldverteilungen auf Basis vorgege
 3. **Eindeutigkeitssatz**  
    Für lineare Medien ist die Lösung durch die RB eindeutig – praktisches Prüfkriterium für analytische oder numerische Ergebnisse.
 
+![[randbedingungen.svg|Im Inneren gilt die Poisson-Gleichung. Auf jedem Stück des Randes braucht man genau eine Angabe: entweder das Potential selbst (Dirichlet) oder seine Normalableitung (Neumann). Dann ist die Lösung eindeutig.]]
+
 ---
 
 ## 2. Klassische Randbedingungstypen

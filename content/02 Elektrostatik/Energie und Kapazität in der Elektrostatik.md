@@ -116,6 +116,8 @@ u = \frac{1}{2} \varepsilon_0 E^2,
 W = \frac{1}{2} C \Phi^2 = \frac{1}{2} \frac{\varepsilon_0 A}{d} (E d)^2
 $$
 
+![[plattenkondensator.svg|Zwischen den Platten ist das Feld homogen, deshalb ist auch die Energiedichte u = ε₀E²/2 überall gleich. Die Energie ist dann einfach u mal Volumen Ad, und das ergibt genau ½CΦ².]]
+
 ### 4.3 Koaxialkondensator (Kapazitätsmatrix)
 
 - Innenradius $a$, Außenradius $b$, Länge $L$

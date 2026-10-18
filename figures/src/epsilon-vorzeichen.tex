@@ -8,9 +8,10 @@
       \node[circle, fill=fg, inner sep=0pt, minimum size=4pt] at (\a:1.25) {};
       \node at (\a:1.75) {$\n$};
     }
+    % Bögen an festen Winkeln statt shorten: so liegt die Spitze tangential auf dem Bogen
     \foreach \s in {90,210,330}
-      \draw[vec, acc, shorten >=11pt, shorten <=11pt]
-        (\s:1.25) arc[start angle=\s, delta angle=120, radius=1.25];
+      \draw[vec, acc, -{Stealth[length=6pt,width=5pt,bend]}]
+        (\s+17:1.25) arc[start angle=\s+17, delta angle=86, radius=1.25];
     \node[acc] at (0,0) {$+1$};
     \node[anchor=north, font=\footnotesize] at (0,-2.1)
       {zyklisch: $123,\ 231,\ 312$};
@@ -23,8 +24,8 @@
       \node at (\a:1.75) {$\n$};
     }
     \foreach \s in {90,210,330}
-      \draw[vec, blue, shorten >=11pt, shorten <=11pt]
-        (\s:1.25) arc[start angle=\s, delta angle=-120, radius=1.25];
+      \draw[vec, blue, -{Stealth[length=6pt,width=5pt,bend]}]
+        (\s-17:1.25) arc[start angle=\s-17, delta angle=-86, radius=1.25];
     \node[blue] at (0,0) {$-1$};
     \node[anchor=north, font=\footnotesize] at (0,-2.1)
       {antizyklisch: $132,\ 321,\ 213$};

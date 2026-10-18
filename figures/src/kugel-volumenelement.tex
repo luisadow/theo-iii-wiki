@@ -21,7 +21,7 @@
   \draw[mu, thin, domain=0:\th, samples=30, variable=\t] plot ({sx(1.15,\t,\ph)},{sy(1.15,\t,\ph)},{sz(1.15,\t)});
   \node[text=mu, font=\footnotesize] at \sph{1.42}{\th/2}{\ph} {$\theta$};
   \draw[mu, thin, domain=0:\ph, samples=30, variable=\t] plot ({sx(1.1,90,\t)},{sy(1.1,90,\t)},{sz(1.1,90)});
-  \node[text=mu, font=\footnotesize] at \sph{1.4}{90}{\ph/2} {$\phi$};
+  \node[text=mu, font=\footnotesize, lbl] at \sph{1.4}{90}{\ph/2} {$\phi$};
   % Volumenelement: Außenfläche (r+dr) getönt
   \fill[acc, fill opacity=0.22]
     plot[domain=\th:\th+\dth, samples=12, variable=\t] ({sx(\r+\dr,\t,\ph)},{sy(\r+\dr,\t,\ph)},{sz(\r+\dr,\t)})
@@ -39,9 +39,9 @@
       \draw \sph{\r}{\T}{\P} -- \sph{\r+\dr}{\T}{\P};
   \end{scope}
   % Kantenbeschriftung (Kanten an der vorderen rechten Ecke theta+dtheta, phi+dphi)
-  \node[anchor=north west, font=\footnotesize] at \sph{\r+\dr/2}{\th+\dth}{\ph+\dph} {$dr$};
+  \node[anchor=west, font=\footnotesize, xshift=2pt] at \sph{\r+\dr/2}{\th+\dth}{\ph+\dph} {$dr$};
   \node[anchor=west, font=\footnotesize] at \sph{\r+\dr}{\th+\dth/2}{\ph+\dph} {$r\,d\theta$};
-  \node[anchor=north, font=\footnotesize] at \sph{\r}{\th+\dth}{\ph+\dph/2} {$r\sin\theta\,d\phi$};
+  \node[anchor=north west, font=\footnotesize, xshift=1pt] at \sph{\r}{\th+\dth}{\ph+\dph/2} {$r\sin\theta\,d\phi$};
   \path \sph{\r+\dr}{\th}{\ph+\dph} coordinate (T);
   \node[anchor=south west] at ($(T)+(0,0.35,0.05)$) {$dV=r^2\sin\theta\,dr\,d\theta\,d\phi$};
 \end{tikzpicture}

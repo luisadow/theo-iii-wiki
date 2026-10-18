@@ -1,0 +1,27 @@
+% Hysterese-Schleife eines Ferromagneten: Neukurve, Remanenz B_r, Koerzitivfeld H_c, Sättigung B_s
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  \def\Bs{1.5} \def\Hc{0.7} \def\w{0.55} \def\Hm{2.6}
+  % Schleifenfläche = Energieverlust pro Zyklus
+  \fill[soft] plot[domain=\Hm:-\Hm, samples=80] (\x,{\Bs*tanh((\x+\Hc)/\w)})
+    -- plot[domain=-\Hm:\Hm, samples=80] (\x,{\Bs*tanh((\x-\Hc)/\w)}) -- cycle;
+  \draw[axis] (-3.0,0) -- (3.2,0) node[anchor=west, text=fg] {$H$};
+  \draw[axis] (0,-2.0) -- (0,2.1) node[anchor=south, text=fg] {$B$};
+  \draw[aux] (-3.0,\Bs) -- (3.0,\Bs); \draw[aux] (-3.0,-\Bs) -- (3.0,-\Bs);
+  \node[mu, font=\footnotesize, anchor=south east] at (-2.0,\Bs) {$B_s$};
+  \node[mu, font=\footnotesize, anchor=north west] at (2.0,-\Bs) {$-B_s$};
+  % Neukurve
+  \draw[mu, line width=0.8pt, dash pattern=on 3pt off 2pt] plot[domain=0:\Hm, samples=50] (\x,{\Bs*tanh(\x/(1.4*\w))*tanh(\x/(1.4*\w))*(\x>0)});
+  % Äste mit Durchlaufrichtung: oben bei fallendem H, unten bei steigendem H
+  \draw[acc, line width=1.4pt, field=0.3] plot[domain=\Hm:-\Hm, samples=80] (\x,{\Bs*tanh((\x+\Hc)/\w)});
+  \draw[acc, line width=1.4pt, field=0.3] plot[domain=-\Hm:\Hm, samples=80] (\x,{\Bs*tanh((\x-\Hc)/\w)});
+  % Kennwerte
+  \pgfmathsetmacro{\Br}{\Bs*tanh(\Hc/\w)}
+  \fill (0,\Br) circle (1.6pt) node[anchor=east, font=\footnotesize, xshift=-3pt] {$B_r$};
+  \fill (-\Hc,0) circle (1.6pt) node[anchor=south east, font=\footnotesize] {$-H_c$};
+  \fill (\Hc,0) circle (1.6pt) node[anchor=north west, font=\footnotesize] {$H_c$};
+  \node[mu, font=\footnotesize, anchor=west] at (1.25,0.55) {Neukurve};
+  \node[acc, font=\footnotesize, align=center, anchor=north] at (0,-2.15) {Fläche der Schleife = Energieverlust pro Zyklus};
+\end{tikzpicture}
+\end{document}

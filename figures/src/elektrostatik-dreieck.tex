@@ -1,0 +1,24 @@
+% Elektrostatik-Dreieck: Umrechnungen zwischen rho, phi und E (nach Griffiths)
+\input{style}
+\begin{document}
+\begin{tikzpicture}[q/.style={circle, draw, line width=1pt, minimum size=30pt, inner sep=0pt, fill=bg}]
+  \node[q, draw=warm, text=warm] (r) at (0,3.0) {$\rho$};
+  \node[q] (p) at (-3.2,0) {$\phi$};
+  \node[q] (e) at (3.2,0) {$\vv E$};
+  % rho <-> phi (Poisson, der übliche Rechenweg): Akzent
+  \draw[acc, vec, transform canvas={shift={(-0.09,0.12)}}] (r) -- (p)
+    node[midway, anchor=south east, font=\footnotesize, text=acc] {$\phi=\dfrac{1}{4\pi\varepsilon_0}\displaystyle\int\frac{\rho}{|\vv r-\vv r'|}\,d^3r'$};
+  \draw[acc, vec, transform canvas={shift={(0.09,-0.12)}}] (p) -- (r)
+    node[midway, sloped, below, font=\footnotesize, text=acc] {$\nabla^2\phi=-\rho/\varepsilon_0$};
+  % rho <-> E
+  \draw[vec, transform canvas={shift={(0.09,0.12)}}] (r) -- (e)
+    node[midway, anchor=south west, font=\footnotesize] {$\vv E=\dfrac{1}{4\pi\varepsilon_0}\displaystyle\int\rho\,\frac{\vv r-\vv r'}{|\vv r-\vv r'|^3}\,d^3r'$};
+  \draw[vec, transform canvas={shift={(-0.09,-0.12)}}] (e) -- (r)
+    node[midway, sloped, below, font=\footnotesize] {$\rho=\varepsilon_0\,\nabla\cdot\vv E$};
+  % phi <-> E
+  \draw[vec, transform canvas={shift={(0,0.13)}}] (p) -- (e)
+    node[midway, anchor=south, font=\footnotesize] {$\vv E=-\nabla\phi$};
+  \draw[vec, transform canvas={shift={(0,-0.13)}}] (e) -- (p)
+    node[midway, anchor=north, font=\footnotesize] {$\phi(\vv r)=-\displaystyle\int_{\mathcal O}^{\vv r}\vv E\cdot d\boldsymbol\ell$};
+\end{tikzpicture}
+\end{document}

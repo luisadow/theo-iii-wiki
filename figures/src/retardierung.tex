@@ -1,0 +1,23 @@
+% Retardierte Potentiale: Wirkung von r' erreicht r erst nach der Laufzeit |r - r'|/c
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+  \coordinate (O) at (-1.2,-1.6);
+  \coordinate (S) at (0,0);
+  \coordinate (F) at (3.6,0.9);
+  \pgfmathsetmacro{\d}{sqrt(3.6*3.6+0.9*0.9)}
+  % Quellverteilung
+  \fill[warm, fill opacity=0.18] (S) ellipse (0.75 and 0.55);
+  \node[warm, font=\footnotesize] at (-0.55,0.75) {$\rho,\ \vv J$};
+  % Kugelwellen von r': die äußere wurde zur Zeit t_r ausgesandt und erreicht r gerade jetzt
+  \foreach \k in {0.35,0.6,0.85} \draw[mu, thin] (S) circle ({\k*\d});
+  \draw[acc, main] ({atan2(0.9,3.6)-38}:\d) arc[start angle={atan2(0.9,3.6)-38}, end angle={atan2(0.9,3.6)+38}, radius=\d];
+  \draw[vec] (S) -- (F) node[midway, lbl, anchor=south, font=\footnotesize, yshift=2pt] {$\vv r-\vv r'$};
+  \draw[thin, mu, ->] (O) -- (S) node[midway, anchor=east, text=mu, font=\footnotesize] {$\vv r'$};
+  \draw[thin, mu, ->] (O) -- (F) node[midway, anchor=north west, text=mu, font=\footnotesize] {$\vv r$};
+  \fill (O) circle (1.4pt) node[anchor=north, text=mu, font=\footnotesize] {$O$};
+  \fill[warm] (S) circle (1.8pt);
+  \fill (F) circle (1.8pt) node[anchor=west, xshift=2pt] {Aufpunkt, Zeit $t$};
+  \node[acc, anchor=west, font=\footnotesize] at (3.75,0.0) {$t_r=t-\dfrac{|\vv r-\vv r'|}{c}$};
+\end{tikzpicture}
+\end{document}

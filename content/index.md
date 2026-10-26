@@ -30,6 +30,7 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
 <div class="news">
 <p>Das Wiki läuft mit der Vorlesung von <strong>Prof. Hendrik Weimer</strong> weiter: Neue Seiten kommen im Takt der Vorlesung dazu und tragen die Markierung <span class="tag-neu">neu</span>. Alle übrigen Seiten stammen aus dem WiSe 25/26 und bleiben, wo sie sind.</p>
 <ul class="news-list">
+<li><time datetime="2026-10-26">26.10.</time><span><a class="internal" href="./01-Grundlagen/Vektoranalysis">Vektoranalysis & Gauß-System in der Elektrostatik</a><span class="news-topic">01 Grundlagen, 02 Elektrostatik, Formelsammlung · Radialer Laplace, Ableitung von 1/R und parallele SI/Gauß-Übersicht für das WiSe 26/27</span></span></li>
 <li><time datetime="2026-10-18">18.10.</time><span><a class="internal" href="./01-Grundlagen/Indexschreibweise-und-Levi-Civita-Symbol">Indexschreibweise – Summenkonvention, δ und ε</a><span class="news-topic">01 Grundlagen · Kronecker-Delta, Levi-Civita-Symbol, ε-δ-Identität</span></span></li>
 </ul>
 </div>

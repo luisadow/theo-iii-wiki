@@ -75,6 +75,11 @@ $$
 \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0},\quad \oint_{\partial V} \mathbf{E}\cdot d\mathbf{A} = \frac{Q_\text{in}}{\varepsilon_0}
 $$
 
+> [!info] Gauß-System
+> Im Gauß-System entfällt $\varepsilon_0$, dafür tritt $4\pi$ auf:
+> $$\nabla \cdot \mathbf{E} = 4\pi\rho, \qquad \oint_{\partial V} \mathbf{E}\cdot d\mathbf{A} = 4\pi Q_\text{in}, \qquad \mathbf{E} = \frac{Q}{r^2}\hat{\mathbf{r}}.$$
+> Die Vorlesung im WiSe 26/27 rechnet im Gauß-System. In den Feldgleichungen wird dabei formal $1/\varepsilon_0 \to 4\pi$ ersetzt; die Ladung selbst wird in Gauß-Einheiten (statC) gemessen, $q_\text{Gauß} = q_\text{SI}/\sqrt{4\pi\varepsilon_0}$ – deshalb bleiben die Kräfte unverändert.
+
 ![[gauss-flaeche.svg|Gesamtfeld der vier Ladungen (numerisch berechnete Feldlinien). Zum Fluss durch ∂V trägt nur Q_in bei. Das Feld von q₄ allein würde ∂V genauso oft durchsetzen, wie es sie wieder verlässt.]]
 
 ### Symmetrie-Check (Faustregel vor jedem Gauß-Integral)
@@ -134,6 +139,10 @@ Allgemeine Form:
 $$
 \nabla^2 \phi(\mathbf{r}) = -\frac{\rho(\mathbf{r})}{\varepsilon_0}
 $$
+
+> [!info] Gauß-System
+> $$ \Delta \phi(\mathbf{r}) = -4\pi\rho(\mathbf{r}), \qquad \phi(\mathbf{r}) = \int_V \frac{\rho(\mathbf{r}')}{\lvert \mathbf{r}-\mathbf{r}'\rvert}\,d^3r', \qquad G = -\frac{1}{4\pi\lvert\mathbf{r}-\mathbf{r}'\rvert}. $$
+> Das $4\pi$ steht im Gauß-System auf der rechten Seite der Poisson-Gleichung statt im Coulomb-Integral, und die Green-Funktion trägt das negative Vorzeichen mit $\Delta G = +\delta(\mathbf{r}-\mathbf{r}')$. Die Vorlesung im WiSe 26/27 rechnet so.
 
 Ladungsfreie Gebiete ($\rho = 0$) → Laplace-Gleichung $\nabla^2 \phi = 0$. Lösung eindeutig bei gegebenen Randbedingungen (Eindeutigkeitssatz).
 

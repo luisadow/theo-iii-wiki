@@ -53,6 +53,90 @@ Siehe [[Elektrostatik - Lernseite (Grundlagen)]] für Anwendungen auf Felder und
 
 Diese Formen sind essenziell für [[Randwertprobleme (Elektrostatik)]] und [[Multipolentwicklung (Elektrostatik)]].
 
+### 2.3 Radialer Fall: Ableitung von $1/R$ und Laplace auf $f(r)$
+
+Fast jede Rechnung der Elektrostatik hängt an einem einzigen Abstand $R = \lvert\mathbf r-\mathbf r'\rvert$. Zwei Ableitungen davon braucht man immer wieder – und beide folgen aus einer einzigen Kettenregel.
+
+#### Der Baustein $\partial_i R = x_i/R$
+
+Mit $\mathbf r = (x,y,z)$, $\mathbf r' = (x',y',z')$ und $R = \sqrt{(x-x')^2+(y-y')^2+(z-z')^2}$:
+
+$$
+\frac{\partial R}{\partial x} = \frac{1}{2\sqrt{\dots}}\cdot 2(x-x') = \frac{x-x'}{R}.
+$$
+
+Allgemein, für jede Koordinate $i$:
+
+$$
+\frac{\partial R}{\partial x_i} = \frac{x_i - x_i'}{R}, \qquad\text{bzw.}\qquad \nabla_{\mathbf r} R = \frac{\mathbf r-\mathbf r'}{R} = \hat{\mathbf R}.
+$$
+
+> [!tip] Merke
+> Ableitung des Abstands nach einer Koordinate ergibt **die Koordinatendifferenz geteilt durch den Abstand**. Mehr steckt nicht dahinter – die Wurzel fällt weg, weil sie sich gegen den Faktor $2$ aus der Quadratregel kürzt. Damit ist jede weitere Ableitung von $1/R$, $R^n$ oder $\ln R$ reine Kettenregel.
+
+#### Gradient von $1/R$
+
+Beide Faktoren der Kettenregel zusammengesetzt ($\frac{\partial}{\partial x}R^{-1} = -R^{-2}\partial_x R$):
+
+$$
+\nabla_{\mathbf r}\,\frac{1}{\lvert\mathbf r-\mathbf r'\rvert} = -\frac{\mathbf r-\mathbf r'}{\lvert\mathbf r-\mathbf r'\rvert^{3}} = -\frac{\hat{\mathbf R}}{R^{2}}.
+$$
+
+Im Zähler steht der volle Abstandsvektor, nicht der Einheitsvektor – deshalb die $3$ im Nenner, die sich gegen den Betrag im Zähler wegkürzt:
+
+$$
+\frac{\mathbf r-\mathbf r'}{\lvert\mathbf r-\mathbf r'\rvert^{3}} = \frac{\hat{\mathbf R}}{R^{2}}.
+$$
+
+Damit wird aus $\mathbf E = -\nabla\phi$ mit dem Coulomb-Integral sofort
+
+$$
+\mathbf E(\mathbf r) = \int \rho(\mathbf r')\,\frac{\mathbf r-\mathbf r'}{\lvert \mathbf r-\mathbf r'\rvert^{3}}\,d^3r',
+$$
+
+also genau der $1/R^2$-Abfall des Coulomb-Gesetzes.
+
+#### Warum $\nabla$ unter das Integral darf
+
+Im Coulomb-Integral ist $\mathbf r'$ die **Integrationsvariable** (Ort der Ladung), $\mathbf r$ der **Aufpunkt** (Ort der Messung). Der Operator $\nabla = \nabla_{\mathbf r}$ leitet nur nach $\mathbf r$ ab, $\rho(\mathbf r')$ hängt gar nicht von $\mathbf r$ ab. Da die Integrationsgrenzen fest sind, gilt
+
+$$
+\nabla_{\mathbf r}\int f(\mathbf r,\mathbf r')\,d^3r' = \int \nabla_{\mathbf r} f(\mathbf r,\mathbf r')\,d^3r',
+$$
+
+und der Nabla-Operator wirkt allein auf den Abstandsterm $1/\lvert\mathbf r-\mathbf r'\rvert$.
+
+#### Laplace auf radialsymmetrische Funktionen
+
+Für $f = f(r)$ (nur vom Abstand von der $z$-Achse bzw. vom Ursprung abhängig) fallen die Winkelterme weg. Aus dem Kugel-Laplace-Operator oben folgt mit der Produktregel
+
+$$
+\nabla^2 f(r) = \frac{1}{r^2}\partial_r\left(r^2 f'(r)\right) = f''(r) + \frac{2}{r}f'(r).
+$$
+
+Das $2/r$ ist kein Zufall, sondern die **logarithmische Ableitung der Kugeloberfläche** $4\pi r^2$: Ein konstantes radiales Feld hat schon Divergenz $2/r$, weil durch die größere Kugelschale hinten mehr Fluss austritt als vorne eintritt. Kurzform zum Nachrechnen:
+
+$$
+\nabla^2 f(r) = \frac{1}{r}\frac{d^2}{dr^2}\bigl(r f(r)\bigr).
+$$
+
+Für $f = 1/r$ ergibt beides $0$:
+
+$$
+\nabla^2 \frac{1}{r} = \frac{2}{r^3} - \frac{2}{r}\cdot\frac{1}{r^2} = 0 \qquad (r \neq 0),
+$$
+
+und erst das Flussintegral über eine $\varepsilon$-Kugel liefert den Anteil im Ursprung (siehe [[Green-Funktionen (Elektrostatik)]]).
+
+| Dimension | $\nabla^2 f$ für $f = f(r)$ | Fundamentallösung von $\nabla^2 f = 0$ |
+| --- | --- | --- |
+| 1D | $f''$ | $\lvert x\rvert$ |
+| 2D | $f'' + \frac{1}{r}f'$ | $\ln r$ |
+| 3D | $f'' + \frac{2}{r}f'$ | $1/r$ |
+
+> [!info] Gauß-System
+> Die Identität $\nabla^2\frac{1}{r} = -4\pi\delta(\mathbf r)$ ist reine Mathematik und gilt in jedem Einheitensystem. Unterschiedlich ist nur, welche Green-Funktion man darauf aufbaut: SI definiert $G_0 = \frac{1}{4\pi\lvert\mathbf r-\mathbf r'\rvert}$ mit $\nabla^2G_0 = -\delta$, das Gauß-System $G = -\frac{1}{4\pi\lvert\mathbf r-\mathbf r'\rvert}$ mit $\Delta G = +\delta$ – passend zu $\Delta\phi = -4\pi\rho$ statt $\nabla^2\phi = -\rho/\varepsilon_0$. Die Vorlesung im WiSe 26/27 rechnet im Gauß-System; die Vorzeichen von $G$ und $\rho$-Term gehören darum immer paarweise zusammen.
+
 ---
 
 ## 3. Integralsätze & Volumenelemente

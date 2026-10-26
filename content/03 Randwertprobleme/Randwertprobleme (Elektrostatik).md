@@ -33,6 +33,10 @@ Randwertprobleme (RWP) liefern Potential- und Feldverteilungen auf Basis vorgege
 
 ![[randbedingungen.svg|Im Inneren gilt die Poisson-Gleichung. Auf jedem Stück des Randes braucht man genau eine Angabe: entweder das Potential selbst (Dirichlet) oder seine Normalableitung (Neumann). Dann ist die Lösung eindeutig.]]
 
+> [!info] Gauß-System
+> $$\Delta\phi = -4\pi\rho, \qquad \frac{\partial \phi}{\partial n}\Big|_{\text{Leiteroberfläche}} = -4\pi\sigma, \qquad \mathbf{E} = -\nabla\phi \text{ unverändert}.$$
+> Die Neumann-Randbedingung liest sich damit ohne $\varepsilon$: die Normalableitung springt an einer Flächenladung $\sigma$ um $4\pi\sigma$. Die Vorlesung im WiSe 26/27 rechnet im Gauß-System.
+
 ---
 
 ## 2. Klassische Randbedingungstypen

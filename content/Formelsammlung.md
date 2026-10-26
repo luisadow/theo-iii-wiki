@@ -48,15 +48,18 @@ $$
 
 → [[Elektrostatik - Lernseite (Grundlagen)]] · [[Energie und Kapazität in der Elektrostatik]]
 
-| | Formel |
-| --- | --- |
-| Feldgleichungen | $\nabla\cdot\mathbf E = \rho/\varepsilon_0$, $\quad\nabla\times\mathbf E = 0$ |
-| Potential | $\mathbf E = -\nabla\phi$, $\quad\nabla^2\phi = -\rho/\varepsilon_0$ |
-| Coulomb-Integral | $\phi(\mathbf r) = \dfrac{1}{4\pi\varepsilon_0}\displaystyle\int\frac{\rho(\mathbf r')}{\lvert\mathbf r-\mathbf r'\rvert}\,d^3r'$ |
-| Gaußsches Gesetz | $\oint\mathbf E\cdot d\mathbf A = Q_{\text{in}}/\varepsilon_0$ |
-| Leiteroberfläche | $\mathbf E_{\text{innen}}=0$, $\quad E_n = \sigma/\varepsilon_0$, $\quad p = \sigma^2/(2\varepsilon_0)$ |
-| Feldenergie | $W = \dfrac{\varepsilon_0}{2}\displaystyle\int E^2\,d^3r = \dfrac12\int\rho\,\phi\,d^3r$ |
-| Kapazität | $C = Q/U$, $\quad W = \dfrac{Q^2}{2C} = \dfrac12 CU^2$ |
+| | SI | Gauß |
+| --- | --- | --- |
+| Feldgleichungen | $\nabla\cdot\mathbf E = \rho/\varepsilon_0$, $\quad\nabla\times\mathbf E = 0$ | $\nabla\cdot\mathbf E = 4\pi\rho$, $\quad\nabla\times\mathbf E = 0$ |
+| Potential | $\mathbf E = -\nabla\phi$, $\quad\nabla^2\phi = -\rho/\varepsilon_0$ | $\mathbf E = -\nabla\phi$, $\quad\Delta\phi = -4\pi\rho$ |
+| Coulomb-Integral | $\phi(\mathbf r) = \dfrac{1}{4\pi\varepsilon_0}\displaystyle\int\frac{\rho(\mathbf r')}{\lvert\mathbf r-\mathbf r'\rvert}\,d^3r'$ | $\phi(\mathbf r) = \displaystyle\int\frac{\rho(\mathbf r')}{\lvert\mathbf r-\mathbf r'\rvert}\,d^3r'$ |
+| Gaußsches Gesetz | $\oint\mathbf E\cdot d\mathbf A = Q_{\text{in}}/\varepsilon_0$ | $\oint\mathbf E\cdot d\mathbf A = 4\pi Q_{\text{in}}$ |
+| Leiteroberfläche | $\mathbf E_{\text{innen}}=0$, $\quad E_n = \sigma/\varepsilon_0$, $\quad p = \sigma^2/(2\varepsilon_0)$ | $\mathbf E_{\text{innen}}=0$, $\quad E_n = 4\pi\sigma$, $\quad p = 2\pi\sigma^2$ |
+| Feldenergie | $W = \dfrac{\varepsilon_0}{2}\displaystyle\int E^2\,d^3r = \dfrac12\int\rho\,\phi\,d^3r$ | $W = \dfrac{1}{8\pi}\displaystyle\int E^2\,d^3r = \dfrac12\int\rho\,\phi\,d^3r$ |
+| Kapazität | $C = Q/U$, $\quad W = \dfrac{Q^2}{2C} = \dfrac12 CU^2$ | unverändert ($C = Q/U$, $W = Q^2/2C$) |
+
+> [!info] Gauß-System
+> Die Vorlesung Elektrodynamik im WiSe 26/27 rechnet im Gauß-System. Die Umrechnung ist eine Ersetzung in den Feldgleichungen, $1/\varepsilon_0 \to 4\pi$; Ladungen misst man dann in statC ($q_\text{Gauß} = q_\text{SI}/\sqrt{4\pi\varepsilon_0}$), Energien und Kräfte bleiben gleich. Typische Vorzeichenfalle: die Green-Funktion ist $G = -1/(4\pi\lvert\mathbf r-\mathbf r'\rvert)$ mit $\Delta G = +\delta$.
 
 Kondensatoren (Vakuum; in Materie $\varepsilon_0\to\varepsilon$):
 
@@ -65,6 +68,8 @@ C_{\text{Platte}} = \frac{\varepsilon_0 A}{d},\qquad
 C_{\text{Kugel}} = \frac{4\pi\varepsilon_0 R_1R_2}{R_2-R_1},\qquad
 C_{\text{Zylinder}} = \frac{2\pi\varepsilon_0 L}{\ln(b/a)}
 $$
+
+Im Gauß-System entsprechend $C_{\text{Platte}} = \dfrac{A}{4\pi d}$, $C_{\text{Kugel}} = \dfrac{R_1R_2}{R_2-R_1}$, $C_{\text{Zylinder}} = \dfrac{L}{2\ln(b/a)}$.
 
 → [[Kugelkondensator]] · [[Zylinderkondensator]] · [[Maxwell-Spannungstensor (Elektrostatik)]]
 

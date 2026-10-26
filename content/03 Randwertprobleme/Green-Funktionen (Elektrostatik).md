@@ -25,6 +25,10 @@ $$
 - Eigenschaften: $\nabla^2 G_0 = -\delta(\mathbf{r}-\mathbf{r}')$; fällt wie $1/r$.
 - Symmetrie: $G_0(\mathbf{r}, \mathbf{r}') = G_0(\mathbf{r}', \mathbf{r})$.
 
+> [!info] Gauß-System
+> $$ G(\mathbf{r},\mathbf{r}') = -\frac{1}{4\pi\lvert\mathbf{r}-\mathbf{r}'\rvert}, \qquad \Delta G = +\delta(\mathbf{r}-\mathbf{r}'), \qquad \Delta\phi = -4\pi\rho \;\Rightarrow\; \phi(\mathbf{r}) = \int \frac{\rho(\mathbf{r}')}{\lvert\mathbf{r}-\mathbf{r}'\rvert}\,d^3r'. $$
+> Die mathematische Identität $\nabla^2\frac{1}{r} = -4\pi\delta(\mathbf{r})$ ist in beiden Systemen dieselbe; nur die Vorzeichenzuordnung von $G$ zu $\rho$ unterscheidet sich. Die Vorlesung im WiSe 26/27 rechnet im Gauß-System – $G$ und der Quellterm müssen dort **immer paarweise** aus derselben Konvention stammen.
+
 ## 2. Geerdete Ebene (Halbraum, Spiegelmethode)
 
 $$

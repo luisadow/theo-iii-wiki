@@ -30,6 +30,7 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
 <div class="news">
 <p>Das Wiki läuft mit der Vorlesung von <strong>Prof. Hendrik Weimer</strong> weiter: Neue Seiten kommen im Takt der Vorlesung dazu und tragen die Markierung <span class="tag-neu">neu</span>. Alle übrigen Seiten stammen aus dem WiSe 25/26 und bleiben, wo sie sind.</p>
 <ul class="news-list">
+<li><time datetime="2026-11-05">05.11.</time><span><strong>Umschalter SI ↔ Gauß</strong><span class="news-topic">Seiten mit Einheiten · Oben auf der Seite zwischen SI und dem Gauß-System der Vorlesung wechseln. Die Wahl bleibt gespeichert. Seiten, die noch nicht umgestellt sind, zeigen im Gauß-Modus eine Ersetzungstabelle.</span></span></li>
 <li><time datetime="2026-10-26">26.10.</time><span><a class="internal" href="./01-Grundlagen/Vektoranalysis">Vektoranalysis & Gauß-System in der Elektrostatik</a><span class="news-topic">01 Grundlagen, 02 Elektrostatik, Formelsammlung · Radialer Laplace, Ableitung von 1/R und parallele SI/Gauß-Übersicht für das WiSe 26/27</span></span></li>
 <li><time datetime="2026-10-18">18.10.</time><span><a class="internal" href="./01-Grundlagen/Indexschreibweise-und-Levi-Civita-Symbol">Indexschreibweise – Summenkonvention, δ und ε</a><span class="news-topic">01 Grundlagen · Kronecker-Delta, Levi-Civita-Symbol, ε-δ-Identität</span></span></li>
 </ul>
@@ -39,16 +40,18 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
 
 Der ganze Kurs läuft auf die Maxwell-Gleichungen hinaus. Statik, Materie, Induktion und Wellen sind Spezialfälle oder Folgerungen davon:
 
+<div class="unit-toggle-inline"><div class="unit-toggle-group" role="group" aria-label="Einheitensystem umschalten"><button type="button" class="unit-btn active" data-unit-target="si" aria-pressed="true" title="Internationales Einheitensystem (SI)">SI</button><button type="button" class="unit-btn" data-unit-target="gauss" aria-pressed="false" title="Gaußsches CGS-System (Vorlesung WiSe 26/27, Prof. Weimer)">Gauß</button></div></div>
+
 $$
 \begin{aligned}
-\nabla\cdot\mathbf E &= \frac{\rho}{\varepsilon_0} &\qquad \nabla\times\mathbf E &= -\partial_t\mathbf B \\[4pt]
-\nabla\cdot\mathbf B &= 0 &\qquad \nabla\times\mathbf B &= \mu_0\mathbf J + \mu_0\varepsilon_0\,\partial_t\mathbf E
+\nabla\cdot\mathbf E &= \sg{\frac{\rho}{\varepsilon_0}}{4\pi\rho} &\qquad \nabla\times\mathbf E &= -\sg{}{\frac{1}{c}}\partial_t\mathbf B \\[4pt]
+\nabla\cdot\mathbf B &= 0 &\qquad \nabla\times\mathbf B &= \sg{\mu_0\mathbf J + \mu_0\varepsilon_0\,\partial_t\mathbf E}{\frac{4\pi}{c}\mathbf J + \frac{1}{c}\,\partial_t\mathbf E}
 \end{aligned}
 $$
 
 ## Worum es geht
 
-Dieses Wiki behandelt die klassische Elektrodynamik auf dem Niveau eines Physik-Bachelors: Elektro- und Magnetostatik, Randwertprobleme, Felder in Materie, Maxwell-Gleichungen, Eichungen und spezielle Relativität. Grundlage sind meine eigenen Notizen zur Vorlesung **Theoretische Physik III** an der **TU Berlin** im WiSe 25/26, entstanden zur Prüfungsvorbereitung; die Angaben **VL 1–20** beziehen sich auf die Reihenfolge dieser Vorlesung. Im WiSe 26/27 ergänze ich das Wiki begleitend zur Vorlesung von Prof. Weimer (siehe oben). Der Inhalt eignet sich für jede Elektrodynamik-Vorlesung, alle Formeln in SI-Einheiten. Es ersetzt kein Lehrbuch, soll dir aber schnell helfen, wenn du bei einem Thema hängst: jede Seite fasst Definitionen, zentrale Formeln und typische Rechenwege zusammen und verlinkt verwandte Themen.
+Dieses Wiki behandelt die klassische Elektrodynamik auf dem Niveau eines Physik-Bachelors: Elektro- und Magnetostatik, Randwertprobleme, Felder in Materie, Maxwell-Gleichungen, Eichungen und spezielle Relativität. Grundlage sind meine eigenen Notizen zur Vorlesung **Theoretische Physik III** an der **TU Berlin** im WiSe 25/26, entstanden zur Prüfungsvorbereitung; die Angaben **VL 1–20** beziehen sich auf die Reihenfolge dieser Vorlesung. Im WiSe 26/27 ergänze ich das Wiki begleitend zur Vorlesung von Prof. Weimer (siehe oben). Der Inhalt eignet sich für jede Elektrodynamik-Vorlesung. Geschrieben ist er in SI-Einheiten; auf den Seiten der Elektrostatik und Randwertprobleme kannst du oben auf das Gauß-System der aktuellen Vorlesung umschalten. Es ersetzt kein Lehrbuch, soll dir aber schnell helfen, wenn du bei einem Thema hängst: jede Seite fasst Definitionen, zentrale Formeln und typische Rechenwege zusammen und verlinkt verwandte Themen.
 
 > [!warning] Keine offizielle Quelle
 > Studentische Notizen – fachlich durchgesehen, trotzdem können Fehler drin sein. Im Zweifel gelten Vorlesung und Lehrbuch. Fehler oder Unklarheiten gern [als Issue melden](https://github.com/luisadow/theo-iii-wiki/issues/new).

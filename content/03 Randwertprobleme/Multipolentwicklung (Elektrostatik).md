@@ -28,7 +28,7 @@ Diese Notiz fasst die Entwicklung des elektrischen Potentials in Multipolbeiträ
 Für eine kompakte Ladungsverteilung $\rho(\mathbf{r}')$ im Volumen $V$ gilt
 
 $$
-\phi(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \int_V \frac{\rho(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|}\, d^3 r'.
+\phi(\mathbf{r}) = \sg{\frac{1}{4\pi\varepsilon_0}}{} \int_V \frac{\rho(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|}\, d^3 r'.
 $$
 
 Der Kehrwert lässt sich via Laplace-Entwicklung ausdrücken:
@@ -49,7 +49,7 @@ wobei $P_\ell$ Legendre-Polynome und $\gamma$ der Winkel zwischen $\mathbf{r}$ u
 
 $$
 Q = \int_V \rho(\mathbf{r}')\, d^3 r', \qquad
-\phi_0(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \frac{Q}{r}.
+\phi_0(\mathbf{r}) = \sg{\frac{1}{4\pi\varepsilon_0}}{} \frac{Q}{r}.
 $$
 
 ### 3.2 Dipolmoment
@@ -61,8 +61,8 @@ $$
 mit Feld-/Potentialbeitrag
 
 $$
-\phi_1(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \frac{\mathbf{p} \cdot \hat{\mathbf{r}}}{r^2}, \qquad
-\mathbf{E}_1(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \left[\frac{3(\mathbf{p} \cdot \hat{\mathbf{r}})\hat{\mathbf{r}} - \mathbf{p}}{r^3}\right].
+\phi_1(\mathbf{r}) = \sg{\frac{1}{4\pi\varepsilon_0}}{} \frac{\mathbf{p} \cdot \hat{\mathbf{r}}}{r^2}, \qquad
+\mathbf{E}_1(\mathbf{r}) = \sg{\frac{1}{4\pi\varepsilon_0}}{} \left[\frac{3(\mathbf{p} \cdot \hat{\mathbf{r}})\hat{\mathbf{r}} - \mathbf{p}}{r^3}\right].
 $$
 
 ![[dipol-feld.svg|Feldlinien des Punktdipols p = p ẑ, exakt aus r = C·sin²θ. Das eingezeichnete E folgt aus E₁ ∝ 3(p·r̂)r̂ − p und liegt tangential zur Feldlinie.]]
@@ -71,7 +71,7 @@ $$
 
 $$
 Q_{ij} = \int_V \rho(\mathbf{r}') \left(3 x'_i x'_j - r'^2 \delta_{ij}\right)\, d^3 r', \qquad
-\phi_2(\mathbf{r}) = \frac{1}{8\pi\varepsilon_0} \frac{Q_{ij}\, \hat{r}_i \hat{r}_j}{r^3}.
+\phi_2(\mathbf{r}) = \sg{\frac{1}{8\pi\varepsilon_0}}{\frac{1}{2}} \frac{Q_{ij}\, \hat{r}_i \hat{r}_j}{r^3}.
 $$
 
 Einstein-Summenkonvention gilt für wiederholte Indizes.
@@ -87,7 +87,7 @@ Allgemein: $\phi_\ell(\mathbf{r}) \propto r^{-(\ell+1)} M_\ell(\hat{\mathbf{r}})
 Alternative Darstellung mit Kugelflächenfunktionen:
 
 $$
-\phi(\mathbf{r}) = \frac{1}{\varepsilon_0}
+\phi(\mathbf{r}) = \sg{\frac{1}{\varepsilon_0}}{4\pi}
 \sum_{\ell=0}^{\infty} \sum_{m=-\ell}^{\ell}
 \frac{1}{2\ell+1}\,\frac{Q_{\ell m}}{r^{\ell+1}}\, Y_{\ell m}(\theta,\phi),
 $$
@@ -136,9 +136,9 @@ Merke: Das führende nichtverschwindende Moment ist unabhängig von der Wahl des
 > > 1. **Monopol:** $Q = q + q - 2q = 0$.
 > > 2. **Dipol:** $\mathbf p = q\,a\,\hat{\mathbf z} - q\,a\,\hat{\mathbf z} + 0 = 0$.
 > > 3. **Quadrupol:** $Q_{zz} = \sum q_i(3z_i^2 - r_i^2) = 2\cdot q\,(3a^2 - a^2) = 4qa^2$, $\ Q_{xx} = Q_{yy} = -2qa^2$. Damit
-> >    $$\phi \approx \frac{1}{8\pi\varepsilon_0}\,\frac{Q_{ij}\hat r_i\hat r_j}{r^3} = \frac{1}{4\pi\varepsilon_0}\,\frac{2qa^2}{r^3}\,P_2(\cos\theta).$$
+> >    $$\phi \approx \sg{\frac{1}{8\pi\varepsilon_0}}{\frac12}\,\frac{Q_{ij}\hat r_i\hat r_j}{r^3} = \sg{\frac{1}{4\pi\varepsilon_0}\,}{}\frac{2qa^2}{r^3}\,P_2(\cos\theta).$$
 > > 4. **Check auf der Achse** ($\theta=0$, $z\gg a$): exakt ist
-> >    $$\phi = \frac{q}{4\pi\varepsilon_0}\left(\frac{1}{z-a}+\frac{1}{z+a}-\frac{2}{z}\right) = \frac{q}{4\pi\varepsilon_0}\,\frac{2a^2}{z(z^2-a^2)} \approx \frac{1}{4\pi\varepsilon_0}\,\frac{2qa^2}{z^3}.\ \checkmark$$
+> >    $$\phi = \sg{\frac{q}{4\pi\varepsilon_0}}{q}\left(\frac{1}{z-a}+\frac{1}{z+a}-\frac{2}{z}\right) = \sg{\frac{q}{4\pi\varepsilon_0}}{q}\,\frac{2a^2}{z(z^2-a^2)} \approx \sg{\frac{1}{4\pi\varepsilon_0}\,}{}\frac{2qa^2}{z^3}.\ \checkmark$$
 > >
 > > **Merke:** Verschwinden Monopol und Dipol, fällt das Potential wie $1/r^3$ – und der Quadrupol ist dann unabhängig von der Wahl des Ursprungs.
 
@@ -166,7 +166,7 @@ Merke: Das führende nichtverschwindende Moment ist unabhängig von der Wahl des
   - Energie: $W = -\mathbf{p}\cdot\mathbf{E}_0$.
   - Kraft: im homogenen Feld $\mathbf F = 0$; im inhomogenen Feld $\mathbf{F} = (\mathbf{p}\cdot\nabla) \mathbf{E}$.
   - Drehmoment: $\boldsymbol{\tau} = \mathbf{p} \times \mathbf{E}_0$.
-- In Kugelkoordinaten: Multipolkoeffizient $A_1 = p/(4\pi\varepsilon_0)$, höhere Terme fallen für ideales Dipolmodell weg.
+- In Kugelkoordinaten: Multipolkoeffizient $A_1 = \sg{p/(4\pi\varepsilon_0)}{p}$, höhere Terme fallen für ideales Dipolmodell weg.
 
 ### 9.2 Green-Funktionen Link
 
@@ -174,5 +174,5 @@ Merke: Das führende nichtverschwindende Moment ist unabhängig von der Wahl des
 
 ### 9.3 Kräfte via Stress-Tensor
 
-- Für Feld $\mathbf{E}$ eines Multipols: $\mathbf{T} = \varepsilon_0(\mathbf{E}\mathbf{E}-\tfrac{1}{2}|\mathbf{E}|^2\mathbf{I})$.
+- Für Feld $\mathbf{E}$ eines Multipols: $\mathbf{T} = \sg{\varepsilon_0}{\tfrac{1}{4\pi}}(\mathbf{E}\mathbf{E}-\tfrac{1}{2}|\mathbf{E}|^2\mathbf{I})$.
 - Kraft auf Teilvolumen $V$: $\mathbf{F} = \oint_{\partial V} \mathbf{T}\cdot \mathbf{n}\, dA$; für Dipol im homogenen Feld verschwindet resultierende Kraft, nur Torque bleibt (konsistent zu oben).

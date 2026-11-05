@@ -31,6 +31,29 @@ body {
   background-attachment: fixed;
 }
 
+// --- Einheitensystem (SI <-> Gauß Switch) -----------------------------------
+
+// Wenn SI aktiv ist (Standard oder data-unit-system="si"):
+html[data-unit-system="si"],
+html:not([data-unit-system="gauss"]) {
+  .unit-gauss,
+  [data-unit="gauss"],
+  .callout[data-callout="gauss-only"],
+  .callout[data-callout="unit-gauss"] {
+    display: none !important;
+  }
+}
+
+// Wenn Gauß aktiv ist (data-unit-system="gauss"):
+html[data-unit-system="gauss"] {
+  .unit-si,
+  [data-unit="si"],
+  .callout[data-callout="si-only"],
+  .callout[data-callout="unit-si"] {
+    display: none !important;
+  }
+}
+
 // --- Typografie --------------------------------------------------------------
 
 article {

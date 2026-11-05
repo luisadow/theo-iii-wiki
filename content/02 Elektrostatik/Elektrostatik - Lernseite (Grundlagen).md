@@ -15,18 +15,27 @@ tags:
 > Zwei Punktladungen $q_1$, $q_2$ im Abstand $r = \lvert \mathbf{r}_1 - \mathbf{r}_2 \rvert$ üben die Kraft
 >
 > $$
-> \mathbf{F}_{12} = k_\text{e} \frac{q_1 q_2}{r^2} \hat{\mathbf{r}},\quad k_\text{e} = \frac{1}{4\pi\varepsilon_0}
+> \mathbf{F}_{12} = k_\text{e} \frac{q_1 q_2}{r^2} \hat{\mathbf{r}},\quad k_\text{e} = \sg{\frac{1}{4\pi\varepsilon_0}}{1}
 > $$
 >
 > aufeinander aus. Die Richtung zeigt entlang der Verbindungsachse.
 
 **Verknüpfungen:** [[Elektrostatik]] · [[Vektoranalysis]] · Weiteres Beispiel siehe [[Energie und Kapazität in der Elektrostatik]].
 
-**Konstanten:**
+<div class="unit-si">
+
+**Konstanten (SI):**
 
 $$
 \frac{1}{4\pi\varepsilon_0} = k_\text{e} \approx 8{,}988 \cdot 10^9\, \frac{\text{N m}^2}{\text{C}^2}
 $$
+
+</div>
+<div class="unit-gauss">
+
+**Konstanten (Gauß):** Im Gauß-System ist $k_\text{e} \equiv 1$ dimensionslos. Ladungen werden in statC (esu) gemessen ($1\,\text{C} \approx 3\cdot 10^9\,\text{statC}$), $q_\text{Gauß} = q_\text{SI}/\sqrt{4\pi\varepsilon_0}$. Deshalb sind die Kräfte in beiden Systemen dieselben, nur die Zahlenwerte von Ladung und Feld unterscheiden sich. In den Feldgleichungen wird formal $1/\varepsilon_0 \to 4\pi$ ersetzt.
+
+</div>
 
 ---
 
@@ -41,7 +50,7 @@ $$
 > Für eine Punktladung $Q$ gilt
 >
 > $$
-> \mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \frac{Q}{r^2} \hat{\mathbf{r}}
+> \mathbf{E}(\mathbf{r}) = \sg{\frac{1}{4\pi\varepsilon_0}}{} \frac{Q}{r^2} \hat{\mathbf{r}}
 > $$
 
 **Hinweis:** Für Randbedingungen und Kraftdichten siehe [[Maxwell-Spannungstensor (Elektrostatik)]] und [[Randwertprobleme (Elektrostatik)]].
@@ -53,18 +62,18 @@ $$
 Für Punktladungen $Q_i$:
 
 $$
-\mathbf{E}(\mathbf{r}) = \sum_i \frac{1}{4\pi\varepsilon_0} \frac{Q_i}{\lvert \mathbf{r}-\mathbf{r}_i \rvert^2}\, \widehat{(\mathbf{r}-\mathbf{r}_i)}
+\mathbf{E}(\mathbf{r}) = \sum_i \sg{\frac{1}{4\pi\varepsilon_0}}{} \frac{Q_i}{\lvert \mathbf{r}-\mathbf{r}_i \rvert^2}\, \widehat{(\mathbf{r}-\mathbf{r}_i)}
 $$
 
 Für kontinuierliche Ladungsverteilungen:
 
 - **Volumenladung** $\rho(\mathbf{r}')$
   $$
-  \mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \int_V \rho(\mathbf{r}') \frac{\mathbf{r}-\mathbf{r}'}{\lvert \mathbf{r}-\mathbf{r}' \rvert^3} \, d^3r'
+  \mathbf{E}(\mathbf{r}) = \sg{\frac{1}{4\pi\varepsilon_0}}{} \int_V \rho(\mathbf{r}') \frac{\mathbf{r}-\mathbf{r}'}{\lvert \mathbf{r}-\mathbf{r}' \rvert^3} \, d^3r'
   $$
 - **Oberflächenladung** $\sigma(\mathbf{r}')$
   $$
-  \mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \int_A \sigma(\mathbf{r}') \frac{\mathbf{r}-\mathbf{r}'}{\lvert \mathbf{r}-\mathbf{r}' \rvert^3} \, dA'
+  \mathbf{E}(\mathbf{r}) = \sg{\frac{1}{4\pi\varepsilon_0}}{} \int_A \sigma(\mathbf{r}') \frac{\mathbf{r}-\mathbf{r}'}{\lvert \mathbf{r}-\mathbf{r}' \rvert^3} \, dA'
   $$
 
 ---
@@ -72,13 +81,17 @@ Für kontinuierliche Ladungsverteilungen:
 ## 4. Gaußsches Gesetz
 
 $$
-\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0},\quad \oint_{\partial V} \mathbf{E}\cdot d\mathbf{A} = \frac{Q_\text{in}}{\varepsilon_0}
+\nabla \cdot \mathbf{E} = \sg{\frac{\rho}{\varepsilon_0}}{4\pi\rho},\quad \oint_{\partial V} \mathbf{E}\cdot d\mathbf{A} = \sg{\frac{Q_\text{in}}{\varepsilon_0}}{4\pi Q_\text{in}}
 $$
+
+<div class="unit-si">
 
 > [!info] Gauß-System
 > Im Gauß-System entfällt $\varepsilon_0$, dafür tritt $4\pi$ auf:
 > $$\nabla \cdot \mathbf{E} = 4\pi\rho, \qquad \oint_{\partial V} \mathbf{E}\cdot d\mathbf{A} = 4\pi Q_\text{in}, \qquad \mathbf{E} = \frac{Q}{r^2}\hat{\mathbf{r}}.$$
-> Die Vorlesung im WiSe 26/27 rechnet im Gauß-System. In den Feldgleichungen wird dabei formal $1/\varepsilon_0 \to 4\pi$ ersetzt; die Ladung selbst wird in Gauß-Einheiten (statC) gemessen, $q_\text{Gauß} = q_\text{SI}/\sqrt{4\pi\varepsilon_0}$ – deshalb bleiben die Kräfte unverändert.
+> Die Vorlesung im WiSe 26/27 rechnet im Gauß-System. Oben auf der Seite kannst du alle Formeln umschalten.
+
+</div>
 
 ![[gauss-flaeche.svg|Gesamtfeld der vier Ladungen (numerisch berechnete Feldlinien). Zum Fluss durch ∂V trägt nur Q_in bei. Das Feld von q₄ allein würde ∂V genauso oft durchsetzen, wie es sie wieder verlässt.]]
 
@@ -89,7 +102,7 @@ $$
 - **Normalen:** nach außen gerichtet; Deckel entgegengesetzt orientiert.
 - **Integral vereinfachen:** Bei konstanter Feldstärke auf der Fläche wird $\oint \mathbf{E}\cdot d\mathbf{A} = E \cdot (\text{Fläche})$.
 - **Enclosed charge:** Volumen mit $\rho$, Fläche mit $\sigma$, Linie mit $\lambda$.
-- **Abschließend:** $E$ aus $\oint \mathbf{E}\cdot d\mathbf{A} = Q_\text{in}/\varepsilon_0$, Richtung aus Symmetrie.
+- **Abschließend:** $E$ aus $\oint \mathbf{E}\cdot d\mathbf{A} = \sg{Q_\text{in}/\varepsilon_0}{4\pi Q_\text{in}}$, Richtung aus Symmetrie.
 
 ### Typische Flächenmaße (bei konstanter Feldstärke)
 
@@ -107,11 +120,11 @@ $$
 >
 > > [!success]- Lösung
 > > 1. **Symmetrie:** $\mathbf E = E(r)\,\hat{\mathbf r}$ – Gauß-Fläche ist eine Kugel vom Radius $r$, also $\oint\mathbf E\cdot d\mathbf A = 4\pi r^2 E(r)$.
-> > 2. **Außen ($r\ge R$):** eingeschlossen ist $Q$, also $E = \dfrac{Q}{4\pi\varepsilon_0 r^2}$ – wie eine Punktladung.
-> > 3. **Innen ($r<R$):** eingeschlossen ist $Q\,r^3/R^3$, also $E = \dfrac{Q\,r}{4\pi\varepsilon_0 R^3}$ – linear in $r$.
-> > 4. **Potential außen:** $\phi(r) = \dfrac{Q}{4\pi\varepsilon_0 r}$.
+> > 2. **Außen ($r\ge R$):** eingeschlossen ist $Q$, also $E = \sg{\dfrac{Q}{4\pi\varepsilon_0 r^2}}{\dfrac{Q}{r^2}}$ – wie eine Punktladung.
+> > 3. **Innen ($r<R$):** eingeschlossen ist $Q\,r^3/R^3$, also $E = \sg{\dfrac{Q\,r}{4\pi\varepsilon_0 R^3}}{\dfrac{Q\,r}{R^3}}$ – linear in $r$.
+> > 4. **Potential außen:** $\phi(r) = \sg{\dfrac{Q}{4\pi\varepsilon_0 r}}{\dfrac{Q}{r}}$.
 > > 5. **Potential innen:** von $R$ aus integrieren,
-> >    $$\phi(r) = \phi(R) - \int_R^r E\,dr' = \frac{Q}{8\pi\varepsilon_0 R}\left(3 - \frac{r^2}{R^2}\right).$$
+> >    $$\phi(r) = \phi(R) - \int_R^r E\,dr' = \sg{\frac{Q}{8\pi\varepsilon_0 R}}{\frac{Q}{2R}}\left(3 - \frac{r^2}{R^2}\right).$$
 > >
 > > **Merke:** $E$ ist bei $r=R$ stetig, weil keine Flächenladung vorliegt. Im Zentrum ist $\phi$ das 1,5-Fache des Oberflächenwerts.
 
@@ -123,11 +136,11 @@ $$
 
 - Punktladung:
   $$
-  \phi(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \frac{Q}{r}
+  \phi(\mathbf{r}) = \sg{\frac{1}{4\pi\varepsilon_0}}{} \frac{Q}{r}
   $$
 - Kontinuierliche Ladung:
   $$
-  \phi(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \int_V \frac{\rho(\mathbf{r}')}{\lvert \mathbf{r}-\mathbf{r}' \rvert} \, d^3r'
+  \phi(\mathbf{r}) = \sg{\frac{1}{4\pi\varepsilon_0}}{} \int_V \frac{\rho(\mathbf{r}')}{\lvert \mathbf{r}-\mathbf{r}' \rvert} \, d^3r'
   $$
 
 ---
@@ -137,12 +150,25 @@ $$
 Allgemeine Form:
 
 $$
-\nabla^2 \phi(\mathbf{r}) = -\frac{\rho(\mathbf{r})}{\varepsilon_0}
+\nabla^2 \phi(\mathbf{r}) = \sg{-\frac{\rho(\mathbf{r})}{\varepsilon_0}}{-4\pi\rho(\mathbf{r})}
 $$
+
+<div class="unit-gauss">
+
+Das $4\pi$ steht im Gauß-System auf der rechten Seite der Poisson-Gleichung statt im Coulomb-Integral $\phi(\mathbf{r}) = \int_V \frac{\rho(\mathbf{r}')}{\lvert \mathbf{r}-\mathbf{r}' \rvert}\,d^3r'$. Die Vorlesung nimmt dazu die Green-Funktion mit negativem Vorzeichen,
+
+$$
+G(\mathbf{r}, \mathbf{r}') = -\frac{1}{4\pi\lvert \mathbf{r}-\mathbf{r}' \rvert},\qquad \Delta G = +\delta(\mathbf{r}-\mathbf{r}').
+$$
+
+</div>
+<div class="unit-si">
 
 > [!info] Gauß-System
 > $$ \Delta \phi(\mathbf{r}) = -4\pi\rho(\mathbf{r}), \qquad \phi(\mathbf{r}) = \int_V \frac{\rho(\mathbf{r}')}{\lvert \mathbf{r}-\mathbf{r}'\rvert}\,d^3r', \qquad G = -\frac{1}{4\pi\lvert\mathbf{r}-\mathbf{r}'\rvert}. $$
-> Das $4\pi$ steht im Gauß-System auf der rechten Seite der Poisson-Gleichung statt im Coulomb-Integral, und die Green-Funktion trägt das negative Vorzeichen mit $\Delta G = +\delta(\mathbf{r}-\mathbf{r}')$. Die Vorlesung im WiSe 26/27 rechnet so.
+> Das $4\pi$ steht im Gauß-System auf der rechten Seite der Poisson-Gleichung statt im Coulomb-Integral, und die Green-Funktion trägt das negative Vorzeichen mit $\Delta G = +\delta(\mathbf{r}-\mathbf{r}')$. Die Vorlesung im WiSe 26/27 rechnet so. Oben auf der Seite kannst du alle Formeln auf Gauß umschalten.
+
+</div>
 
 Ladungsfreie Gebiete ($\rho = 0$) → Laplace-Gleichung $\nabla^2 \phi = 0$. Lösung eindeutig bei gegebenen Randbedingungen (Eindeutigkeitssatz).
 
@@ -166,19 +192,19 @@ Linienladung $\lambda$ entlang der $z$-Achse:
 3. Gaußsches Gesetz:
 
 $$
-E(r) (2\pi r L) = \frac{\lambda L}{\varepsilon_0}
+E(r) (2\pi r L) = \sg{\frac{\lambda L}{\varepsilon_0}}{4\pi\lambda L}
 $$
 
 4. Lösung:
 
 $$
-E(r) = \frac{\lambda}{2\pi\varepsilon_0 r}
+E(r) = \sg{\frac{\lambda}{2\pi\varepsilon_0 r}}{\frac{2\lambda}{r}}
 $$
 
 5. Richtung:
 
 $$
-\mathbf{E}(r) = \frac{\lambda}{2\pi\varepsilon_0 r} \hat{\mathbf{r}}
+\mathbf{E}(r) = \sg{\frac{\lambda}{2\pi\varepsilon_0 r}}{\frac{2\lambda}{r}} \hat{\mathbf{r}}
 $$
 
 ---
@@ -199,9 +225,9 @@ $$
 ## Beispiele – Laplace/Poisson (schnelle Referenz)
 
 **1) 1D-Poisson mit konstanter Quelle (Kartesisch)**  
-$\nabla^2\phi = -\rho_0/\varepsilon_0$ auf $z\in[-d,d]$, Dirichlet $\phi(\pm d)=0$.  
-Zweifach integrieren: $\phi(z) = -\rho_0 z^2/(2\varepsilon_0) + C_1 z + C_2$. Randbedingungen $\phi(\pm d)=0$ liefern $C_1=0$, $C_2 = \rho_0 d^2/(2\varepsilon_0)$.  
-Ergebnis: $$\phi(z) = \frac{\rho_0}{2\varepsilon_0}(d^2 - z^2),\quad E_z = -\partial_z\phi = \frac{\rho_0}{\varepsilon_0} z.$$  
+$\nabla^2\phi = \sg{-\rho_0/\varepsilon_0}{-4\pi\rho_0}$ auf $z\in[-d,d]$, Dirichlet $\phi(\pm d)=0$.  
+Zweifach integrieren: $\phi(z) = \sg{-\rho_0 z^2/(2\varepsilon_0)}{-2\pi\rho_0 z^2} + C_1 z + C_2$. Randbedingungen $\phi(\pm d)=0$ liefern $C_1=0$, $C_2 = \sg{\rho_0 d^2/(2\varepsilon_0)}{2\pi\rho_0 d^2}$.  
+Ergebnis: $$\phi(z) = \sg{\frac{\rho_0}{2\varepsilon_0}}{2\pi\rho_0}(d^2 - z^2),\quad E_z = -\partial_z\phi = \sg{\frac{\rho_0}{\varepsilon_0}}{4\pi\rho_0}\, z.$$  
 Symmetrische Quelle → Feld linear, Potential parabolisch.
 
 **2) 1D-Laplace zwischen zwei Platten (Kartesisch)**  
@@ -216,7 +242,7 @@ Integriere: $r\partial_r\phi = C_1 \Rightarrow \partial_r\phi = C_1/r \Rightarro
 Dirichlet $\phi(a)=V_a$, $\phi(b)=V_b$:  
 $$C_1 = \frac{V_a - V_b}{\ln(a/b)},\quad C_2 = V_a - C_1\ln a.$$  
 Potentialverlauf: $$\phi(r) = V_a + (V_b - V_a)\frac{\ln(r/a)}{\ln(b/a)},\quad E_r = -\partial_r\phi = -\frac{V_b - V_a}{\ln(b/a)}\frac{1}{r}.$$  
-Diese Form liefert direkt das $E(r)\propto 1/r$ und ist Basis für $C = 2\pi\varepsilon_0 L/\ln(b/a)$.
+Diese Form liefert direkt das $E(r)\propto 1/r$ und ist Basis für $C = \sg{2\pi\varepsilon_0 L/\ln(b/a)}{L/(2\ln(b/a))}$.
 
 **4) Kugelsymmetrie – Laplace im leeren Raum (außen ohne Quellen)**  
 $\nabla^2\phi=0$ für $R_1<r<R_2$. Allgemeine Lösung: $\phi(r) = A + B/r$.  
@@ -234,17 +260,17 @@ Grenzfall $R_2\to\infty$, $V_2=0$ ergibt $\phi(r)=V_1 R_1/r$ (Punktladungsform o
 ### Ausgeschriebene Beispiele (mit Zwischenschritten)
 
 **A) 1D-Poisson, konstante Quelle, symmetrische Dirichlet-Randwerte**  
-Problem: $\nabla^2\phi = -\rho_0/\varepsilon_0$ für $z\in[-d,d]$, Rand: $\phi(\pm d)=0$.
+Problem: $\nabla^2\phi = \sg{-\rho_0/\varepsilon_0}{-4\pi\rho_0}$ für $z\in[-d,d]$, Rand: $\phi(\pm d)=0$.
 
 1. Schreibe $\nabla^2\phi = \partial_{zz}\phi$ (nur z-Abhängigkeit).
 2. Erste Integration:  
-   $$\partial_{zz}\phi = -\frac{\rho_0}{\varepsilon_0} \Rightarrow \partial_z\phi = -\frac{\rho_0}{\varepsilon_0} z + C_1.$$
+   $$\partial_{zz}\phi = \sg{-\frac{\rho_0}{\varepsilon_0}}{-4\pi\rho_0} \Rightarrow \partial_z\phi = \sg{-\frac{\rho_0}{\varepsilon_0}}{-4\pi\rho_0}\, z + C_1.$$
 3. Zweite Integration:  
-   $$\phi(z) = -\frac{\rho_0}{2\varepsilon_0} z^2 + C_1 z + C_2.$$
+   $$\phi(z) = \sg{-\frac{\rho_0}{2\varepsilon_0}}{-2\pi\rho_0}\, z^2 + C_1 z + C_2.$$
 4. Symmetrie: Quelle und Gebiet sind gerade in $z$, daher $\phi(z)$ gerade und $\partial_z\phi$ ungerade $\Rightarrow C_1=0$.
-5. Randbedingung $\phi(d)=0$ gibt $0 = -\rho_0 d^2/(2\varepsilon_0) + C_2 \Rightarrow C_2 = \rho_0 d^2/(2\varepsilon_0)$.  
+5. Randbedingung $\phi(d)=0$ gibt $0 = \sg{-\rho_0 d^2/(2\varepsilon_0)}{-2\pi\rho_0 d^2} + C_2 \Rightarrow C_2 = \sg{\rho_0 d^2/(2\varepsilon_0)}{2\pi\rho_0 d^2}$.  
    **Ergebnis:**  
-   $$\phi(z) = \frac{\rho_0}{2\varepsilon_0}(d^2 - z^2),\quad E_z = -\partial_z\phi = \frac{\rho_0}{\varepsilon_0} z.$$  
+   $$\phi(z) = \sg{\frac{\rho_0}{2\varepsilon_0}}{2\pi\rho_0}(d^2 - z^2),\quad E_z = -\partial_z\phi = \sg{\frac{\rho_0}{\varepsilon_0}}{4\pi\rho_0}\, z.$$  
    Parabel für $\phi$, lineares Feld.
 
 **B) 1D-Laplace zwischen Platten (Dirichlet)**  

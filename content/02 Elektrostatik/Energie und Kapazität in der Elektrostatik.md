@@ -21,14 +21,14 @@ Diese Seite bündelt Formeln, Beispiele und Strategien rund um Feldenergie, Kapa
 ### Energiedichte
 
 $$
-u(\mathbf{r}) = \frac{\varepsilon_0}{2}\,\lvert \mathbf{E}(\mathbf{r}) \rvert^2
+u(\mathbf{r}) = \sg{\frac{\varepsilon_0}{2}}{\frac{1}{8\pi}}\,\lvert \mathbf{E}(\mathbf{r}) \rvert^2
 $$
 
 ### Gesamtenergie im Volumen $V$
 
 $$
 W = \int_V u(\mathbf{r})\, d^3 r
-  = \frac{\varepsilon_0}{2} \int_V \lvert \mathbf{E} \rvert^2\, d^3 r
+  = \sg{\frac{\varepsilon_0}{2}}{\frac{1}{8\pi}} \int_V \lvert \mathbf{E} \rvert^2\, d^3 r
 $$
 
 ### Potentialdarstellung
@@ -95,12 +95,12 @@ $$
 ### 4.1 Isolierte Kugel
 
 - Radius $R$, Ladung $Q$, Referenz $\phi(\infty)=0$
-- Kapazität: $C = 4\pi \varepsilon_0 R$ (siehe [[Kugelkondensator]] für Doppelschale)
+- Kapazität: $C = \sg{4\pi \varepsilon_0}{} R$ (siehe [[Kugelkondensator]] für Doppelschale)
 
 $$
-W = \frac{\varepsilon_0}{2} \int_R^\infty
-    \left( \frac{Q}{4\pi\varepsilon_0 r^2} \right)^2 \! 4\pi r^2\, dr
-  = \frac{Q^2}{8\pi \varepsilon_0 R}
+W = \sg{\frac{\varepsilon_0}{2}}{\frac{1}{8\pi}} \int_R^\infty
+    \left( \frac{Q}{\sg{4\pi\varepsilon_0}{} r^2} \right)^2 \! 4\pi r^2\, dr
+  = \frac{Q^2}{\sg{8\pi \varepsilon_0}{2} R}
   = \frac{Q^2}{2C}
 $$
 
@@ -109,11 +109,11 @@ $$
 - Fläche $A$, Abstand $d$, $\sigma = Q/A$
 
 $$
-C = \frac{\varepsilon_0 A}{d},
+C = \sg{\frac{\varepsilon_0 A}{d}}{\frac{A}{4\pi d}},
 \qquad
-u = \frac{1}{2} \varepsilon_0 E^2,
+u = \sg{\frac{1}{2} \varepsilon_0}{\frac{1}{8\pi}} E^2,
 \qquad
-W = \frac{1}{2} C \Phi^2 = \frac{1}{2} \frac{\varepsilon_0 A}{d} (E d)^2
+W = \frac{1}{2} C \Phi^2 = \frac{1}{2} \sg{\frac{\varepsilon_0 A}{d}}{\frac{A}{4\pi d}} (E d)^2
 $$
 
 ![[plattenkondensator.svg|Zwischen den Platten ist das Feld homogen, deshalb ist auch die Energiedichte u = ε₀E²/2 überall gleich. Die Energie ist dann einfach u mal Volumen Ad, und das ergibt genau ½CΦ².]]
@@ -125,7 +125,7 @@ $$
 Pro Längeneinheit; der Außenleiter schirmt ab, seine Kapazität gegen $\infty$ wird vernachlässigt ($\Phi$ = Spannung zwischen den Leitern):
 
 $$
-C' = \frac{2\pi \varepsilon_0}{\ln(b/a)}, \qquad
+C' = \sg{\frac{2\pi \varepsilon_0}{\ln(b/a)}}{\frac{1}{2\ln(b/a)}}, \qquad
 \mathbf{C} = C'
 \begin{pmatrix}
  1 & -1 \\
@@ -136,35 +136,35 @@ W' = \frac{1}{2} C' \Phi^2
 $$
 
 ### 4.4 Zylinderkondensator (einfach)
-- Innenradius $a$, Außenradius $b$, Länge $L$, homogenes Medium $\varepsilon = \varepsilon_0 \varepsilon_r$.
+- Innenradius $a$, Außenradius $b$, Länge $L$, homogenes Medium $\sg{\varepsilon = \varepsilon_0 \varepsilon_r}{\varepsilon}$.
 - Feld (Gauss):
 $$
-E(r)=\frac{\lambda}{2\pi \varepsilon r}, \quad a<r<b.
+E(r)=\sg{\frac{\lambda}{2\pi \varepsilon r}}{\frac{2\lambda}{\varepsilon r}}, \quad a<r<b.
 $$
 - Potential (Bezug $\phi(b)=0$):
 $$
-\phi(r)=\frac{\lambda}{2\pi \varepsilon}\ln\frac{b}{r}.
+\phi(r)=\sg{\frac{\lambda}{2\pi \varepsilon}}{\frac{2\lambda}{\varepsilon}}\ln\frac{b}{r}.
 $$
 - Spannung und Kapazität:
 $$
-V=\frac{\lambda}{2\pi \varepsilon}\ln\frac{b}{a},\quad
-C = \frac{2\pi \varepsilon L}{\ln(b/a)}.
+V=\sg{\frac{\lambda}{2\pi \varepsilon}}{\frac{2\lambda}{\varepsilon}}\ln\frac{b}{a},\quad
+C = \sg{\frac{2\pi \varepsilon L}{\ln(b/a)}}{\frac{\varepsilon L}{2\ln(b/a)}}.
 $$
-- Spezial: Luft/Vakuum $\varepsilon_r=1$; dünnwandig $b\to a$: $C \approx 2\pi \varepsilon a L/(b-a)$ (wegen $\ln(b/a)\approx (b-a)/a$; entspricht $\varepsilon A/d$ mit $A=2\pi aL$).
+- Spezial: Luft/Vakuum $\sg{\varepsilon_r}{\varepsilon}=1$; dünnwandig $b\to a$: $C \approx \sg{2\pi \varepsilon a L/(b-a)}{\varepsilon a L/(2(b-a))}$ (wegen $\ln(b/a)\approx (b-a)/a$; entspricht $\sg{\varepsilon A/d}{\varepsilon A/(4\pi d)}$ mit $A=2\pi aL$).
 - Ausführliche Herleitung: [[Zylinderkondensator]].
 
 ### 4.5 Kugelkondensator
-- Radien $R_1<R_2$, homogenes Medium $\varepsilon = \varepsilon_0 \varepsilon_r$.
+- Radien $R_1<R_2$, homogenes Medium $\sg{\varepsilon = \varepsilon_0 \varepsilon_r}{\varepsilon}$.
 - Potential (Bezug $\phi(R_2)=0$):
 $$
-\phi(r)=\frac{Q}{4\pi \varepsilon}\Bigl(\frac{1}{r}-\frac{1}{R_2}\Bigr),\quad R_1<r<R_2.
+\phi(r)=\frac{Q}{\sg{4\pi}{} \varepsilon}\Bigl(\frac{1}{r}-\frac{1}{R_2}\Bigr),\quad R_1<r<R_2.
 $$
 - Spannung und Kapazität:
 $$
-V = \frac{Q}{4\pi \varepsilon}\Bigl(\frac{1}{R_1}-\frac{1}{R_2}\Bigr),\quad
-C = \frac{4\pi \varepsilon}{\frac{1}{R_1}-\frac{1}{R_2}}.
+V = \frac{Q}{\sg{4\pi}{} \varepsilon}\Bigl(\frac{1}{R_1}-\frac{1}{R_2}\Bigr),\quad
+C = \frac{\sg{4\pi}{} \varepsilon}{\frac{1}{R_1}-\frac{1}{R_2}}.
 $$
-- Spezial: isolierte Kugel ($R_2\to\infty$): $C=4\pi \varepsilon R_1$; dünne Schale $R_2\to R_1$: $C\approx 4\pi \varepsilon R_1^2/(R_2-R_1)$.
+- Spezial: isolierte Kugel ($R_2\to\infty$): $C=\sg{4\pi}{} \varepsilon R_1$; dünne Schale $R_2\to R_1$: $C\approx \sg{4\pi}{} \varepsilon R_1^2/(R_2-R_1)$.
 - Ausführliche Herleitung: [[Kugelkondensator]].
 
 ---
@@ -174,9 +174,9 @@ $$
 ### 5.1 Homogene Dielektrika
 
 $$
-\varepsilon = \varepsilon_0 \varepsilon_r,
+\sg{\varepsilon = \varepsilon_0 \varepsilon_r}{\varepsilon = 1 + 4\pi\chi_e},
 \qquad
-C = \varepsilon \frac{A}{d}
+C = \varepsilon \frac{A}{\sg{}{4\pi} d}
 $$
 
 ### 5.2 Mehrschichtsysteme
@@ -187,11 +187,11 @@ $$
 ### 5.3 Polarisation & Energie
 
 $$
-\mathbf{P} = \varepsilon_0 \chi_e \mathbf{E},
+\mathbf{P} = \sg{\varepsilon_0}{} \chi_e \mathbf{E},
 \qquad
-\mathbf{D} = \varepsilon_0 \mathbf{E} + \mathbf{P} = \varepsilon \mathbf{E},
+\mathbf{D} = \sg{\varepsilon_0 \mathbf{E} + \mathbf{P}}{\mathbf{E} + 4\pi\mathbf{P}} = \varepsilon \mathbf{E},
 \qquad
-u = \frac{1}{2} \mathbf{E} \cdot \mathbf{D}
+u = \sg{\frac{1}{2}}{\frac{1}{8\pi}} \mathbf{E} \cdot \mathbf{D}
 $$
 
 Siehe [[Dielektrika (Elektrostatik)]] und [[Elektrostatik in Materie]]; Randbedingungen in [[Randwertprobleme (Elektrostatik)]].
@@ -218,12 +218,12 @@ Siehe [[Dielektrika (Elektrostatik)]] und [[Elektrostatik in Materie]]; Randbedi
 
 ### 8.1 Beispiel: Maxwell-Spannungstensor (Plattenkondensator)
 
-- Feld: $E=\sigma/\varepsilon_0$ außerhalb Dielektrika, Druck auf Platte $p = \sigma^2/(2\varepsilon_0)$.
+- Feld: $E=\sg{\sigma/\varepsilon_0}{4\pi\sigma}$ außerhalb Dielektrika, Druck auf Platte $p = \sg{\sigma^2/(2\varepsilon_0)}{2\pi\sigma^2}$.
 - Kraft auf Fläche $A$: $F = pA$; identisch mit Energieänderung $\Delta W = -F \Delta x$ beim Plattenabstand.
 - Verbindung: siehe [[Maxwell-Spannungstensor (Elektrostatik)#9.1 Druck auf dielektrische Grenzfläche]].
 
 ### 8.2 Ladungsrelaxation in leitfähigen Medien
 
-- Aus $\mathbf J=\sigma\mathbf E$ (hier $\sigma$ = Leitfähigkeit) und Kontinuitätsgleichung: $\partial_t\rho = -\tfrac{\sigma}{\varepsilon}\rho$, also $Q(t)=Q_0e^{-t/\tau}$ mit $\tau = \varepsilon/\sigma$.
+- Aus $\mathbf J=\sigma\mathbf E$ (hier $\sigma$ = Leitfähigkeit) und Kontinuitätsgleichung: $\partial_t\rho = -\tfrac{\sg{}{4\pi}\sigma}{\varepsilon}\rho$, also $Q(t)=Q_0e^{-t/\tau}$ mit $\tau = \varepsilon/(\sg{}{4\pi}\sigma)$.
 - Energieabfall: $W(t)=W_0 e^{-2t/\tau}$ (da $W\propto Q^2$); konsistent zu $\dot{W}=-\int \mathbf{J}\cdot\mathbf{E}\, d^3r$.
 - Nicht verwechseln mit der **Entelektrisierung** (Depolarisationsfeld), siehe [[Dielektrika (Elektrostatik)#5. Entelektrisierung (Depolarisationsfeld)]].

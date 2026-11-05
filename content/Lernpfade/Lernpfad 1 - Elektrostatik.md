@@ -36,15 +36,15 @@ Hake ab, was du sicher kannst – der Stand bleibt in deinem Browser gespeichert
 - [ ] Ich kann das Feld einer homogen geladenen Kugel innen und außen mit dem Gaußschen Gesetz herleiten.
 - [ ] Ich weiß, warum aus $\nabla\times\mathbf E=0$ ein Potential mit $\mathbf E=-\nabla\phi$ folgt.
 - [ ] Ich kann die Kapazität von Kugel- und Zylinderkondensator ohne Nachschlagen herleiten.
-- [ ] Ich kann die Feldenergie auf zwei Arten berechnen ($\tfrac12\int\rho\phi$ und $\tfrac{\varepsilon_0}{2}\int E^2$).
-- [ ] Ich kann den Druck $\sigma^2/(2\varepsilon_0)$ auf eine Leiteroberfläche begründen.
+- [ ] Ich kann die Feldenergie auf zwei Arten berechnen ($\tfrac12\int\rho\phi$ und $\sg{\tfrac{\varepsilon_0}{2}}{\tfrac{1}{8\pi}}\int E^2$).
+- [ ] Ich kann den Druck $\sg{\sigma^2/(2\varepsilon_0)}{2\pi\sigma^2}$ auf eine Leiteroberfläche begründen.
 
 ## Häufige Fehler
 
 - **Gauß ohne Symmetrie:** Das Gesetz gilt immer, liefert $E$ aber nur, wenn $E$ auf der Gauß-Fläche konstant ist.
 - **Vorzeichen:** $\phi(b)-\phi(a)=-\int_a^b\mathbf E\cdot d\mathbf l$ – Integrationsrichtung beachten.
 - **Jacobi-Faktor vergessen:** $r^2\sin\theta$ bzw. $\rho$ gehören ins Volumenintegral.
-- **Punktladungen und Feldenergie:** $\tfrac{\varepsilon_0}{2}\int E^2$ enthält die (divergente) Selbstenergie, die Summe über Paare nicht.
+- **Punktladungen und Feldenergie:** $\sg{\tfrac{\varepsilon_0}{2}}{\tfrac{1}{8\pi}}\int E^2$ enthält die (divergente) Selbstenergie, die Summe über Paare nicht.
 
 > [!tip] Weiter
 > Als Nächstes: [[Lernpfad 2 - Randwertprobleme und Multipole|Lernpfad 2: Randwertprobleme & Multipole]]

@@ -9,7 +9,7 @@ Die Elektrostatik beschreibt ruhende Ladungen und ihre zeitunabhängigen Felder.
 
 **Kernidee:** Alles folgt aus zwei Gleichungen,
 
-$$\nabla\cdot\mathbf E = \frac{\rho}{\varepsilon_0},\qquad \nabla\times\mathbf E = 0 \quad\Longrightarrow\quad \nabla^2\phi = -\frac{\rho}{\varepsilon_0}.$$
+$$\nabla\cdot\mathbf E = \sg{\frac{\rho}{\varepsilon_0}}{4\pi\rho},\qquad \nabla\times\mathbf E = 0 \quad\Longrightarrow\quad \nabla^2\phi = \sg{-\frac{\rho}{\varepsilon_0}}{-4\pi\rho}.$$
 
 Bei hoher Symmetrie liefert das Gaußsche Gesetz das Feld direkt; die im Feld gespeicherte Energie bestimmt Kapazitäten und Kräfte.
 

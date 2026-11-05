@@ -1,4 +1,5 @@
 import remarkMath from "remark-math"
+import { remarkUnitVariants } from "./unitVariants"
 import rehypeKatex from "rehype-katex"
 import rehypeMathjax from "rehype-mathjax/svg"
 //@ts-ignore
@@ -29,7 +30,8 @@ export const Latex: QuartzTransformerPlugin<Partial<Options>> = (opts) => {
   return {
     name: "Latex",
     markdownPlugins() {
-      return [remarkMath]
+      // \sg{SI}{Gauß} in Formeln → zwei Varianten für den Einheiten-Umschalter
+      return [remarkMath, remarkUnitVariants]
     },
     htmlPlugins() {
       switch (engine) {

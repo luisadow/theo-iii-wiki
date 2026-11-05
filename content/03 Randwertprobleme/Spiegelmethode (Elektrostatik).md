@@ -39,9 +39,9 @@ Die Spiegelmethode ersetzt leitende Randflächen durch äquivalente Bildladungen
 
 | Fall | Bildladungen | Ergebnisidee |
 | --- | --- | --- |
-| Punktladung $+Q$ im Abstand $a$ über geerdeter Ebene | Spiegelladung $-Q$ symmetrisch unter der Ebene | $\phi(\mathbf{r})=\frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{\lvert\mathbf{r}-\mathbf{r}_Q\rvert}-\frac{1}{\lvert\mathbf{r}-\mathbf{r}_{Q'}\rvert}\right)$ |
+| Punktladung $+Q$ im Abstand $a$ über geerdeter Ebene | Spiegelladung $-Q$ symmetrisch unter der Ebene | $\phi(\mathbf{r})=\sg{\frac{Q}{4\pi\varepsilon_0}}{Q}\left(\frac{1}{\lvert\mathbf{r}-\mathbf{r}_Q\rvert}-\frac{1}{\lvert\mathbf{r}-\mathbf{r}_{Q'}\rvert}\right)$ |
 | Punktladung $Q$ im Abstand $r_0$ vom Mittelpunkt einer geerdeten Kugel (Radius $R$) | $Q'=-Q\,R/r_0$ auf derselben radialen Linie im Abstand $R^2/r_0$ vom Mittelpunkt | Potential außerhalb = Summe realer + Bildladung, $\phi(R)=0$ |
-| Linienladung $\lambda$ neben geerdeter Ebene | Spiegel-Linienladung $-\lambda$ | Feld wie Doppelleitung; Kraft pro Länge $\lambda^2/(2\pi\varepsilon_0\cdot 2a)$ zur Ebene hin |
+| Linienladung $\lambda$ neben geerdeter Ebene | Spiegel-Linienladung $-\lambda$ | Feld wie Doppelleitung; Kraft pro Länge $\sg{\lambda^2/(2\pi\varepsilon_0\cdot 2a)}{\lambda^2/a}$ zur Ebene hin |
 
 Weitere Fälle (z. B. Kombination mehrerer Ebenen) erfordern iterative Spiegelungen oder Übergang zu [[Multipolentwicklung (Elektrostatik)]].
 
@@ -64,14 +64,14 @@ Weitere Fälle (z. B. Kombination mehrerer Ebenen) erfordern iterative Spiegel
 4. **Potential bestimmen:**
 
    $$
-   \phi(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0}\sum_i \frac{Q_i}{|\mathbf{r}-\mathbf{r}_i|}
+   \phi(\mathbf{r}) = \sg{\frac{1}{4\pi\varepsilon_0}}{}\sum_i \frac{Q_i}{|\mathbf{r}-\mathbf{r}_i|}
    $$
 
 5. **Feld berechnen:** $\mathbf{E} = -\nabla\phi$ im physikalischen Raum.
 
 6. **Randkontrolle:** Prüfen, ob $\phi$ auf der leitenden Fläche konstant ist und Grenzfälle korrekt reproduziert werden.
 
-7. **Messgrößen ableiten:** Kräfte (z. B. $F=Q\,E_{\text{Bild}}$), Oberflächenladungsdichte $\sigma=\varepsilon_0 E_\perp$, Energie oder Druck über [[Maxwell-Spannungstensor (Elektrostatik)]].
+7. **Messgrößen ableiten:** Kräfte (z. B. $F=Q\,E_{\text{Bild}}$), Oberflächenladungsdichte $\sigma=\sg{\varepsilon_0}{\tfrac{1}{4\pi}} E_\perp$, Energie oder Druck über [[Maxwell-Spannungstensor (Elektrostatik)]].
 
 ---
 
@@ -86,7 +86,7 @@ Weitere Fälle (z. B. Kombination mehrerer Ebenen) erfordern iterative Spiegel
 - Feld am Ort der realen Ladung durch Bildladungen liefert
 
   $$
-  \mathbf{F} = -\frac{Q^2}{16\pi\varepsilon_0 a^2}\,\hat{\mathbf{z}}
+  \mathbf{F} = -\frac{Q^2}{\sg{16\pi\varepsilon_0}{4} a^2}\,\hat{\mathbf{z}}
   $$
 
   (Ebene bei $z=0$, Ladung bei $z=a$): Anziehung zur Ebene hin. Der Vorfaktor $\frac{1}{16\pi}$ stammt aus dem Abstand $2a$ zwischen realer und Bildladung.
@@ -96,7 +96,7 @@ Weitere Fälle (z. B. Kombination mehrerer Ebenen) erfordern iterative Spiegel
 - Energie = Hälfte der Coulomb-Energie zwischen realer und Bildladung:
 
   $$
-  W = \frac{1}{2}\frac{Q(-Q)}{4\pi\varepsilon_0(2a)} = -\frac{Q^2}{16\pi\varepsilon_0 a}.
+  W = \frac{1}{2}\frac{Q(-Q)}{\sg{4\pi\varepsilon_0}{}(2a)} = -\frac{Q^2}{\sg{16\pi\varepsilon_0}{4} a}.
   $$
 
 ### 4.3 Oberflächenladungsdichte
@@ -104,7 +104,7 @@ Weitere Fälle (z. B. Kombination mehrerer Ebenen) erfordern iterative Spiegel
 - Normalkomponente des Feldes liefert
 
   $$
-  \sigma(\mathbf{r}) = \varepsilon_0\,E_\perp(\mathbf{r}) = \varepsilon_0\left[E_{\text{real},\perp}+E_{\text{Bild},\perp}\right]_{\text{an der Fläche}}.
+  \sigma(\mathbf{r}) = \sg{\varepsilon_0}{\frac{1}{4\pi}}\,E_\perp(\mathbf{r}) = \sg{\varepsilon_0}{\frac{1}{4\pi}}\left[E_{\text{real},\perp}+E_{\text{Bild},\perp}\right]_{\text{an der Fläche}}.
   $$
 
 - Für die Ebene (Abstand $\rho$ vom Fußpunkt der Ladung):
@@ -122,8 +122,8 @@ Weitere Fälle (z. B. Kombination mehrerer Ebenen) erfordern iterative Spiegel
 > > [!success]- Lösung
 > > 1. **Bildladung:** $-q$ bei $z=-a$. Für $z>0$ ist das Potential das von $q$ und $-q$.
 > > 2. **Feld auf der Ebene:** Die Tangentialanteile heben sich auf, die $z$-Anteile addieren sich:
-> >    $$E_z(\rho, 0) = -\frac{1}{4\pi\varepsilon_0}\,\frac{2qa}{(\rho^2+a^2)^{3/2}}.$$
-> > 3. **Flächenladung:** $\sigma = \varepsilon_0 E_z$ (Normale zeigt aus dem Leiter heraus):
+> >    $$E_z(\rho, 0) = -\sg{\frac{1}{4\pi\varepsilon_0}\,}{}\frac{2qa}{(\rho^2+a^2)^{3/2}}.$$
+> > 3. **Flächenladung:** $\sigma = \sg{\varepsilon_0 E_z}{E_z/(4\pi)}$ (Normale zeigt aus dem Leiter heraus):
 > >    $$\sigma(\rho) = -\frac{q\,a}{2\pi(\rho^2+a^2)^{3/2}}.$$
 > > 4. **Gesamtladung:** in Polarkoordinaten auf der Ebene
 > >    $$\int_0^\infty \sigma\,2\pi\rho\,d\rho = -q\,a\left[-\frac{1}{\sqrt{\rho^2+a^2}}\right]_0^\infty = -q.$$
@@ -153,14 +153,14 @@ Weitere Fälle (z. B. Kombination mehrerer Ebenen) erfordern iterative Spiegel
 Gegeben: Kugelradius $R$, Punktladung $q$ auf der $z$-Achse bei $r_0>R$.
 
 - Bildladung: $q' = -q \tfrac{R}{r_0}$ bei $r' = \tfrac{R^2}{r_0}$.
-- Potential: $\phi(r) = \tfrac{1}{4\pi\varepsilon_0}\left( \tfrac{q}{|\mathbf{r}-r_0\hat{\mathbf{z}}|} + \tfrac{q'}{|\mathbf{r}-r'\hat{\mathbf{z}}|} \right)$.
+- Potential: $\phi(r) = \sg{\tfrac{1}{4\pi\varepsilon_0}}{}\left( \tfrac{q}{|\mathbf{r}-r_0\hat{\mathbf{z}}|} + \tfrac{q'}{|\mathbf{r}-r'\hat{\mathbf{z}}|} \right)$.
 - Kraft zwischen Ladung und geerdeter Kugel (Anziehung):
   $$
-  F = \frac{1}{4\pi\varepsilon_0}\frac{q\,\lvert q'\rvert}{(r_0-r')^2} = \frac{1}{4\pi\varepsilon_0} \frac{q^2 R\, r_0}{(r_0^2-R^2)^2}.
+  F = \sg{\frac{1}{4\pi\varepsilon_0}}{}\frac{q\,\lvert q'\rvert}{(r_0-r')^2} = \sg{\frac{1}{4\pi\varepsilon_0}}{} \frac{q^2 R\, r_0}{(r_0^2-R^2)^2}.
   $$
 - Oberflächenladungsdichte aus dem Gesamtfeld (reale + Bildladung) bei $r=R$:
   $$
-  \sigma(\theta) = \varepsilon_0 E_r(R,\theta) = -\frac{q}{4\pi R}\,\frac{r_0^2-R^2}{\left(R^2+r_0^2-2Rr_0\cos\theta\right)^{3/2}},\qquad \int\sigma\,dA = q'.
+  \sigma(\theta) = \sg{\varepsilon_0}{\frac{1}{4\pi}} E_r(R,\theta) = -\frac{q}{4\pi R}\,\frac{r_0^2-R^2}{\left(R^2+r_0^2-2Rr_0\cos\theta\right)^{3/2}},\qquad \int\sigma\,dA = q'.
   $$
 - Isolierte, ungeladene Kugel: zusätzlich $-q'$ im Mittelpunkt, damit die Gesamtladung null ist.
 
@@ -168,8 +168,8 @@ Gegeben: Kugelradius $R$, Punktladung $q$ auf der $z$-Achse bei $r_0>R$.
 
 | Geometrie                                            | Bildladungen                                                           | Ergebnisidee                                                                |
 | ---------------------------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| Punktladung vor leitender Ebene                      | eine Bildladung $-q$ gespiegelt                                        | Feld wie Dipol; Kraft $F = -\tfrac{1}{16\pi\varepsilon_0} \tfrac{q^2}{d^2}$ |
-| Punktladung (im Vakuum) vor dielektrischem Halbraum ($\varepsilon_r$) | Bildladung $q' = -q \tfrac{\varepsilon_r-1}{\varepsilon_r+1}$ für das Feld im Vakuum; im Dielektrikum wirkt $q'' = q\tfrac{2}{\varepsilon_r+1}$ am Ort von $q$ | Stetigkeit von $E_t$ und $D_n$; Grenzfall $\varepsilon_r\to\infty$ = Leiter |
+| Punktladung vor leitender Ebene                      | eine Bildladung $-q$ gespiegelt                                        | Feld wie Dipol; Kraft $F = -\sg{\tfrac{1}{16\pi\varepsilon_0}}{\tfrac14} \tfrac{q^2}{d^2}$ |
+| Punktladung (im Vakuum) vor dielektrischem Halbraum ($\sg{\varepsilon_r}{\varepsilon}$) | Bildladung $q' = -q \tfrac{\sg{\varepsilon_r}{\varepsilon}-1}{\sg{\varepsilon_r}{\varepsilon}+1}$ für das Feld im Vakuum; im Dielektrikum wirkt $q'' = q\tfrac{2}{\sg{\varepsilon_r}{\varepsilon}+1}$ am Ort von $q$ | Stetigkeit von $E_t$ und $D_n$; Grenzfall $\sg{\varepsilon_r}{\varepsilon}\to\infty$ = Leiter |
 | Punktladung vor geerdeter Kugel | $q'=-q R/r_0$ im Abstand $R^2/r_0$ vom Mittelpunkt | siehe Beispiel oben |
 | Parallele Platten (geerdet) | unendliche Bildladungsreihe | Reihe konvergiert langsam; besser Fourier/SoV |
 

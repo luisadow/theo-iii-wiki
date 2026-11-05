@@ -1,0 +1,123 @@
+@use "../../styles/variables.scss" as *;
+
+.unit-toggle-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0.8rem 0;
+  padding: 0.25rem 0.6rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  font-family: var(--bodyFont);
+  font-size: 0.85rem;
+  width: fit-content;
+
+  .unit-toggle-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--darkgray);
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    user-select: none;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+  }
+}
+
+.unit-toggle-group {
+  display: inline-flex;
+  background: var(--lightgray);
+  border-radius: 14px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.unit-btn {
+  border: none;
+  background: transparent;
+  color: var(--darkgray);
+  font-family: var(--headerFont);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  line-height: 1.2;
+
+  &:hover {
+    color: var(--dark);
+  }
+
+  &.active {
+    background: var(--light);
+    color: var(--secondary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+}
+
+:root[saved-theme="dark"] .unit-btn.active {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media all and ($mobile) {
+  .unit-toggle-container {
+    margin: 0.3rem 0 0.6rem 0;
+    font-size: 0.8rem;
+    .unit-toggle-label {
+      font-size: 0.75rem;
+    }
+  }
+  .unit-btn {
+    padding: 0.15rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+// Startseite: Umschalter direkt über den Maxwell-Gleichungen (Markup in content/index.md)
+.unit-toggle-inline {
+  display: flex;
+  justify-content: center;
+  margin: 0.4rem 0 -0.4rem 0;
+}
+
+// Box auf Seiten, die (noch) nur SI-Formeln haben; sichtbar nur im Gauß-Modus
+.unit-fallback {
+  margin: 0 0 1.2rem 0;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--card-border);
+  border-left: 3px solid var(--secondary);
+  border-radius: 8px;
+  background: var(--card-bg);
+  font-size: 0.92rem;
+
+  p {
+    margin: 0.3rem 0;
+  }
+
+  table {
+    margin: 0.5rem 0;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 0.25rem 0.6rem;
+    text-align: left;
+    border-bottom: 1px solid var(--lightgray);
+  }
+
+  th {
+    font-weight: 600;
+    color: var(--darkgray);
+  }
+}

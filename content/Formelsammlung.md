@@ -7,16 +7,17 @@ tags:
   - formelsammlung
 ---
 
-Alle zentralen Formeln auf einer Seite (SI-Einheiten). Die Links führen jeweils zur Seite mit Herleitung und Beispielen.
+Alle zentralen Formeln auf einer Seite, wahlweise in SI- oder Gauß-Einheiten (Umschalter oben). Die Links führen jeweils zur Seite mit Herleitung und Beispielen.
 
 ## Konstanten
 
 | Größe | Wert |
 | --- | --- |
-| Elektrische Feldkonstante | $\varepsilon_0 \approx 8{,}854\cdot 10^{-12}\ \mathrm{F/m}$ |
-| Magnetische Feldkonstante | $\mu_0 \approx 1{,}2566\cdot 10^{-6}\ \mathrm{N/A^2}$ |
-| Lichtgeschwindigkeit | $c = 1/\sqrt{\mu_0\varepsilon_0} = 299\,792\,458\ \mathrm{m/s}$ |
-| Coulomb-Konstante | $\frac{1}{4\pi\varepsilon_0} \approx 8{,}988\cdot 10^{9}\ \mathrm{N\,m^2/C^2}$ |
+| Elektrische Feldkonstante | $\sg{\varepsilon_0 \approx 8{,}854\cdot 10^{-12}\ \mathrm{F/m}}{\text{entfällt}\ (\varepsilon_0 \to 1/4\pi)}$ |
+| Magnetische Feldkonstante | $\sg{\mu_0 \approx 1{,}2566\cdot 10^{-6}\ \mathrm{N/A^2}}{\text{entfällt}\ (\mu_0 \to 4\pi/c^2)}$ |
+| Lichtgeschwindigkeit | $\sg{c = 1/\sqrt{\mu_0\varepsilon_0} = 299\,792\,458\ \mathrm{m/s}}{c \approx 2{,}998\cdot 10^{10}\ \mathrm{cm/s}}$ |
+| Coulomb-Konstante | $\sg{\frac{1}{4\pi\varepsilon_0} \approx 8{,}988\cdot 10^{9}\ \mathrm{N\,m^2/C^2}}{k_\text{e} = 1}$ |
+| Elementarladung | $e \approx \sg{1{,}602\cdot 10^{-19}\ \mathrm{C}}{4{,}803\cdot 10^{-10}\ \mathrm{statC}}$ |
 
 ## Vektoranalysis
 
@@ -61,15 +62,13 @@ $$
 > [!info] Gauß-System
 > Die Vorlesung Elektrodynamik im WiSe 26/27 rechnet im Gauß-System. Die Umrechnung ist eine Ersetzung in den Feldgleichungen, $1/\varepsilon_0 \to 4\pi$; Ladungen misst man dann in statC ($q_\text{Gauß} = q_\text{SI}/\sqrt{4\pi\varepsilon_0}$), Energien und Kräfte bleiben gleich. Typische Vorzeichenfalle: die Green-Funktion ist $G = -1/(4\pi\lvert\mathbf r-\mathbf r'\rvert)$ mit $\Delta G = +\delta$.
 
-Kondensatoren (Vakuum; in Materie $\varepsilon_0\to\varepsilon$):
+Kondensatoren (Vakuum; in Materie $\sg{\varepsilon_0\to\varepsilon}{C\to\varepsilon C}$):
 
 $$
-C_{\text{Platte}} = \frac{\varepsilon_0 A}{d},\qquad
-C_{\text{Kugel}} = \frac{4\pi\varepsilon_0 R_1R_2}{R_2-R_1},\qquad
-C_{\text{Zylinder}} = \frac{2\pi\varepsilon_0 L}{\ln(b/a)}
+C_{\text{Platte}} = \sg{\frac{\varepsilon_0 A}{d}}{\frac{A}{4\pi d}},\qquad
+C_{\text{Kugel}} = \sg{\frac{4\pi\varepsilon_0 R_1R_2}{R_2-R_1}}{\frac{R_1R_2}{R_2-R_1}},\qquad
+C_{\text{Zylinder}} = \sg{\frac{2\pi\varepsilon_0 L}{\ln(b/a)}}{\frac{L}{2\ln(b/a)}}
 $$
-
-Im Gauß-System entsprechend $C_{\text{Platte}} = \dfrac{A}{4\pi d}$, $C_{\text{Kugel}} = \dfrac{R_1R_2}{R_2-R_1}$, $C_{\text{Zylinder}} = \dfrac{L}{2\ln(b/a)}$.
 
 → [[Kugelkondensator]] · [[Zylinderkondensator]] · [[Maxwell-Spannungstensor (Elektrostatik)]]
 
@@ -94,12 +93,12 @@ $$
 Multipolentwicklung für $r$ außerhalb der Ladungsverteilung:
 
 $$
-\phi(\mathbf r) = \frac{1}{4\pi\varepsilon_0}\left(\frac{Q}{r} + \frac{\mathbf p\cdot\hat{\mathbf r}}{r^2} + \frac{1}{2}\,\frac{Q_{ij}\,\hat r_i\hat r_j}{r^3} + \dots\right),
+\phi(\mathbf r) = \sg{\frac{1}{4\pi\varepsilon_0}}{}\left(\frac{Q}{r} + \frac{\mathbf p\cdot\hat{\mathbf r}}{r^2} + \frac{1}{2}\,\frac{Q_{ij}\,\hat r_i\hat r_j}{r^3} + \dots\right),
 \qquad
 \mathbf p = \int\rho\,\mathbf r'\,d^3r'
 $$
 
-Dipolfeld: $\mathbf E = \dfrac{1}{4\pi\varepsilon_0}\,\dfrac{3(\mathbf p\cdot\hat{\mathbf r})\hat{\mathbf r}-\mathbf p}{r^3}$; im äußeren Feld $W=-\mathbf p\cdot\mathbf E$, $\boldsymbol\tau = \mathbf p\times\mathbf E$.
+Dipolfeld: $\mathbf E = \sg{\dfrac{1}{4\pi\varepsilon_0}\,}{}\dfrac{3(\mathbf p\cdot\hat{\mathbf r})\hat{\mathbf r}-\mathbf p}{r^3}$; im äußeren Feld $W=-\mathbf p\cdot\mathbf E$, $\boldsymbol\tau = \mathbf p\times\mathbf E$.
 
 Bildladungen (→ [[Spiegelmethode (Elektrostatik)]]): Ebene $q' = -q$ gespiegelt; geerdete Kugel $q' = -qR/r_0$ im Abstand $R^2/r_0$ vom Mittelpunkt.
 
@@ -109,19 +108,19 @@ Bildladungen (→ [[Spiegelmethode (Elektrostatik)]]): Ebene $q' = -q$ gespiegel
 
 | Elektrisch | Magnetisch |
 | --- | --- |
-| $\mathbf D = \varepsilon_0\mathbf E + \mathbf P$ | $\mathbf B = \mu_0(\mathbf H + \mathbf M)$ |
-| $\nabla\cdot\mathbf D = \rho_{\text{frei}}$ | $\nabla\times\mathbf H = \mathbf J_{\text{frei}}$ (statisch) |
-| $\rho_b = -\nabla\cdot\mathbf P$, $\ \sigma_b = \mathbf P\cdot\mathbf n$ | $\mathbf J_b = \nabla\times\mathbf M$, $\ \mathbf K_b = \mathbf M\times\mathbf n$ |
-| linear: $\mathbf D = \varepsilon_0\varepsilon_r\mathbf E$, $\ \varepsilon_r = 1+\chi_e$ | linear: $\mathbf B = \mu_0\mu_r\mathbf H$, $\ \mu_r = 1+\chi_m$ |
-| Entelektrisierung: $\mathbf E_{\text{in}} = \mathbf E_0 - \mathsf N\mathbf P/\varepsilon_0$ | Entmagnetisierung: $\mathbf H_{\text{in}} = \mathbf H_0 - \mathsf N\mathbf M$ |
+| $\mathbf D = \sg{\varepsilon_0\mathbf E + \mathbf P}{\mathbf E + 4\pi\mathbf P}$ | $\mathbf B = \sg{\mu_0(\mathbf H + \mathbf M)}{\mathbf H + 4\pi\mathbf M}$ |
+| $\nabla\cdot\mathbf D = \sg{}{4\pi}\rho_{\text{frei}}$ | $\nabla\times\mathbf H = \sg{}{\frac{4\pi}{c}}\mathbf J_{\text{frei}}$ (statisch) |
+| $\rho_b = -\nabla\cdot\mathbf P$, $\ \sigma_b = \mathbf P\cdot\mathbf n$ | $\mathbf J_b = \sg{}{c\,}\nabla\times\mathbf M$, $\ \mathbf K_b = \sg{}{c\,}\mathbf M\times\mathbf n$ |
+| linear: $\sg{\mathbf D = \varepsilon_0\varepsilon_r\mathbf E,\ \varepsilon_r = 1+\chi_e}{\mathbf D = \varepsilon\mathbf E,\ \varepsilon = 1+4\pi\chi_e}$ | linear: $\sg{\mathbf B = \mu_0\mu_r\mathbf H,\ \mu_r = 1+\chi_m}{\mathbf B = \mu\mathbf H,\ \mu = 1+4\pi\chi_m}$ |
+| Entelektrisierung: $\mathbf E_{\text{in}} = \mathbf E_0 - \sg{\mathsf N\mathbf P/\varepsilon_0}{4\pi\mathsf N\mathbf P}$ | Entmagnetisierung: $\mathbf H_{\text{in}} = \mathbf H_0 - \sg{}{4\pi}\mathsf N\mathbf M$ |
 
 Randbedingungen ($\mathbf n$ von Medium 1 nach 2):
 
 $$
-\mathbf n\cdot(\mathbf D_2-\mathbf D_1) = \sigma_{\text{frei}},\quad
+\mathbf n\cdot(\mathbf D_2-\mathbf D_1) = \sg{}{4\pi}\sigma_{\text{frei}},\quad
 \mathbf n\times(\mathbf E_2-\mathbf E_1) = 0,\quad
 \mathbf n\cdot(\mathbf B_2-\mathbf B_1) = 0,\quad
-\mathbf n\times(\mathbf H_2-\mathbf H_1) = \mathbf K_{\text{frei}}
+\mathbf n\times(\mathbf H_2-\mathbf H_1) = \sg{}{\frac{4\pi}{c}}\mathbf K_{\text{frei}}
 $$
 
 ## Magnetostatik
@@ -130,14 +129,14 @@ $$
 
 | | Formel |
 | --- | --- |
-| Feldgleichungen | $\nabla\cdot\mathbf B = 0$, $\quad\nabla\times\mathbf B = \mu_0\mathbf J$ |
-| Biot–Savart | $\mathbf B(\mathbf r) = \dfrac{\mu_0}{4\pi}\displaystyle\int\mathbf J(\mathbf r')\times\frac{\mathbf r-\mathbf r'}{\lvert\mathbf r-\mathbf r'\rvert^3}\,d^3r'$ |
-| Ampère | $\oint\mathbf B\cdot d\mathbf l = \mu_0 I_{\text{durch}}$ |
-| Vektorpotential | $\mathbf B = \nabla\times\mathbf A$, $\quad\mathbf A = \dfrac{\mu_0}{4\pi}\displaystyle\int\frac{\mathbf J(\mathbf r')}{\lvert\mathbf r-\mathbf r'\rvert}\,d^3r'$ (Coulomb-Eichung) |
-| Typische Felder | Draht $B = \dfrac{\mu_0 I}{2\pi r}$, $\quad$ lange Spule $B = \mu_0 nI$ |
-| Magnetischer Dipol | $\mathbf m = \tfrac12\displaystyle\int\mathbf r\times\mathbf J\,d^3r$, $\quad\mathbf B = \dfrac{\mu_0}{4\pi}\,\dfrac{3(\mathbf m\cdot\hat{\mathbf r})\hat{\mathbf r}-\mathbf m}{r^3}$ |
-| Kraft | $\mathbf F = q(\mathbf E + \mathbf v\times\mathbf B)$, $\quad d\mathbf F = I\,d\mathbf l\times\mathbf B$ |
-| Induktivität | $\Phi = LI$, $\quad W = \tfrac12 LI^2 = \dfrac{1}{2\mu_0}\displaystyle\int B^2\,d^3r$, $\quad L_{\text{Spule}} = \mu_0 n^2 A\ell$ |
+| Feldgleichungen | $\nabla\cdot\mathbf B = 0$, $\quad\nabla\times\mathbf B = \sg{\mu_0}{\frac{4\pi}{c}}\mathbf J$ |
+| Biot–Savart | $\mathbf B(\mathbf r) = \sg{\dfrac{\mu_0}{4\pi}}{\dfrac{1}{c}}\displaystyle\int\mathbf J(\mathbf r')\times\frac{\mathbf r-\mathbf r'}{\lvert\mathbf r-\mathbf r'\rvert^3}\,d^3r'$ |
+| Ampère | $\oint\mathbf B\cdot d\mathbf l = \sg{\mu_0}{\frac{4\pi}{c}} I_{\text{durch}}$ |
+| Vektorpotential | $\mathbf B = \nabla\times\mathbf A$, $\quad\mathbf A = \sg{\dfrac{\mu_0}{4\pi}}{\dfrac{1}{c}}\displaystyle\int\frac{\mathbf J(\mathbf r')}{\lvert\mathbf r-\mathbf r'\rvert}\,d^3r'$ (Coulomb-Eichung) |
+| Typische Felder | Draht $B = \sg{\dfrac{\mu_0 I}{2\pi r}}{\dfrac{2I}{c\,r}}$, $\quad$ lange Spule $B = \sg{\mu_0 nI}{\dfrac{4\pi nI}{c}}$ |
+| Magnetischer Dipol | $\mathbf m = \sg{\tfrac12}{\tfrac{1}{2c}}\displaystyle\int\mathbf r\times\mathbf J\,d^3r$, $\quad\mathbf B = \sg{\dfrac{\mu_0}{4\pi}\,}{}\dfrac{3(\mathbf m\cdot\hat{\mathbf r})\hat{\mathbf r}-\mathbf m}{r^3}$ |
+| Kraft | $\mathbf F = q(\mathbf E + \sg{\mathbf v}{\tfrac{\mathbf v}{c}}\times\mathbf B)$, $\quad d\mathbf F = \sg{I}{\tfrac{I}{c}}\,d\mathbf l\times\mathbf B$ |
+| Induktivität | $\Phi = \sg{}{c\,}LI$, $\quad W = \tfrac12 LI^2 = \sg{\dfrac{1}{2\mu_0}}{\dfrac{1}{8\pi}}\displaystyle\int B^2\,d^3r$, $\quad L_{\text{Spule}} = \sg{\mu_0 n^2 A\ell}{\dfrac{4\pi n^2 A\ell}{c^2}}$ |
 
 ## Maxwell-Gleichungen & Induktion
 
@@ -145,34 +144,34 @@ $$
 
 $$
 \begin{aligned}
-\nabla\cdot\mathbf E &= \frac{\rho}{\varepsilon_0} &\qquad \nabla\times\mathbf E &= -\partial_t\mathbf B \\[4pt]
-\nabla\cdot\mathbf B &= 0 &\qquad \nabla\times\mathbf B &= \mu_0\mathbf J + \mu_0\varepsilon_0\,\partial_t\mathbf E
+\nabla\cdot\mathbf E &= \sg{\frac{\rho}{\varepsilon_0}}{4\pi\rho} &\qquad \nabla\times\mathbf E &= -\sg{}{\frac{1}{c}}\partial_t\mathbf B \\[4pt]
+\nabla\cdot\mathbf B &= 0 &\qquad \nabla\times\mathbf B &= \sg{\mu_0\mathbf J + \mu_0\varepsilon_0\,\partial_t\mathbf E}{\frac{4\pi}{c}\mathbf J + \frac{1}{c}\,\partial_t\mathbf E}
 \end{aligned}
 $$
 
-In Materie: $\nabla\cdot\mathbf D = \rho_{\text{frei}}$, $\ \nabla\times\mathbf H = \mathbf J_{\text{frei}} + \partial_t\mathbf D$. Kontinuitätsgleichung: $\partial_t\rho + \nabla\cdot\mathbf J = 0$.
+In Materie: $\nabla\cdot\mathbf D = \sg{}{4\pi}\rho_{\text{frei}}$, $\ \nabla\times\mathbf H = \sg{\mathbf J_{\text{frei}} + \partial_t\mathbf D}{\frac{4\pi}{c}\mathbf J_{\text{frei}} + \frac{1}{c}\partial_t\mathbf D}$. Kontinuitätsgleichung: $\partial_t\rho + \nabla\cdot\mathbf J = 0$.
 
-Induktionsgesetz: $\mathcal E = \oint(\mathbf E + \mathbf v\times\mathbf B)\cdot d\mathbf l = -\dfrac{d\Phi_B}{dt}$.
+Induktionsgesetz: $\mathcal E = \oint(\mathbf E + \sg{\mathbf v}{\tfrac{\mathbf v}{c}}\times\mathbf B)\cdot d\mathbf l = -\sg{}{\dfrac{1}{c}}\dfrac{d\Phi_B}{dt}$.
 
 ## Potentiale & Eichungen
 
 → [[Coulomb-Eichung (Elektrodynamik)]] · [[Lorenz-Eichung (Elektrodynamik)]] · [[Helmholtz-Zerlegung (Vektorfelder)]]
 
 $$
-\mathbf B = \nabla\times\mathbf A,\qquad \mathbf E = -\nabla\phi - \partial_t\mathbf A,\qquad
-\mathbf A\to\mathbf A + \nabla\chi,\quad \phi\to\phi - \partial_t\chi
+\mathbf B = \nabla\times\mathbf A,\qquad \mathbf E = -\nabla\phi - \sg{}{\frac{1}{c}}\partial_t\mathbf A,\qquad
+\mathbf A\to\mathbf A + \nabla\chi,\quad \phi\to\phi - \sg{}{\frac{1}{c}}\partial_t\chi
 $$
 
 | Eichung | Bedingung | Gleichungen |
 | --- | --- | --- |
-| Coulomb | $\nabla\cdot\mathbf A = 0$ | $\nabla^2\phi = -\rho/\varepsilon_0$, $\ \Box\mathbf A = -\mu_0\mathbf J_T$ |
-| Lorenz | $\nabla\cdot\mathbf A + \frac{1}{c^2}\partial_t\phi = 0$ | $\Box\phi = -\rho/\varepsilon_0$, $\ \Box\mathbf A = -\mu_0\mathbf J$ |
+| Coulomb | $\nabla\cdot\mathbf A = 0$ | $\nabla^2\phi = \sg{-\rho/\varepsilon_0}{-4\pi\rho}$, $\ \Box\mathbf A = -\sg{\mu_0}{\frac{4\pi}{c}}\mathbf J_T$ |
+| Lorenz | $\nabla\cdot\mathbf A + \sg{\frac{1}{c^2}}{\frac{1}{c}}\partial_t\phi = 0$ | $\Box\phi = \sg{-\rho/\varepsilon_0}{-4\pi\rho}$, $\ \Box\mathbf A = -\sg{\mu_0}{\frac{4\pi}{c}}\mathbf J$ |
 
 mit $\Box = \nabla^2 - \frac{1}{c^2}\partial_t^2$. Retardierte Potentiale (Lorenz-Eichung):
 
 $$
-\phi(\mathbf r,t) = \frac{1}{4\pi\varepsilon_0}\int\frac{\rho(\mathbf r',t_r)}{\lvert\mathbf r-\mathbf r'\rvert}\,d^3r',\qquad
-\mathbf A(\mathbf r,t) = \frac{\mu_0}{4\pi}\int\frac{\mathbf J(\mathbf r',t_r)}{\lvert\mathbf r-\mathbf r'\rvert}\,d^3r',\qquad
+\phi(\mathbf r,t) = \sg{\frac{1}{4\pi\varepsilon_0}}{}\int\frac{\rho(\mathbf r',t_r)}{\lvert\mathbf r-\mathbf r'\rvert}\,d^3r',\qquad
+\mathbf A(\mathbf r,t) = \sg{\frac{\mu_0}{4\pi}}{\frac{1}{c}}\int\frac{\mathbf J(\mathbf r',t_r)}{\lvert\mathbf r-\mathbf r'\rvert}\,d^3r',\qquad
 t_r = t - \frac{\lvert\mathbf r-\mathbf r'\rvert}{c}
 $$
 
@@ -182,14 +181,14 @@ $$
 
 | | Formel |
 | --- | --- |
-| Energiedichte | $u = \dfrac{\varepsilon_0}{2}E^2 + \dfrac{1}{2\mu_0}B^2$ (in Materie $\tfrac12(\mathbf E\cdot\mathbf D + \mathbf B\cdot\mathbf H)$) |
-| Poynting-Vektor | $\mathbf S = \dfrac{1}{\mu_0}\,\mathbf E\times\mathbf B$ |
+| Energiedichte | $u = \sg{\dfrac{\varepsilon_0}{2}E^2 + \dfrac{1}{2\mu_0}B^2}{\dfrac{1}{8\pi}\left(E^2 + B^2\right)}$ (in Materie $\sg{\tfrac12}{\tfrac{1}{8\pi}}(\mathbf E\cdot\mathbf D + \mathbf B\cdot\mathbf H)$) |
+| Poynting-Vektor | $\mathbf S = \sg{\dfrac{1}{\mu_0}}{\dfrac{c}{4\pi}}\,\mathbf E\times\mathbf B$ |
 | Poynting-Theorem | $\partial_t u + \nabla\cdot\mathbf S = -\mathbf J\cdot\mathbf E$ |
-| Impulsdichte | $\mathbf g = \varepsilon_0\,\mathbf E\times\mathbf B = \mathbf S/c^2$ |
-| Spannungstensor | $T_{ij} = \varepsilon_0\left(E_iE_j - \tfrac12\delta_{ij}E^2\right) + \tfrac{1}{\mu_0}\left(B_iB_j - \tfrac12\delta_{ij}B^2\right)$ |
-| Ebene Welle | $\mathbf E = \mathbf E_0\,e^{i(\mathbf k\cdot\mathbf r-\omega t)}$, $\ \omega = ck$, $\ \mathbf B = \tfrac1\omega\,\mathbf k\times\mathbf E$, $\ \mathbf k\cdot\mathbf E = 0$ |
-| Intensität | $I = \langle S\rangle = \tfrac12 c\,\varepsilon_0 E_0^2$ |
-| Dipolstrahlung | $P = \dfrac{\mu_0\,\lvert\ddot{\mathbf p}\rvert^2}{6\pi c}$, harmonisch $\langle P\rangle = \dfrac{\mu_0\,p_0^2\,\omega^4}{12\pi c}$ |
+| Impulsdichte | $\mathbf g = \sg{\varepsilon_0}{\dfrac{1}{4\pi c}}\,\mathbf E\times\mathbf B = \mathbf S/c^2$ |
+| Spannungstensor | $T_{ij} = \sg{\varepsilon_0}{\tfrac{1}{4\pi}}\left(E_iE_j - \tfrac12\delta_{ij}E^2\right) + \sg{\tfrac{1}{\mu_0}}{\tfrac{1}{4\pi}}\left(B_iB_j - \tfrac12\delta_{ij}B^2\right)$ |
+| Ebene Welle | $\mathbf E = \mathbf E_0\,e^{i(\mathbf k\cdot\mathbf r-\omega t)}$, $\ \omega = ck$, $\ \mathbf B = \sg{\tfrac1\omega}{\tfrac{c}{\omega}}\,\mathbf k\times\mathbf E$, $\ \mathbf k\cdot\mathbf E = 0$ |
+| Intensität | $I = \langle S\rangle = \sg{\tfrac12 c\,\varepsilon_0}{\tfrac{c}{8\pi}}\, E_0^2$ |
+| Dipolstrahlung | $P = \sg{\dfrac{\mu_0\,\lvert\ddot{\mathbf p}\rvert^2}{6\pi c}}{\dfrac{2\,\lvert\ddot{\mathbf p}\rvert^2}{3c^3}}$, harmonisch $\langle P\rangle = \sg{\dfrac{\mu_0\,p_0^2\,\omega^4}{12\pi c}}{\dfrac{p_0^2\,\omega^4}{3c^3}}$ |
 
 ## Spezielle Relativität
 
@@ -207,6 +206,6 @@ Vierervektoren mit $\eta = \operatorname{diag}(1,-1,-1,-1)$:
 
 $$
 p^\mu = \left(\tfrac{E}{c},\,\mathbf p\right),\quad E^2 = (pc)^2 + (mc^2)^2,\qquad
-J^\mu = (c\rho,\,\mathbf J),\quad A^\mu = \left(\tfrac{\phi}{c},\,\mathbf A\right),\quad
-\partial_\mu A^\mu = 0,\quad \Box A^\mu = -\mu_0 J^\mu
+J^\mu = (c\rho,\,\mathbf J),\quad A^\mu = \sg{\left(\tfrac{\phi}{c},\,\mathbf A\right)}{(\phi,\,\mathbf A)},\quad
+\partial_\mu A^\mu = 0,\quad \Box A^\mu = -\sg{\mu_0}{\frac{4\pi}{c}} J^\mu
 $$

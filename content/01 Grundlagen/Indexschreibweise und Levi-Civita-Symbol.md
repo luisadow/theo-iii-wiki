@@ -253,7 +253,7 @@ Zusammengesetzt ergibt sich exakt:
 $$[\nabla\times(\nabla\times\mathbf F)]_i = [\nabla(\nabla\cdot\mathbf F)]_i - (\nabla^2\mathbf F)_i \iff \nabla\times(\nabla\times\mathbf F) = \nabla(\nabla\cdot\mathbf F) - \nabla^2\mathbf F.$$
 
 > [!tip] Physikalische Bedeutung
-> In der Elektrodynamik ist diese Identität der Schlüssel zur Herleitung der **elektromagnetischen Wellengleichung**: Wendet man die Rotation auf das Faradaysche Induktionsgesetz an ($\nabla\times(\nabla\times\mathbf E) = -\partial_t(\nabla\times\mathbf B)$) und nutzt im Vakuum $\nabla\cdot\mathbf E=0$ sowie $\nabla\times\mathbf B = \mu_0\varepsilon_0\partial_t\mathbf E$, fällt die linke Seite auf $-\nabla^2\mathbf E$ zusammen – und liefert unmittelbar $\nabla^2\mathbf E - \mu_0\varepsilon_0\partial_t^2\mathbf E = 0$.
+> In der Elektrodynamik ist diese Identität der Schlüssel zur Herleitung der **elektromagnetischen Wellengleichung**: Wendet man die Rotation auf das Faradaysche Induktionsgesetz an ($\nabla\times(\nabla\times\mathbf E) = -\sg{}{\tfrac1c}\partial_t(\nabla\times\mathbf B)$) und nutzt im Vakuum $\nabla\cdot\mathbf E=0$ sowie $\nabla\times\mathbf B = \sg{\mu_0\varepsilon_0}{\tfrac1c}\partial_t\mathbf E$, fällt die linke Seite auf $-\nabla^2\mathbf E$ zusammen – und liefert unmittelbar $\nabla^2\mathbf E - \sg{\mu_0\varepsilon_0}{\tfrac{1}{c^2}}\partial_t^2\mathbf E = 0$.
 
 ## Beispielaufgabe
 
@@ -287,6 +287,6 @@ Hake ab, was du sicher kannst – der Stand bleibt in deinem Browser gespeichert
 ## Siehe auch
 
 - [[Vektoranalysis]] – dieselben Operatoren und Identitäten in ausgeschriebener Form, plus Kugel- und Zylinderkoordinaten
-- [[Magnetostatik - Grundgleichungen]] – $\nabla\cdot\mathbf B=0$, $\nabla\times\mathbf B=\mu_0\mathbf J$ und das Vektorpotential als Anwendung
+- [[Magnetostatik - Grundgleichungen]] – $\nabla\cdot\mathbf B=0$, $\nabla\times\mathbf B=\sg{\mu_0}{\tfrac{4\pi}{c}}\mathbf J$ und das Vektorpotential als Anwendung
 - [[Helmholtz-Zerlegung (Vektorfelder)]] – Projektorformeln, die ebenfalls mit $\delta$ und $\varepsilon$ argumentieren
 - [[Formelsammlung]] – alle Formeln dieser Seite kompakt auf einer Seite

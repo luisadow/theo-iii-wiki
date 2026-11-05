@@ -16,23 +16,30 @@ Kurzer Spickzettel für Green-Funktionen $G(\mathbf{r}, \mathbf{r}')$ in typisch
 
 ---
 
-## 1. Freier Raum
+## 1. Freier Raum ($G_0$)
 
 $$
-G_0(\mathbf{r}, \mathbf{r}') = \frac{1}{4\pi |\mathbf{r}-\mathbf{r}'|}
+G_0(\mathbf{r}, \mathbf{r}') = \sg{}{-}\frac{1}{4\pi |\mathbf{r}-\mathbf{r}'|}
 $$
 
-- Eigenschaften: $\nabla^2 G_0 = -\delta(\mathbf{r}-\mathbf{r}')$; fällt wie $1/r$.
+- Eigenschaften: $\nabla^2 G_0 = \sg{-}{+}\delta(\mathbf{r}-\mathbf{r}')$; fällt wie $1/r$.
 - Symmetrie: $G_0(\mathbf{r}, \mathbf{r}') = G_0(\mathbf{r}', \mathbf{r})$.
+- Potential: $\phi(\mathbf{r}) = \sg{\frac{1}{\varepsilon_0}}{-4\pi}\int_V \rho(\mathbf{r}')\,G_0(\mathbf{r},\mathbf{r}')\,d^3r' = \sg{\frac{1}{4\pi\varepsilon_0}}{}\int_V \frac{\rho(\mathbf{r}')}{\lvert\mathbf{r}-\mathbf{r}'\rvert}\,d^3r'$.
 
-> [!info] Gauß-System
-> $$ G(\mathbf{r},\mathbf{r}') = -\frac{1}{4\pi\lvert\mathbf{r}-\mathbf{r}'\rvert}, \qquad \Delta G = +\delta(\mathbf{r}-\mathbf{r}'), \qquad \Delta\phi = -4\pi\rho \;\Rightarrow\; \phi(\mathbf{r}) = \int \frac{\rho(\mathbf{r}')}{\lvert\mathbf{r}-\mathbf{r}'\rvert}\,d^3r'. $$
-> Die mathematische Identität $\nabla^2\frac{1}{r} = -4\pi\delta(\mathbf{r})$ ist in beiden Systemen dieselbe; nur die Vorzeichenzuordnung von $G$ zu $\rho$ unterscheidet sich. Die Vorlesung im WiSe 26/27 rechnet im Gauß-System – $G$ und der Quellterm müssen dort **immer paarweise** aus derselben Konvention stammen.
+> [!info] Zwei Konventionen für $G$
+> Die Identität $\nabla^2\frac{1}{r} = -4\pi\delta(\mathbf{r})$ ist reine Mathematik und gilt in beiden Systemen; unterschiedlich ist nur, welches Vorzeichen man $G$ gibt.
+>
+> | | $G_0$ | Gleichung für $G$ | Poisson |
+> |---|---|---|---|
+> | SI (Wiki) | $+\frac{1}{4\pi\lvert\mathbf r-\mathbf r'\rvert}$ | $\nabla^2 G = -\delta$ | $\nabla^2\phi = -\rho/\varepsilon_0$ |
+> | Gauß (Vorlesung WiSe 26/27) | $-\frac{1}{4\pi\lvert\mathbf r-\mathbf r'\rvert}$ | $\Delta G = +\delta$ | $\Delta\phi = -4\pi\rho$ |
+>
+> $G$ und Quellterm müssen **immer paarweise** aus derselben Konvention stammen. Mit dem Umschalter oben wechseln alle Formeln dieser Seite gemeinsam.
 
 ## 2. Geerdete Ebene (Halbraum, Spiegelmethode)
 
 $$
-G_{\text{Ebene}}(\mathbf{r}, \mathbf{r}') = \frac{1}{4\pi} \left( \frac{1}{|\mathbf{r}-\mathbf{r}'|} - \frac{1}{|\mathbf{r}-\mathbf{r}'^*|} \right)
+G_{\text{Ebene}}(\mathbf{r}, \mathbf{r}') = \sg{}{-}\frac{1}{4\pi} \left( \frac{1}{|\mathbf{r}-\mathbf{r}'|} - \frac{1}{|\mathbf{r}-\mathbf{r}'^*|} \right)
 $$
 
 - $\mathbf{r}'^*$: Spiegelpunkt an der Ebene ($z \to -z$).
@@ -43,8 +50,8 @@ $$
 Innenraum $r, r' < R$ (Dirichlet $G=0$ bei $r=R$), geschlossen per Spiegelladung $-R/r'$ bei $\mathbf r'' = (R^2/r'^2)\,\mathbf r'$:
 
 $$
-G_{\text{Kugel}}(\mathbf r,\mathbf r') = \frac{1}{4\pi}\left(\frac{1}{\lvert\mathbf r-\mathbf r'\rvert} - \frac{R/r'}{\lvert\mathbf r-\tfrac{R^2}{r'^2}\mathbf r'\rvert}\right)
-= \frac{1}{4\pi} \sum_{\ell=0}^{\infty} \frac{r_<^{\ell}}{r_>^{\ell+1}} \left( 1 - \left(\frac{r_>}{R}\right)^{2\ell+1} \right) P_\ell(\cos\gamma)
+G_{\text{Kugel}}(\mathbf r,\mathbf r') = \sg{}{-}\frac{1}{4\pi}\left(\frac{1}{\lvert\mathbf r-\mathbf r'\rvert} - \frac{R/r'}{\lvert\mathbf r-\tfrac{R^2}{r'^2}\mathbf r'\rvert}\right)
+= \sg{}{-}\frac{1}{4\pi} \sum_{\ell=0}^{\infty} \frac{r_<^{\ell}}{r_>^{\ell+1}} \left( 1 - \left(\frac{r_>}{R}\right)^{2\ell+1} \right) P_\ell(\cos\gamma)
 $$
 
 - $r_< = \min(r,r')$, $r_> = \max(r,r')$, $\gamma$ Winkel zwischen $\mathbf{r}$ und $\mathbf{r}'$.
@@ -57,7 +64,7 @@ $$
 Innenraum $\rho,\rho'<R$:
 
 $$
-G_{\text{Zyl}} = \frac{1}{2\pi^2} \sum_{m=-\infty}^{\infty} e^{im(\phi-\phi')} \int_0^{\infty} dk\, \cos\big(k(z-z')\big) \left[ I_m(k\rho_<) K_m(k\rho_>) - \frac{K_m(kR)}{I_m(kR)}\, I_m(k\rho)\, I_m(k\rho') \right]
+G_{\text{Zyl}} = \sg{}{-}\frac{1}{2\pi^2} \sum_{m=-\infty}^{\infty} e^{im(\phi-\phi')} \int_0^{\infty} dk\, \cos\big(k(z-z')\big) \left[ I_m(k\rho_<) K_m(k\rho_>) - \frac{K_m(kR)}{I_m(kR)}\, I_m(k\rho)\, I_m(k\rho') \right]
 $$
 
 - $I_m$, $K_m$: modifizierte Bessel-Funktionen. Der erste Term allein ist die Freiraum-Funktion $G_0$ in Zylinderkoordinaten; der zweite (homogene) Term sorgt für $G=0$ bei $\rho=R$.
@@ -65,10 +72,10 @@ $$
 
 ## 5. Nutzung im RB-Problem
 
-- Aus dem Greenschen Satz (mit $\nabla'^2 G = -\delta$, Ableitungen nach $\mathbf r'$, Normale nach außen):
-  $$\phi(\mathbf{r}) = \frac{1}{\varepsilon_0}\int_V \rho(\mathbf r')\, G(\mathbf r,\mathbf r')\, d^3r' + \oint_{\partial V} \left[G\,\frac{\partial \phi}{\partial n'} - \phi\,\frac{\partial G}{\partial n'}\right] dA'.$$
-- Dirichlet-Problem: wähle $G_D=0$ auf $\partial V$, dann bleibt nur $-\oint \phi\,\partial_{n'} G_D\, dA'$ als Randterm.
-- Neumann-Problem: $\partial_{n'} G_N = -1/A$ auf $\partial V$ (nicht $0$, wegen Gauß); der Randterm liefert dann eine Konstante $\langle\phi\rangle_{\partial V}$.
+- Aus dem Greenschen Satz (mit $\nabla'^2 G = \sg{-}{+}\delta$, Ableitungen nach $\mathbf r'$, Normale nach außen):
+  $$\phi(\mathbf{r}) = \sg{\frac{1}{\varepsilon_0}}{-4\pi}\int_V \rho(\mathbf r')\, G(\mathbf r,\mathbf r')\, d^3r' + \oint_{\partial V} \left[\sg{G\,\frac{\partial \phi}{\partial n'} - \phi\,\frac{\partial G}{\partial n'}}{\phi\,\frac{\partial G}{\partial n'} - G\,\frac{\partial \phi}{\partial n'}}\right] dA'.$$
+- Dirichlet-Problem: wähle $G_D=0$ auf $\partial V$, dann bleibt nur $\sg{-}{+}\oint \phi\,\partial_{n'} G_D\, dA'$ als Randterm.
+- Neumann-Problem: $\partial_{n'} G_N = \sg{-}{+}1/A$ auf $\partial V$ (nicht $0$, wegen Gauß); der Randterm liefert dann eine Konstante $\langle\phi\rangle_{\partial V}$.
 
 ## 6. Verknüpfungen
 

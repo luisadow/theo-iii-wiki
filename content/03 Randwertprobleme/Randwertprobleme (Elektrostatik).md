@@ -144,8 +144,8 @@ Randwertprobleme (RWP) liefern Potential- und Feldverteilungen auf Basis vorgege
 
 - Kugel mit Radius $a$, $\phi(a)=\phi_0$, $\phi\to 0$ für $r\to\infty$.
 - Legendre-Ansatz außen: $\phi=\sum_\ell B_\ell r^{-(\ell+1)}P_\ell(\cos\theta)$. Die RB ist winkelunabhängig, also bleibt nur $\ell=0$: $\phi(r)=\phi_0 a/r$, $E_r = -\partial_r\phi = \phi_0 a/r^2$.
-- Oberflächenladung: $\sigma = \varepsilon_0 E_r(a) = \varepsilon_0 \phi_0/a$, Gesamtladung $Q=4\pi a^2\sigma = 4\pi\varepsilon_0 a\,\phi_0$.
-- Damit $C = 4\pi\varepsilon_0 a$ und $W = \tfrac{1}{2} C \phi_0^2$.
+- Oberflächenladung: $\sigma = \sg{\varepsilon_0}{\tfrac{1}{4\pi}} E_r(a) = \sg{\varepsilon_0 \phi_0/a}{\phi_0/(4\pi a)}$, Gesamtladung $Q=4\pi a^2\sigma = \sg{4\pi\varepsilon_0}{} a\,\phi_0$.
+- Damit $C = \sg{4\pi\varepsilon_0}{} a$ und $W = \tfrac{1}{2} C \phi_0^2$.
 - Gegenstück: In einem ladungsfreien Hohlraum eines Leiters ist $\phi$ konstant (Eindeutigkeitssatz), das Feld dort verschwindet (Faraday-Käfig).
 
 ### 9.2 Green-Funktionen (Kurzlink)

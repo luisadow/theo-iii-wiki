@@ -46,8 +46,8 @@ $$
 - Potential stetig: $\Phi_{\text{in}}(a,\theta)=\Phi_{\text{out}}(a,\theta)$.
 - Normalanteil von $\mathbf D$: $(\mathbf D_{\text{out}}-\mathbf D_{\text{in}})\cdot\hat n=\sigma_f$.
 - Tangentialanteil von $\mathbf E$: $(\mathbf E_{\text{out}}-\mathbf E_{\text{in}})\times\hat n=0$ $\Rightarrow$ $E_{\parallel}$ stetig.
-- Linear isotrop: $\mathbf D=\varepsilon\mathbf E$ $\Rightarrow$ $\varepsilon_{\text{out}}E_{\perp,\text{out}}-\varepsilon_{\text{in}}E_{\perp,\text{in}}=\sigma_f$.
-- Leitergrenze: $E_{\parallel}=0$, $\Phi=\text{konstant}$ auf der Oberfläche; $E_{\perp}=\sigma_f/\varepsilon_0$ außerhalb.
+- Linear isotrop: $\mathbf D=\varepsilon\mathbf E$ $\Rightarrow$ $\varepsilon_{\text{out}}E_{\perp,\text{out}}-\varepsilon_{\text{in}}E_{\perp,\text{in}}=\sg{}{4\pi}\sigma_f$.
+- Leitergrenze: $E_{\parallel}=0$, $\Phi=\text{konstant}$ auf der Oberfläche; $E_{\perp}=\sg{\sigma_f/\varepsilon_0}{4\pi\sigma_f}$ außerhalb.
 
 ### Bedeutung der Größen
 
@@ -63,7 +63,7 @@ Nur $\ell=1$ relevant. Äußeres Feld $E_0\hat z$, Kugelradius $a$:
 - Ansatz: $\Phi_{\text{out}}=-E_0 r\cos\theta + B_1 \cos\theta / r^2$, $\Phi_{\text{in}}=A_1 r\cos\theta$.
 - RB bei $r=a$: (1) Stetigkeit von $\Phi$, (2) Sprungbedingung für $D_\perp$ mit $\sigma_f=0$.
 - Koeffizienten: $A_1=-\dfrac{3\varepsilon_{\text{out}}}{\varepsilon_{\text{in}}+2\varepsilon_{\text{out}}}E_0$ (Innenfeld homogen, $\mathbf E_{\text{in}} = -A_1\hat z$), $\displaystyle B_1=a^3E_0\frac{\varepsilon_{\text{in}}-\varepsilon_{\text{out}}}{\varepsilon_{\text{in}}+2\varepsilon_{\text{out}}}$.
-- Induziertes Dipolmoment (definiert über $\Phi_{\text{Dipol}} = p\cos\theta/(4\pi\varepsilon_{\text{out}} r^2)$): $p=4\pi\varepsilon_{\text{out}} a^3 E_0\dfrac{\varepsilon_{\text{in}}-\varepsilon_{\text{out}}}{\varepsilon_{\text{in}}+2\varepsilon_{\text{out}}}$.
+- Induziertes Dipolmoment (definiert über $\Phi_{\text{Dipol}} = p\cos\theta/(\sg{4\pi}{}\varepsilon_{\text{out}} r^2)$): $p=\sg{4\pi}{}\varepsilon_{\text{out}} a^3 E_0\dfrac{\varepsilon_{\text{in}}-\varepsilon_{\text{out}}}{\varepsilon_{\text{in}}+2\varepsilon_{\text{out}}}$.
 
 ![[kugel-homogenes-feld.svg|Links die leitende Kugel (Grenzfall ε_in → ∞): Innen ist E = 0, außen treffen die Feldlinien senkrecht auf die Influenzladung σ = 3ε₀E₀cos θ. Rechts die dielektrische Kugel mit ε_r = 3: Das Innenfeld ist homogen und auf 0,6 E₀ geschwächt. Die Linien sind exakt aus der ℓ = 1-Lösung berechnet.]]
 
@@ -108,9 +108,9 @@ $$
 $$
 
 - RB bei $r=a$: Die Kugel ist ein Leiter (Äquipotentialfläche). Neutral bzw. geerdet: $\Phi(a,\theta)=0$ für alle $\theta$. Im Inneren ist $\mathbf E_{\text{in}}=0$, also $A_1=0$.
-- Gleichung: $-E_0 a + B_1/a^2 = 0 \Rightarrow B_1 = E_0 a^3$, d. h. induziertes Dipolmoment $p = 4\pi\varepsilon_0 a^3 E_0$.
+- Gleichung: $-E_0 a + B_1/a^2 = 0 \Rightarrow B_1 = E_0 a^3$, d. h. induziertes Dipolmoment $p = \sg{4\pi\varepsilon_0}{} a^3 E_0$.
 - Felder außen: $E_r=E_0\cos\theta\left(1+2a^3/r^3\right)$, $E_\theta=-E_0\sin\theta\left(1-a^3/r^3\right)$; an der Oberfläche steht $\mathbf E$ senkrecht ($E_\theta(a)=0$).
-- Influenzladung: $\sigma(\theta)=\varepsilon_0 E_r(a,\theta) = 3\varepsilon_0 E_0\cos\theta$ (Gesamtladung $0$).
+- Influenzladung: $\sigma(\theta)=\sg{\varepsilon_0}{\tfrac{1}{4\pi}} E_r(a,\theta) = \sg{3\varepsilon_0}{\tfrac{3}{4\pi}} E_0\cos\theta$ (Gesamtladung $0$).
 - Check: Das ist der Grenzfall $\varepsilon_{\text{in}}\to\infty$ der dielektrischen Kugel aus Abschnitt 3.
 - Intuition: Nur $\ell=1$ bleibt, weil das entfernte Feld wie ein Dipolterm $\propto P_1$ aussieht; höhere $\ell$ würden die Fernbedingung verletzen.
 
@@ -119,11 +119,11 @@ $$
 Geladener Ring mit Radius $a$ in der Ebene $\theta=\pi/2$, Gesamtladung $q$, Beobachtungspunkt mit $r>a$:
 
 $$
-\Phi(r,\theta)=\frac{q}{4\pi\varepsilon_0 r}\sum_{s=0}^{\infty}(-1)^s\frac{(2s)!}{2^{2s}(s!)^2}\left(\frac{a}{r}\right)^{2s} P_{2s}(\cos\theta).
+\Phi(r,\theta)=\frac{q}{\sg{4\pi\varepsilon_0}{} r}\sum_{s=0}^{\infty}(-1)^s\frac{(2s)!}{2^{2s}(s!)^2}\left(\frac{a}{r}\right)^{2s} P_{2s}(\cos\theta).
 $$
 
 - Nur gerade $\ell=2s$ treten auf, weil die Ladungsverteilung unter $\theta\to\pi-\theta$ unverändert bleibt.
-- Für Punkte auf der Achse ($\theta=0$) kollabiert die Reihe zur bekannten Achsenform $\Phi=q/(4\pi\varepsilon_0\sqrt{z^2+a^2})$.
+- Für Punkte auf der Achse ($\theta=0$) kollabiert die Reihe zur bekannten Achsenform $\Phi=q/(\sg{4\pi\varepsilon_0}{}\sqrt{z^2+a^2})$.
 - Praktischer Tipp: Für Ringe/Disks schnell prüfen, ob das Vorzeichen unter Spiegelung wechselt ($\Rightarrow$ nur ungerade $\ell$) oder nicht ($\Rightarrow$ nur gerade $\ell$).
 
 ## Beispielaufgabe
@@ -137,8 +137,8 @@ $$
 > >    $$\phi_{\text{in}} = V_0\,\frac{r}{R}\cos\theta,\qquad \phi_{\text{out}} = V_0\,\frac{R^2}{r^2}\cos\theta.$$
 > > 3. **Felder an der Schale:** $E_r^{\text{out}} = -\partial_r\phi_{\text{out}} = \tfrac{2V_0}{R}\cos\theta$, $\ E_r^{\text{in}} = -\tfrac{V_0}{R}\cos\theta$.
 > > 4. **Flächenladung** aus dem Sprung der Normalkomponente:
-> >    $$\sigma = \varepsilon_0\left(E_r^{\text{out}} - E_r^{\text{in}}\right) = \frac{3\varepsilon_0 V_0}{R}\cos\theta.$$
-> > 5. **Deutung:** Innen homogenes Feld, außen reines Dipolfeld mit $p = 4\pi\varepsilon_0 R^2 V_0$.
+> >    $$\sigma = \sg{\varepsilon_0}{\frac{1}{4\pi}}\left(E_r^{\text{out}} - E_r^{\text{in}}\right) = \sg{\frac{3\varepsilon_0 V_0}{R}}{\frac{3V_0}{4\pi R}}\cos\theta.$$
+> > 5. **Deutung:** Innen homogenes Feld, außen reines Dipolfeld mit $p = \sg{4\pi\varepsilon_0}{} R^2 V_0$.
 > >
 > > **Merke:** Ist die Randbedingung ein einzelnes Legendre-Polynom, überlebt genau dieser Term – kein Integral nötig.
 

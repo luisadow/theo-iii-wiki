@@ -68,18 +68,18 @@ Dieser Hub fasst alle laufenden Notizen zum Modul **Theoretische Physik III: El
 
 - **Coulomb-Kraft:**
   $$
-  \mathbf{F}_{12} = \frac{1}{4\pi\varepsilon_0} \frac{q_1 q_2}{r^2}\,\hat{\mathbf{r}}_{12}
+  \mathbf{F}_{12} = \sg{\frac{1}{4\pi\varepsilon_0}}{} \frac{q_1 q_2}{r^2}\,\hat{\mathbf{r}}_{12}
   $$
 - **Elektrisches Feld / Potential:**  
   $\mathbf{E} = \mathbf{F}/q$, $\mathbf{E} = -\nabla \phi$,  
-  $\phi(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \int \frac{\rho(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}\, d^3 r'$
+  $\phi(\mathbf{r}) = \sg{\frac{1}{4\pi\varepsilon_0}}{} \int \frac{\rho(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}\, d^3 r'$
 - **Gaußsches Gesetz:**  
-  Differential: $\nabla \cdot \mathbf{E} = \rho / \varepsilon_0$  
-  Integral: $\oint_{\partial V} \mathbf{E} \cdot d\mathbf{A} = Q_{\text{in}} / \varepsilon_0$
+  Differential: $\nabla \cdot \mathbf{E} = \sg{\rho / \varepsilon_0}{4\pi\rho}$  
+  Integral: $\oint_{\partial V} \mathbf{E} \cdot d\mathbf{A} = \sg{Q_{\text{in}} / \varepsilon_0}{4\pi Q_{\text{in}}}$
 - **Poisson/Laplace:**  
-  $\nabla^2 \phi = -\rho/\varepsilon_0$, in Quellfreiheit $\nabla^2 \phi = 0$
+  $\nabla^2 \phi = \sg{-\rho/\varepsilon_0}{-4\pi\rho}$, in Quellfreiheit $\nabla^2 \phi = 0$
 - **Feldenergie & Kapazität:**  
-  $W = \frac{\varepsilon_0}{2} \int |\mathbf{E}|^2 d^3 r = \frac{1}{2} \int \rho \phi\, d^3 r$,  
+  $W = \sg{\frac{\varepsilon_0}{2}}{\frac{1}{8\pi}} \int |\mathbf{E}|^2 d^3 r = \frac{1}{2} \int \rho \phi\, d^3 r$,  
   $C = Q/\phi$, $W = \frac{Q^2}{2C} = \frac{1}{2} C \phi^2$
 
 Siehe [[Elektrostatik - Lernseite (Grundlagen)]] für Herleitungen und [[Energie und Kapazität in der Elektrostatik]] für detaillierte Beispiele.
@@ -102,7 +102,7 @@ Siehe [[Elektrostatik - Lernseite (Grundlagen)]] für Herleitungen und [[Energie
 | Aufgabe | Methode | Seite |
 | --- | --- | --- |
 | Feld einer symmetrischen Ladungsverteilung (Kugel, Zylinder, Platte) | Gaußsches Gesetz mit passender Gauß-Fläche | [[Elektrostatik - Lernseite (Grundlagen)]] |
-| Kapazität oder Feldenergie einer Leiteranordnung | Feld → Spannung → $C=Q/U$, oder $W=\tfrac{\varepsilon_0}{2}\int E^2$ | [[Energie und Kapazität in der Elektrostatik]], [[Kugelkondensator]], [[Zylinderkondensator]] |
+| Kapazität oder Feldenergie einer Leiteranordnung | Feld → Spannung → $C=Q/U$, oder $W=\sg{\tfrac{\varepsilon_0}{2}}{\tfrac{1}{8\pi}}\int E^2$ | [[Energie und Kapazität in der Elektrostatik]], [[Kugelkondensator]], [[Zylinderkondensator]] |
 | Punktladung vor geerdeter Ebene oder Kugel | Bildladungen | [[Spiegelmethode (Elektrostatik)]] |
 | Potential bei vorgegebenen Randwerten auf Kugel oder Kasten | Separation der Variablen, Legendre-Reihe | [[Randwertprobleme (Elektrostatik)]], [[Legendre-Ansatz und Grenzflächen]] |
 | Fernfeld einer lokalisierten Ladungsverteilung | Monopol-, Dipol-, Quadrupolmoment berechnen | [[Multipolentwicklung (Elektrostatik)]] |

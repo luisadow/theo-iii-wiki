@@ -195,5 +195,5 @@ Nutze diese Schreibweisen, wenn du Gleichungen aus Lehrbüchern wie Jackson nach
 ### Schneller Einsatz
 
 - Immer erst Koordinatensystem fixieren; dann passenden Laplace-/Divergenz-/Curl-Operator aus der Tabelle nehmen.
-- Für elektrostatische Aufgaben: $\nabla^2 \phi = -\rho/\varepsilon_0$ notieren, um Rechenweg zu verankern.
-- Für magnetostatische Ströme: $\nabla\times\mathbf{B}=\mu_0\mathbf{J}$, $\nabla\cdot\mathbf{B}=0$ als Minimal-Check.
+- Für elektrostatische Aufgaben: $\nabla^2 \phi = \sg{-\rho/\varepsilon_0}{-4\pi\rho}$ notieren, um Rechenweg zu verankern.
+- Für magnetostatische Ströme: $\nabla\times\mathbf{B}=\sg{\mu_0}{\frac{4\pi}{c}}\mathbf{J}$, $\nabla\cdot\mathbf{B}=0$ als Minimal-Check.

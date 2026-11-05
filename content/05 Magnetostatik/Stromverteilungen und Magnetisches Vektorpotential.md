@@ -38,19 +38,19 @@ $$
 ### Poisson-Gleichung
 
 $$
-\nabla^2 \mathbf{A} = -\mu_0 \mathbf{J}
+\nabla^2 \mathbf{A} = -\sg{\mu_0}{\frac{4\pi}{c}} \mathbf{J}
 $$
 
 ### Lösung für allgemeine Stromverteilungen
 
 $$
-\mathbf{A}(\mathbf{r}) = \frac{\mu_0}{4\pi} \int_V \frac{\mathbf{J}(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|}\, d^3 r'
+\mathbf{A}(\mathbf{r}) = \sg{\frac{\mu_0}{4\pi}}{\frac{1}{c}} \int_V \frac{\mathbf{J}(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|}\, d^3 r'
 $$
 
 Für Linienströme:
 
 $$
-\mathbf{A}(\mathbf{r}) = \frac{\mu_0 I}{4\pi} \int_{\mathcal{L}} \frac{d\boldsymbol{\ell}'}{|\mathbf{r} - \mathbf{r}'|}
+\mathbf{A}(\mathbf{r}) = \sg{\frac{\mu_0 I}{4\pi}}{\frac{I}{c}} \int_{\mathcal{L}} \frac{d\boldsymbol{\ell}'}{|\mathbf{r} - \mathbf{r}'|}
 $$
 
 ---
@@ -60,24 +60,24 @@ $$
 ### 3.1 Unendlich langer Leiter
 
 - $\mathbf{J} = I\, \delta(x)\, \delta(y)\, \hat{\mathbf{z}}$
-- $A_z(r) = -\frac{\mu_0 I}{2\pi} \ln \left(\frac{r}{r_0}\right)$ ($r_0$ beliebige Referenz; das Integral über den unendlichen Draht divergiert, nur Differenzen sind physikalisch)
-- Feld: $\mathbf{B} = \nabla \times (A_z\, \hat{\mathbf{z}}) = -\partial_r A_z\,\hat{\boldsymbol{\varphi}} = \frac{\mu_0 I}{2\pi r}\, \hat{\boldsymbol{\varphi}}$
+- $A_z(r) = -\sg{\frac{\mu_0 I}{2\pi}}{\frac{2I}{c}} \ln \left(\frac{r}{r_0}\right)$ ($r_0$ beliebige Referenz; das Integral über den unendlichen Draht divergiert, nur Differenzen sind physikalisch)
+- Feld: $\mathbf{B} = \nabla \times (A_z\, \hat{\mathbf{z}}) = -\partial_r A_z\,\hat{\boldsymbol{\varphi}} = \sg{\frac{\mu_0 I}{2\pi r}}{\frac{2I}{c\,r}}\, \hat{\boldsymbol{\varphi}}$
 
 ### 3.2 Kreisstrom (Radius $R$)
 
-- $\mathbf{A}(\mathbf{r}) = \frac{\mu_0 I}{4\pi} \oint \frac{d\boldsymbol{\ell}'}{|\mathbf{r} - \mathbf{r}'|}$
+- $\mathbf{A}(\mathbf{r}) = \sg{\frac{\mu_0 I}{4\pi}}{\frac{I}{c}} \oint \frac{d\boldsymbol{\ell}'}{|\mathbf{r} - \mathbf{r}'|}$
 - Aus Symmetrie hat $\mathbf A$ nur eine $\varphi$-Komponente: $\mathbf A = A_\varphi(r,\theta)\,\hat{\boldsymbol\varphi}$; auf der Achse ist $\mathbf A = 0$.
 - Das allgemeine $A_\varphi$ führt auf elliptische Integrale. Fernfeld ($r\gg R$): Dipolform
   $$
-  \mathbf A = \frac{\mu_0}{4\pi}\frac{\mathbf m\times\hat{\mathbf r}}{r^2},\qquad \mathbf m = I\pi R^2\,\hat{\mathbf z}.
+  \mathbf A = \sg{\frac{\mu_0}{4\pi}}{}\frac{\mathbf m\times\hat{\mathbf r}}{r^2},\qquad \mathbf m = \sg{}{\frac{1}{c}}I\pi R^2\,\hat{\mathbf z}.
   $$
-- $\mathbf B$ auf der Achse bequemer direkt mit Biot–Savart: $B_z = \dfrac{\mu_0 I R^2}{2(R^2+z^2)^{3/2}}$.
+- $\mathbf B$ auf der Achse bequemer direkt mit Biot–Savart: $B_z = \sg{\dfrac{\mu_0 I R^2}{2(R^2+z^2)^{3/2}}}{\dfrac{2\pi I R^2}{c\,(R^2+z^2)^{3/2}}}$.
 
 ### 3.3 Langes Solenoid (Windungsdichte $n$)
 
 - $\mathbf{J} = n I\, \delta(r - R)\, \hat{\boldsymbol{\varphi}}$ (Flächenstrom $K = nI$)
-- Innen ($r < R$): $A_\varphi = \frac{1}{2}\mu_0 n I r$
-- Außen ($r > R$): $A_\varphi = \frac{1}{2}\mu_0 n I \frac{R^2}{r}$
+- Innen ($r < R$): $A_\varphi = \sg{\frac{1}{2}\mu_0 n I r}{\frac{2\pi n I r}{c}}$
+- Außen ($r > R$): $A_\varphi = \sg{\frac{1}{2}\mu_0 n I \frac{R^2}{r}}{\frac{2\pi n I R^2}{c\,r}}$
 
 ![[solenoid-vektorpotential.svg|Querschnitt durch ein langes Solenoid: B gibt es nur innen, A dagegen auch außen. A_φ wächst innen linear und fällt außen wie 1/r. Außen ist A rotationsfrei, aber nicht null, denn sein Umlaufintegral ist gleich dem eingeschlossenen Fluss.]]
 
@@ -101,7 +101,7 @@ $$
 
 - **Linearität:** $\mathbf{A}$ überlagert sich für mehrere Quellen direkt.
 - **Spiegelmethode (magnetostatische Analogie):** Bei perfekten Leitern können Bildströme genutzt werden; vgl. [[Spiegelmethode (Elektrostatik)]].
-- **Numerische Lösungen:** Diskretisiere $\mathbf{J}$ und löse $\nabla^2 \mathbf{A} = -\mu_0 \mathbf{J}$ (Finite Differences/Elements) mit Randbedingungen $\mathbf{A} \to 0$ für $r \to \infty$ oder periodischen Grenzen.
+- **Numerische Lösungen:** Diskretisiere $\mathbf{J}$ und löse $\nabla^2 \mathbf{A} = -\sg{\mu_0}{\tfrac{4\pi}{c}} \mathbf{J}$ (Finite Differences/Elements) mit Randbedingungen $\mathbf{A} \to 0$ für $r \to \infty$ oder periodischen Grenzen.
 
 ---
 

@@ -12,6 +12,9 @@ Potentiale sind nicht eindeutig – die Wahl der Eichung entscheidet, wie einfac
 > [!info] Voraussetzungen
 > [[Lernpfad 4 - Elektrodynamik und Wellen|Lernpfad 4]].
 
+> [!note] Zur Vorlesung WiSe 26/27
+> Kommt in der Vorlesung später. Die Coulomb-Eichung (Schritt 2) führt das Skript schon in der Magnetostatik ein (III.A). In der kovarianten Formulierung zahlt sich das Gauß-System aus, weil $\mathbf E$ und $\mathbf B$ dieselbe Dimension haben.
+
 ## Die Schritte
 
 1. **[[Helmholtz-Zerlegung (Vektorfelder)]]**  

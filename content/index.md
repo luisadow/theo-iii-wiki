@@ -15,8 +15,8 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
 </section>
 
 <div class="topic-grid">
-  <a class="topic-card internal" href="./01-Grundlagen/"><img src="./assets/figures/icon-grundlagen.svg" alt=""><span class="topic-num">01 <span class="tag-neu">1 neu</span></span><span class="topic-name">Grundlagen</span><span class="topic-lec">VL 1–2 · 3 Seiten</span><span class="topic-desc">Operatoren in Kugel- und Zylinderkoordinaten, Indexschreibweise, Integralsätze</span></a>
-  <a class="topic-card internal" href="./02-Elektrostatik/"><img src="./assets/figures/icon-elektrostatik.svg" alt=""><span class="topic-num">02</span><span class="topic-name">Elektrostatik</span><span class="topic-lec">VL 3–5 · 6 Seiten</span><span class="topic-desc">Gauß, Potential, Feldenergie, Kapazität, Maxwell-Spannungstensor</span></a>
+  <a class="topic-card internal" href="./01-Grundlagen/"><img src="./assets/figures/icon-grundlagen.svg" alt=""><span class="topic-num">01 <span class="tag-neu">2 neu</span></span><span class="topic-name">Grundlagen</span><span class="topic-lec">VL 1–2 · 4 Seiten</span><span class="topic-desc">Einheitensysteme, Operatoren in Kugel- und Zylinderkoordinaten, Indexschreibweise, Integralsätze</span></a>
+  <a class="topic-card internal" href="./02-Elektrostatik/"><img src="./assets/figures/icon-elektrostatik.svg" alt=""><span class="topic-num">02 <span class="tag-neu">1 neu</span></span><span class="topic-name">Elektrostatik</span><span class="topic-lec">VL 3–5 · 7 Seiten</span><span class="topic-desc">Gauß, Potential, Feldenergie, Kapazität, Variationsprinzip, Maxwell-Spannungstensor</span></a>
   <a class="topic-card internal" href="./03-Randwertprobleme/"><img src="./assets/figures/icon-randwertprobleme.svg" alt=""><span class="topic-num">03</span><span class="topic-name">Randwert&shy;probleme</span><span class="topic-lec">VL 6–8 · 5 Seiten</span><span class="topic-desc">Spiegelladungen, Green-Funktionen, Legendre-Ansatz, Multipole</span></a>
   <a class="topic-card internal" href="./04-Materie/"><img src="./assets/figures/icon-materie.svg" alt=""><span class="topic-num">04</span><span class="topic-name">Felder in Materie</span><span class="topic-lec">VL 8–10, 13–14 · 4 Seiten</span><span class="topic-desc">Dielektrika, Entelektrisierung, Magnetisierung, Materialgesetze</span></a>
   <a class="topic-card internal" href="./05-Magnetostatik/"><img src="./assets/figures/icon-magnetostatik.svg" alt=""><span class="topic-num">05</span><span class="topic-name">Magnetostatik</span><span class="topic-lec">VL 11–12, 16 · 3 Seiten</span><span class="topic-desc">Biot–Savart, Ampère, Vektorpotential, Induktivität</span></a>
@@ -30,7 +30,7 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
 <div class="news">
 <p>Das Wiki läuft mit der Vorlesung von <strong>Prof. Hendrik Weimer</strong> weiter: Neue Seiten kommen im Takt der Vorlesung dazu und tragen die Markierung <span class="tag-neu">neu</span>. Alle übrigen Seiten stammen aus dem WiSe 25/26 und bleiben, wo sie sind.</p>
 <ul class="news-list">
-<li><time datetime="2026-11-05">05.11.</time><span><strong>Umschalter SI ↔ Gauß</strong><span class="news-topic">Seiten mit Einheiten · Oben auf der Seite zwischen SI und dem Gauß-System der Vorlesung wechseln. Die Wahl bleibt gespeichert. Seiten, die noch nicht umgestellt sind, zeigen im Gauß-Modus eine Ersetzungstabelle.</span></span></li>
+<li><time datetime="2026-11-05">05.11.</time><span><strong>Umschalter SI ↔ Gauß</strong><span class="news-topic">Seiten mit Einheiten · Oben auf der Seite zwischen SI und dem Gauß-System der Vorlesung wechseln. Voreingestellt ist Gauß, deine Wahl bleibt gespeichert. Seiten, die noch nicht umgestellt sind, zeigen im Gauß-Modus eine Ersetzungstabelle.</span></span></li>
 <li><time datetime="2026-10-26">26.10.</time><span><a class="internal" href="./01-Grundlagen/Vektoranalysis">Vektoranalysis & Gauß-System in der Elektrostatik</a><span class="news-topic">01 Grundlagen, 02 Elektrostatik, Formelsammlung · Radialer Laplace, Ableitung von 1/R und parallele SI/Gauß-Übersicht für das WiSe 26/27</span></span></li>
 <li><time datetime="2026-10-18">18.10.</time><span><a class="internal" href="./01-Grundlagen/Indexschreibweise-und-Levi-Civita-Symbol">Indexschreibweise – Summenkonvention, δ und ε</a><span class="news-topic">01 Grundlagen · Kronecker-Delta, Levi-Civita-Symbol, ε-δ-Identität</span></span></li>
 </ul>
@@ -40,7 +40,7 @@ description: "Elektrodynamik verständlich: Zusammenfassungen, Formeln und Herle
 
 Der ganze Kurs läuft auf die Maxwell-Gleichungen hinaus. Statik, Materie, Induktion und Wellen sind Spezialfälle oder Folgerungen davon:
 
-<div class="unit-toggle-inline"><div class="unit-toggle-group" role="group" aria-label="Einheitensystem umschalten"><button type="button" class="unit-btn active" data-unit-target="si" aria-pressed="true" title="Internationales Einheitensystem (SI)">SI</button><button type="button" class="unit-btn" data-unit-target="gauss" aria-pressed="false" title="Gaußsches CGS-System (Vorlesung WiSe 26/27, Prof. Weimer)">Gauß</button></div></div>
+<div class="unit-toggle-inline"><div class="unit-toggle-group" role="group" aria-label="Einheitensystem umschalten"><button type="button" class="unit-btn" data-unit-target="si" aria-pressed="true" title="Internationales Einheitensystem (SI)">SI</button><button type="button" class="unit-btn" data-unit-target="gauss" aria-pressed="false" title="Gaußsches CGS-System (Vorlesung WiSe 26/27, Prof. Weimer)">Gauß</button></div></div>
 
 $$
 \begin{aligned}
@@ -51,7 +51,7 @@ $$
 
 ## Worum es geht
 
-Dieses Wiki behandelt die klassische Elektrodynamik auf dem Niveau eines Physik-Bachelors: Elektro- und Magnetostatik, Randwertprobleme, Felder in Materie, Maxwell-Gleichungen, Eichungen und spezielle Relativität. Grundlage sind meine eigenen Notizen zur Vorlesung **Theoretische Physik III** an der **TU Berlin** im WiSe 25/26, entstanden zur Prüfungsvorbereitung; die Angaben **VL 1–20** beziehen sich auf die Reihenfolge dieser Vorlesung. Im WiSe 26/27 ergänze ich das Wiki begleitend zur Vorlesung von Prof. Weimer (siehe oben). Der Inhalt eignet sich für jede Elektrodynamik-Vorlesung. Geschrieben ist er in SI-Einheiten; auf den Seiten der Elektrostatik und Randwertprobleme kannst du oben auf das Gauß-System der aktuellen Vorlesung umschalten. Es ersetzt kein Lehrbuch, soll dir aber schnell helfen, wenn du bei einem Thema hängst: jede Seite fasst Definitionen, zentrale Formeln und typische Rechenwege zusammen und verlinkt verwandte Themen.
+Dieses Wiki behandelt die klassische Elektrodynamik auf dem Niveau eines Physik-Bachelors: Elektro- und Magnetostatik, Randwertprobleme, Felder in Materie, Maxwell-Gleichungen, Eichungen und spezielle Relativität. Grundlage sind meine eigenen Notizen zur Vorlesung **Theoretische Physik III** an der **TU Berlin** im WiSe 25/26, entstanden zur Prüfungsvorbereitung; die Angaben **VL 1–20** beziehen sich auf die Reihenfolge dieser Vorlesung. Im WiSe 26/27 ergänze ich das Wiki begleitend zur Vorlesung von Prof. Weimer (siehe oben). Der Inhalt eignet sich für jede Elektrodynamik-Vorlesung. Geschrieben wurde er in SI-Einheiten. Auf den Seiten zu Elektrostatik, Randwertproblemen und Magnetostatik schaltest du oben zwischen SI und dem Gauß-System der aktuellen Vorlesung um; wie die Systeme zusammenhängen, erklärt [[Einheitensysteme]]. Es ersetzt kein Lehrbuch, soll dir aber schnell helfen, wenn du bei einem Thema hängst: jede Seite fasst Definitionen, zentrale Formeln und typische Rechenwege zusammen und verlinkt verwandte Themen.
 
 > [!warning] Keine offizielle Quelle
 > Studentische Notizen – fachlich durchgesehen, trotzdem können Fehler drin sein. Im Zweifel gelten Vorlesung und Lehrbuch. Fehler oder Unklarheiten gern [als Issue melden](https://github.com/luisadow/theo-iii-wiki/issues/new).
@@ -71,6 +71,7 @@ Alles Wichtige kompakt: [[Formelsammlung|Formelsammlung Elektrodynamik]] · [[Gl
 
 ### Mathematische Grundlagen (VL 1–2)
 
+- [[Einheitensysteme|Einheitensysteme – SI, Gauß und Heaviside-Lorentz]] <span class="tag-neu">neu</span>: Ersetzungsregeln, Zahlen umrechnen, typische Fehler
 - [[Vektoranalysis]]: Operatoren, Koordinatensysteme, Integralsätze
 - [[Indexschreibweise und Levi-Civita-Symbol|Indexschreibweise – Summenkonvention, δ und ε]] <span class="tag-neu">neu</span>: Summenkonvention, $\delta_{ij}$, $\varepsilon_{ijk}$ und Beweise
 - [[Flächen- und Volumenelemente – Leitfaden]]
@@ -80,6 +81,7 @@ Alles Wichtige kompakt: [[Formelsammlung|Formelsammlung Elektrodynamik]] · [[Gl
 - Einstieg: [[Elektrostatik - Lernseite (Grundlagen)]] · Überblick & Spickzettel: [[Elektrostatik]]
 - [[Energie und Kapazität in der Elektrostatik]] mit [[Kugelkondensator]] und [[Zylinderkondensator]]
 - [[Maxwell-Spannungstensor (Elektrostatik)]]
+- [[Variationsprinzip (Elektrostatik)|Variationsprinzip der Elektrostatik]] <span class="tag-neu">neu</span>: Energiefunktional, Herleitung der Poisson-Gleichung, Ritz-Verfahren
 
 ### Randwertprobleme & Multipole (VL 6–8)
 

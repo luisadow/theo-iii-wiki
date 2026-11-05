@@ -9,7 +9,7 @@ Die Magnetostatik beschreibt die Magnetfelder stationärer Ströme. Sie ist das 
 
 **Kernidee:**
 
-$$\nabla\cdot\mathbf B = 0,\qquad \nabla\times\mathbf B = \mu_0\mathbf J.$$
+$$\nabla\cdot\mathbf B = 0,\qquad \nabla\times\mathbf B = \sg{\mu_0}{\frac{4\pi}{c}}\mathbf J.$$
 
 Weil $\mathbf B$ quellenfrei ist, lässt es sich als Rotation eines Vektorpotentials schreiben, $\mathbf B = \nabla\times\mathbf A$. Bei Symmetrie liefert das Ampèresche Gesetz das Feld direkt, sonst das Biot–Savart-Gesetz. Die Feldenergie führt auf die Induktivität.
 

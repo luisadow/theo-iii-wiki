@@ -13,6 +13,6 @@ $$\nabla\cdot\mathbf E = \sg{\frac{\rho}{\varepsilon_0}}{4\pi\rho},\qquad \nabla
 
 Bei hoher Symmetrie liefert das Gaußsche Gesetz das Feld direkt; die im Feld gespeicherte Energie bestimmt Kapazitäten und Kräfte.
 
-**Lesereihenfolge:** [[Elektrostatik - Lernseite (Grundlagen)]] → [[Energie und Kapazität in der Elektrostatik]] mit [[Kugelkondensator]] und [[Zylinderkondensator]] → [[Maxwell-Spannungstensor (Elektrostatik)]]. Der [[Elektrostatik|Überblick]] ordnet typische Aufgaben den Methoden zu. Als geführter Weg: [[Lernpfad 1 - Elektrostatik|Lernpfad 1]].
+**Lesereihenfolge:** [[Elektrostatik - Lernseite (Grundlagen)]] → [[Energie und Kapazität in der Elektrostatik]] mit [[Kugelkondensator]] und [[Zylinderkondensator]] → [[Maxwell-Spannungstensor (Elektrostatik)]]. Warum die Poisson-Gleichung die Feldenergie minimiert, zeigt das [[Variationsprinzip (Elektrostatik)|Variationsprinzip]]. Der [[Elektrostatik|Überblick]] ordnet typische Aufgaben den Methoden zu. Als geführter Weg: [[Lernpfad 1 - Elektrostatik|Lernpfad 1]].
 
 *In der Vorlesung Theoretische Physik III: VL 3–5.*

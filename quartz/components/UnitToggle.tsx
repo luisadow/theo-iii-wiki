@@ -3,6 +3,7 @@ import unitToggleScript from "./scripts/unittoggle.inline"
 import styles from "./styles/unittoggle.scss"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
+import { FullSlug, SimpleSlug, resolveRelative } from "../util/path"
 import { Element, Node, Parent } from "hast"
 import { readFileSync } from "fs"
 // katex kommt als Abhängigkeit von rehype-katex mit
@@ -54,14 +55,16 @@ const fallbackHtml = `
 </tbody>
 </table>
 <p>Unverändert bleiben ${m("\\mathbf E,\\ \\phi,\\ q,\\ \\rho,\\ \\mathbf J,\\ \\mathbf P")}. Vorsicht bei Green-Funktionen: Die Vorlesung nimmt ${m("G = -\\frac{1}{4\\pi\\lvert\\mathbf r-\\mathbf r'\\rvert}")} mit ${m("\\Delta G = +\\delta")} – das ist eine Vorzeichenkonvention, keine Einheitenfrage.</p>
+<p>Mehr dazu, mit Zahlenwerten und typischen Fehlern: <a class="internal" href="__EINHEITEN__">Einheitensysteme</a>.</p>
 `
+const EINHEITEN_SLUG = "01-Grundlagen/Einheitensysteme" as SimpleSlug
 
 /** Die beiden Buttons. content/index.md baut dasselbe Markup von Hand nach (gleiche Klassen). */
 export const UnitButtons = () => (
   <div class="unit-toggle-group" role="group" aria-label="Einheitensystem umschalten">
     <button
       type="button"
-      class="unit-btn active"
+      class="unit-btn"
       data-unit-target="si"
       aria-pressed="true"
       title="Internationales Einheitensystem (SI)"
@@ -84,6 +87,9 @@ export default ((opts?: Partial<UnitToggleOptions>) => {
   const options = { ...defaultOptions, ...opts }
 
   const UnitToggle: QuartzComponent = ({ displayClass, tree, fileData }: QuartzComponentProps) => {
+    // Seiten, die die Systeme ohnehin nebeneinander zeigen (z. B. Einheitensysteme), setzen
+    // im Frontmatter unitToggle: false
+    if (fileData.frontmatter?.unitToggle === false) return null
     const hasVariants = hasUnitVariants(tree)
     // Seiten ohne Einheiten (Mathe-Grundlagen, Relativität ohne Felder …) brauchen keinen Switch
     if (!hasVariants && !usesSIConstants(fileData.filePath)) return null
@@ -107,7 +113,12 @@ export default ((opts?: Partial<UnitToggleOptions>) => {
           // Seite ist (noch) nur in SI geschrieben: im Gauß-Modus Übersetzungsregeln einblenden
           <div
             class="unit-gauss unit-fallback"
-            dangerouslySetInnerHTML={{ __html: fallbackHtml }}
+            dangerouslySetInnerHTML={{
+              __html: fallbackHtml.replace(
+                "__EINHEITEN__",
+                resolveRelative(fileData.slug as FullSlug, EINHEITEN_SLUG),
+              ),
+            }}
           />
         )}
       </>

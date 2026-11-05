@@ -1,15 +1,18 @@
 type UnitSystem = "si" | "gauss"
 
 const STORAGE_KEY = "unit-system"
+// Voreinstellung für Erstbesucher: Gauß wie in der Vorlesung WiSe 26/27. Ohne JavaScript
+// (Suchmaschinen, RSS) zeigt das CSS weiterhin SI.
+const DEFAULT_UNIT: UnitSystem = "gauss"
 const isUnit = (v: unknown): v is UnitSystem => v === "si" || v === "gauss"
 
 // localStorage kann im privaten Modus oder bei blockierten Website-Daten werfen
 const readStored = (): UnitSystem => {
   try {
     const v = localStorage.getItem(STORAGE_KEY)
-    return isUnit(v) ? v : "si"
+    return isUnit(v) ? v : DEFAULT_UNIT
   } catch {
-    return "si"
+    return DEFAULT_UNIT
   }
 }
 

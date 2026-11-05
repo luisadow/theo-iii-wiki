@@ -1,6 +1,6 @@
 import { Element, Root } from "hast"
 import { fromHtml } from "hast-util-from-html"
-import { readFileSync } from "fs"
+import { existsSync, readFileSync } from "fs"
 import path from "path"
 import { visit } from "unist-util-visit"
 import { QuartzTransformerPlugin } from "../types"
@@ -12,6 +12,9 @@ import { QuartzTransformerPlugin } from "../types"
 //   ![[gauss-flaeche.svg|Bildunterschrift]]   -> <figure> mit <figcaption>
 //   ![[icon-elektrostatik.svg]]               -> dekoratives Icon (icon-*)
 //   <img src="assets/figures/icon-….svg">     -> auch in HTML-Blöcken
+//
+// Gibt es zusätzlich <name>-gauss.svg (Quelle figures/src/<name>-gauss.tex), kommen beide
+// Fassungen in die <figure>, eingewickelt in .unit-si / .unit-gauss für den Umschalter.
 
 const figureSrc = /(?:^|\/)assets\/figures\/([\w-]+)\.svg$/
 
@@ -19,9 +22,11 @@ export const InlineFigures: QuartzTransformerPlugin = () => ({
   name: "InlineFigures",
   htmlPlugins(ctx) {
     const cache = new Map<string, Element>()
+    const figurePath = (name: string) =>
+      path.join(ctx.argv.directory, "assets", "figures", `${name}.svg`)
     const load = (name: string): Element => {
       if (!cache.has(name)) {
-        const file = path.join(ctx.argv.directory, "assets", "figures", `${name}.svg`)
+        const file = figurePath(name)
         const svg = fromHtml(readFileSync(file, "utf8"), { fragment: true }).children.find(
           (n): n is Element => n.type === "element" && n.tagName === "svg",
         )
@@ -53,13 +58,26 @@ export const InlineFigures: QuartzTransformerPlugin = () => ({
           } else {
             svg.properties.role = "img"
             if (alt) svg.properties["aria-label"] = alt
+            let graphic: Element[] = [svg]
+            if (existsSync(figurePath(`${name}-gauss`))) {
+              const gauss = load(`${name}-gauss`)
+              gauss.properties.role = "img"
+              if (alt) gauss.properties["aria-label"] = alt
+              const variant = (unit: string, child: Element): Element => ({
+                type: "element",
+                tagName: "div",
+                properties: { className: [`unit-${unit}`] },
+                children: [child],
+              })
+              graphic = [variant("si", svg), variant("gauss", gauss)]
+            }
             replacement = {
               type: "element",
               tagName: "figure",
               properties: { className: ["fig"] },
               children: alt
                 ? [
-                    svg,
+                    ...graphic,
                     {
                       type: "element",
                       tagName: "figcaption",
@@ -67,7 +85,7 @@ export const InlineFigures: QuartzTransformerPlugin = () => ({
                       children: [{ type: "text", value: alt }],
                     },
                   ]
-                : [svg],
+                : graphic,
             }
           }
 

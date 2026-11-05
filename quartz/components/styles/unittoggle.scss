@@ -56,16 +56,23 @@
   &:hover {
     color: var(--dark);
   }
-
-  &.active {
-    background: var(--light);
-    color: var(--secondary);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-  }
 }
 
-:root[saved-theme="dark"] .unit-btn.active {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+// Aktiver Button folgt dem Attribut auf <html>, das schon vor dem ersten Rendern gesetzt
+// ist. So blitzt beim Laden nicht kurz die falsche Auswahl auf.
+html[data-unit-system="gauss"] .unit-btn[data-unit-target="gauss"],
+html[data-unit-system="si"] .unit-btn[data-unit-target="si"],
+html:not([data-unit-system]) .unit-btn[data-unit-target="si"] {
+  background: var(--light);
+  color: var(--secondary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+:root[saved-theme="dark"] {
+  &[data-unit-system="gauss"] .unit-btn[data-unit-target="gauss"],
+  &[data-unit-system="si"] .unit-btn[data-unit-target="si"] {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  }
 }
 
 @media all and ($mobile) {

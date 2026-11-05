@@ -12,6 +12,7 @@ export const sharedPageComponents: SharedLayout = {
     // Stelle einreihen, z. B. Indexschreibweise nach Vektoranalysis wie in 01 Grundlagen.
     Component.PrevNext({
       order: [
+        "Einheitensysteme",
         "Vektoranalysis",
         "Indexschreibweise und Levi-Civita-Symbol",
         "Flächen- und Volumenelemente – Leitfaden",
@@ -21,6 +22,7 @@ export const sharedPageComponents: SharedLayout = {
         "Kugelkondensator",
         "Zylinderkondensator",
         "Maxwell-Spannungstensor (Elektrostatik)",
+        "Variationsprinzip (Elektrostatik)",
         "Randwertprobleme (Elektrostatik)",
         "Spiegelmethode (Elektrostatik)",
         "Legendre-Ansatz und Grenzflächen",

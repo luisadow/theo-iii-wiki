@@ -21,13 +21,30 @@ const defaultOptions: UnitToggleOptions = {
 // output: "html" (ohne TeX-Annotation), deshalb wird der Markdown-Quelltext durchsucht.
 const SI_CONSTANT = /\\(?:var)?epsilon_\{?0\}?|\\mu_\{?0\}?/
 
-function hasUnitVariants(node: Node): boolean {
+// Varianten im Text. Abbildungen (<figure>) zählen nicht: Eine Seite mit nur umschaltbarer
+// Abbildung bleibt eine SI-Seite und braucht weiter die Ersetzungstabelle.
+function hasTextVariants(node: Node): boolean {
   if (node.type === "element") {
-    const cls = (node as Element).properties?.className
+    const el = node as Element
+    if (el.tagName === "figure") return false
+    const cls = el.properties?.className
     const classes = Array.isArray(cls) ? cls.map(String) : []
     if (classes.includes("unit-si") || classes.includes("unit-gauss")) return true
   }
-  return ((node as Parent).children ?? []).some(hasUnitVariants)
+  return ((node as Parent).children ?? []).some(hasTextVariants)
+}
+
+function hasFigureVariants(node: Node): boolean {
+  if (node.type === "element") {
+    const el = node as Element
+    if (el.tagName === "figure") {
+      return el.children.some((c) => {
+        const cls = c.type === "element" ? c.properties?.className : undefined
+        return Array.isArray(cls) && cls.map(String).includes("unit-gauss")
+      })
+    }
+  }
+  return ((node as Parent).children ?? []).some(hasFigureVariants)
 }
 
 function usesSIConstants(filePath: string | undefined): boolean {
@@ -90,9 +107,10 @@ export default ((opts?: Partial<UnitToggleOptions>) => {
     // Seiten, die die Systeme ohnehin nebeneinander zeigen (z. B. Einheitensysteme), setzen
     // im Frontmatter unitToggle: false
     if (fileData.frontmatter?.unitToggle === false) return null
-    const hasVariants = hasUnitVariants(tree)
+    const hasVariants = hasTextVariants(tree)
+    const siOnly = !hasVariants && usesSIConstants(fileData.filePath)
     // Seiten ohne Einheiten (Mathe-Grundlagen, Relativität ohne Felder …) brauchen keinen Switch
-    if (!hasVariants && !usesSIConstants(fileData.filePath)) return null
+    if (!hasVariants && !siOnly && !hasFigureVariants(tree)) return null
 
     return (
       <>
@@ -109,7 +127,7 @@ export default ((opts?: Partial<UnitToggleOptions>) => {
           </span>
           <UnitButtons />
         </div>
-        {!hasVariants && (
+        {siOnly && (
           // Seite ist (noch) nur in SI geschrieben: im Gauß-Modus Übersetzungsregeln einblenden
           <div
             class="unit-gauss unit-fallback"

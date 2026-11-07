@@ -20,7 +20,8 @@ const config: QuartzConfig = {
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
-      cdnCaching: true,
+      // false: Schriften beim Build laden und selbst ausliefern, keine Requests an Google
+      cdnCaching: false,
       typography: {
         header: "Oxanium",
         body: "IBM Plex Sans",
@@ -68,7 +69,12 @@ const config: QuartzConfig = {
         },
         keepBackground: false,
       }),
-      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false, enableCheckbox: true }),
+      // mermaid: false, sonst käme die Bibliothek bei Bedarf vom CDN (cdnjs)
+      Plugin.ObsidianFlavoredMarkdown({
+        enableInHtmlEmbed: false,
+        enableCheckbox: true,
+        mermaid: false,
+      }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),

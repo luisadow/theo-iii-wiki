@@ -52,6 +52,7 @@ export const sharedPageComponents: SharedLayout = {
       "Über mich": "https://sadowski-dos-santos.de",
       "Quellcode auf GitHub": "https://github.com/luisadow/theo-iii-wiki",
       "Fehler melden": "https://github.com/luisadow/theo-iii-wiki/issues/new",
+      Datenschutz: "/Datenschutz",
     },
   }),
 }
@@ -91,6 +92,7 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
+      filterFn: (node) => node.slugSegment !== "tags" && node.slugSegment !== "Datenschutz",
       // Ordner nach Pfad sortieren ("01 Grundlagen", "02 …"), damit die Vorlesungsreihenfolge
       // erhalten bleibt, obwohl die Ordner-Titel keine Nummern tragen.
       sortFn: (a, b) => {
@@ -147,6 +149,7 @@ export const defaultListPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
+      filterFn: (node) => node.slugSegment !== "tags" && node.slugSegment !== "Datenschutz",
       // Ordner nach Pfad sortieren ("01 Grundlagen", "02 …"), damit die Vorlesungsreihenfolge
       // erhalten bleibt, obwohl die Ordner-Titel keine Nummern tragen.
       sortFn: (a, b) => {

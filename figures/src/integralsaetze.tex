@@ -14,8 +14,8 @@
     }
     \node[acc] at (-0.35,0.15) {$V$};
     \node[acc, anchor=north east] at (-1.05,-0.72) {$\partial V$};
-    \node[anchor=south west] at ({\a*cos(20)+0.5},{\b*sin(20)+0.1}) {$d\vec A$};
-    \node[anchor=north] at (0,-1.75) {$\displaystyle\int_V \nabla\cdot\vec F\,dV=\oint_{\partial V}\vec F\cdot d\vec A$};
+    \node[anchor=south west] at ({\a*cos(20)+0.5},{\b*sin(20)+0.1}) {$d\vv A$};
+    \node[anchor=north] at (0,-1.75) {$\displaystyle\int_V \nabla\cdot\vv F\,dV=\oint_{\partial V}\vv F\cdot d\vv A$};
   \end{scope}
 
   % --- Stokes: gewölbte Fläche A, Randkurve dA mit Umlaufsinn passend zu dA (rechte Hand)
@@ -30,10 +30,10 @@
     \draw[acc, main] (-\rx,0) arc[start angle=180, end angle=360, x radius=\rx, y radius=\ry];
     \draw[acc, line width=1.1pt, -{Stealth[length=6pt,width=5pt,bend]}]
       (250:{\rx} and {\ry}) arc[start angle=250, end angle=300, x radius=\rx, y radius=\ry];
-    \draw[vec] (0,0.94) -- (0,1.75) node[anchor=west] {$d\vec A$};
+    \draw[vec] (0,0.94) -- (0,1.75) node[anchor=west] {$d\vv A$};
     \node[acc] at (0.55,0.62) {$A$};
     \node[acc, anchor=west] at (\rx+0.05,-0.15) {$\partial A$};
-    \node[anchor=north] at (0,-1.4) {$\displaystyle\int_A (\nabla\times\vec F)\cdot d\vec A=\oint_{\partial A}\vec F\cdot d\vec r$};
+    \node[anchor=north] at (0,-1.4) {$\displaystyle\int_A (\nabla\times\vv F)\cdot d\vv A=\oint_{\partial A}\vv F\cdot d\vv r$};
   \end{scope}
 \end{tikzpicture}
 \end{document}

@@ -14,7 +14,8 @@ normale Bilder mit eingebauten Fallback-Farben (hell/dunkel über `prefers-color
 ## Bauen
 
 ```sh
-brew install tectonic poppler            # einmalig
+brew install tectonic poppler            # einmalig (Linux: Tectonic-Release, poppler-utils)
+pip install numpy matplotlib             # für figures/gen/*.py
 node figures/build.mjs                   # alle
 node figures/build.mjs dipol-feld        # einzelne
 node figures/preview.mjs out.png dipol-feld   # PNG-Vorschau hell/dunkel
@@ -28,6 +29,7 @@ node figures/preview.mjs out.png dipol-feld   # PNG-Vorschau hell/dunkel
 | `icon-head.tex`  | Rahmen für Icons (gleiche Box, kräftige Linien)                          |
 | `src/<name>.tex` | eine Abbildung pro Datei                                                 |
 | `gen/<name>.py`  | optional: berechnet Kurven (z. B. Feldlinien) → `data/<name>*.tex`       |
+| `src/<name>-gauss.tex` | optional: Gauß-Fassung; `InlineFigures` setzt beide ein, der Umschalter wählt |
 | `build.mjs`      | tectonic → PDF → pdftocairo → SVG, Farben → CSS-Variablen, IDs eindeutig |
 
 ## Regeln
@@ -36,6 +38,8 @@ node figures/preview.mjs out.png dipol-feld   # PNG-Vorschau hell/dunkel
   Jede andere Farbe bricht den Build ab.
 - Farbrollen: **E** in `fg`, **B** in `blue`, das eine Kernkonzept der Abbildung in `acc`,
   positive Ladung `warm`, negative Ladung `blue`.
+- Einheitenabhängige Formeln (ε₀, μ₀, 4π, c) brauchen eine `-gauss`-Fassung. Bildunterschriften
+  einheitenneutral halten, sie gelten für beide Fassungen.
 - Notation wie auf der jeweiligen Seite (z. B. `d\vv A`, `Q_{\text{in}}`, `\partial V`).
 - Kein `\clip`: pdftocairo verschluckt darin exakt waagerechte/senkrechte Linien.
   Berechnete Kurven schneidet `gen/*.py` selbst am Rahmen ab.

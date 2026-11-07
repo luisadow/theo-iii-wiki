@@ -3,7 +3,7 @@
 \begin{document}
 \begin{tikzpicture}
   \def\Bs{1.5} \def\Hc{0.7} \def\w{0.55} \def\Hm{2.6}
-  % Schleifenfläche = Energieverlust pro Zyklus
+  % Schleifenfläche proportional zum Energieverlust pro Zyklus (SI: gleich, Gauß: Faktor 1/4pi)
   \fill[soft] plot[domain=\Hm:-\Hm, samples=80] (\x,{\Bs*tanh((\x+\Hc)/\w)})
     -- plot[domain=-\Hm:\Hm, samples=80] (\x,{\Bs*tanh((\x-\Hc)/\w)}) -- cycle;
   \draw[axis] (-3.0,0) -- (3.2,0) node[anchor=west, text=fg] {$H$};
@@ -22,6 +22,6 @@
   \fill (-\Hc,0) circle (1.6pt) node[anchor=south east, font=\footnotesize] {$-H_c$};
   \fill (\Hc,0) circle (1.6pt) node[anchor=north west, font=\footnotesize] {$H_c$};
   \node[mu, font=\footnotesize, anchor=west] at (1.25,0.55) {Neukurve};
-  \node[acc, font=\footnotesize, align=center, anchor=north] at (0,-2.15) {Fläche der Schleife = Energieverlust pro Zyklus};
+  \node[acc, font=\footnotesize, align=center, anchor=north] at (0,-2.15) {Fläche der Schleife $\propto$ Energieverlust pro Zyklus};
 \end{tikzpicture}
 \end{document}

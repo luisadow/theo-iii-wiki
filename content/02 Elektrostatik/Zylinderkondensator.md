@@ -19,7 +19,7 @@ $$
 E(r)=\sg{\frac{\lambda}{2\pi\varepsilon\,r}}{\frac{2\lambda}{\varepsilon\,r}}, \quad a<r<b.
 $$
 
-![[zylinderkondensator.svg|Das Feld steht senkrecht auf der Achse und durchsetzt nur den Mantel des Gauß-Zylinders (Radius r, Länge L), nicht die Deckel. Daraus folgt E(r) = λ/(2πεr) zwischen a und b, außen ist E = 0.]]
+![[zylinderkondensator.svg|Das Feld steht senkrecht auf der Achse und durchsetzt nur den Mantel des Gauß-Zylinders (Radius r, Länge L), nicht die Deckel. Daraus folgt E(r) ∝ λ/r zwischen a und b, außen ist E = 0.]]
 
 ### Potential
 $$
